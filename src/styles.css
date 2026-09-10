@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Great Vibes", cursive;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-tech: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #10100e;
+  --color-bg: #faf9f7;
+  --color-fg: #1c1c1a;
+  --color-muted: #5c5c58;
+  --color-gold: #c4a574;
+  --color-paper: #f5f2eb;
+  --color-line: #d9d4cc;
+  --color-white: #ffffff;
+
+  --radius: 0rem;
+  --aspect-portrait: 3 / 4;
+}
+
+[data-site="bureau"] {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-gold: #b89563;
+}
+
+[data-site="lab"] {
+  --color-bg: #f3f1ec;
+  --color-gold: #6f6a62;
+  --color-paper: #ebe7de;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: inherit;
+  }
+}

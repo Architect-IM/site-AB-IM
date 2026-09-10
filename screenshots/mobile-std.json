@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Ирина Михейкина",
+      "hasCanvas": false,
+      "bodyTextLen": 1683,
+      "bodyTextHash": "a5aa12bd9ae61fb751f14ac43fa8c474b94555c93be7b0172ffc3b04c82918fe",
+      "bodyTextPrefix": "ИРИНА МИХЕЙКИНА ПОРТФОЛИО БЮРО ЛАБОРАТОРИЯ КОНТАКТ RU | EN АРХИТ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/mobile-std.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Ирина Михейкина",
+      "hasCanvas": false,
+      "bodyTextLen": 1630,
+      "bodyTextHash": "2506e94ababf8024e547818bff46a06f3df4e755430f8ecc3d2287fd631588ca",
+      "bodyTextPrefix": "ИРИНА АРХИТЕКТОР ИЗ ВЛАДИМИРА Ирина Михейкина Современная архите",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/mobile-std-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/mobile-std.json"
+}
