@@ -59,19 +59,41 @@ function Header({ site, overlay }: { site: Site; overlay?: boolean }) {
             site === "lab" ? "font-serif text-lg leading-tight" : "text-xs font-medium uppercase",
           )}
         >
-          <span className="lg:hidden">{brandShort}</span>
-          <span className="hidden lg:inline">{brand}</span>
+          {site === "bureau" ? (
+            <span className="flex max-w-[14rem] flex-col text-[11px] font-medium leading-tight tracking-[0.06em] normal-case md:max-w-none md:text-xs">
+              {lang === "ru" ? (
+                <>
+                  <span>Архитектурное бюро</span>
+                  <span>Ирины Михейкиной</span>
+                </>
+              ) : (
+                <>
+                  <span>Architecture bureau</span>
+                  <span>Irina Mikheykina</span>
+                </>
+              )}
+            </span>
+          ) : (
+            <>
+              <span className="md:hidden">{brandShort}</span>
+              <span className="hidden md:inline">{brand}</span>
+            </>
+          )}
         </Link>
-        <nav className="hidden items-center gap-6 lg:flex">
-          {links.map((item) => (
-            <Link
-              key={item.to + item.label}
-              to={item.to}
-              className="text-xs font-medium uppercase tracking-[0.14em] opacity-80 transition hover:opacity-100"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-6 md:flex">
+          {links.map((item) => {
+            const [to, hash] = item.to.split("#");
+            return (
+              <Link
+                key={item.to + item.label}
+                to={to}
+                hash={hash}
+                className="text-xs font-medium uppercase tracking-[0.14em] opacity-80 transition hover:opacity-100"
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           {site !== "irina" ? (
             <Link to="/" className="text-xs font-medium uppercase tracking-[0.14em] text-gold">
               {site === "bureau" ? bureau.back : lab.back}
@@ -81,7 +103,7 @@ function Header({ site, overlay }: { site: Site; overlay?: boolean }) {
         </nav>
         <button
           type="button"
-          className="inline-flex size-11 items-center justify-center lg:hidden"
+          className="inline-flex size-11 items-center justify-center md:hidden"
           aria-label="Menu"
           onClick={() => setOpen(true)}
         >
@@ -89,7 +111,7 @@ function Header({ site, overlay }: { site: Site; overlay?: boolean }) {
         </button>
       </div>
       {open ? (
-        <div className="fixed inset-0 z-50 bg-ink text-white lg:hidden">
+        <div className="fixed inset-0 z-50 bg-ink text-white md:hidden">
           <div className="flex items-center justify-between px-5 py-4">
             <span className="text-xs uppercase tracking-[0.14em]">{brand}</span>
             <button
@@ -102,16 +124,20 @@ function Header({ site, overlay }: { site: Site; overlay?: boolean }) {
             </button>
           </div>
           <div className="flex flex-col gap-2 px-5 py-8">
-            {links.map((item) => (
-              <Link
-                key={item.to + item.label}
-                to={item.to}
-                className="py-3 text-lg"
-                onClick={() => setOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {links.map((item) => {
+              const [to, hash] = item.to.split("#");
+              return (
+                <Link
+                  key={item.to + item.label}
+                  to={to}
+                  hash={hash}
+                  className="py-3 text-lg"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             {site !== "irina" ? (
               <Link to="/" className="py-3 text-gold" onClick={() => setOpen(false)}>
                 {site === "bureau" ? bureau.back : lab.back}

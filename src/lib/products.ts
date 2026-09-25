@@ -16,6 +16,8 @@ export type Product = {
   site: "irina" | "bureau";
   image: string;
   demo?: boolean;
+  kind: "product" | "bundle";
+  parent?: string;
   ru: ProductCopy;
   en: ProductCopy;
 };
@@ -28,8 +30,10 @@ function P(
   ru: ProductCopy,
   en: ProductCopy,
   demo = false,
+  kind: Product["kind"] = "product",
+  parent?: string,
 ): Product {
-  return { slug, group, site, image, ru, en, demo };
+  return { slug, group, site, image, ru, en, demo, kind, parent };
 }
 
 export const irinaProducts: Product[] = [
@@ -101,7 +105,7 @@ export const irinaProducts: Product[] = [
     why: "Without it, concept, AGO and adaptation start blind.",
     next: "A research report. Then concept, AGO, approvals or adaptation.",
   }),
-  P("consulting", "vladimir", "irina", "/images/territory.jpg", {
+  P("consulting", "consulting", "irina", "/images/territory.jpg", {
     title: "Консалтинг",
     essence: "Можно консультироваться, не запуская сразу проектирование. Я сама предлагаю этот шаг: быстро разобраться, что делать сейчас, и наметить путь.",
     who: "Для тех, кому нужен целостный взгляд — от смысла и архитектуры до экономики, согласований и жизни объекта после реализации.",
@@ -117,8 +121,8 @@ export const irinaProducts: Product[] = [
     how: "I look at the task as a whole and start with a consultation.",
     why: "Openness and speed: the fastest way to see what is actually needed.",
     next: "A meeting. Then audit, adaptation, approvals or concept.",
-  }),
-  P("audit", "vladimir", "irina", "/images/territory.jpg", {
+  }, false, "bundle"),
+  P("audit", "consulting", "irina", "/images/territory.jpg", {
     title: "Контекстный аудит проекта",
     essence: "Спокойная оценка, где проект может столкнуться с проблемами, а где есть пространство для сильного решения. Глубину выбираете вы.",
     who: "Для тех, у кого уже есть идея, участок или материалы — и хочется понять положение дел, не запуская тяжёлую проектную машину.",
@@ -134,8 +138,8 @@ export const irinaProducts: Product[] = [
     how: "I look only as deep as this stage needs.",
     why: "Expensive errors start in the belief that it is already obvious.",
     next: "An audit. Then adaptation, approvals or concept.",
-  }),
-  P("adaptation", "vladimir", "irina", "/images/mansion.jpg", {
+  }, false, "product", "consulting"),
+  P("adaptation", "consulting", "irina", "/images/mansion.jpg", {
     title: "Адаптация проекта",
     essence: "Привести уже существующие материалы к рабочему стандарту. Аудит внутри — без отдельной доплаты и без работы вслепую.",
     who: "Когда проект уже есть, но его нельзя защищать, согласовывать или строить в текущем виде.",
@@ -151,8 +155,8 @@ export const irinaProducts: Product[] = [
     how: "I audit what exists, fill the gaps, bring the documents to standard.",
     why: "Adaptation is cheaper than drawing again — if it is not done blind.",
     next: "A document pack. Then approvals or further design.",
-  }),
-  P("approvals", "vladimir", "irina", "/images/territory.jpg", {
+  }, false, "product", "consulting"),
+  P("approvals", "consulting", "irina", "/images/territory.jpg", {
     title: "Согласования и экспертизы",
     essence: "Разбор ситуации, реалистичная стратегия прохождения и ведение процесса до результата. Если берёмся — не оставляем заказчика один на один с инстанциями.",
     who: "Для проектов, которым предстоит градсовет, экспертиза или другие согласования. Особенно когда сроки жёсткие или история уже сложная.",
@@ -168,15 +172,15 @@ export const irinaProducts: Product[] = [
     how: "I read the data and the authority. Then a route. Then, if taken, delivery.",
     why: "Approvals are rarely lost “in general”. They are lost on detail, time and a wrong strategy.",
     next: "First the chances. Then accompaniment if both sides agree.",
-  }),
+  }, false, "product", "consulting"),
   P("vision", "hospitality", "irina", "/images/resort.jpg", {
     title: "Визионерская концепция туристического комплекса",
     essence: "Экспресс-формат, часто за чашку кофе. Показываю, какой объект сделала бы здесь сама: не универсальный вариант «для рынка», а свой взгляд на этот участок.",
     who: "Для тех, у кого есть земля или идея комплекса, и хочется быстро понять, по пути ли нам.",
-    gets: "После встречи — pack: майндмэп по идеологии, продуктовая матрица и экспресс-финмодель. Материал остаётся у вас.",
+    gets: "После встречи — комплект: карта смыслов, состав услуг и первый расчёт денег. Материал остаётся у вас.",
     how: "За одну встречу смотрю участок и задачу. Показываю, какой объект вижу. Собираю соображения с проверкой, сможет ли идея зарабатывать.",
     why: "Это не продажа полного проекта, а быстрая проверка совместимости. Низкий порог входа.",
-    next: "Встреча. На выходе — pack идей. Если совпали — сессия или мастер-план живого объекта.",
+    next: "Встреча. На выходе — набор идей. Если совпали — сессия или мастер-план живого объекта.",
   }, {
     title: "Vision concept for a tourist complex",
     essence: "A short format, often over coffee. What I would make here — not a generic market option.",
@@ -186,7 +190,7 @@ export const irinaProducts: Product[] = [
     why: "Not a full-project sale. A low-threshold test of fit.",
     next: "A meeting and a pack. Then a session or a living master plan.",
   }),
-  P("tourism-plan", "hospitality", "irina", "/images/resort.jpg", {
+  P("tourism-plan", "hospitality", "irina", "/images/territory.jpg", {
     title: "Мастер-план живого туристического объекта",
     essence: "Связывает территорию, экономику, архитектуру и стратегию в один документ. Внутри сразу задаю архитектурный характер.",
     who: "Для тех, кто понял, что объект может жить, и готов собирать его как систему, а не как красивый генплан отдельно от бизнеса.",
@@ -220,7 +224,7 @@ export const irinaProducts: Product[] = [
     why: "A turnkey concept often fails because the client is not in it.",
     next: "One working day. Then a master plan or full accompaniment.",
   }),
-  P("hospitality-lead", "hospitality", "irina", "/images/lodge.jpg", {
+  P("hospitality-lead", "hospitality", "irina", "/images/bureau.jpg", {
     title: "Комплексное сопровождение проекта",
     essence: "Ведение туристического объекта от замысла до ключевых решений на реализации. На площадке берегу смысл, характер и опыт гостя, а не только соответствие чертежам.",
     who: "Для тех, кто не хочет, чтобы замысел растерялся между проектировщиками, подрядчиками и стройкой.",
@@ -237,7 +241,7 @@ export const irinaProducts: Product[] = [
     why: "A strong master plan can still die in small site decisions.",
     next: "The format follows the stage. Usually after a master plan or session.",
   }),
-  P("estate-analysis", "houses", "irina", "/images/house.jpg", {
+  P("estate-analysis", "houses", "irina", "/images/territory.jpg", {
     title: "Предпроектный анализ частных владений",
     essence: "Знакомство с будущим проектом, аудит ситуации и первичный синтез решения. Ищу предпосылки и барьеры, вижу возможности и риски. Смотрю широко и ухожу вглубь ровно настолько, чтобы не проектировать вслепую.",
     who: "Для тех, у кого есть участок или идея, но ещё нет ясности, с чего начинать. Особенно когда территория нетипичная или видение будущего размыто.",
@@ -270,8 +274,8 @@ export const irinaProducts: Product[] = [
     how: "I read the site as research. No assistants in between. Beauty for you, not in general.",
     why: "If house and land are not one from the start, they live apart — and meet expensively later.",
     next: "A working master plan. Then concept, appearance pack or brief.",
-  }),
-  P("estate-concept", "houses", "irina", "/images/house.jpg", {
+  }, false, "bundle"),
+  P("estate-concept", "houses", "irina", "/images/mansion.jpg", {
     title: "Идеологическое и концептуальное проектирование частных владений",
     essence: "Сборка образа и логики жизни на участке. Беру её только после предпроектного анализа: быстрее и точнее, без красивых гипотез «с нуля».",
     who: "Для тех, кто хочет дом с тихой, не кричащей эстетикой — авторской, но вписанной в вас и в место. Подходит и когда в программе не только семья: хозяйство, мастерская, гости или ферма.",
@@ -287,7 +291,7 @@ export const irinaProducts: Product[] = [
     how: "I hold the lead designer’s seat: blocks come together. Money is counted on the sketches; rare junctions are solved now, not later.",
     why: "An idea without analysis and without a count breaks on site. Character, daily life and budget travel together.",
     next: "A concept with ideology, image, life-logic and an early feasibility. Then appearance pack, brief or design stage.",
-  }),
+  }, false, "product", "estate-plan"),
   P("estate-ago", "houses", "irina", "/images/house.jpg", {
     title: "Архитектурно-градостроительный облик частных владений",
     essence: "Показывает, как дом выглядит в своём месте. Работаю со всеми слоями сразу: ландшафт, код территории, ваша история — чтобы дом спокойно встал в среду или уверенно стал её акцентом.",
@@ -304,8 +308,8 @@ export const irinaProducts: Product[] = [
     how: "Relief and neighbours. The code of the territory. Why the house appears here — then that meaning into the look.",
     why: "A casual facade on private land quickly looks foreign. Grown from place and from you, it passes more calmly, and is easier to live with.",
     next: "The appearance pack. Then brief, stage P, or a sharper concept.",
-  }),
-  P("estate-brief", "houses", "irina", "/images/house.jpg", {
+  }, false, "product", "estate-plan"),
+  P("estate-brief", "houses", "irina", "/images/bureau.jpg", {
     title: "ТЗ на проектирование частного дома",
     essence: "Документ, который фиксирует рамки до тяжёлой стадии. Опираюсь на опыт управления бюро больше десяти лет и на реальный порядок стройки, а не на голую теорию.",
     who: "Для тех, кто уже понял задачу и готов закрепить договорённости. Особенно когда сторон несколько и потом легко услышать: «мы имели в виду другое».",
@@ -321,8 +325,8 @@ export const irinaProducts: Product[] = [
     how: "I gather requirements the way the bureau actually runs projects and the way the site actually moves. Not for a folder — so the text can be used without endless clarifications.",
     why: "A weak brief multiplies remakes. A strong one saves the next stages and keeps a common language.",
     next: "An agreed brief. Then stage P or working drawings.",
-  }),
-  P("estate-lead", "houses", "irina", "/images/house.jpg", {
+  }, false, "product", "estate-plan"),
+  P("estate-lead", "houses", "irina", "/images/bureau.jpg", {
     title: "Сопровождение реализации частного дома",
     essence: "Ведение стройки силами бюро, а не передача чертежей «и удачи». В работу входит команда, а не один взгляд с расстояния.",
     who: "Заказчики, которые уже выбрали направление дома и не хотят остаться один на один со стройкой.",
@@ -338,7 +342,7 @@ export const irinaProducts: Product[] = [
     how: "The bureau joins at the stage that is needed. A direct talk between you, the project and those who build.",
     why: "A private house is exposed to chance on the ground. Comfort now, and a reserve for later years.",
     next: "The format follows the stage. Usually through key delivery decisions and handover.",
-  }),
+  }, false, "bundle"),
   P("estate-supervision", "houses", "irina", "/images/house.jpg", {
     title: "Авторский надзор частного дома",
     essence: "Присутствие бюро на реализации: скрытые работы, параметры проекта, узкие специалисты. Свожу стороны и веду бюджет, чтобы стройка прошла максимально близко к проекту и смете.",
@@ -355,7 +359,7 @@ export const irinaProducts: Product[] = [
     how: "Different specialists of the bureau, each their contour. Contractors read widely: reputation and actual work. Everyone with a stake in one conversation.",
     why: "Character is lost quietly on site: a junction, a substitution, haste, a compromise. Supervision keeps idea and cost from drifting apart.",
     next: "It depends on the stage. Usually through key handover and commissioning.",
-  }),
+  }, false, "product", "estate-lead"),
   P("temple", "temples", "irina", "/images/chapel.jpg", {
     title: "Храмовая архитектура",
     essence: "Храм как место и конструкция. Сдержанность в теме, которую легко перегрузить цитатой.",
@@ -417,7 +421,7 @@ export const bureauProducts: Product[] = [
     gets: "Несколько рабочих вариантов с плюсами и ограничениями. Возможность отбросить лишнее до стадии П.",
     how: "Обсуждаем задачу. Эскизируем без жёстких рамок «как принято». Проверяем на участок, нормы и логику использования.",
     why: "На ранней стадии дешевле проверить гипотезы, чем потом переделывать проект.",
-    next: "Набор эскизов и логика выбранного решения. Затем ОПР, АГО или стадия П.",
+    next: "Набор эскизов и логика выбранного решения. Затем планировки, облик или проектная стадия.",
   }, {
     title: "Sketch concept",
     essence: "A fast test of an architectural idea before the heavy machine. The first consultation is open.",
@@ -447,11 +451,11 @@ export const bureauProducts: Product[] = [
   P("spatial", "pre", "bureau", "/images/house.jpg", {
     title: "Объёмно-планировочные решения",
     essence: "Архитектура начинает работать с экономикой, нормативами и логикой использования. Связываем желаемый результат с тем, что можно построить и эксплуатировать.",
-    who: "Когда концепция есть, но ещё не зафиксированы планировки, объёмы и ТЭП.",
+    who: "Когда концепция есть, но ещё не зафиксированы планировки, объёмы и цифры проекта.",
     gets: "Проработанные планировки и объёмы, увязанные с нормами, технологией и экономикой. Понятные технико-экономические показатели.",
     how: "Берём концепцию и АГО. Проверяем нормативную и технологическую базу. Связываем архитектуру с экономикой и потребительским опытом.",
     why: "Именно здесь идея становится рабочим основанием для проектирования.",
-    next: "Комплект ОПР с ТЭП. Обычно далее — стадия П.",
+    next: "Комплект планировок с цифрами. Обычно далее — проектная стадия.",
   }, {
     title: "Spatial and planning design",
     essence: "Architecture meeting economy, code and use. Desire bound to what can actually be built and run.",
@@ -517,7 +521,7 @@ export const bureauProducts: Product[] = [
     essence: "Моделирование технико-экономических показателей, реальные рыночные цены, предварительная смета и пул поставщиков.",
     who: "Когда нужно понять стоимость и комплектацию до закупки и стройки — на этапе согласования концепции и дальше.",
     gets: "Декомпозицию проекта на материалы и цены. Обоснование устойчивых технических и экономических решений. Ведомости и сметную логику.",
-    how: "Фиксируем ТЭП. Подбираем решения по стоимости, технике и эстетике. Считаем предварительную смету. При необходимости ведём переговоры с подрядчиками.",
+    how: "Фиксируем цифры проекта. Подбираем решения по стоимости, технике и эстетике. Считаем предварительную смету. При необходимости ведём переговоры с подрядчиками.",
     why: "Без ранней ясности в деньгах архитектура быстро становится необязательной.",
     next: "Расчёт с вариантами комплектации. Затем уточнение концепции, проектирование или корректировка финансовой модели.",
   }, {
@@ -551,7 +555,7 @@ export const bureauProducts: Product[] = [
     essence: "Сопровождение реализации: диалог с подрядчиками, проверка смет и комплектации, управляемость площадки — не формальный надзор.",
     who: "Заказчики, которые хотят снизить хаос при передаче проекта подрядчику и дальше по ходу строительства.",
     gets: "Помощь в подборе подрядчиков, проверку смет, понятные объёмы по ведомостям, варианты проверенных производителей.",
-    how: "Участвуем на передаче ПСД. Переводим решения на язык стройки. Контролируем, чтобы закупки соответствовали проекту.",
+    how: "Участвуем на передаче проекта подрядчику. Переводим решения на язык стройки. Контролируем, чтобы закупки соответствовали проекту.",
     why: "Проблемы чаще начинаются не из-за чертежей, а из-за разрыва между проектом и реализацией.",
     next: "От точечного участия до плотного сопровождения. Обычно вместе с авторским надзором и функцией техзаказчика.",
   }, {
@@ -565,12 +569,12 @@ export const bureauProducts: Product[] = [
   }),
   P("client", "build", "bureau", "/images/bureau.jpg", {
     title: "Функция технического заказчика",
-    essence: "Сопровождение интересов заказчика: ИРД, задания подрядчикам, согласования вплоть до ввода. Организационная и нормативная нагрузка — на нас.",
+    essence: "Сопровождение интересов заказчика: исходные данные, задания подрядчикам, согласования вплоть до ввода. Организационная и нормативная нагрузка — на нас.",
     who: "Кто не хочет самостоятельно погружаться в получение исходных данных, ТЗ подрядчикам и многочисленные согласования.",
-    gets: "ИРД без «переполучения» условий. Релевантные коммерческие предложения. Сопровождение инстанций до ввода в эксплуатацию.",
+    gets: "Исходные данные без повторного сбора условий. Релевантные коммерческие предложения. Сопровождение инстанций до ввода в эксплуатацию.",
     how: "Собираем данные, опираясь на опыт подачи заявок. Формируем задания. Ведём коммуникацию с органами, ресурсоснабжением и экспертизой.",
     why: "Проекты теряют время на организационных этапах — неполные данные, некорректные задания, затянутые согласования.",
-    next: "Подключение с любого этапа — от ИРД до ввода. Часто с надзором и управлением строительством.",
+    next: "Подключение с любого этапа — от исходных данных до ввода. Часто с надзором и управлением строительством.",
   }, {
     title: "Employer’s agent",
     essence: "The client’s side: baseline data, contractor briefs, consents through to handover. Organisation and regulation on us.",
@@ -655,6 +659,15 @@ export function productsOf(site: "irina" | "bureau", group?: string) {
   return group ? list.filter((p) => p.group === group) : list;
 }
 
+export function topOffers(site: "irina" | "bureau", group: string) {
+  return productsOf(site, group).filter((p) => !p.parent);
+}
+
+export function childrenOf(site: "irina" | "bureau", parent: string) {
+  const list = site === "irina" ? irinaProducts : bureauProducts;
+  return list.filter((p) => p.parent === parent);
+}
+
 export function findProduct(site: "irina" | "bureau", slug: string) {
   return (site === "irina" ? irinaProducts : bureauProducts).find((p) => p.slug === slug);
 }
@@ -663,23 +676,33 @@ export const productLabels: Record<Lang, Record<string, string>> = {
   ru: {
     essence: "Суть",
     who: "Для кого и когда",
-    gets: "Что получает клиент",
+    gets: "Что в результате?",
     how: "Как работаем",
     why: "Почему это важно",
     next: "Формат и следующий шаг",
     cta: "Написать",
     demo: "Раздел в работе — демо",
     all: "Все услуги",
+    service: "Услуга",
+    direction: "Направление",
+    others: "Другие услуги направления",
+    bundle: "Группа",
+    services: "Услуги",
   },
   en: {
     essence: "Essence",
     who: "For whom, and when",
-    gets: "What you receive",
+    gets: "What comes of it?",
     how: "How we work",
     why: "Why it matters",
     next: "Format and next step",
     cta: "Write",
     demo: "In progress — demo",
     all: "All services",
+    service: "Service",
+    direction: "Direction",
+    others: "Other services in this direction",
+    bundle: "Group",
+    services: "Services",
   },
 };

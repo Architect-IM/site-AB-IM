@@ -30,8 +30,8 @@ function Directions() {
                 <img src={d.image} alt="" className="size-full object-cover" />
               </div>
               <div>
-                <p className="text-[11px] uppercase tracking-[0.18em] text-gold">{d[lang].group}</p>
-                <h2 className="mt-3 text-3xl">{d[lang].title}</h2>
+                <h2 className="text-3xl">{d[lang].group}</h2>
+                <p className="mt-2 text-lg">{d[lang].title}</p>
                 <p className="mt-4 leading-relaxed text-muted">{d[lang].body}</p>
               </div>
             </Link>

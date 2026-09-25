@@ -4,35 +4,51 @@ import type { Product } from "@/lib/products";
 import { productLabels } from "@/lib/products";
 import { useLang, type Site } from "@/lib/lang";
 
-const blocks = ["essence", "who", "gets", "how", "why", "next"] as const;
+const rest = ["who", "gets", "how", "why", "next"] as const;
 
 export function ProductPage({
   product,
   site,
   backTo,
   backLabel,
+  siblings = [],
 }: {
   product: Product;
   site: Site;
   backTo: string;
   backLabel: string;
+  siblings?: { slug: string; title: string; href: string; image?: string }[];
 }) {
   const { lang } = useLang();
   const copy = product[lang];
   const labels = productLabels[lang];
+  const others = siblings.filter((s) => s.slug !== product.slug);
 
   return (
     <SiteChrome site={site}>
-      <div className="aspect-portrait overflow-hidden md:h-[420px] md:aspect-auto">
-        <img src={product.image} alt="" className="size-full object-cover" />
+      <div className="border-b border-line px-5 py-4">
+        <div className="mx-auto max-w-6xl">
+          <a href={backTo} className="text-xs uppercase tracking-[0.16em] text-gold">
+            ← {backLabel}
+          </a>
+        </div>
       </div>
+      <div className="grid md:grid-cols-2">
+        <div className="flex flex-col justify-end px-5 py-12 md:px-12 md:min-h-[70dvh]">
+          {product.demo ? (
+            <p className="mb-4 text-xs uppercase tracking-[0.18em] text-gold">{labels.demo}</p>
+          ) : null}
+          <h1 className="text-4xl leading-tight">{copy.title}</h1>
+          <p className="mt-6 max-w-xl text-base leading-relaxed md:text-lg">{copy.essence}</p>
+        </div>
+        <div className="relative aspect-square md:min-h-[70dvh] md:aspect-auto">
+          <img src={product.image} alt="" className="absolute inset-0 size-full object-cover" />
+        </div>
+      </div>
+
       <main className="mx-auto max-w-3xl px-5 py-16">
-        {product.demo ? (
-          <p className="text-xs uppercase tracking-[0.18em] text-gold">{labels.demo}</p>
-        ) : null}
-        <h1 className="mt-3 text-4xl leading-tight">{copy.title}</h1>
-        <div className="mt-12 space-y-12">
-          {blocks.map((key) => (
+        <div className="space-y-12">
+          {rest.map((key) => (
             <section key={key}>
               <h2 className="text-xs font-medium uppercase tracking-[0.18em] text-muted">
                 {labels[key]}
@@ -41,18 +57,38 @@ export function ProductPage({
             </section>
           ))}
         </div>
-        <div className="mt-14 flex flex-wrap gap-6">
+        <div className="mt-14">
           <Link
             to="/kontakt"
-            className="bg-ink px-6 py-3 text-xs uppercase tracking-[0.16em] text-white"
+            className="inline-block bg-ink px-6 py-3 text-xs uppercase tracking-[0.16em] text-white"
           >
             {labels.cta} →
           </Link>
-          <a href={backTo} className="py-3 text-xs uppercase tracking-[0.16em] text-gold">
-            ← {backLabel}
-          </a>
         </div>
+        <a href={backTo} className="mt-12 inline-block text-xs uppercase tracking-[0.16em] text-gold">
+          ← {backLabel}
+        </a>
       </main>
+
+      {others.length ? (
+        <section className="border-t border-line bg-paper">
+          <div className="mx-auto max-w-6xl px-5 py-16">
+            <h2 className="text-xs uppercase tracking-[0.18em] text-muted">{labels.others}</h2>
+            <div className="mt-10 grid gap-8 md:grid-cols-3">
+              {others.map((s) => (
+                <a key={s.slug} href={s.href} className="group block">
+                  {s.image ? (
+                    <div className="aspect-square overflow-hidden">
+                      <img src={s.image} alt="" className="size-full object-cover" />
+                    </div>
+                  ) : null}
+                  <p className="mt-3 text-base group-hover:text-gold">{s.title}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
     </SiteChrome>
   );
 }

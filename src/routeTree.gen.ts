@@ -12,16 +12,24 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as LegalRouteImport } from './routes/legal'
-import { Route as SketchesRouteImport } from './routes/sketches'
 import { Route as BureauIndexRouteImport } from './routes/bureau/index'
+import { Route as BureauKontaktRouteImport } from './routes/bureau/kontakt'
+import { Route as BureauNovostiRouteImport } from './routes/bureau/novosti'
+import { Route as BureauProektyRouteImport } from './routes/bureau/proekty'
+import { Route as BureauRabotyRouteImport } from './routes/bureau/raboty'
 import { Route as BureauStadiiRouteImport } from './routes/bureau/stadii'
 import { Route as LabIndexRouteImport } from './routes/lab/index'
 import { Route as NapravleniyaIndexRouteImport } from './routes/napravleniya/index'
 import { Route as NapravleniyaSlugRouteImport } from './routes/napravleniya/$slug'
 import { Route as PortfolioIndexRouteImport } from './routes/portfolio/index'
 import { Route as PortfolioSlugRouteImport } from './routes/portfolio/$slug'
+import { Route as BureauProektyIndexRouteImport } from './routes/bureau/proekty.index'
+import { Route as BureauProektySlugRouteImport } from './routes/bureau/proekty.$slug'
+import { Route as BureauRabotyIndexRouteImport } from './routes/bureau/raboty.index'
+import { Route as BureauRabotySlugRouteImport } from './routes/bureau/raboty.$slug'
 import { Route as BureauStadiiIndexRouteImport } from './routes/bureau/stadii.index'
 import { Route as BureauStadiiSlugRouteImport } from './routes/bureau/stadii.$slug'
+import { Route as NapravleniyaSlugIndexRouteImport } from './routes/napravleniya/$slug.index'
 import { Route as NapravleniyaSlugProductRouteImport } from './routes/napravleniya/$slug.$product'
 
 const IndexRoute = IndexRouteImport.update({
@@ -39,14 +47,29 @@ const LegalRoute = LegalRouteImport.update({
   path: '/legal',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SketchesRoute = SketchesRouteImport.update({
-  id: '/sketches',
-  path: '/sketches',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BureauIndexRoute = BureauIndexRouteImport.update({
   id: '/bureau/',
   path: '/bureau/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BureauKontaktRoute = BureauKontaktRouteImport.update({
+  id: '/bureau/kontakt',
+  path: '/bureau/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BureauNovostiRoute = BureauNovostiRouteImport.update({
+  id: '/bureau/novosti',
+  path: '/bureau/novosti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BureauProektyRoute = BureauProektyRouteImport.update({
+  id: '/bureau/proekty',
+  path: '/bureau/proekty',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BureauRabotyRoute = BureauRabotyRouteImport.update({
+  id: '/bureau/raboty',
+  path: '/bureau/raboty',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BureauStadiiRoute = BureauStadiiRouteImport.update({
@@ -79,6 +102,26 @@ const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
   path: '/portfolio/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BureauProektyIndexRoute = BureauProektyIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BureauProektyRoute,
+} as any)
+const BureauProektySlugRoute = BureauProektySlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BureauProektyRoute,
+} as any)
+const BureauRabotyIndexRoute = BureauRabotyIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BureauRabotyRoute,
+} as any)
+const BureauRabotySlugRoute = BureauRabotySlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BureauRabotyRoute,
+} as any)
 const BureauStadiiIndexRoute = BureauStadiiIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -88,6 +131,11 @@ const BureauStadiiSlugRoute = BureauStadiiSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => BureauStadiiRoute,
+} as any)
+const NapravleniyaSlugIndexRoute = NapravleniyaSlugIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => NapravleniyaSlugRoute,
 } as any)
 const NapravleniyaSlugProductRoute = NapravleniyaSlugProductRouteImport.update({
   id: '/$product',
@@ -99,7 +147,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/kontakt': typeof KontaktRoute
   '/legal': typeof LegalRoute
-  '/sketches': typeof SketchesRoute
+  '/bureau/kontakt': typeof BureauKontaktRoute
+  '/bureau/novosti': typeof BureauNovostiRoute
+  '/bureau/proekty': typeof BureauProektyRouteWithChildren
+  '/bureau/raboty': typeof BureauRabotyRouteWithChildren
   '/bureau/stadii': typeof BureauStadiiRouteWithChildren
   '/napravleniya/$slug': typeof NapravleniyaSlugRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
@@ -107,31 +158,44 @@ export interface FileRoutesByFullPath {
   '/lab/': typeof LabIndexRoute
   '/napravleniya/': typeof NapravleniyaIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
+  '/bureau/proekty/$slug': typeof BureauProektySlugRoute
+  '/bureau/raboty/$slug': typeof BureauRabotySlugRoute
   '/bureau/stadii/$slug': typeof BureauStadiiSlugRoute
   '/napravleniya/$slug/$product': typeof NapravleniyaSlugProductRoute
+  '/bureau/proekty/': typeof BureauProektyIndexRoute
+  '/bureau/raboty/': typeof BureauRabotyIndexRoute
   '/bureau/stadii/': typeof BureauStadiiIndexRoute
+  '/napravleniya/$slug/': typeof NapravleniyaSlugIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/kontakt': typeof KontaktRoute
   '/legal': typeof LegalRoute
-  '/sketches': typeof SketchesRoute
-  '/napravleniya/$slug': typeof NapravleniyaSlugRouteWithChildren
+  '/bureau/kontakt': typeof BureauKontaktRoute
+  '/bureau/novosti': typeof BureauNovostiRoute
   '/portfolio/$slug': typeof PortfolioSlugRoute
   '/bureau': typeof BureauIndexRoute
   '/lab': typeof LabIndexRoute
   '/napravleniya': typeof NapravleniyaIndexRoute
   '/portfolio': typeof PortfolioIndexRoute
+  '/bureau/proekty/$slug': typeof BureauProektySlugRoute
+  '/bureau/raboty/$slug': typeof BureauRabotySlugRoute
   '/bureau/stadii/$slug': typeof BureauStadiiSlugRoute
   '/napravleniya/$slug/$product': typeof NapravleniyaSlugProductRoute
+  '/bureau/proekty': typeof BureauProektyIndexRoute
+  '/bureau/raboty': typeof BureauRabotyIndexRoute
   '/bureau/stadii': typeof BureauStadiiIndexRoute
+  '/napravleniya/$slug': typeof NapravleniyaSlugIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/kontakt': typeof KontaktRoute
   '/legal': typeof LegalRoute
-  '/sketches': typeof SketchesRoute
+  '/bureau/kontakt': typeof BureauKontaktRoute
+  '/bureau/novosti': typeof BureauNovostiRoute
+  '/bureau/proekty': typeof BureauProektyRouteWithChildren
+  '/bureau/raboty': typeof BureauRabotyRouteWithChildren
   '/bureau/stadii': typeof BureauStadiiRouteWithChildren
   '/napravleniya/$slug': typeof NapravleniyaSlugRouteWithChildren
   '/portfolio/$slug': typeof PortfolioSlugRoute
@@ -139,9 +203,14 @@ export interface FileRoutesById {
   '/lab/': typeof LabIndexRoute
   '/napravleniya/': typeof NapravleniyaIndexRoute
   '/portfolio/': typeof PortfolioIndexRoute
+  '/bureau/proekty/$slug': typeof BureauProektySlugRoute
+  '/bureau/raboty/$slug': typeof BureauRabotySlugRoute
   '/bureau/stadii/$slug': typeof BureauStadiiSlugRoute
   '/napravleniya/$slug/$product': typeof NapravleniyaSlugProductRoute
+  '/bureau/proekty/': typeof BureauProektyIndexRoute
+  '/bureau/raboty/': typeof BureauRabotyIndexRoute
   '/bureau/stadii/': typeof BureauStadiiIndexRoute
+  '/napravleniya/$slug/': typeof NapravleniyaSlugIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -149,7 +218,10 @@ export interface FileRouteTypes {
     | '/'
     | '/kontakt'
     | '/legal'
-    | '/sketches'
+    | '/bureau/kontakt'
+    | '/bureau/novosti'
+    | '/bureau/proekty'
+    | '/bureau/raboty'
     | '/bureau/stadii'
     | '/napravleniya/$slug'
     | '/portfolio/$slug'
@@ -157,30 +229,43 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/napravleniya/'
     | '/portfolio/'
+    | '/bureau/proekty/$slug'
+    | '/bureau/raboty/$slug'
     | '/bureau/stadii/$slug'
     | '/napravleniya/$slug/$product'
+    | '/bureau/proekty/'
+    | '/bureau/raboty/'
     | '/bureau/stadii/'
+    | '/napravleniya/$slug/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/kontakt'
     | '/legal'
-    | '/sketches'
-    | '/napravleniya/$slug'
+    | '/bureau/kontakt'
+    | '/bureau/novosti'
     | '/portfolio/$slug'
     | '/bureau'
     | '/lab'
     | '/napravleniya'
     | '/portfolio'
+    | '/bureau/proekty/$slug'
+    | '/bureau/raboty/$slug'
     | '/bureau/stadii/$slug'
     | '/napravleniya/$slug/$product'
+    | '/bureau/proekty'
+    | '/bureau/raboty'
     | '/bureau/stadii'
+    | '/napravleniya/$slug'
   id:
     | '__root__'
     | '/'
     | '/kontakt'
     | '/legal'
-    | '/sketches'
+    | '/bureau/kontakt'
+    | '/bureau/novosti'
+    | '/bureau/proekty'
+    | '/bureau/raboty'
     | '/bureau/stadii'
     | '/napravleniya/$slug'
     | '/portfolio/$slug'
@@ -188,16 +273,24 @@ export interface FileRouteTypes {
     | '/lab/'
     | '/napravleniya/'
     | '/portfolio/'
+    | '/bureau/proekty/$slug'
+    | '/bureau/raboty/$slug'
     | '/bureau/stadii/$slug'
     | '/napravleniya/$slug/$product'
+    | '/bureau/proekty/'
+    | '/bureau/raboty/'
     | '/bureau/stadii/'
+    | '/napravleniya/$slug/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KontaktRoute: typeof KontaktRoute
   LegalRoute: typeof LegalRoute
-  SketchesRoute: typeof SketchesRoute
+  BureauKontaktRoute: typeof BureauKontaktRoute
+  BureauNovostiRoute: typeof BureauNovostiRoute
+  BureauProektyRoute: typeof BureauProektyRouteWithChildren
+  BureauRabotyRoute: typeof BureauRabotyRouteWithChildren
   BureauStadiiRoute: typeof BureauStadiiRouteWithChildren
   NapravleniyaSlugRoute: typeof NapravleniyaSlugRouteWithChildren
   PortfolioSlugRoute: typeof PortfolioSlugRoute
@@ -230,18 +323,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sketches': {
-      id: '/sketches'
-      path: '/sketches'
-      fullPath: '/sketches'
-      preLoaderRoute: typeof SketchesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/bureau/': {
       id: '/bureau/'
       path: '/bureau'
       fullPath: '/bureau/'
       preLoaderRoute: typeof BureauIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bureau/kontakt': {
+      id: '/bureau/kontakt'
+      path: '/bureau/kontakt'
+      fullPath: '/bureau/kontakt'
+      preLoaderRoute: typeof BureauKontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bureau/novosti': {
+      id: '/bureau/novosti'
+      path: '/bureau/novosti'
+      fullPath: '/bureau/novosti'
+      preLoaderRoute: typeof BureauNovostiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bureau/proekty': {
+      id: '/bureau/proekty'
+      path: '/bureau/proekty'
+      fullPath: '/bureau/proekty'
+      preLoaderRoute: typeof BureauProektyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bureau/raboty': {
+      id: '/bureau/raboty'
+      path: '/bureau/raboty'
+      fullPath: '/bureau/raboty'
+      preLoaderRoute: typeof BureauRabotyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/bureau/stadii': {
@@ -286,6 +400,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bureau/proekty/': {
+      id: '/bureau/proekty/'
+      path: '/'
+      fullPath: '/bureau/proekty/'
+      preLoaderRoute: typeof BureauProektyIndexRouteImport
+      parentRoute: typeof BureauProektyRoute
+    }
+    '/bureau/proekty/$slug': {
+      id: '/bureau/proekty/$slug'
+      path: '/$slug'
+      fullPath: '/bureau/proekty/$slug'
+      preLoaderRoute: typeof BureauProektySlugRouteImport
+      parentRoute: typeof BureauProektyRoute
+    }
+    '/bureau/raboty/': {
+      id: '/bureau/raboty/'
+      path: '/'
+      fullPath: '/bureau/raboty/'
+      preLoaderRoute: typeof BureauRabotyIndexRouteImport
+      parentRoute: typeof BureauRabotyRoute
+    }
+    '/bureau/raboty/$slug': {
+      id: '/bureau/raboty/$slug'
+      path: '/$slug'
+      fullPath: '/bureau/raboty/$slug'
+      preLoaderRoute: typeof BureauRabotySlugRouteImport
+      parentRoute: typeof BureauRabotyRoute
+    }
     '/bureau/stadii/': {
       id: '/bureau/stadii/'
       path: '/'
@@ -300,6 +442,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BureauStadiiSlugRouteImport
       parentRoute: typeof BureauStadiiRoute
     }
+    '/napravleniya/$slug/': {
+      id: '/napravleniya/$slug/'
+      path: '/'
+      fullPath: '/napravleniya/$slug/'
+      preLoaderRoute: typeof NapravleniyaSlugIndexRouteImport
+      parentRoute: typeof NapravleniyaSlugRoute
+    }
     '/napravleniya/$slug/$product': {
       id: '/napravleniya/$slug/$product'
       path: '/$product'
@@ -309,6 +458,34 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface BureauProektyRouteChildren {
+  BureauProektySlugRoute: typeof BureauProektySlugRoute
+  BureauProektyIndexRoute: typeof BureauProektyIndexRoute
+}
+
+const BureauProektyRouteChildren: BureauProektyRouteChildren = {
+  BureauProektySlugRoute: BureauProektySlugRoute,
+  BureauProektyIndexRoute: BureauProektyIndexRoute,
+}
+
+const BureauProektyRouteWithChildren = BureauProektyRoute._addFileChildren(
+  BureauProektyRouteChildren,
+)
+
+interface BureauRabotyRouteChildren {
+  BureauRabotySlugRoute: typeof BureauRabotySlugRoute
+  BureauRabotyIndexRoute: typeof BureauRabotyIndexRoute
+}
+
+const BureauRabotyRouteChildren: BureauRabotyRouteChildren = {
+  BureauRabotySlugRoute: BureauRabotySlugRoute,
+  BureauRabotyIndexRoute: BureauRabotyIndexRoute,
+}
+
+const BureauRabotyRouteWithChildren = BureauRabotyRoute._addFileChildren(
+  BureauRabotyRouteChildren,
+)
 
 interface BureauStadiiRouteChildren {
   BureauStadiiSlugRoute: typeof BureauStadiiSlugRoute
@@ -326,10 +503,12 @@ const BureauStadiiRouteWithChildren = BureauStadiiRoute._addFileChildren(
 
 interface NapravleniyaSlugRouteChildren {
   NapravleniyaSlugProductRoute: typeof NapravleniyaSlugProductRoute
+  NapravleniyaSlugIndexRoute: typeof NapravleniyaSlugIndexRoute
 }
 
 const NapravleniyaSlugRouteChildren: NapravleniyaSlugRouteChildren = {
   NapravleniyaSlugProductRoute: NapravleniyaSlugProductRoute,
+  NapravleniyaSlugIndexRoute: NapravleniyaSlugIndexRoute,
 }
 
 const NapravleniyaSlugRouteWithChildren =
@@ -339,7 +518,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KontaktRoute: KontaktRoute,
   LegalRoute: LegalRoute,
-  SketchesRoute: SketchesRoute,
+  BureauKontaktRoute: BureauKontaktRoute,
+  BureauNovostiRoute: BureauNovostiRoute,
+  BureauProektyRoute: BureauProektyRouteWithChildren,
+  BureauRabotyRoute: BureauRabotyRouteWithChildren,
   BureauStadiiRoute: BureauStadiiRouteWithChildren,
   NapravleniyaSlugRoute: NapravleniyaSlugRouteWithChildren,
   PortfolioSlugRoute: PortfolioSlugRoute,

@@ -45,7 +45,7 @@ export const irina: Record<Lang, Copy> = {
     manifestoLong:
       "Я создаю современную архитектуру, всегда глубоко в контексте задачи, всегда многослойную и осмысленную. За каждым проектом стоит моё проектное бюро, комплексная экспертиза и умение решать задачи любой сложности на своей земле. Наши проекты живут, работают и помогают заказчикам достигать их целей — уверенно и надолго.",
     heroKicker: "Архитектор из Владимира",
-    directionsTitle: "Направления",
+    directionsTitle: "Чем я занимаюсь?",
     portfolioTitle: "Портфолио",
     inWorkTitle: "В работе",
     bureauWidget: {
@@ -81,7 +81,7 @@ export const irina: Record<Lang, Copy> = {
     manifestoLong:
       "I make contemporary architecture that is always deep in the brief — layered and considered. Behind every project stands my design bureau, complete expertise, and the ability to solve work of any complexity on our own ground.",
     heroKicker: "Architect from Vladimir",
-    directionsTitle: "Directions",
+    directionsTitle: "What do I do?",
     portfolioTitle: "Portfolio",
     inWorkTitle: "In progress",
     bureauWidget: {
@@ -115,47 +115,155 @@ export const bureauCopy: Record<
     manifestoShort: string;
     hero: string;
     stagesTitle: string;
+    worksTitle: string;
+    newsTitle: string;
+    alsoTitle: string;
+    alsoBody: string;
     guarantee: string;
     back: string;
+    roles: { title: string; body: string }[];
   }
 > = {
   ru: {
     brand: "Бюро",
     brandFull: "Архитектурное бюро Ирины Михейкиной",
     nav: [
-      { label: "Стадии", to: "/bureau/stadii" },
-      { label: "Проекты", to: "/portfolio" },
-      { label: "Подход", to: "/bureau" },
-      { label: "Контакт", to: "/kontakt" },
+      { label: "Услуги", to: "/bureau#raboty" },
+      { label: "Портфолио", to: "/bureau/proekty" },
+      { label: "Новости", to: "/bureau/novosti" },
+      { label: "Контакт", to: "/bureau/kontakt" },
     ],
     manifesto:
-      "Мы соединяем инженерную, градостроительно-правовую, экономическую и сервисную экспертизу с авторским подходом архитектора Ирины Михейкиной и гарантируем своевременное, точное и элегантное решение задач.",
+      "Мы соединяем инженерную, градостроительно-правовую, экономическую и сервисную экспертизу с авторским подходом архитектора Ирины Михейкиной и гарантируем своим заказчикам своевременное, точное и элегантное решение их архитектурных и проектных задач.",
     manifestoShort:
       "Современная архитектура, всегда глубоко в контексте задачи. Сильное проектное бюро и комплексная экспертиза.",
     hero: "Полный цикл. От замысла до площадки.",
-    stagesTitle: "Стадии работы",
-    guarantee: "100% положительных заключений экспертизы по нашим проектам.",
+    stagesTitle: "Услуги",
+    worksTitle: "Услуги",
+    newsTitle: "Лента бюро",
+    alsoTitle: "Ещё умеем",
+    alsoBody: "Бренд, финансовая модель, коммуникационная стратегия — когда объекту нужна экономика, а не только том чертежей.",
+    guarantee: "По нашим проектам не было отказа в экспертизе — это рабочий факт, не лозунг.",
     back: "К архитектору",
+    roles: [
+      {
+        title: "Инженер-конструктор",
+        body: "Глубокая инженерия, сложные конструкции, педантичная рабочая документация. Не для галочки экспертизы — чтобы объект можно было строить.",
+      },
+      {
+        title: "Эксперт-градостроитель",
+        body: "Нормы, земля, наследие, согласования. Рано видим, что пройдёт, а что станет проблемой — и собираем решение до инерции проекта.",
+      },
+      {
+        title: "Бизнес-архитектор",
+        body: "Считаем объект как предприятие заказчика: ТЭО, модель, сценарии. Архитектура, которая работает на его задачу, а не продаёт наш стиль.",
+      },
+      {
+        title: "Сервисное бюро",
+        body: "Полный цикл, включаемся на любом этапе. Внимательность, порядок, повторный спрос. Комфортный сервис без театра.",
+      },
+    ],
   },
   en: {
     brand: "Bureau",
-    brandFull: "Irina Mikheykina Architecture Bureau",
+    brandFull: "Mikheykina Bureau",
     nav: [
-      { label: "Stages", to: "/bureau/stadii" },
-      { label: "Projects", to: "/portfolio" },
-      { label: "Approach", to: "/bureau" },
-      { label: "Contact", to: "/kontakt" },
+      { label: "Services", to: "/bureau#raboty" },
+      { label: "Portfolio", to: "/bureau/proekty" },
+      { label: "News", to: "/bureau/novosti" },
+      { label: "Contact", to: "/bureau/kontakt" },
     ],
     manifesto:
-      "We join engineering, planning law, economy and service with Irina Mikheykina’s authorship — timely, precise, elegant.",
+      "We join engineering, planning law, economy and service with the authorship of architect Irina Mikheykina — timely, precise, elegant solutions to architectural and design tasks.",
     manifestoShort:
       "Contemporary architecture, always deep in the brief. A strong bureau and complete expertise.",
     hero: "Full cycle. From idea to site.",
-    stagesTitle: "Stages of work",
-    guarantee: "Every project of ours has received a positive expert review.",
+    stagesTitle: "Services",
+    worksTitle: "Services",
+    newsTitle: "Bureau feed",
+    alsoTitle: "We also do",
+    alsoBody: "Brand, financial model, communications — when the object needs an economy, not only a set of drawings.",
+    guarantee: "None of our files has been refused expert review — a working fact, not a slogan.",
     back: "To the architect",
+    roles: [
+      {
+        title: "Engineer–constructor",
+        body: "Deep engineering, hard structures, pedantic working drawings. Not for a tick in review — so the object can be built.",
+      },
+      {
+        title: "Planning expert",
+        body: "Codes, land, heritage, approvals. We see early what will pass and what will stall — and assemble the case before the project gains inertia.",
+      },
+      {
+        title: "Business architect",
+        body: "The object as the client’s enterprise: feasibility, model, scenarios. Architecture that serves their brief, not our style.",
+      },
+      {
+        title: "Service bureau",
+        body: "Full cycle, we join at any stage. Care, order, return custom. Comfort without theatre.",
+      },
+    ],
   },
 };
+
+export const bureauExpertises = [
+  {
+    slug: "inzheneriya",
+    products: ["stage-p", "stage-r", "survey", "spatial", "sketch"],
+    ru: {
+      title: "Конструкции и инженерия",
+      lead: "Проектируем и считаем так, чтобы можно было строить не задумываясь.",
+      body: "Каждое решение — расчётом, без перезаклада. На площадке ясно, спокойно, без лишних затрат.",
+    },
+    en: {
+      title: "Structure and engineering",
+      lead: "We design and calculate so you can build without thinking.",
+      body: "Every decision calculated, without fat. Clear and calm on site, tight on cost.",
+    },
+  },
+  {
+    slug: "gorod",
+    products: ["analysis", "brief", "ago", "consulting"],
+    ru: {
+      title: "Город и согласования",
+      lead: "Превращаем узлы норм, целей, возможностей и ограничений в прямые маршруты.",
+      body: "Нормы, земля, наследие. Рано видно, что пройдёт, а что станет проблемой — до инерции проекта.",
+    },
+    en: {
+      title: "City and approvals",
+      lead: "We turn knots of codes, aims, means and limits into a straight route.",
+      body: "Codes, land, heritage. We see early what will pass and what will stall — before the project gains inertia.",
+    },
+  },
+  {
+    slug: "ekonomika",
+    products: ["feasibility", "finance", "brand", "comms"],
+    ru: {
+      title: "Экономика объекта",
+      lead: "Превращаем замысел в модель бизнеса, бренд, продукты и коммуникации.",
+      body: "Объект как дело заказчика: модель, бренд, коммуникации. Не стиль бюро — его задача в цифрах.",
+    },
+    en: {
+      title: "The object’s economy",
+      lead: "We turn the idea into a business model, brand, products and communications.",
+      body: "The object as the client’s enterprise: feasibility, model, brand, communications. Their brief in numbers, not our style.",
+    },
+  },
+  {
+    slug: "vedenie",
+    products: ["client", "cm", "supervision"],
+    ru: {
+      title: "Сопровождение строительства",
+      lead: "Ведём площадку так, чтобы заказчику не пришлось думать за всех.",
+      body: "Включаемся на любом этапе. Функция заказчика, стройка, надзор. Порядок без театра.",
+    },
+    en: {
+      title: "Construction support",
+      lead: "We run the site so the client does not have to think for everyone.",
+      body: "We join at any stage. Employer’s agent, the site, supervision. Order without theatre.",
+    },
+  },
+];
 
 export const labCopy: Record<
   Lang,
@@ -206,12 +314,30 @@ export const directions = [
     ru: {
       group: "Владимирский контекст",
       title: "Мастер-план территории, идеология, облик",
-      body: "Место — не фон. Исследую школу, раскрываю потенциал земли, собираю решение, с которым можно выходить на защиту.",
+      lead: "Владимирская земля для меня не фон, а родной контекст. Развиваю местную школу и собираю решение, уместное именно здесь. Мы дома: знаем людей, процессы и ограничения. Главное — исследование, концепция, облик и мастер-план, с которыми можно выходить на защиту.",
+      body: "Владимирская земля для меня не фон, а родной контекст. Я развиваю местную архитектурную школу, вижу, чем территория уже сильна, и всегда собираю решение, которое лучше всего уместно именно здесь. Здесь мы дома: знаем людей, процессы и ограничения — дома и стены помогают. Моё основное внимание — исследованию задачи, концепции, облику и мастер-плану, с которыми можно уверенно выходить на защиту и проектирование.",
     },
     en: {
       group: "Vladimir context",
       title: "Territory, ideology, appearance",
-      body: "Place is not a backdrop. I read the school, the land, and assemble a case that can be defended.",
+      lead: "The Vladimir land is not a backdrop for me — it is native context. I develop the local school and assemble what is fitting here. We are at home: people, processes, limits. The work is the brief, the concept, the appearance and the master plan — enough to go to defence.",
+      body: "The Vladimir land is not a backdrop for me — it is native context. I develop the local architectural school, see what the territory is already strong in, and always assemble the solution that is most fitting here. We are at home: we know the people, the processes and the limits — home and walls help. My attention is the brief, the concept, the appearance and the master plan, with which one can go confidently to defence and design.",
+    },
+  },
+  {
+    slug: "consulting",
+    image: "/images/territory.jpg",
+    ru: {
+      group: "Консалтинг",
+      title: "Взгляд до проекта",
+      lead: "Можно консультироваться, не запуская проектирование или стройку. Я сама предлагаю этот шаг: разобраться в деталях и наметить путь. Рекомендации — из исследования и практики, не из общих схем. Смотрю задачу целиком: смысл, архитектура, экономика, согласования и то, как объект будет жить.",
+      body: "С нами можно просто консультироваться — не запуская сразу проектирование или стройку. Я сама предлагаю этот шаг: быстро разобраться в деталях, понять, что нужно делать сейчас, и наметить путь. Рекомендации берутся из исследования и практики реализации, а не из общих схем. Смотрю задачу целиком: от смысла и архитектуры до экономики, согласований и того, как объект будет жить.",
+    },
+    en: {
+      group: "Consulting",
+      title: "A view before design",
+      lead: "You can consult without launching design or a site. I offer this step myself: see the details and mark a path. Advice from research and built work, not generic schemes. The task as a whole: meaning, architecture, money, approvals, and how the object will live.",
+      body: "You can consult with us without launching design or a site. I offer this step myself: see the details quickly, know what to do now, and mark a path. Advice comes from research and from built work, not from generic schemes. I look at the task as a whole: from meaning and architecture to economy, approvals, and how the object will live.",
     },
   },
   {
@@ -220,12 +346,14 @@ export const directions = [
     ru: {
       group: "Живое гостеприимство",
       title: "Туристические комплексы, которые живут",
-      body: "Берусь, если вижу, как объект будет держать гостя и повторный спрос. Архитектура, экономика и опыт — одна система.",
+      lead: "Беру туристический объект только если вижу, как он будет привлекать гостей, удерживать их и вызывать повторный спрос. Архитектура здесь не декорация, а причина выбрать место и точка роста территории. Соединяю образ, экономику, опыт гостя и реализацию. Отличаю то, что красиво открывается, от того, что потом живёт.",
+      body: "Я беру туристический объект только если вижу, как он будет привлекать гостей, удерживать их и вызывать повторный спрос. Архитектура здесь не декорация, а одна из причин, почему место выбирают — и точка роста территории, а не просто здание на участке. Соединяю образ, экономику, опыт гостя и реализацию в одну систему; при необходимости подключаю нужных специалистов. Опыт российских гостиничных и туристических проектов помогает отличать то, что красиво открывается, от того, что потом живёт.",
     },
     en: {
       group: "Living hospitality",
       title: "Resorts that keep working",
-      body: "I take a brief only if the place can hold a guest and bring them back. Architecture, economy, experience — one system.",
+      lead: "I take a tourist place only if I can see how it will attract guests, hold them and bring them back. Architecture here is not decoration: it is why the place is chosen, and a point of growth for the land. Image, economy, guest experience and delivery as one. I tell what opens beautifully from what then lives.",
+      body: "I take a tourist place only if I can see how it will attract guests, hold them and bring them back. Architecture here is not decoration: it is one of the reasons the place is chosen, and a point of growth for the territory — not just a building on a plot. Image, economy, guest experience and delivery are one system; the right specialists join when needed. Work on Russian hotels and tourist projects helps tell what opens beautifully from what then lives.",
     },
   },
   {
@@ -234,12 +362,14 @@ export const directions = [
     ru: {
       group: "Частные владения",
       title: "Дома и территории",
-      body: "Частный дом — не метраж, а способ жить на своей земле. Характер из вашей жизни, традиции места и природа в ансамбле, прямой разговор на площадке.",
+      lead: "Частный дом для меня — не метраж, а способ жить на своей земле. Собираю без лишнего: характер из вашей жизни, традиции места и природа в ансамбле, быт на своих местах. На площадке — прямой разговор между вами, проектом и теми, кто строит: комфорт сегодня и запас на годы вперёд.",
+      body: "Частный дом для меня — не метраж, а способ жить на своей земле. Собираю его так, чтобы не было лишнего: характер растёт из вашей жизни и запроса; традиции места и природа включаются в ансамбль, а быт — семья, гости, хозяйство — встаёт на свои места. Любые материалы, техники и приёмы доступны — берём то, что лучше всего подойдёт к вашему случаю. На площадке строю прямой разговор между вами, проектом и теми, кто строит: комфорт сегодня и запас на завтра, чтобы жить здесь было хорошо много много лет.",
     },
     en: {
       group: "Private estates",
       title: "Houses and grounds",
-      body: "A private house is a way to live on one’s land, not a floor area. Character from your life, the codes of place, a direct talk on site.",
+      lead: "A private house for me is not floor area, but a way to live on one’s land. Nothing extra: character from your life, the codes of place and nature in the ensemble, daily life in its rooms. On the site — a direct talk between you, the project and those who build: comfort now, and a reserve for years.",
+      body: "A private house for me is not floor area, but a way to live on one’s land. I assemble it so there is nothing extra: character grows from your life and brief; the traditions of the place and nature enter the ensemble; daily life — family, guests, the household — finds its rooms. Any materials, techniques and devices are available — we take what fits your case. On the site I keep a direct talk between you, the project and those who build: comfort today and a reserve for later years, so it is good to live here for a long, long time.",
     },
   },
   {
@@ -248,11 +378,13 @@ export const directions = [
     ru: {
       group: "Храмовая архитектура",
       title: "Храм как место и конструкция",
+      lead: "Раздел зарезервирован. Пока демо-кадр — заменим авторским.",
       body: "Раздел зарезервирован. Пока демо-кадр — заменим авторским.",
     },
     en: {
       group: "Sacred architecture",
       title: "Temple as place and structure",
+      lead: "Reserved. A demo frame until the author’s photographs arrive.",
       body: "Reserved. A demo frame until the author’s photographs arrive.",
     },
   },

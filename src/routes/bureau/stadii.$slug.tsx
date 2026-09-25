@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
+import { FinancePage } from "@/components/finance-page";
 import { ProductPage } from "@/components/product-page";
-import { bureauCopy } from "@/lib/content";
 import { findProduct } from "@/lib/products";
 import { useLang } from "@/lib/lang";
 
@@ -13,9 +13,15 @@ function BureauProduct() {
   const { lang } = useLang();
   const product = findProduct("bureau", slug);
   if (!product) throw notFound();
-  const t = bureauCopy[lang];
+
+  if (slug === "finance") return <FinancePage />;
 
   return (
-    <ProductPage product={product} site="bureau" backTo="/bureau/stadii" backLabel={t.stagesTitle} />
+    <ProductPage
+      product={product}
+      site="bureau"
+      backTo="/bureau#raboty"
+      backLabel={lang === "ru" ? "Все услуги" : "All services"}
+    />
   );
 }
