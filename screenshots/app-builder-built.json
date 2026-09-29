@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Ирина Михейкина",
+      "hasCanvas": false,
+      "bodyTextLen": 1719,
+      "bodyTextHash": "93a0f949ae20be98794bb1bd91f049d1a2ba374d9190b697951965032455ee21",
+      "bodyTextPrefix": "ИРИНА МИХЕЙКИНА НАПРАВЛЕНИЯ ПОРТФОЛИО БЮРО ЛАБОРАТОРИЯ КОНТАКТ R",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Ирина Михейкина",
+      "hasCanvas": false,
+      "bodyTextLen": 1664,
+      "bodyTextHash": "7aacaddb9858f29a2d7f25b15fe1ff27af92b00734a943b6db46929841b0b5df",
+      "bodyTextPrefix": "ИРИНА МИХЕЙКИНА АРХИТЕКТОР ИЗ ВЛАДИМИРА Ирина Михейкина Современ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

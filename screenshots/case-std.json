@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/portfolio/usadba",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Ирина Михейкина",
+      "hasCanvas": false,
+      "bodyTextLen": 1129,
+      "bodyTextHash": "ef20629ed7b6f41de8343ccd0c3900e2b8321140cc231d77858426e42b4d6b7a",
+      "bodyTextPrefix": "ИРИНА МИХЕЙКИНА ПОРТФОЛИО БЮРО ЛАБОРАТОРИЯ КОНТАКТ RU | EN ЧАСТН",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/case-std.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Ирина Михейкина",
+      "hasCanvas": false,
+      "bodyTextLen": 1076,
+      "bodyTextHash": "e157c8488adc85e46db15023af3011c2c08b3de5f2bcd99d39cd55456d91a9a7",
+      "bodyTextPrefix": "ИРИНА ЧАСТНЫЙ ДОМ Дом у бора Современный особняк в сосновом крае",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/case-std-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/case-std.json"
+}
