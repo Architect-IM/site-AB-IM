@@ -35,8 +35,6 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22.16.0'
-          cache: pnpm
-          cache-dependency-path: sites/irina-architecture/pnpm-lock.yaml
       - name: Review location
         id: review
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
