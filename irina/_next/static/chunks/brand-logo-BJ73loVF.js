@@ -1,0 +1,1 @@
+import{r as e}from"./framework-PJ6s30SV.js";import{t}from"./site-path-B_UKdJf7.js";var n=e();function r({footer:e=!1}){return(0,n.jsx)(`span`,{className:`brand-symbol${e?` brand-symbol-footer`:``}`,"aria-hidden":`true`,children:(0,n.jsx)(`img`,{src:t(`/assets/logo-irina.jpg`),alt:``,width:1280,height:678})})}export{r as t};
