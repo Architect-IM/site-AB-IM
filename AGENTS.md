@@ -1,3 +1,15 @@
+# Current shared project
+
+Read `AGENTS.project.md` first. The user has selected `sites/irina-architecture`
+as the shared website for Irina (ChatGPT/Codex) and Mikhail (browser Grok Build).
+Follow that directory's `AGENTS.md` and `docs/COLLABORATION.md` for current work.
+
+The original Grok sandbox contract below applies to the legacy TanStack app in
+this repository's root. It does not change the Vinext stack or publication
+workflow of the shared website. GitHub is the agreed source of truth; working
+branches publish review copies and production Sites updates use reviewed main.
+
+---
 # App Builder Workspace
 
 **The single source of truth** for the App Builder sandbox contract. You are

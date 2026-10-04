@@ -1,3 +1,5 @@
+
+import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import styles from "./consulting.module.css";
 
@@ -12,13 +14,13 @@ export default function Consulting() {
   return (
     <main id="content" className={`inner-page ${styles.page}`}>
       <nav className={styles.breadcrumbs} aria-label="Навигация по разделу">
-        <a href="/#directions">На главную</a>
+        <a href={sitePath("/#directions")}>На главную</a>
         <span aria-current="page">Консалтинг</span>
       </nav>
 
       <section className={styles.hero} aria-labelledby="consulting-title">
         <div className={styles.heroImage}>
-          <img src="/assets/bureau.jpg" alt="Архитектурная мастерская: чертежи и макеты на рабочих столах" fetchPriority="high" />
+          <img src={sitePath("/assets/bureau.jpg")} alt="Архитектурная мастерская: чертежи и макеты на рабочих столах" fetchPriority="high" />
         </div>
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>Архитектор / Консультации</p>
@@ -35,7 +37,7 @@ export default function Consulting() {
       <section id="formats" className={styles.format} aria-labelledby="conversation-title">
         <div className={styles.row}>
           <figure className={styles.image}>
-            <img src="/assets/house.jpg" alt="Частный дом и участок в природном окружении" loading="lazy" />
+            <img src={sitePath("/assets/house.jpg")} alt="Частный дом и участок в природном окружении" loading="lazy" />
           </figure>
           <div className={styles.copy}>
             <p className={styles.eyebrow}>01 / Первая консультация</p>
@@ -46,13 +48,13 @@ export default function Consulting() {
               <h3>Результат</h3>
               <p>Приоритеты, перечень исходных данных и понятный следующий шаг. Глубину дальнейшей работы определим по вашей задаче.</p>
             </div>
-            <a className={styles.link} href={contact("Первая архитектурная консультация")}>Обсудить консультацию</a>
+            <a className={styles.link} href={sitePath(contact("Первая архитектурная консультация"))}>Обсудить консультацию</a>
           </div>
         </div>
       </section>
 
       <section className={styles.panorama} aria-labelledby="audit-title">
-        <img className={styles.panoramaImage} src="/assets/territory.jpg" alt="Территория у реки: застройка, рельеф и ландшафт" loading="lazy" />
+        <img className={styles.panoramaImage} src={sitePath("/assets/territory.jpg")} alt="Территория у реки: застройка, рельеф и ландшафт" loading="lazy" />
         <div className={styles.panoramaInner}>
           <div className={styles.copy}>
             <p className={styles.eyebrow}>02 / Контекстный аудит</p>
@@ -63,7 +65,7 @@ export default function Consulting() {
               <h3>Результат</h3>
               <p>Картина рисков и возможностей, рекомендации по дальнейшим действиям. Затем можно перейти к адаптации, согласованиям или концепции.</p>
             </div>
-            <a className={styles.link} href={contact("Контекстный аудит проекта")}>Обсудить аудит</a>
+            <a className={styles.link} href={sitePath(contact("Контекстный аудит проекта"))}>Обсудить аудит</a>
           </div>
         </div>
       </section>
@@ -79,17 +81,17 @@ export default function Consulting() {
               <h3>Результат</h3>
               <p>Необходимый комплект: альбом архитектурно-градостроительного облика, рабочая документация или другие материалы. Состав определяем после разбора проекта.</p>
             </div>
-            <a className={styles.link} href={contact("Адаптация существующего проекта")}>Обсудить адаптацию</a>
+            <a className={styles.link} href={sitePath(contact("Адаптация существующего проекта"))}>Обсудить адаптацию</a>
           </div>
           <figure className={styles.image}>
-            <img src="/assets/mansion.jpg" alt="Архитектурная визуализация дома: фасад, материалы и связь с участком" loading="lazy" />
+            <img src={sitePath("/assets/mansion.jpg")} alt="Архитектурная визуализация дома: фасад, материалы и связь с участком" loading="lazy" />
           </figure>
         </div>
       </section>
 
       <section className={styles.split} aria-labelledby="approvals-title">
         <div className={styles.splitImage}>
-          <img src="/assets/lab.jpg" alt="Архитектурные чертежи и образцы материалов" loading="lazy" />
+          <img src={sitePath("/assets/lab.jpg")} alt="Архитектурные чертежи и образцы материалов" loading="lazy" />
         </div>
         <div className={`${styles.copy} ${styles.splitCopy}`}>
           <p className={styles.eyebrow}>04 / Сопровождение</p>
@@ -100,12 +102,12 @@ export default function Consulting() {
             <h3>Результат</h3>
             <p>Понятная стратегия: какие материалы подготовить, что доработать и в какой последовательности действовать.</p>
           </div>
-          <a className={styles.link} href={contact("Консультация по согласованиям и экспертизам")}>Разобрать вашу ситуацию</a>
+          <a className={styles.link} href={sitePath(contact("Консультация по согласованиям и экспертизам"))}>Разобрать вашу ситуацию</a>
         </div>
       </section>
 
       <nav className={styles.return} aria-label="Другие направления">
-        <a className={styles.link} href="/#directions">Вернуться к направлениям</a>
+        <a className={styles.link} href={sitePath("/#directions")}>Вернуться к направлениям</a>
       </nav>
     </main>
   );
