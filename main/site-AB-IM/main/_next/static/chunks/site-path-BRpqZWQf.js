@@ -1,0 +1,1 @@
+var e=`/site-AB-IM/main`;function t(t){return!t.startsWith(`/`)||t.startsWith(`//`)||t===`/site-AB-IM/main`||t.startsWith(`/site-AB-IM/main/`)?t:`${e}${t}`}function n(e){return e===`/site-AB-IM/main`||e.startsWith(`/site-AB-IM/main/`)?e.slice(16)||`/`:e}export{n,t};
