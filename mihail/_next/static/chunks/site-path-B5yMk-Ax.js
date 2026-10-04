@@ -1,0 +1,1 @@
+var e=`/site-AB-IM/mihail`;function t(t){return!t.startsWith(`/`)||t.startsWith(`//`)||t===`/site-AB-IM/mihail`||t.startsWith(`/site-AB-IM/mihail/`)?t:`${e}${t}`}function n(e){return e===`/site-AB-IM/mihail`||e.startsWith(`/site-AB-IM/mihail/`)?e.slice(18)||`/`:e}export{n,t};
