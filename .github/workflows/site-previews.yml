@@ -1,0 +1,91 @@
+name: Publish review copies
+
+on:
+  workflow_run:
+    workflows: ['Site checks']
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-review-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: write
+      pages: write
+      id-token: write
+      pull-requests: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Read trusted publishing scripts
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          path: source
+          sparse-checkout: scripts
+          persist-credentials: false
+      - name: Get existing review copies
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: gh-pages
+          path: pages
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: site-review
+          path: incoming
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Validate revision and publish files
+        id: publish
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          script: |
+            const publish = require('./source/scripts/publish-review.cjs');
+            await publish({github, context, core});
+      - name: Store review copies
+        if: steps.publish.outputs.skipped != 'true'
+        working-directory: pages
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add --all
+          if ! git diff --cached --quiet; then
+            git commit -m "Update review copies"
+            git push origin HEAD:gh-pages
+          fi
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        if: steps.publish.outputs.skipped != 'true'
+        with:
+          path: pages
+      - name: Publish GitHub Pages
+        id: deployment
+        if: steps.publish.outputs.skipped != 'true'
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+      - name: Link the review copy
+        if: steps.publish.outputs.pr != '' && steps.publish.outputs.skipped != 'true'
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          REVIEW_PR: ${{ steps.publish.outputs.pr }}
+          REVIEW_KEY: ${{ steps.publish.outputs.key }}
+          REVIEW_SHA: ${{ steps.publish.outputs.sha }}
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+        with:
+          script: |
+            const issue_number = Number(process.env.REVIEW_PR);
+            const marker = '<!-- site-review -->';
+            const url = `${process.env.PAGES_URL.replace(/\/$/, '')}/${process.env.REVIEW_KEY}/`;
+            const body = `${marker}\n### Предпросмотр сайта\n\n[Открыть изменения](${url})\n\nВерсия: \`${process.env.REVIEW_SHA.slice(0, 7)}\`. Основной сайт в Sites обновляется после согласования отдельно.`;
+            const comments = await github.paginate(github.rest.issues.listComments, {...context.repo, issue_number});
+            const previous = comments.find(c => c.user.login === 'github-actions[bot]' && c.body.includes(marker));
+            if (previous) await github.rest.issues.updateComment({...context.repo, comment_id:previous.id, body});
+            else await github.rest.issues.createComment({...context.repo, issue_number, body});

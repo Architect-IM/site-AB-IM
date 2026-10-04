@@ -1,0 +1,72 @@
+name: Site checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main, 'irina/**', 'mihail/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  site-checks:
+    name: site-checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: sites/irina-architecture
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          sparse-checkout: |
+            sites/irina-architecture
+          persist-credentials: false
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
+        with:
+          version: 11.25.0
+          run_install: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.16.0'
+      - name: Review location
+        id: review
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          script: |
+            const branch = context.ref.replace('refs/heads/', '');
+            const pr = context.payload.pull_request;
+            const key = pr ? `pr-${pr.number}` : branch === 'main' ? 'main' : branch.startsWith('irina/') ? 'irina' : branch.startsWith('mihail/') ? 'mihail' : null;
+            if (!key) throw new Error('Use main, irina/*, mihail/* or a pull request.');
+            core.setOutput('key', key);
+            core.setOutput('sha', pr ? pr.head.sha : context.sha);
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - name: Production build
+        run: pnpm build
+      - name: Build review copy
+        run: pnpm build:review
+        env:
+          SITE_REVIEW_EXPORT: '1'
+          NEXT_PUBLIC_PREVIEW_BASE_PATH: /site-AB-IM/${{ steps.review.outputs.key }}
+      - name: Check exported pages and links
+        run: node scripts/verify-review.mjs
+        env:
+          NEXT_PUBLIC_PREVIEW_BASE_PATH: /site-AB-IM/${{ steps.review.outputs.key }}
+      - name: Record reviewed revision
+        run: node -e "require('fs').writeFileSync('dist/client/review.json', JSON.stringify({key:process.env.REVIEW_KEY,sha:process.env.REVIEW_SHA,run:process.env.GITHUB_RUN_ID}))"
+        env:
+          REVIEW_KEY: ${{ steps.review.outputs.key }}
+          REVIEW_SHA: ${{ steps.review.outputs.sha }}
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: site-review
+          path: sites/irina-architecture/dist/client
+          if-no-files-found: error
+          retention-days: 14

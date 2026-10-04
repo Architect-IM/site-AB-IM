@@ -1,1 +1,12 @@
-This conversation belongs to a Grok project. The project's files are mounted at `/workspace/artifacts` — look there for user-provided sources before concluding the workspace has no project files. Files written there persist to the project across conversations.
+# Совместная работа Ирины и Михаила
+
+- Общий репозиторий: https://github.com/Architect-IM/site-AB-IM.
+- Единственная актуальная кодовая база сайта: `sites/irina-architecture`.
+- Общая принятая версия: `origin/main`. Перед задачей получить её последние изменения.
+- Ирина работает через ChatGPT/Codex в `irina/*`, Михаил через Grok Build в `mihail/*`.
+- Оба помощника изменяют одни и те же файлы в указанной папке. Корневой `src/` содержит прежний сайт Grok.
+- Подробный порядок: `docs/COLLABORATION.md`; подключение браузерного Grok: `docs/GROK-START.md`.
+- Отправлять изменения в свою ветку и открывать PR в `main`. Не обходить обязательные проверки и согласование второго участника.
+- Рабочие варианты показываются через GitHub Pages. Публикация основного сайта Sites допускается только из согласованной `main` по запросу владельца.
+- Проверять, что синхронизация с GitHub действительно состоялась. Не называть экспорт из Grok автоматической двусторонней синхронизацией.
+- В браузерном Grok исходные вложения могут находиться в `/workspace/artifacts`; этот путь относится только к его среде.

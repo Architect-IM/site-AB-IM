@@ -1,0 +1,13 @@
+
+import { sitePath } from "@/lib/site-path";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { projects } from "@/lib/projects";
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const p=projects.find(p=>p.slug===slug);return {title:p?.name??"Проект не найден",description:p?.description};}
+export default async function Project({params}:{params:Promise<{slug:string}>}) {
+const {slug}=await params; const project=projects.find(p=>p.slug===slug); if(!project) notFound();
+const next=projects[(projects.indexOf(project)+1)%projects.length];
+return <main id="content" className="inner-page"><section className="page-intro project-intro"><div className="page-overline"><a className="mono" href={sitePath("/portfolio")}>Все проекты</a><span className="mono">{project.category}</span></div><h1>{project.name}</h1><div className="intro-bottom"><p>{project.caption}</p><span className="mono">{project.place} / {project.year}</span></div></section><figure className="project-cover"><img src={sitePath(`/assets/${project.image}.jpg`)} alt={project.name}/><figcaption>{project.name} · {project.category}</figcaption></figure><section className="section project-story"><dl className="project-facts">{[["Тип",project.category],["Статус",project.status],["Место",project.place],["Год",project.year]].map(([name,value])=><div key={name}><dt>{name}</dt><dd>{value}</dd></div>)}</dl><div className="story-grid"><p className="section-label">01 — Задача</p><h2>{project.task}</h2><p className="section-label">02 — Решение</p><p>{project.solution}</p></div></section><section className="project-quote"><p className="section-label">Взгляд Ирины</p><blockquote>«{project.idea}»</blockquote><span>Ирина Михейкина · Архитектор</span></section><section className="section story-grid"><p className="section-label">03 — Результат</p><h2>{project.result}</h2></section><a className="next-project" href={sitePath(`/portfolio/${next.slug}`)}><span className="section-label">Следующий проект</span><span>{next.name}</span><img src={sitePath(`/assets/${next.image}.jpg`)} alt="" loading="lazy"/></a></main>;
+}
+
+export function generateStaticParams() { return projects.map(({slug}) => ({slug})); }
