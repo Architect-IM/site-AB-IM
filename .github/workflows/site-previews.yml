@@ -53,6 +53,7 @@ jobs:
             const publish = require('./source/scripts/publish-review.cjs');
             await publish({github, context, core});
       - name: Store review copies
+        id: stored
         if: steps.publish.outputs.skipped != 'true'
         working-directory: pages
         run: |
@@ -63,14 +64,23 @@ jobs:
             git commit -m "Update review copies"
             git push origin HEAD:gh-pages
           fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        id: pages-artifact
         if: steps.publish.outputs.skipped != 'true'
         with:
           path: pages
       - name: Publish GitHub Pages
         id: deployment
         if: steps.publish.outputs.skipped != 'true'
-        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          PAGES_ARTIFACT_ID: ${{ steps.pages-artifact.outputs.artifact_id }}
+          PAGES_BUILD_SHA: ${{ steps.stored.outputs.sha }}
+        with:
+          script: |
+            const deploy = require('./source/scripts/deploy-review.cjs');
+            await deploy({github, context, core});
       - name: Link the review copy
         if: steps.publish.outputs.pr != '' && steps.publish.outputs.skipped != 'true'
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
