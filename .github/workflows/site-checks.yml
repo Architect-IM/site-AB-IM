@@ -27,6 +27,7 @@ jobs:
         with:
           sparse-checkout: |
             sites/irina-architecture
+            scripts
           persist-credentials: false
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
         with:
@@ -35,6 +36,9 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22.16.0'
+      - name: Check preview deployment safeguards
+        working-directory: .
+        run: node --test scripts/deploy-review.test.cjs
       - name: Review location
         id: review
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
