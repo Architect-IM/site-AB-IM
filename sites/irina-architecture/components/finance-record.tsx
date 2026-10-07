@@ -45,7 +45,7 @@ export function FinanceRecord() {
             </tbody>
           </table>
         </div>
-        <p className="finance-note">Демо. Цифры условные, логика — как в рабочих моделях бюро.</p>
+        <p className="finance-note">Другой объект, тот же приём: не одна цифра, а три сценария. Прибыль — после содержания, до налога и до процента. Осторожный столбец — год, который уже не несёт стройку. Цифры демо.</p>
       </section>
 
       <section className="finance-block finance-split">

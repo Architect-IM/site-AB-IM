@@ -11,32 +11,37 @@ type Key = keyof Choice;
 const start: Choice = { land: "mid", road: true, capital: true, money: "own", food: "kitchen", pool: false };
 
 const landCost: Record<Land, number> = { far: 8, mid: 14, near: 22 };
-const landIncome: Record<Land, number> = { far: -4, mid: 0, near: 3 };
+
+function round1(value: number) {
+  return Math.round(value * 10) / 10;
+}
 
 function model(choice: Choice) {
-  let capex = landCost[choice.land];
-  let income = 17.6 + landIncome[choice.land];
-  if (choice.road) {
-    capex += 18;
-    income += 3.4;
-  }
-  if (choice.capital) capex += 126;
-  else {
-    capex += 58;
-    income -= 4;
-  }
-  if (choice.food === "restaurant") {
-    capex += 28;
-    income += 5;
-  } else capex += 10;
-  if (choice.pool) {
-    capex += 14;
-    income += 2.2;
-  }
+  const nights = { far: 80, mid: 110, near: 130 }[choice.land] + (choice.road ? 40 : 0);
+  const nightly = choice.capital ? 14000 : 10000;
+  const roomRevenue = round1((20 * nights * nightly) / 1e6);
+  const foodRevenue = choice.food === "restaurant" ? 9 : 0;
+  const poolRevenue = choice.pool ? 3.5 : 0;
+  const upkeep = round1((choice.capital ? 21 : 13) + (choice.food === "restaurant" ? 4 : 0) + (choice.pool ? 1.3 : 0));
+  const capexLines = [
+    { label: "Участок", value: landCost[choice.land] },
+    ...(choice.road ? [{ label: "Дорога", value: 18 }] : []),
+    { label: choice.capital ? "20 капитальных домов" : "20 некапитальных домов", value: choice.capital ? 126 : 58 },
+    { label: choice.food === "restaurant" ? "Ресторан" : "Кухня", value: choice.food === "restaurant" ? 28 : 10 },
+    ...(choice.pool ? [{ label: "Бассейн", value: 14 }] : []),
+  ];
+  const capex = round1(capexLines.reduce((sum, line) => sum + line.value, 0));
   const rate = choice.money === "own" ? 0 : choice.money === "12" ? 0.12 : 0.18;
-  const interest = capex * rate;
-  const net = income - interest;
-  return { capex, income: net, interest, payback: net > 1 ? capex / net : Infinity };
+  const interest = round1(capex * rate);
+  const incomeLines = [
+    { label: `Ночи: 20 × ${nights} × ${nightly.toLocaleString("ru-RU")} ₽`, value: roomRevenue },
+    ...(foodRevenue ? [{ label: "Ресторан, выручка", value: foodRevenue }] : []),
+    ...(poolRevenue ? [{ label: "Бассейн, выручка", value: poolRevenue }] : []),
+    { label: "Содержание", value: -upkeep },
+    ...(interest ? [{ label: "Платёж по займу", value: -interest }] : []),
+  ];
+  const income = round1(incomeLines.reduce((sum, line) => sum + line.value, 0));
+  return { capex, income, interest, payback: income > 1 ? capex / income : Infinity, capexLines, incomeLines };
 }
 
 function mln(value: number) {
@@ -87,7 +92,7 @@ function explain(next: Choice, prev: Choice, key: Key) {
   if (key === "capital") {
     return next.capital
       ? `Капитальные здания дороже в стройке и держат более высокий доход. ${sentence(term)}`
-      : `Некапитальные здания заметно дешевле, доход ниже. ${sentence(term)}`;
+      : `Некапитальные дома дешевле в стройке и в содержании, счёт с гостя ниже. ${sentence(term)}`;
   }
   if (key === "money") {
     if (next.money === "own") return `Свои деньги не забирают ежегодный процент из дохода. ${sentence(term)}`;
@@ -100,7 +105,7 @@ function explain(next: Choice, prev: Choice, key: Key) {
       : `Кухня для гостей дешевле ресторана, доход скромнее. ${sentence(term)}`;
   }
   return next.pool
-    ? `Бассейн добавляет 14 млн и немного летнего дохода. ${sentence(term)}`
+    ? `Бассейн добавляет 14 млн и немного выручки. ${sentence(term)}`
     : `Без бассейна и вложения, и доход ниже. ${sentence(term)}`;
 }
 
@@ -140,6 +145,23 @@ export function FinanceExample() {
         <div><b>{paybackLabel(figures.payback)}</b><span>Окупаемость</span></div>
       </div>
       <p className="finance-why">{note}</p>
+      <div className="finance-calc">
+        <div>
+          <p>Вложения</p>
+          {figures.capexLines.map((line) => (
+            <div key={line.label}><span>{line.label}</span><b>{mln(line.value)}</b></div>
+          ))}
+          <div className="is-total"><span>Итого</span><b>{mln(figures.capex)}</b></div>
+        </div>
+        <div>
+          <p>Доход за год</p>
+          {figures.incomeLines.map((line) => (
+            <div key={line.label}><span>{line.label}</span><b>{line.value < 0 ? `−${mln(line.value)}` : mln(line.value)}</b></div>
+          ))}
+          <div className="is-total"><span>Итого</span><b>{mln(figures.income)}</b></div>
+        </div>
+      </div>
+      <p className="finance-limit">Срок — это вложения, делённые на доход одного такого года. Без налога и без дисконтирования. Платёж по займу, если он включён, — ставка на всю сумму вложений за год, без графика погашения. Так видно, выдерживает ли год сам процент. Для банка этого мало: там нужен поток по годам.</p>
       <div className="finance-rows">
         {groups.map((group) => (
           <div className="finance-row" key={group.key}>

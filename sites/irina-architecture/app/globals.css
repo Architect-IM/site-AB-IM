@@ -1424,6 +1424,11 @@ p {text-wrap:pretty}
 .finance-nums b{display:block;font-size:clamp(32px,4vw,48px);font-weight:500;letter-spacing:-.045em;line-height:1}
 .finance-nums span{display:block;margin-top:8px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#686963}
 .finance-why{max-width:68ch;margin:18px 0 8px;font-size:18px;line-height:1.45}
+.finance-calc{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:28px}
+.finance-calc p{margin:0 0 10px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#686963}
+.finance-calc div div{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-top:1px solid rgba(22,23,27,.1);font-size:15px}
+.finance-calc .is-total{font-weight:500}
+.finance-limit{max-width:68ch;margin:18px 0 28px;color:#686963;font-size:15px;line-height:1.5}
 .finance-row{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;padding:11px 0;border-top:1px solid rgba(22,23,27,.1)}
 .finance-row strong{font-weight:500;font-size:15px}
 .finance-opts{display:flex;flex-wrap:wrap;gap:8px}
@@ -1472,6 +1477,7 @@ p {text-wrap:pretty}
   .finance-why{font-size:16px}
   .finance-row{grid-template-columns:1fr;gap:8px;align-items:start}
   .finance-opts button{padding:10px 12px}
+  .finance-calc{grid-template-columns:1fr;gap:22px}
 }
 .service-sections{display:grid;gap:42px;max-width:760px}
 .service-sections p:not(.section-label){margin:12px 0 0;font-size:18px;line-height:1.65}
