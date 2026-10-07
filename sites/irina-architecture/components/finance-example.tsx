@@ -125,8 +125,10 @@ export function FinanceExample() {
 
   return (
     <section className="finance-example" aria-label="Сводная панель глемпинга">
-      <p className="finance-kicker">Сводная панель (за каждой цифрой стоит отдельный расчёт)</p>
-      <h2>Глемпинг на 20 домов</h2>
+      <details className="finance-fold">
+        <summary><span className="when-closed">Открыть</span><span className="when-open">Закрыть</span></summary>
+        <p className="finance-kicker">Сводная панель (за каждой цифрой стоит отдельный расчёт)</p>
+        <h2>Глемпинг на 20 домов</h2>
       <p className="finance-place">Средняя полоса · круглый год</p>
       <div className="finance-nums">
         <div><b>{mln(figures.capex)}</b><span>Вложения</span></div>
@@ -146,9 +148,10 @@ export function FinanceExample() {
           </div>
         ))}
       </div>
+      </details>
       <div className="finance-proforma">
         <p className="section-label">Операционная проформа</p>
-        <details>
+        <details className="finance-fold">
           <summary><span className="when-closed">Открыть</span><span className="when-open">Закрыть</span></summary>
           <div className="finance-table-wrap">
           <table className="finance-table">
