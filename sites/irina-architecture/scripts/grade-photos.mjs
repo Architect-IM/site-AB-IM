@@ -1,12 +1,12 @@
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
-import { gradeRgb, gradedSize, photoGrade } from "../lib/grade-photo.ts";
+import { gradeRgb, photoGrade } from "../lib/grade-photo.ts";
 
 const args = process.argv.slice(2);
 const outFlag = args.indexOf("--out");
 const output = outFlag >= 0 ? args[outFlag + 1] : "";
-const inputs = args.filter((arg, index) => arg !== "--out" && index !== outFlag + 1);
+const inputs = args.filter((arg, index) => outFlag < 0 || (index !== outFlag && index !== outFlag + 1));
 
 if (!inputs.length || (outFlag >= 0 && !output)) {
   console.error("Использование: node --experimental-strip-types scripts/grade-photos.mjs снимок.jpg [--out public/assets/снимок.jpg]");
@@ -24,12 +24,10 @@ function destination(input) {
 }
 
 for (const input of inputs) {
-  const image = sharp(input).rotate();
-  const meta = await image.metadata();
-  if (!meta.width || !meta.height) throw new Error(`Не удалось прочитать ${input}`);
-  const size = gradedSize(meta.width, meta.height);
-  const { data, info } = await image
-    .resize(size.width, size.height, { fit: "fill" })
+  const { data, info } = await sharp(input)
+    .rotate()
+    .resize({ width: photoGrade.longEdge, height: photoGrade.longEdge, fit: "inside", withoutEnlargement: true })
+    .toColourspace("srgb")
     .removeAlpha()
     .raw()
     .toBuffer({ resolveWithObject: true });

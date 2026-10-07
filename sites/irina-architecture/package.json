@@ -13,6 +13,7 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate",
     "typecheck": "tsc --noEmit --incremental false",
+    "test:photos": "node --experimental-strip-types --test lib/grade-photo.test.ts scripts/grade-photos.test.mjs",
     "build:review": "node node_modules/vinext/dist/cli.js build --config preview.vite.config.ts"
   },
   "dependencies": {
