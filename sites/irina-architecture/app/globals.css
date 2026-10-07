@@ -1414,6 +1414,30 @@ p {text-wrap:pretty}
 .service-lead-sign{margin:12px 0 0;font-size:13px;line-height:1.35}
 .service-lead-sign span{display:block;color:#686963}
 @media(max-width:1099px){.service-lead{display:block}.service-lead-aside{margin-top:36px}}
+.finance-example{padding:8px var(--side) 20px}
+.finance-example h2{margin:12px 0 8px;font-size:clamp(32px,4vw,44px);font-weight:500;letter-spacing:-.04em}
+.finance-place{margin:0 0 28px;color:#686963;font-size:15px}
+.finance-nums{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);border-bottom:1px solid rgba(22,23,27,.12)}
+.finance-nums div{padding:18px 0 16px}
+.finance-nums div+div{padding-left:28px}
+.finance-nums b{display:block;font-size:clamp(32px,4vw,48px);font-weight:500;letter-spacing:-.045em;line-height:1}
+.finance-nums span{display:block;margin-top:8px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#686963}
+.finance-why{max-width:68ch;margin:18px 0 8px;font-size:18px;line-height:1.45}
+.finance-row{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center;padding:11px 0;border-top:1px solid rgba(22,23,27,.1)}
+.finance-row strong{font-weight:500;font-size:15px}
+.finance-opts{display:flex;flex-wrap:wrap;gap:8px}
+.finance-opts button{border:1px solid rgba(22,23,27,.22);background:transparent;padding:8px 12px;font:inherit;font-size:14px;cursor:pointer}
+.finance-opts button[aria-pressed=true]{background:#16171b;color:#fbfbf9;border-color:#16171b}
+@media(max-width:760px){
+  .finance-nums{display:block}
+  .finance-nums div{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(22,23,27,.1)}
+  .finance-nums div+div{padding-left:0}
+  .finance-nums b{font-size:28px}
+  .finance-nums span{margin:0}
+  .finance-why{font-size:16px}
+  .finance-row{grid-template-columns:1fr;gap:8px;align-items:start}
+  .finance-opts button{padding:10px 12px}
+}
 .service-sections{display:grid;gap:42px;max-width:760px}
 .service-sections p:not(.section-label){margin:12px 0 0;font-size:18px;line-height:1.65}
 .process-section {background:var(--ink);color:var(--white)}

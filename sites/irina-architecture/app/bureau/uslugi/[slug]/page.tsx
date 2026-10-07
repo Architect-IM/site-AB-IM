@@ -1,6 +1,7 @@
 import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { FinanceExample } from "@/components/finance-example";
 import { bureauProduct, bureauProducts } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -53,6 +54,7 @@ export default async function BureauService({ params }: Props) {
           </aside>
         ) : null}
       </section>
+      {slug === "finance" ? <FinanceExample /> : null}
       <section className="section service-sections">
         {sections.map(([key, label]) => (
           <div key={key}>
