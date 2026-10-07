@@ -146,10 +146,11 @@ export function FinanceExample() {
           </div>
         ))}
       </div>
-      <details className="finance-proforma">
-        <summary><span className="when-closed">Открыть</span><span className="when-open">Закрыть</span></summary>
+      <div className="finance-proforma">
         <p className="section-label">Операционная проформа</p>
-        <div className="finance-table-wrap">
+        <details>
+          <summary><span className="when-closed">Открыть</span><span className="when-open">Закрыть</span></summary>
+          <div className="finance-table-wrap">
           <table className="finance-table">
             <thead>
               <tr><th>Строка</th><th>Расчёт</th><th>Сумма</th></tr>
@@ -169,6 +170,7 @@ export function FinanceExample() {
           </table>
         </div>
       </details>
+      </div>
     </section>
   );
 }
