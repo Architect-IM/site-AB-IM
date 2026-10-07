@@ -55,6 +55,12 @@ export default async function BureauService({ params }: Props) {
           </aside>
         ) : null}
       </section>
+      {slug === "finance" ? (
+        <section className="finance-method">
+          <h2>Как это делается</h2>
+          <p>Мы проводим все необходимые интервью и расчёты: что за объект, какие решения уже есть, откуда берутся деньги и доход. Потом собираем все цифры в таблицы, перепроверяем их на достоверность и полноту. После этого показываем результат инфографикой на закрытом сайте проекта, который мы делаем для каждого заказчика и храним там этот архив всех данных по его проекту.</p>
+        </section>
+      ) : null}
       {slug === "finance" ? <FinanceExample /> : null}
       {slug === "finance" ? <FinanceRecord /> : null}
       {slug === "finance" ? null : (

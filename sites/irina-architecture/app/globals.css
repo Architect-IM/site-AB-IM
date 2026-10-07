@@ -1414,6 +1414,9 @@ p {text-wrap:pretty}
 .service-lead-sign{margin:12px 0 0;font-size:13px;line-height:1.35}
 .service-lead-sign span{display:block;color:#686963}
 @media(max-width:1099px){.service-lead{display:block}.service-lead-aside{margin-top:36px}}
+.finance-method{max-width:740px;padding:88px var(--side) 48px}
+.finance-method h2{margin:0 0 20px;font-size:clamp(32px,3.6vw,48px);font-weight:500;letter-spacing:-.04em}
+.finance-method p{margin:0;font-size:18px;line-height:1.65}
 .finance-example{padding:8px var(--side) 20px}
 .finance-kicker{margin:0;max-width:40em;font-size:15px;line-height:1.45}
 .finance-example h2{margin:12px 0 8px;font-size:clamp(32px,4vw,44px);font-weight:500;letter-spacing:-.04em}
