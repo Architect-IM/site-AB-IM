@@ -148,7 +148,6 @@ export function FinanceExample() {
       </div>
       <div className="finance-proforma">
         <p className="section-label">Операционная проформа</p>
-        <h2>Из этих строк получается доход</h2>
         <div className="finance-table-wrap">
           <table className="finance-table">
             <thead>
