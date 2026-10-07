@@ -1414,11 +1414,11 @@ p {text-wrap:pretty}
 .service-lead-sign{margin:12px 0 0;font-size:13px;line-height:1.35}
 .service-lead-sign span{display:block;color:#686963}
 @media(max-width:1099px){.service-lead{display:block}.service-lead-aside{margin-top:36px}}
-.finance-method{max-width:740px;padding:88px var(--side) 48px}
+.finance-method{max-width:740px;padding:88px var(--side) 18px}
 .finance-method h2{margin:0 0 20px;font-size:clamp(32px,3.6vw,48px);font-weight:500;letter-spacing:-.04em}
 .finance-method p{margin:0;font-size:18px;line-height:1.65}
 .finance-method p.finance-method-next{margin-top:22px}
-.finance-example{padding:8px var(--side) 20px}
+.finance-example{padding:0 var(--side) 20px}
 .finance-kicker{margin:0;max-width:40em;font-size:15px;line-height:1.45}
 .finance-example h2{margin:12px 0 8px;font-size:clamp(32px,4vw,44px);font-weight:500;letter-spacing:-.04em}
 .finance-place{margin:0 0 28px;color:#686963;font-size:15px}
@@ -1433,7 +1433,7 @@ p {text-wrap:pretty}
 .finance-calc div div{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-top:1px solid rgba(22,23,27,.1);font-size:15px}
 .finance-calc .is-total{font-weight:500}
 .finance-limit{max-width:68ch;margin:18px 0 0;color:#686963;font-size:15px;line-height:1.5}
-.finance-fold{margin-top:8px}
+.finance-fold{margin-top:0}
 .finance-fold summary{width:fit-content;cursor:pointer;list-style:none;font-size:15px;border-bottom:1px solid #16171b}
 .finance-fold summary::-webkit-details-marker{display:none}
 .finance-fold .when-open{display:none}

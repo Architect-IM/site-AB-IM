@@ -148,7 +148,6 @@ export function FinanceExample() {
           </div>
         ))}
       </div>
-      </details>
       <div className="finance-proforma">
         <p className="section-label">Операционная проформа</p>
         <details className="finance-fold">
@@ -174,6 +173,7 @@ export function FinanceExample() {
         </div>
       </details>
       </div>
+      </details>
     </section>
   );
 }
