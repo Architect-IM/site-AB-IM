@@ -2,6 +2,7 @@ import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FinanceExample } from "@/components/finance-example";
+import { FinanceRecord } from "@/components/finance-record";
 import { bureauProduct, bureauProducts } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -55,6 +56,8 @@ export default async function BureauService({ params }: Props) {
         ) : null}
       </section>
       {slug === "finance" ? <FinanceExample /> : null}
+      {slug === "finance" ? <FinanceRecord /> : null}
+      {slug === "finance" ? null : (
       <section className="section service-sections">
         {sections.map(([key, label]) => (
           <div key={key}>
@@ -63,6 +66,7 @@ export default async function BureauService({ params }: Props) {
           </div>
         ))}
       </section>
+      )}
     </main>
   );
 }
