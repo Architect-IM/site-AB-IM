@@ -1,14 +1,5 @@
 import { sitePath } from "@/lib/site-path";
 
-const cols = ["Базовый", "Осторожный", "Без второго корпуса"];
-const rows = [
-  ["Номера", "48", "48", "32"],
-  ["Счёт с гостя, ₽", "18 400", "15 200", "17 100"],
-  ["Заполняемость", "58%", "44%", "61%"],
-  ["Прибыль, год 3", "42 млн", "11 млн", "38 млн"],
-  ["Срок возврата", "7,5 лет", "не сходится", "6,2 года"],
-];
-
 const leave = [
   "Модель со сценариями, не один лист «как будет хорошо».",
   "Список допущений: что мы приняли и что вы можете оспорить.",
@@ -25,29 +16,6 @@ const passport = [
 export function FinanceRecord() {
   return (
     <div className="finance-record">
-      <section className="finance-block">
-        <p className="section-label">Фрагмент модели</p>
-        <h2>Гостевой дом на берегу, 48 номеров</h2>
-        <div className="finance-table-wrap">
-          <table className="finance-table">
-            <thead>
-              <tr>
-                <th />
-                {cols.map((col, index) => <th key={col} className={index === 1 ? "is-cautious" : undefined}>{col}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row) => (
-                <tr key={row[0]}>
-                  {row.map((cell, index) => <td key={index} className={index === 2 ? "is-cautious" : undefined}>{cell}</td>)}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="finance-note">Другой объект, тот же приём: не одна цифра, а три сценария. Прибыль — после содержания, до налога и до процента. Осторожный столбец — год, который уже не несёт стройку. Цифры демо.</p>
-      </section>
-
       <section className="finance-block finance-split">
         <div className="finance-video">
           <video src={sitePath("/assets/finance-session.mp4")} poster={sitePath("/assets/resort.jpg")} muted loop autoPlay playsInline />

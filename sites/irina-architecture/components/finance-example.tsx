@@ -23,25 +23,14 @@ function model(choice: Choice) {
   const foodRevenue = choice.food === "restaurant" ? 9 : 0;
   const poolRevenue = choice.pool ? 3.5 : 0;
   const upkeep = round1((choice.capital ? 21 : 13) + (choice.food === "restaurant" ? 4 : 0) + (choice.pool ? 1.3 : 0));
-  const capexLines = [
-    { label: "Участок", value: landCost[choice.land] },
-    ...(choice.road ? [{ label: "Дорога", value: 18 }] : []),
-    { label: choice.capital ? "20 капитальных домов" : "20 некапитальных домов", value: choice.capital ? 126 : 58 },
-    { label: choice.food === "restaurant" ? "Ресторан" : "Кухня", value: choice.food === "restaurant" ? 28 : 10 },
-    ...(choice.pool ? [{ label: "Бассейн", value: 14 }] : []),
-  ];
-  const capex = round1(capexLines.reduce((sum, line) => sum + line.value, 0));
+  const houses = choice.capital ? 126 : 58;
+  const foodCost = choice.food === "restaurant" ? 28 : 10;
+  const capex = round1(landCost[choice.land] + (choice.road ? 18 : 0) + houses + foodCost + (choice.pool ? 14 : 0));
   const rate = choice.money === "own" ? 0 : choice.money === "12" ? 0.12 : 0.18;
   const interest = round1(capex * rate);
-  const incomeLines = [
-    { label: `Ночи: 20 × ${nights} × ${nightly.toLocaleString("ru-RU")} ₽`, value: roomRevenue },
-    ...(foodRevenue ? [{ label: "Ресторан, выручка", value: foodRevenue }] : []),
-    ...(poolRevenue ? [{ label: "Бассейн, выручка", value: poolRevenue }] : []),
-    { label: "Содержание", value: -upkeep },
-    ...(interest ? [{ label: "Платёж по займу", value: -interest }] : []),
-  ];
-  const income = round1(incomeLines.reduce((sum, line) => sum + line.value, 0));
-  return { capex, income, interest, payback: income > 1 ? capex / income : Infinity, capexLines, incomeLines };
+  const operating = round1(roomRevenue + foodRevenue + poolRevenue - upkeep);
+  const income = round1(operating - interest);
+  return { capex, income, operating, interest, nights, nightly, roomRevenue, foodRevenue, poolRevenue, upkeep, rate, payback: income > 1 ? capex / income : Infinity };
 }
 
 function mln(value: number) {
@@ -145,23 +134,6 @@ export function FinanceExample() {
         <div><b>{paybackLabel(figures.payback)}</b><span>Окупаемость</span></div>
       </div>
       <p className="finance-why">{note}</p>
-      <div className="finance-calc">
-        <div>
-          <p>Вложения</p>
-          {figures.capexLines.map((line) => (
-            <div key={line.label}><span>{line.label}</span><b>{mln(line.value)}</b></div>
-          ))}
-          <div className="is-total"><span>Итого</span><b>{mln(figures.capex)}</b></div>
-        </div>
-        <div>
-          <p>Доход за год</p>
-          {figures.incomeLines.map((line) => (
-            <div key={line.label}><span>{line.label}</span><b>{line.value < 0 ? `−${mln(line.value)}` : mln(line.value)}</b></div>
-          ))}
-          <div className="is-total"><span>Итого</span><b>{mln(figures.income)}</b></div>
-        </div>
-      </div>
-      <p className="finance-limit">Срок — это вложения, делённые на доход одного такого года. Без налога и без дисконтирования. Платёж по займу, если он включён, — ставка на всю сумму вложений за год, без графика погашения. Так видно, выдерживает ли год сам процент. Для банка этого мало: там нужен поток по годам.</p>
       <div className="finance-rows">
         {groups.map((group) => (
           <div className="finance-row" key={group.key}>
@@ -173,6 +145,30 @@ export function FinanceExample() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="finance-proforma">
+        <p className="section-label">Операционная проформа</p>
+        <h2>Из этих строк получается доход</h2>
+        <div className="finance-table-wrap">
+          <table className="finance-table">
+            <thead>
+              <tr><th>Строка</th><th>Расчёт</th><th>Сумма</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Дома</td><td>20</td><td /></tr>
+              <tr><td>Занятых ночей на дом</td><td>{figures.nights}</td><td /></tr>
+              <tr><td>Счёт за ночь</td><td>{figures.nightly.toLocaleString("ru-RU")} ₽</td><td /></tr>
+              <tr><td>Выручка ночей</td><td>20 × {figures.nights} × {figures.nightly.toLocaleString("ru-RU")}</td><td>{mln(figures.roomRevenue)}</td></tr>
+              <tr><td>Ресторан</td><td>{figures.foodRevenue ? "своя посадка" : "нет"}</td><td>{figures.foodRevenue ? mln(figures.foodRevenue) : "—"}</td></tr>
+              <tr><td>Бассейн</td><td>{figures.poolRevenue ? "есть" : "нет"}</td><td>{figures.poolRevenue ? mln(figures.poolRevenue) : "—"}</td></tr>
+              <tr><td>Содержание</td><td>персонал, тепло, расходники</td><td>−{mln(figures.upkeep)}</td></tr>
+              <tr><td>Доход до процента</td><td>выручка − содержание</td><td>{mln(figures.operating)}</td></tr>
+              <tr><td>Платёж по займу</td><td>{figures.rate ? `${Math.round(figures.rate * 100)}% × ${mln(figures.capex)}` : "свои деньги"}</td><td>{figures.interest ? `−${mln(figures.interest)}` : "—"}</td></tr>
+              <tr className="is-total"><td>Годовой доход</td><td /><td>{mln(figures.income)}</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="finance-limit">Так финансисты называют расчёт одного года: от ночей и счёта к выручке, затем минус содержание. Это не отчёт за прошлый год и не модель для банка: без налога, без дисконтирования и без графика погашения займа.</p>
       </div>
     </section>
   );
