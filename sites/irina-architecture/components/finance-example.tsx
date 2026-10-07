@@ -76,7 +76,7 @@ function explain(next: Choice, prev: Choice, key: Key) {
   const term = termShift(before.payback, after.payback);
   if (key === "road") {
     return next.road
-      ? `Дорога добавляет 18 млн к вложениям и поднимает заполняемость: гость доезжает в сезон. ${sentence(term)}`
+      ? `Дорога добавляет 18 млн к вложениям и поднимает заполняемость: гость доезжает. ${sentence(term)}`
       : `Без дороги вложения меньше на 18 млн, но часть гостей не доезжает. ${sentence(term)}`;
   }
   if (key === "land") {
@@ -130,10 +130,10 @@ export function FinanceExample() {
   ];
 
   return (
-    <section className="finance-example" aria-label="Условный пример туркомплекса">
-      <p className="section-label">Условный пример</p>
-      <h2>Двадцать домиков</h2>
-      <p className="finance-place">Средняя полоса · сезон с мая по сентябрь · цифры не про ваш объект</p>
+    <section className="finance-example" aria-label="Сводная панель глемпинга">
+      <p className="finance-kicker">Сводная панель (за каждой цифрой стоит отдельный расчёт)</p>
+      <h2>Глемпинг на 20 домов</h2>
+      <p className="finance-place">Средняя полоса · круглый год</p>
       <div className="finance-nums">
         <div><b>{mln(figures.capex)}</b><span>Вложения</span></div>
         <div><b>{mln(figures.income)}</b><span>Годовой доход</span></div>
