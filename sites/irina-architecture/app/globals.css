@@ -1436,10 +1436,10 @@ p {text-wrap:pretty}
 .finance-fold{margin-top:0}
 .finance-fold summary{width:fit-content;cursor:pointer;list-style:none;font-size:15px;border-bottom:1px solid #16171b}
 .finance-fold summary::-webkit-details-marker{display:none}
-.finance-fold .when-open{display:none}
-.finance-fold[open] .when-closed{display:none}
-.finance-fold[open] .when-open{display:inline}
-.finance-fold[open] summary{margin-bottom:28px}
+.finance-fold > summary .when-open{display:none}
+.finance-fold[open] > summary .when-closed{display:none}
+.finance-fold[open] > summary .when-open{display:inline}
+.finance-fold[open] > summary{margin-bottom:28px}
 .finance-proforma{margin-top:48px}
 .finance-proforma .section-label{display:block;margin-bottom:16px}
 .finance-table td:nth-child(2){color:#686963}
