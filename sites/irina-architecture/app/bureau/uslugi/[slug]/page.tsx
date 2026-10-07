@@ -10,7 +10,7 @@ const voices: Record<string, { image: string; name: string; role: string; quote:
     image: "/assets/finance-voice.jpg",
     name: "Михаил Лункин",
     role: "маркетолог",
-    quote: "Я не рисую один удобный прогноз. Сначала раскладываю, из чего складываются затраты и откуда берётся доход, потом смотрю несколько сценариев: ниже загрузка, длиннее стройка, другая цена входа. Так видно, при каких условиях объект ещё держится и где он уже не сходится. После этого архитектуру можно править по цифрам, а не на глаз.",
+    quote: "Я не рисую один удобный прогноз. Сначала раскладываю, из чего складываются затраты и откуда берётся доход, потом смотрю несколько сценариев: ниже загрузка, длиннее стройка, другая цена входа. Так видно, при каких условиях объект ещё держится и где он уже не сходится.",
   },
 };
 
@@ -42,12 +42,14 @@ export default async function BureauService({ params }: Props) {
           <p className="section-label"><a href={sitePath(`/bureau#${product.groupId}`)}>← {product.groupTitle}</a></p>
           <h1>{product.title}</h1>
           <p className="service-essence">{product.essence}</p>
-          {voice ? <img className="service-lead-photo" src={sitePath(voice.image)} alt="" /> : null}
         </div>
         {voice ? (
           <aside className="service-lead-aside">
+            <figure>
+              <img className="service-lead-photo" src={sitePath(voice.image)} alt="" />
+              <figcaption className="service-lead-sign">{voice.name}<span>{voice.role}</span></figcaption>
+            </figure>
             <blockquote>{voice.quote}</blockquote>
-            <p className="service-lead-sign">{voice.name}<span>{voice.role}</span></p>
           </aside>
         ) : null}
       </section>
