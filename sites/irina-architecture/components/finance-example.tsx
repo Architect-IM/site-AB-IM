@@ -146,7 +146,8 @@ export function FinanceExample() {
           </div>
         ))}
       </div>
-      <div className="finance-proforma">
+      <details className="finance-proforma">
+        <summary><span className="when-closed">Открыть</span><span className="when-open">Закрыть</span></summary>
         <p className="section-label">Операционная проформа</p>
         <div className="finance-table-wrap">
           <table className="finance-table">
@@ -167,8 +168,7 @@ export function FinanceExample() {
             </tbody>
           </table>
         </div>
-        <p className="finance-limit">Так финансисты называют расчёт одного года: от ночей и счёта к выручке, затем минус содержание. Это не отчёт за прошлый год и не модель для банка: без налога, без дисконтирования и без графика погашения займа.</p>
-      </div>
+      </details>
     </section>
   );
 }
