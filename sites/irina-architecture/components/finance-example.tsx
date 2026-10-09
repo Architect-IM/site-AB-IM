@@ -28,9 +28,9 @@ function model(choice: Choice) {
   const capex = round1(landCost[choice.land] + (choice.road ? 18 : 0) + houses + foodCost + (choice.pool ? 14 : 0));
   const rate = choice.money === "own" ? 0 : choice.money === "12" ? 0.12 : 0.18;
   const interest = round1(capex * rate);
-  const income = round1(roomRevenue + foodRevenue + poolRevenue - upkeep);
-  const left = round1(income - interest);
-  return { capex, income, interest, left, nights, nightly, roomRevenue, foodRevenue, poolRevenue, upkeep, rate, payback: income > 1 ? capex / income : Infinity };
+  const objectIncome = round1(roomRevenue + foodRevenue + poolRevenue - upkeep);
+  const left = round1(objectIncome - interest);
+  return { capex, income: left, objectIncome, interest, left, nights, nightly, roomRevenue, foodRevenue, poolRevenue, upkeep, rate, payback: left > 1 ? capex / left : Infinity };
 }
 
 function mln(value: number) {
@@ -84,10 +84,10 @@ function explain(next: Choice, prev: Choice, key: Key) {
       : `Некапитальные дома дешевле в стройке и в содержании, счёт с гостя ниже. ${sentence(term)}`;
   }
   if (key === "money") {
-    if (next.money === "own") return "Свои деньги: платежа нет, владельцу остаётся весь доход объекта. Срок вложений от этого не меняется.";
+    if (next.money === "own") return `Свои деньги: платежа нет, владельцу остаётся весь доход объекта. ${sentence(term)}`;
     const rate = next.money === "12" ? "12%" : "18%";
     const remains = after.left > 1 ? `владельцу остаётся ${mln(after.left)}` : "владельцу почти ничего не остаётся";
-    return `Заём под ${rate} — платёж около ${mln(after.interest)} в год. Доход объекта тот же, ${remains}. Срок считается от дохода объекта, не от этого остатка.`;
+    return `Заём под ${rate} забирает около ${mln(after.interest)} в год. Доход объекта ${mln(after.objectIncome)} от займа не меняется, ${remains}. ${sentence(term)}`;
   }
   if (key === "food") {
     return next.food === "restaurant"
@@ -133,7 +133,7 @@ export function FinanceExample() {
       <p className="finance-place">Средняя полоса · круглый год</p>
       <div className="finance-nums">
         <div><b>{mln(figures.capex)}</b><span>Вложения</span></div>
-        <div><b>{mln(figures.income)}</b><span>Годовой доход</span></div>
+        <div><b>{figures.income < 0 ? `−${mln(figures.income)}` : mln(figures.income)}</b><span>Годовой доход</span></div>
         <div><b>{paybackLabel(figures.payback)}</b><span>Окупаемость</span></div>
       </div>
       <p className="finance-why">{note}</p>
@@ -166,7 +166,7 @@ export function FinanceExample() {
               <tr><td>Ресторан</td><td>{figures.foodRevenue ? "своя посадка" : "нет"}</td><td>{figures.foodRevenue ? mln(figures.foodRevenue) : "—"}</td></tr>
               <tr><td>Бассейн</td><td>{figures.poolRevenue ? "есть" : "нет"}</td><td>{figures.poolRevenue ? mln(figures.poolRevenue) : "—"}</td></tr>
               <tr><td>Содержание</td><td>персонал, тепло, расходники</td><td>−{mln(figures.upkeep)}</td></tr>
-              <tr><td>Доход объекта</td><td>выручка − содержание</td><td>{mln(figures.income)}</td></tr>
+              <tr><td>Доход объекта</td><td>выручка − содержание</td><td>{mln(figures.objectIncome)}</td></tr>
               <tr><td>Платёж по займу</td><td>{figures.rate ? `${Math.round(figures.rate * 100)}% × ${mln(figures.capex)}` : "свои деньги"}</td><td>{figures.interest ? `−${mln(figures.interest)}` : "—"}</td></tr>
               <tr className="is-total"><td>Остаётся владельцу</td><td>доход объекта − платёж</td><td>{figures.left < 0 ? `−${mln(figures.left)}` : mln(figures.left)}</td></tr>
             </tbody>
