@@ -1,6 +1,7 @@
 import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { LeadVideo } from "@/components/lead-video";
 import { FinanceExample } from "@/components/finance-example";
 import { FinanceRecord } from "@/components/finance-record";
 import { bureauProduct, bureauProducts } from "@/lib/bureau-products";
@@ -48,7 +49,7 @@ export default async function BureauService({ params }: Props) {
         {voice ? (
           <aside className="service-lead-aside">
             <figure>
-              <img className="service-lead-photo" src={sitePath(voice.image)} alt="" />
+              <LeadVideo src={sitePath("/assets/finance-voice.mp4")} poster={sitePath(voice.image)} />
               <figcaption className="service-lead-sign">{voice.name}<span>{voice.role}</span></figcaption>
             </figure>
             <blockquote>{voice.quote}</blockquote>
