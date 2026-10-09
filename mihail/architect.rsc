@@ -1,4 +1,4 @@
-0:{"page:/architect":"$L1","layout:/":"$L2","route:/architect":"$L3","__route":"route:/architect","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/architect":"[\"page\",\"page:/architect\",\"root-boundary:/\",\"[\\\"architect\\\"]\"]"},"__srcPage":["architect","page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:5f4fc57c4c7b75c2","deploymentVersion":"711a2ce1-fd78-40d4-9fee-08b1aa6fe6c0","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
+0:{"page:/architect":"$L1","layout:/":"$L2","route:/architect":"$L3","__route":"route:/architect","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/architect":"[\"page\",\"page:/architect\",\"root-boundary:/\",\"[\\\"architect\\\"]\"]"},"__srcPage":["architect","page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:5f4fc57c4c7b75c2","deploymentVersion":"c02b4075-89dc-4a54-9300-07113be34e9e","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
 4:I["4715d14f82e4",[],"Header",1]
 5:I["74f944bd09a9",[],"Children",1]
 6:I["eedcf459879d",[],"Footer",1]
@@ -15,8 +15,8 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
 :HL["https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&display=swap","style"     ]
 2:[[["$","link","css:/site-AB-IM/mihail/_next/static/css/index.fHO2gxqk.css",{"rel":"stylesheet","precedence":"vite-rsc/importer-resources","href":"/site-AB-IM/mihail/_next/static/css/index.fHO2gxqk.css","data-rsc-css-href":"/site-AB-IM/mihail/_next/static/css/index.fHO2gxqk.css"}],"$undefined"],["$","html",null,{"lang":"ru","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#content","children":"Перейти к содержанию"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]
 3:[[["$","meta",null,{"charSet":"utf-8"}],[["$","title","0",{"children":"Ирина Михейкина — архитектор"}],["$","meta","1",{"name":"description","content":"Современная архитектура в контексте места. Архитектор Ирина Михейкина, проектное бюро полного цикла и лаборатория «Владимир»."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"data-vinext-streamed-icon":"$undefined","rel":"shortcut icon","href":"/site-AB-IM/mihail/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}],["$","link","4",{"data-vinext-streamed-icon":"$undefined","rel":"icon","href":"/site-AB-IM/mihail/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}]],[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]],["$","$L8",null,{"fallback":"$9","children":["$","$La",null,{"fallback":"$9","children":["$","$Lb",null,{"providerId":"layout:/","segmentMap":{"children":["architect"]},"children":["$","$Lc",null,{"id":"layout:/","parallelSlots":"$undefined","children":["$","$Ld",null,{"resetKey":"architect","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/mihail/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Ld",null,{"resetKey":"[\"architect\"]","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/mihail/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Le",null,{"children":["$","$Lf",null,{"children":[["$","$Lb",null,{"providerId":"page:/architect","segmentMap":{"children":["__PAGE__"]},"children":["$","$Lc",null,{"id":"page:/architect"}]}],null]}]}]}]}]}]}]}]}],null,null]
-10:T3c55,
-    <section class="hero" id="top" aria-labelledby="hero-title">
+10:T3c6c,
+    <section class="hero" id="top" aria-label="Создаю многослойные, осмысленные проекты">
       <div class="hero-media" aria-hidden="true">
         <div class="hero-panel">
           <img src="/site-AB-IM/mihail/assets/portrait.jpg" alt="">
@@ -34,7 +34,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
         </div>
 
         <div class="hero-content">
-          <h1 id="hero-title">Архитектура в контексте места</h1>
+          <h1 id="hero-title" class="visually-hidden">Архитектура в контексте места</h1>
           <p class="hero-description">Создаю многослойные, осмысленные проекты — от частных домов до туристических комплексов и общественных пространств.</p>
           <a class="hero-action" href="/site-AB-IM/mihail/portfolio"><span class="hero-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Смотреть работы</span></a>
         </div>
@@ -45,7 +45,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
     <section class="section" id="about">
       <div class="intro-grid">
         <p class="section-label reveal home-section-label">01 — Подход</p>
-        <h2 class="intro-title reveal">Проект начинается не с формы, а с понимания задачи</h2>
+        <h2 class="intro-title reveal">Проект = решение</h2>
         <div class="intro-copy reveal">
           <p>Я создаю современную архитектуру, всегда глубоко в контексте задачи, всегда многослойную и осмысленную. За каждым проектом стоит моё проектное бюро, комплексная экспертиза и умение решать задачи любой сложности на своей земле. Наши проекты живут, работают и помогают заказчикам достигать их целей — уверенно и надолго.</p>
           <div class="micro-list" aria-label="Принципы работы">
