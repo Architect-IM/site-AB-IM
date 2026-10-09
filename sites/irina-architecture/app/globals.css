@@ -1420,7 +1420,8 @@ p {text-wrap:pretty}
 .service-lead-sign{margin:12px 0 0;font-size:13px;line-height:1.35}
 .service-lead-sign span{display:block;color:#686963}
 @media(max-width:1099px){.service-lead{display:block}.service-lead-aside{margin-top:36px;padding-top:0;grid-template-columns:min(264px,42vw) minmax(0,1fr)}}
-.finance-method{max-width:740px;padding:88px var(--side) 18px}
+.service-page .page-intro{padding-bottom:8px}
+.finance-method{max-width:740px;padding:28px var(--side) 18px}
 .finance-method h2{margin:0 0 20px;font-size:clamp(32px,3.6vw,48px);font-weight:500;letter-spacing:-.04em}
 .finance-method p{margin:0;font-size:18px;line-height:1.65}
 .finance-method p.finance-method-next{margin-top:22px}
