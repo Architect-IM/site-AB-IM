@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { BrandLogo } from "@/components/brand-logo";
 const pages = [["/", "Архитектор"], ["/portfolio", "Портфолио"], ["/bureau", "Бюро"], ["/lab", "Лаборатория"], ["/contacts", "Контакты"]];
-const bureauPages = [["/bureau#raboty", "Услуги"], ["/bureau/portfolio", "Портфолио"], ["/bureau/news", "Новости"], ["/contacts", "Контакт"]];
+const bureauPages = [["/bureau#raboty", "Услуги"], ["/portfolio", "Портфолио"], ["/bureau/news", "Новости"], ["/contacts", "Контакт"]];
 export function Header() {
   const pathname = sitePathname(usePathname());
   const isBureau = pathname === "/bureau" || pathname.startsWith("/bureau/");

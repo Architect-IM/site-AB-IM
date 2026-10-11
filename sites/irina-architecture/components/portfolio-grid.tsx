@@ -1,10 +1,74 @@
 "use client";
-import { sitePath } from "@/lib/site-path";
 
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { projects } from "@/lib/projects";
-const categories = ["Все", "Частный дом", "Гостеприимство", "Храм"];
-export function PortfolioGrid({bureau=false}:{bureau?:boolean}){
-const basePath=bureau ? "/bureau/portfolio" : "/portfolio";
-return <Tabs defaultValue="Все" className={`portfolio-tabs${bureau ? " bureau-portfolio-tabs" : ""}`}><TabsList className="filter-list" aria-label="Категории проектов">{categories.map(category=><TabsTrigger key={category} value={category} className="filter">{category}<sup>{category === "Все" ? projects.length : projects.filter(p=>p.category===category).length.toString().padStart(2,"0")}</sup></TabsTrigger>)}</TabsList>{categories.map(category=><TabsContent key={category} value={category}><div className="portfolio-grid">{projects.filter(p=>category === "Все" || p.category === category).map((p,i)=><a href={sitePath(`${basePath}/${p.slug}`)} key={p.slug} className="work-card"><div className="work-image media-frame"><img src={sitePath(`/assets/${p.image}.jpg`)} alt={p.name} loading={i===0?"eager":"lazy"}/><span className="image-tag">{p.status} · {p.year}</span><span className="work-view">Смотреть проект</span></div><div className="work-meta"><div><span className="project-kicker">{p.category} · {p.place}</span><h2>{p.name}</h2><p>{p.description}</p></div><span className="work-number">0{projects.indexOf(p)+1}</span></div></a>)}</div></TabsContent>)}</Tabs>;
+import { useState } from "react";
+import { sitePath } from "@/lib/site-path";
+import { productTags, projects, type ProductTagId } from "@/lib/projects";
+
+const sides = [
+  ["all", "Все"],
+  ["architect", "Архитектор"],
+  ["bureau", "Бюро"],
+] as const;
+
+function tagOf(id: string) {
+  return productTags.find((tag) => tag.id === id);
+}
+
+export function PortfolioGrid() {
+  const [side, setSide] = useState<(typeof sides)[number][0]>("all");
+  const [tag, setTag] = useState<ProductTagId | "">("");
+
+  const visible = projects.filter((project) => {
+    const ids = project.tags;
+    if (side !== "all" && !ids.some((id) => tagOf(id)?.side === side)) return false;
+    if (tag && !ids.includes(tag)) return false;
+    return true;
+  });
+
+  function count(next: (typeof sides)[number][0]) {
+    return projects.filter((project) => next === "all" || project.tags.some((id) => tagOf(id)?.side === next)).length;
+  }
+
+  return (
+    <div className="portfolio-tabs">
+      <div className="filter-list" role="group" aria-label="Чьи работы">
+        {sides.map(([id, label]) => (
+          <button key={id} type="button" className="filter" aria-pressed={side === id} onClick={() => setSide(id)}>
+            {label}<sup>{String(count(id)).padStart(2, "0")}</sup>
+          </button>
+        ))}
+      </div>
+      <div className="portfolio-tags" role="group" aria-label="Продукты">
+        {productTags.map((item) => (
+          <button key={item.id} type="button" aria-pressed={tag === item.id} onClick={() => setTag(tag === item.id ? "" : item.id)}>
+            {item.label}
+          </button>
+        ))}
+      </div>
+      {visible.length === 0 ? <p className="portfolio-empty">Таких работ пока нет.</p> : null}
+      <div className="portfolio-grid">
+        {visible.map((project, index) => (
+          <a href={sitePath(`/portfolio/${project.slug}`)} key={project.slug} className="work-card">
+            <div className="work-image media-frame">
+              <img src={sitePath(`/assets/${project.image}.jpg`)} alt={project.name} loading={index === 0 ? "eager" : "lazy"} style={"imagePosition" in project && project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
+              {project.tags.length === 0 ? <span className="image-tag">{project.status} · {project.year}</span> : null}
+              <span className="work-view">Смотреть</span>
+            </div>
+            <div className="work-meta">
+              <div>
+                {project.tags.length === 0 ? <span className="project-kicker">{project.category} · {project.place}</span> : null}
+                <h2>{project.name}</h2>
+                {project.tags.length ? (
+                  <ul className="work-tags">
+                    {project.tags.map((id) => <li key={id}>{tagOf(id)?.label}</li>)}
+                  </ul>
+                ) : <p>{project.description}</p>}
+              </div>
+              <span className="work-number">{String(projects.indexOf(project) + 1).padStart(2, "0")}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
 }
