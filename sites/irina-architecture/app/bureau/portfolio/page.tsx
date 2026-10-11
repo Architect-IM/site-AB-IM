@@ -5,7 +5,7 @@ export default function BureauPortfolio() {
   return (
     <main id="content" className="inner-page">
       <script dangerouslySetInnerHTML={{ __html: `location.replace(${JSON.stringify(href)})` }} />
-      <p className="section" style={{ padding: "48px var(--side)" }}><a href={href}>Портфолио</a></p>
+      <h1 className="visually-hidden">Портфолио</h1>
     </main>
   );
 }
