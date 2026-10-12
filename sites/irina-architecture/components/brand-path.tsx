@@ -29,7 +29,11 @@ export function BrandPath() {
           </li>
         ))}
       </ol>
-      <p className="brand-wink">В основном это там, где мы уже проектируем или строим. Чаще всего — <a href={sitePath("/#directions")}>живое гостеприимство</a>.</p>
+      <section className="brand-close">
+        <h2>Сначала место.</h2>
+        <p>Прежде всего — мы архитектурное бюро. Обычно мы берёмся за маркетинг тогда, когда проектируем или ведём какую-то стройку: опыт начинается с места, а не с объявления. Чаще всего это <a href={sitePath("/#directions")}>живое гостеприимство</a>, хотя бывает и другое. Если вам нужна помощь — приходите, договоримся.</p>
+        <p className="brand-close-sign">Ирина Михейкина<span>архитектор</span></p>
+      </section>
       <section className="brand-been" aria-label="Примеры">
         <h2>Кто уже шёл этим путём</h2>
         <div className="brand-been-grid">
