@@ -15,8 +15,8 @@ export function BrandPath() {
   return (
     <div className="brand-path">
       <p className="brand-creed">
-        <span>Он творит.</span>
-        <span>Мы ограняем, охраняем, укрепляем, продвигаем и воспеваем.</span>
+        <span>Вы творите.</span>
+        <span>Мы изучаем, ограняем, укрепляем, воспеваем и продвигаем.</span>
       </p>
       <ol className="brand-steps">
         {steps.map(([num, title, text]) => (
