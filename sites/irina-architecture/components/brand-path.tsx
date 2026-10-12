@@ -35,7 +35,7 @@ export function BrandPath() {
         <p className="brand-close-sign">Ирина Михейкина<span>архитектор</span></p>
       </section>
       <section className="brand-been" aria-label="Примеры">
-        <h2>Кто уже шёл этим путём</h2>
+        <h2>Наши клиенты</h2>
         <div className="brand-been-grid">
           {shown.map((project) => (
             <a href={sitePath(`/portfolio/${project.slug}`)} key={project.slug}>
