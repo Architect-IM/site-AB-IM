@@ -1,0 +1,1 @@
+var e=`/site-AB-IM/irina`;function t(t){return!t.startsWith(`/`)||t.startsWith(`//`)||t===`/site-AB-IM/irina`||t.startsWith(`/site-AB-IM/irina/`)?t:`${e}${t}`}function n(e){return e===`/site-AB-IM/irina`||e.startsWith(`/site-AB-IM/irina/`)?e.slice(17)||`/`:e}export{t as n,n as r,e as t};
