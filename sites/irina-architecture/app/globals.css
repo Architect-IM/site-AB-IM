@@ -1422,7 +1422,7 @@ p {text-wrap:pretty}
 .service-lead-sign span{display:block;color:#686963}
 .service-lead-stack{display:grid;grid-template-columns:1fr;gap:0;padding-top:46px}
 .service-lead-stack figure{display:contents}
-.service-lead-stack .lead-video{order:1}
+.service-lead-stack .lead-video{order:1;width:50%}
 .service-lead-stack .lead-video video{aspect-ratio:1/1;object-position:50% 28%}
 .service-lead-stack blockquote{order:2;margin:28px 0 0;max-width:22em;font-size:clamp(26px,2.4vw,36px);line-height:1.28;font-weight:500;letter-spacing:-.03em;color:var(--ink)}
 .service-lead-stack .service-lead-sign{order:3;margin-top:18px}
