@@ -51,6 +51,7 @@ jobs:
             core.setOutput('key', key);
             core.setOutput('sha', pr ? pr.head.sha : context.sha);
       - run: pnpm install --frozen-lockfile
+      - run: pnpm test:photos
       - run: pnpm typecheck
       - name: Production build
         run: pnpm build
