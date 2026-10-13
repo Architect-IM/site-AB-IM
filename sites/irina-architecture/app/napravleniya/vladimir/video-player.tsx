@@ -10,30 +10,11 @@ export function VladimirVideo() {
   const [ready, setReady] = useState(false);
   const [paused, setPaused] = useState(true);
   const [unavailable, setUnavailable] = useState(false);
-  const [source, setSource] = useState(previewBasePath ? "" : sitePath("/api/vladimir-video"));
-
-  useEffect(() => {
-    // GitHub Pages has no server routes. Resolve this public video's temporary
-    // download URL in the viewer's browser; the live Site keeps its own proxy.
-    if (!previewBasePath || !motionAllowed || source || unavailable) return;
-    const controller = new AbortController();
-    let cancelled = false;
-    const timeout = setTimeout(() => controller.abort(), 15_000);
-    void fetch("https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key=https%3A%2F%2Fdisk.yandex.ru%2Fi%2FhWBIq7RIz01WYg", { signal: controller.signal })
-      .then(async response => {
-        if (!response.ok) throw new Error("Video source unavailable");
-        const result: { href?: string } = await response.json();
-        if (!result.href?.startsWith("https://")) throw new Error("Video download link unavailable");
-        if (!cancelled) setSource(result.href);
-      })
-      .catch(() => { if (!cancelled) setUnavailable(true); })
-      .finally(() => clearTimeout(timeout));
-    return () => { cancelled = true; clearTimeout(timeout); controller.abort(); };
-  }, [motionAllowed, source, unavailable]);
 
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setMotionAllowed(!preference.matches);
+    // Static review copies have no video proxy; keep the poster there.
+    const update = () => setMotionAllowed(!previewBasePath && !preference.matches);
     update();
     preference.addEventListener("change", update);
     return () => preference.removeEventListener("change", update);
@@ -42,7 +23,7 @@ export function VladimirVideo() {
   useEffect(() => {
     if (!motionAllowed) video.current?.pause();
     else void video.current?.play().catch(() => setPaused(true));
-  }, [motionAllowed, source]);
+  }, [motionAllowed]);
 
   const toggleMotion = () => {
     const media = video.current;
@@ -64,7 +45,7 @@ export function VladimirVideo() {
       disablePictureInPicture
       disableRemotePlayback
       preload={motionAllowed ? "auto" : "none"}
-      src={motionAllowed && !unavailable && source ? source : undefined}
+      src={motionAllowed && !unavailable ? sitePath("/api/vladimir-video") : undefined}
       poster={sitePath("/assets/vladimir-assumption-context.jpg")}
       aria-hidden="true"
       onError={() => setUnavailable(true)}
