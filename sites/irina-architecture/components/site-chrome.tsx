@@ -4,11 +4,12 @@ import { sitePath, sitePathname } from "@/lib/site-path";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { BrandLogo } from "@/components/brand-logo";
-const pages = [["/", "Архитектор"], ["/portfolio", "Портфолио"], ["/bureau", "Бюро"], ["/lab", "Лаборатория"], ["/contacts", "Контакты"]];
+const pages = [["/", "Архитектор"], ["/architect/portfolio", "Портфолио"], ["/bureau", "Бюро"], ["/lab", "Лаборатория"], ["/contacts", "Контакты"]];
 const bureauPages = [["/bureau#raboty", "Услуги"], ["/portfolio", "Портфолио"], ["/bureau/news", "Новости"], ["/contacts", "Контакт"]];
 export function Header() {
   const pathname = sitePathname(usePathname());
   const isBureau = pathname === "/bureau" || pathname.startsWith("/bureau/");
+  const isSharedPortfolio = pathname === "/portfolio" || pathname.startsWith("/portfolio/");
   const [activeSection, setActiveSection] = useState("");
   const [open, setOpen] = useState(false);
   const menu = useRef<HTMLDivElement>(null);
@@ -39,7 +40,8 @@ export function Header() {
     document.addEventListener("keydown", key);
     return () => { document.body.classList.remove("menu-open"); document.removeEventListener("keydown", key); };
   }, [open]);
-  const navigation = (isBureau ? bureauPages : pages).map(([href, name]) => {
+  const navigation = (isBureau ? bureauPages : pages).map(([pageHref, name]) => {
+    const href = isSharedPortfolio && pageHref === "/architect/portfolio" ? "/portfolio" : pageHref;
     const hashIndex = href.indexOf("#");
     const isSection = hashIndex !== -1;
     const current = isSection

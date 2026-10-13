@@ -2,6 +2,7 @@
 import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import { vladimir, vladimirServices } from "@/lib/vladimir";
+import { VladimirVideo } from "./video-player";
 import styles from "./vladimir.module.css";
 
 export const metadata: Metadata = {
@@ -32,13 +33,13 @@ export default function Vladimir() {
       </nav>
 
       <section className={styles.hero} aria-labelledby="vladimir-title">
-        <div className={styles.heroImage}>
-          <img src={sitePath("/assets/territory.jpg")} alt="Поселение, храмы и зелёные берега реки в вечернем свете" fetchPriority="high" />
-        </div>
+        <VladimirVideo />
         <div className={styles.heroCopy}>
           <h1 id="vladimir-title">{vladimir.title}</h1>
-          <p className={styles.subtitle}>{vladimir.subtitle}</p>
-          <p className={styles.lead}>{vladimir.intro}</p>
+          <div className={styles.heroText}>
+            <p className={styles.subtitle}>{vladimir.subtitle}</p>
+            <p className={styles.lead}>{vladimir.intro}</p>
+          </div>
         </div>
       </section>
 
