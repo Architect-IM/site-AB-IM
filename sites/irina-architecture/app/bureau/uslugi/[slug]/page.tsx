@@ -22,7 +22,7 @@ const voices: Record<string, { image: string; video: string; name: string; role:
     video: "/assets/brand-voice.mp4",
     name: "Михаил Лункин",
     role: "маркетолог бюро",
-    quote: "Мы исходим из того, что продукт — это всегда проекция реальных ценностей на рынок. Поэтому берёмся за работу только тогда, когда слово соответствует делу, и не везём на рынок то, чего на самом деле нет. Иначе это ложь, а у лжи одна дорога: сначала конкуренция по цене, затем вылет с рынка. Конкуренции не существует, и подобно тому, как не существует двух одинаковых людей, так же не существует и двух одинаковых продуктов. Задача не победить, а выразить замысел. Маркетинг для нас — инструмент создания добавленной стоимости и способ строить саморазвивающиеся системы. Мы не стремимся быть понятными и удобными для всех, но с удовольствием и пользой работаем там, где общий язык всё-таки находится.",
+    quote: "Мы исходим из того, что продукт — это всегда проекция реальных ценностей на рынок. Поэтому берёмся за работу только тогда, когда слово соответствует делу.",
   },
 };
 
@@ -56,7 +56,7 @@ export default async function BureauService({ params }: Props) {
           <p className="service-essence">{product.essence}</p>
         </div>
         {voice ? (
-          <aside className="service-lead-aside">
+          <aside className={slug === "brand" ? "service-lead-aside service-lead-stack" : "service-lead-aside"}>
             <figure>
               <LeadVideo src={sitePath(voice.video)} poster={sitePath(voice.image)} />
               <figcaption className="service-lead-sign">{voice.name}<span>{voice.role}</span></figcaption>
