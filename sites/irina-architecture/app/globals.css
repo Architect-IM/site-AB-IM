@@ -1424,7 +1424,7 @@ p {text-wrap:pretty}
 .service-lead-stack figure{display:contents}
 .service-lead-stack .lead-video{grid-column:1;grid-row:1;width:100%}
 .service-lead-stack .lead-video video{aspect-ratio:1/1;object-position:50% 28%}
-.service-lead-stack blockquote{grid-column:2;grid-row:1 / span 2;align-self:center;margin:0;max-width:none;font-size:16px;line-height:1.5;font-weight:400;letter-spacing:0;color:#2a2b2e}
+.service-lead-stack blockquote{grid-column:2;grid-row:1 / span 2;align-self:center;margin:0;max-width:none;font-size:14.4px;line-height:1.5;font-weight:400;letter-spacing:0;color:#2a2b2e}
 .service-lead-stack blockquote::before{content:"«";display:block;margin:0 0 10px;font-size:72px;line-height:.72;font-weight:500;letter-spacing:-.04em;color:var(--ink)}
 .service-lead-stack .service-lead-sign{grid-column:1;grid-row:2;margin-top:12px}
 @media(max-width:1099px){.service-lead{display:block}.service-lead-aside{margin-top:36px;padding-top:0;grid-template-columns:min(264px,42vw) minmax(0,1fr)}.service-lead-stack{grid-template-columns:1fr 1fr;margin-top:36px;padding-top:0}}
