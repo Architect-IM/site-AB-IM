@@ -54,7 +54,7 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
       ]} />
 
       <section className="pp-path">
-        <img src={photo("img_0372")} alt="Пешеходный настил между корпусами" />
+        <img src={photo("img_0361")} alt="Фасад шоколадной фабрики" />
         <div>
           <p className="pp-kicker">Маршрут уже есть</p>
           <h2>От пряника к шоколаду — пешком.</h2>
@@ -64,7 +64,7 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
       </section>
 
       <div className="pp-pair">
-        <figure><img src={photo("img_0361")} alt="Настил через берёзовый лес" /><figcaption>Настил через берёзы</figcaption></figure>
+        <figure><img src={photo("img_0372")} alt="Пешеходный настил паркового маршрута" /><figcaption>Настил паркового маршрута</figcaption></figure>
         <figure><img src={photo("img_0415")} alt="Лесная тропа на территории" /><figcaption>Тропа, с которой начнётся парк</figcaption></figure>
       </div>
 
