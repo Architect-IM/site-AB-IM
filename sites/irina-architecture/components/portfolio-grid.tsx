@@ -67,7 +67,8 @@ export function PortfolioGrid() {
                       return <li key={id}>{tag ? <a href={sitePath(tag.href)}>{tag.label}</a> : null}</li>;
                     })}
                   </ul>
-                ) : <p>{project.description}</p>}
+                ) : null}
+                {project.slug === "pokrovskiy-pryanik" ? <p className="work-quote">— Увидели не руины, а возможности.</p> : project.tags.length === 0 ? <p>{project.description}</p> : null}
               </div>
               <span className="work-number">{String(projects.indexOf(project) + 1).padStart(2, "0")}</span>
             </div>
