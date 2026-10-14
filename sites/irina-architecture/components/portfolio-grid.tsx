@@ -52,7 +52,7 @@ export function PortfolioGrid() {
             <a href={sitePath(`/portfolio/${project.slug}`)}>
               <div className="work-image media-frame">
                 <img src={sitePath(`/assets/${project.image}.jpg`)} alt={project.name} loading={index === 0 ? "eager" : "lazy"} style={"imagePosition" in project && project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
-                {project.tags.length === 0 ? <span className="image-tag">{project.status} · {project.year}</span> : null}
+                <span className="image-tag">{project.status} · {project.year}</span>
                 <span className="work-view">Смотреть</span>
               </div>
             </a>
