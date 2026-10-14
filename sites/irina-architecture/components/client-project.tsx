@@ -99,9 +99,13 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
         </article>
       </section>
 
-      <div className="pp-wide">
-        <img src={photo("img_0339")} alt="Шоколадная витрина в обновлённом корпусе" />
-      </div>
+      <PhotoRail photos={[
+        { src: photo("img_0366"), alt: "Уличный настил у шоколадной фабрики" },
+        { src: photo("img_0396"), alt: "Вход пряничной фабрики с площади" },
+        { src: photo("img_0339"), alt: "Шоколадная витрина" },
+        { src: photo("img_0413"), alt: "Парк: вид с настила через берёзы" },
+        { src: photo("img_0407"), alt: "Домик в парке среди берёз" },
+      ]} />
 
       <section className="pp-two">
         <div>
