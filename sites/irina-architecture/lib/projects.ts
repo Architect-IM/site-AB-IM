@@ -1,8 +1,8 @@
 export const productTags = [
-  { id: "hospitality", label: "Живое гостеприимство", side: "architect" },
-  { id: "stage-p", label: "Стадия П", side: "bureau" },
-  { id: "stage-r", label: "Стадия Р", side: "bureau" },
-  { id: "survey", label: "Обследование", side: "bureau" },
+  { id: "hospitality", label: "Живое гостеприимство", side: "architect", href: "/#hospitality" },
+  { id: "stage-p", label: "Стадия П", side: "bureau", href: "/bureau/uslugi/stage-p" },
+  { id: "stage-r", label: "Стадия Р", side: "bureau", href: "/bureau/uslugi/stage-r" },
+  { id: "survey", label: "Обследование", side: "bureau", href: "/bureau/uslugi/survey" },
 ] as const;
 
 export type ProductTagId = (typeof productTags)[number]["id"];

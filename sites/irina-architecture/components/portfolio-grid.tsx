@@ -48,25 +48,30 @@ export function PortfolioGrid() {
       {visible.length === 0 ? <p className="portfolio-empty">Таких работ пока нет.</p> : null}
       <div className="portfolio-grid">
         {visible.map((project, index) => (
-          <a href={sitePath(`/portfolio/${project.slug}`)} key={project.slug} className="work-card">
-            <div className="work-image media-frame">
-              <img src={sitePath(`/assets/${project.image}.jpg`)} alt={project.name} loading={index === 0 ? "eager" : "lazy"} style={"imagePosition" in project && project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
-              {project.tags.length === 0 ? <span className="image-tag">{project.status} · {project.year}</span> : null}
-              <span className="work-view">Смотреть</span>
-            </div>
+          <article key={project.slug} className="work-card">
+            <a href={sitePath(`/portfolio/${project.slug}`)}>
+              <div className="work-image media-frame">
+                <img src={sitePath(`/assets/${project.image}.jpg`)} alt={project.name} loading={index === 0 ? "eager" : "lazy"} style={"imagePosition" in project && project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
+                {project.tags.length === 0 ? <span className="image-tag">{project.status} · {project.year}</span> : null}
+                <span className="work-view">Смотреть</span>
+              </div>
+            </a>
             <div className="work-meta">
               <div>
                 {project.tags.length === 0 ? <span className="project-kicker">{project.category} · {project.place}</span> : null}
-                <h2>{project.name}</h2>
+                <h2><a href={sitePath(`/portfolio/${project.slug}`)}>{project.name}</a></h2>
                 {project.tags.length ? (
                   <ul className="work-tags">
-                    {project.tags.map((id) => <li key={id}>{tagOf(id)?.label}</li>)}
+                    {project.tags.map((id) => {
+                      const tag = tagOf(id);
+                      return <li key={id}>{tag ? <a href={sitePath(tag.href)}>{tag.label}</a> : null}</li>;
+                    })}
                   </ul>
                 ) : <p>{project.description}</p>}
               </div>
               <span className="work-number">{String(projects.indexOf(project) + 1).padStart(2, "0")}</span>
             </div>
-          </a>
+          </article>
         ))}
       </div>
     </div>
