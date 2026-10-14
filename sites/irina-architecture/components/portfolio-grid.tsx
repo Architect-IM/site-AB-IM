@@ -60,7 +60,7 @@ export function PortfolioGrid() {
               <div>
                 {project.tags.length === 0 ? <span className="project-kicker">{project.category} · {project.place}</span> : null}
                 <h2><a href={sitePath(`/portfolio/${project.slug}`)}>{project.name}</a></h2>
-                {project.slug === "pokrovskiy-pryanik" ? <p className="work-quote">— Увидели не руины, а возможности.</p> : project.tags.length === 0 ? <p>{project.description}</p> : null}
+                {project.slug === "pokrovskiy-pryanik" ? <p className="work-quote">— Печатный пряник, который стал местом.</p> : project.tags.length === 0 ? <p>{project.description}</p> : null}
                 {project.tags.length ? (
                   <ul className="work-tags">
                     {project.tags.map((id) => {
