@@ -49,7 +49,7 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
         { src: photo("img_0350"), alt: "Фасад шоколадной фабрики" },
         { src: photo("img_0276"), alt: "Зал фабрики: часы, лестница, витрина" },
         { src: photo("img_0334"), alt: "Шоколадные фонтаны" },
-        { src: photo("img_0338"), alt: "Витрина шоколадной фабрики" },
+        { src: photo("img_0323"), alt: "Корпус на территории, вид сквозь сосны" },
         { src: photo("img_0344"), alt: "Полки шоколадной фабрики" },
       ]} />
 
