@@ -1,4 +1,4 @@
-0:{"page:/":"$L1","layout:/":"$L2","route:/":"$L3","__route":"route:/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/":"[\"page\",\"page:/\",\"root-boundary:/\",\"\"]"},"__srcPage":["page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:1177fd80f83fa7b0","deploymentVersion":"4fae1355-0b46-4463-a731-d38cc8afc7d9","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
+0:{"page:/":"$L1","layout:/":"$L2","route:/":"$L3","__route":"route:/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/":"[\"page\",\"page:/\",\"root-boundary:/\",\"\"]"},"__srcPage":["page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:1177fd80f83fa7b0","deploymentVersion":"2a139649-7d7b-43e6-b543-1b083fc99b6c","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
 4:I["4715d14f82e4",[],"Header",1]
 5:I["74f944bd09a9",[],"Children",1]
 6:I["eedcf459879d",[],"Footer",1]
@@ -11,11 +11,11 @@ c:I["74f944bd09a9",[],"Slot",1]
 d:I["52529b92208a",[],"NotFoundBoundary",1]
 e:I["78579b1089e4",[],"AppRouterScrollTarget",1]
 f:I["52529b92208a",[],"RedirectBoundary",1]
-:HL["/site-AB-IM/irina/_next/static/css/index.GThoXC8i.css","style"     ]
-:HL["https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&display=swap","style"     ]
-2:[[["$","link","css:/site-AB-IM/irina/_next/static/css/index.GThoXC8i.css",{"rel":"stylesheet","precedence":"vite-rsc/importer-resources","href":"/site-AB-IM/irina/_next/static/css/index.GThoXC8i.css","data-rsc-css-href":"/site-AB-IM/irina/_next/static/css/index.GThoXC8i.css"}],"$undefined"],["$","html",null,{"lang":"ru","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#content","children":"Перейти к содержанию"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]
+:HL["/site-AB-IM/irina/_next/static/css/index.9rPDUOVh.css","style"     ]
+:HL["https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap","style"     ]
+2:[[["$","link","css:/site-AB-IM/irina/_next/static/css/index.9rPDUOVh.css",{"rel":"stylesheet","precedence":"vite-rsc/importer-resources","href":"/site-AB-IM/irina/_next/static/css/index.9rPDUOVh.css","data-rsc-css-href":"/site-AB-IM/irina/_next/static/css/index.9rPDUOVh.css"}],"$undefined"],["$","html",null,{"lang":"ru","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#content","children":"Перейти к содержанию"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]
 3:[[["$","meta",null,{"charSet":"utf-8"}],[["$","title","0",{"children":"Ирина Михейкина — архитектор"}],["$","meta","1",{"name":"description","content":"Современная архитектура в контексте места. Архитектор Ирина Михейкина, проектное бюро полного цикла и лаборатория «Владимир»."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"data-vinext-streamed-icon":"$undefined","rel":"shortcut icon","href":"/site-AB-IM/irina/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}],["$","link","4",{"data-vinext-streamed-icon":"$undefined","rel":"icon","href":"/site-AB-IM/irina/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}]],[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]],["$","$L8",null,{"fallback":"$9","children":["$","$La",null,{"fallback":"$9","children":["$","$Lb",null,{"providerId":"layout:/","segmentMap":{"children":[]},"children":["$","$Lc",null,{"id":"layout:/","parallelSlots":"$undefined","children":["$","$Ld",null,{"resetKey":"","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/irina/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Ld",null,{"resetKey":"","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/irina/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Le",null,{"children":["$","$Lf",null,{"children":[["$","$Lb",null,{"providerId":"page:/","segmentMap":{"children":["__PAGE__"]},"children":["$","$Lc",null,{"id":"page:/"}]}],null]}]}]}]}]}]}]}]}],null,null]
-10:T3c54,
+10:T3db2,
     <section class="hero" id="top" aria-label="Создаю многослойные, осмысленные проекты">
       <div class="hero-media" aria-hidden="true">
         <div class="hero-panel">
@@ -90,7 +90,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
       <div class="direction-grid">
         <a href="/site-AB-IM/irina/napravleniya/vladimir" class="direction-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/irina/assets/territory.jpg" alt="Архитектурная концепция территории" loading="lazy">
+            <img src="/site-AB-IM/irina/assets/vladimir-assumption-context.jpg" alt="Владимир: Успенский собор и городская панорама" loading="lazy">
             
           </div>
           <div class="direction-meta">
@@ -103,7 +103,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
           </div>
         </a>
 
-        <a href="/site-AB-IM/irina/portfolio" class="direction-card direction-fullbleed reveal">
+        <a href="/site-AB-IM/irina/portfolio" id="hospitality" class="direction-card direction-fullbleed reveal">
           <div class="media-frame">
             <img src="/site-AB-IM/irina/assets/resort.jpg" alt="Туристический комплекс в природном ландшафте" loading="lazy">
             
@@ -162,7 +162,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
       <div class="project-grid">
         <a href="/site-AB-IM/irina/portfolio/usadba" class="project-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/irina/assets/mansion.jpg" alt="Дом у бора" loading="lazy">
+            <img src="/site-AB-IM/irina/assets/architect-usadba-family.jpg" alt="Дом у бора" loading="lazy">
             <span class="image-tag">Реализован · 2024</span>
           </div>
           <div class="project-meta">
@@ -222,12 +222,6 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
       </div>
     </section>
 
-    <div class="practice-overview"><section class="practice-panel reveal" id="bureau" aria-labelledby="bureau-overview-title"><div><p class="section-label home-section-label">04 — Проектное бюро</p><h2 id="bureau-overview-title">От замысла до площадки</h2></div><div class="practice-panel-copy"><p>Инженерная, градостроительная, экономическая и сервисная экспертиза. Своя команда ведёт проект как единую систему — от предпроектного анализа и рабочей документации до авторского надзора и управления строительством.</p><div class="practice-panel-image"><img src="/site-AB-IM/irina/assets/bureau.jpg" alt="Работа архитектурного бюро" loading="lazy"></div><a class="text-link" href="/site-AB-IM/irina/bureau">
-            <span>Начать диалог с бюро</span>
-            
-          </a></div></section><section class="practice-panel reveal" id="lab" aria-labelledby="lab-overview-title"><div><p class="section-label home-section-label">05 — Лаборатория</p><h2 id="lab-overview-title">Лаборатория «Владимир»</h2></div><div class="practice-panel-copy"><p>Независимый исследовательский проект по сохранению и развитию архитектурно-пространственного кода Владимирской земли. Исследуем наследие и ищем, как его принципы работают в современных условиях.</p><div class="practice-panel-image"><img src="/site-AB-IM/irina/assets/lab.jpg" alt="Исследование архитектурного наследия Владимира" loading="lazy"></div><a class="text-link" href="/site-AB-IM/irina/lab">
-          <span>Узнать о лаборатории</span>
-          
-        </a></div></section></div>
+    <div class="practice-overview"><section class="practice-panel reveal" id="bureau" aria-labelledby="bureau-overview-title"><div class="practice-panel-image" aria-hidden="true"><img src="/site-AB-IM/irina/assets/bureau.jpg" alt="" loading="lazy"></div><div><p class="section-label home-section-label">04 — Проектное бюро</p><h2 id="bureau-overview-title">От замысла до площадки</h2></div><div class="practice-panel-copy"><p>Инженерная, градостроительная, экономическая и сервисная экспертиза. Своя команда ведёт проект как единую систему — от предпроектного анализа и рабочей документации до авторского надзора и управления строительством.</p><a class="hero-action" href="/site-AB-IM/irina/bureau"><span class="hero-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Начать диалог с бюро</span></a></div></section><section class="practice-panel reveal" id="lab" aria-labelledby="lab-overview-title"><div class="practice-panel-image" aria-hidden="true"><img src="/site-AB-IM/irina/assets/lab.jpg" alt="" loading="lazy"></div><div><p class="section-label home-section-label">05 — Лаборатория</p><h2 id="lab-overview-title">Лаборатория «Владимир»</h2></div><div class="practice-panel-copy"><p>Независимый исследовательский проект по сохранению и развитию архитектурно-пространственного кода Владимирской земли. Исследуем наследие и ищем, как его принципы работают в современных условиях.</p><a class="hero-action" href="/site-AB-IM/irina/lab"><span class="hero-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Узнать о лаборатории</span></a></div></section></div>
 
     1:["$","main",null,{"id":"content","dangerouslySetInnerHTML":{"__html":"$10"}}]
