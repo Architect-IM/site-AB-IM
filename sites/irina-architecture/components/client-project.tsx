@@ -102,7 +102,7 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
       <PhotoRail photos={[
         { src: photo("img_0366"), alt: "Уличный настил у шоколадной фабрики" },
         { src: photo("img_0396"), alt: "Вход пряничной фабрики с площади" },
-        { src: photo("img_0339"), alt: "Шоколадная витрина" },
+        { src: photo("img_0300"), alt: "Фирменный магазин «Покровский пряник»" },
         { src: photo("img_0413"), alt: "Парк: вид с настила через берёзы" },
         { src: photo("img_0407"), alt: "Домик в парке среди берёз" },
       ]} />
