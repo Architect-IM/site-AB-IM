@@ -10,5 +10,5 @@ export const metadata: Metadata = {
   icons: { icon: sitePath("/favicon.svg"), shortcut: sitePath("/favicon.svg") },
 };
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
-  return <html lang="ru"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&display=swap" rel="stylesheet"/></head><body><a className="skip-link" href="#content">Перейти к содержанию</a><Header/>{children}<Footer/><SiteEffects/></body></html>;
+  return <html lang="ru"><head><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap" rel="stylesheet"/></head><body><a className="skip-link" href="#content">Перейти к содержанию</a><Header/>{children}<Footer/><SiteEffects/></body></html>;
 }
