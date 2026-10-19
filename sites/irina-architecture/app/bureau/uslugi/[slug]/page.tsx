@@ -4,12 +4,13 @@ import { notFound } from "next/navigation";
 import { LeadVideo } from "@/components/lead-video";
 import { FinanceExample } from "@/components/finance-example";
 import { BrandPath } from "@/components/brand-path";
+import { BrandRecord } from "@/components/brand-record";
 import { FinanceRecord } from "@/components/finance-record";
-import { bureauProduct, bureauProducts } from "@/lib/bureau-products";
+import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
 
-const voices: Record<string, { image: string; video: string; name: string; role: string; quote: string }> = {
+const voices: Record<string, { image: string; video: string; name: string; role: string; quote: string; stacked?: boolean }> = {
   finance: {
     image: "/assets/finance-voice.jpg",
     video: "/assets/finance-voice.mp4",
@@ -22,6 +23,7 @@ const voices: Record<string, { image: string; video: string; name: string; role:
     video: "/assets/brand-voice.mp4",
     name: "Михаил Лункин",
     role: "маркетолог бюро",
+    stacked: true,
     quote: "Говорят, что нужно быть, а не казаться. Всё так. Но казаться тоже надо уметь. Даже если у вас золото: любой товар важно уметь представить лицом. Мы помогаем любое дело превратить в продукт и сформировать на него платежеспособный спрос.",
   },
 };
@@ -34,62 +36,122 @@ const sections = [
   ["next", "Формат и следующий шаг"],
 ] as const;
 
+const marketingSlugs = new Set(["marketing", "finance", "brand", "comms"]);
+
+function ProductCard({ product }: { product: BureauProduct }) {
+  return (
+    <section className="section service-sections">
+      {sections.map(([key, label]) => (
+        <div key={key}>
+          <p className="section-label">{label}</p>
+          <p>{product[key]}</p>
+        </div>
+      ))}
+    </section>
+  );
+}
+
+function Voice({ slug }: { slug: string }) {
+  const voice = voices[slug];
+  if (!voice) return null;
+  return (
+    <aside className={voice.stacked ? "service-lead-aside service-lead-stack" : "service-lead-aside"}>
+      <figure>
+        <LeadVideo src={sitePath(voice.video)} poster={sitePath(voice.image)} />
+        <figcaption className="service-lead-sign">{voice.name}<span>{voice.role}</span></figcaption>
+      </figure>
+      <blockquote>{voice.quote}</blockquote>
+    </aside>
+  );
+}
+
+function MarketingObject() {
+  const finance = bureauProduct("finance")!;
+  const brand = bureauProduct("brand")!;
+  const comms = bureauProduct("comms")!;
+
+  return (
+    <main id="content" className="inner-page bureau-page service-page">
+      <section className="page-intro">
+        <p className="section-label"><a href={sitePath("/bureau#marketing")}>← Маркетинг объекта</a></p>
+        <h1>Маркетинг объекта</h1>
+        <p className="service-essence">Деньги, смысл и разговор об объекте ведутся вместе.</p>
+      </section>
+
+      <article className="marketing-chapter" id="finance">
+        <section className="page-intro service-lead">
+          <div>
+            <p className="section-label">01</p>
+            <h2>{finance.title}</h2>
+            <p className="service-essence">{finance.essence}</p>
+          </div>
+          <Voice slug="finance" />
+        </section>
+        <section className="finance-method">
+          <h2>Как это делается</h2>
+          <p>Мы проводим все необходимые интервью и расчёты: что за объект, какие решения уже есть, откуда берутся деньги и доход. Потом собираем все цифры в таблицы, перепроверяем их на достоверность и полноту. После этого показываем результат инфографикой на закрытом сайте проекта, который мы делаем для каждого заказчика и храним там этот архив всех данных по его проекту.</p>
+          <p className="finance-method-next">Ниже — пример.</p>
+        </section>
+        <FinanceExample />
+        <FinanceRecord />
+        <ProductCard product={finance} />
+      </article>
+
+      <article className="marketing-chapter" id="brand">
+        <section className="page-intro service-lead">
+          <div>
+            <p className="section-label">02</p>
+            <h2>{brand.title}</h2>
+            <p className="service-essence">{brand.essence}</p>
+          </div>
+          <Voice slug="brand" />
+        </section>
+        <section className="finance-method brand-method">
+          <h2>Как это делаем мы</h2>
+        </section>
+        <BrandPath />
+        <BrandRecord />
+        <ProductCard product={brand} />
+      </article>
+
+      <article className="marketing-chapter" id="comms">
+        <section className="page-intro">
+          <p className="section-label">03</p>
+          <h2>{comms.title}</h2>
+          <p className="service-essence">{comms.essence}</p>
+        </section>
+        <ProductCard product={comms} />
+      </article>
+    </main>
+  );
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  if (marketingSlugs.has(slug)) {
+    return { title: "Маркетинг объекта — бюро", description: "Финансовая модель, бренд и коммуникации объекта — одним материалом." };
+  }
   const product = bureauProduct(slug);
   return { title: product ? `${product.title} — бюро` : "Страница не найдена", description: product?.essence };
 }
 
 export default async function BureauService({ params }: Props) {
   const { slug } = await params;
+  if (marketingSlugs.has(slug)) return <MarketingObject />;
+
   const product = bureauProduct(slug);
   if (!product) notFound();
 
-  const voice = voices[slug];
-
   return (
     <main id="content" className="inner-page bureau-page service-page">
-      <section className={voice ? "page-intro service-lead" : "page-intro"}>
+      <section className="page-intro">
         <div>
           <p className="section-label"><a href={sitePath(`/bureau#${product.groupId}`)}>← {product.groupTitle}</a></p>
           <h1>{product.title}</h1>
           <p className="service-essence">{product.essence}</p>
         </div>
-        {voice ? (
-          <aside className={slug === "brand" ? "service-lead-aside service-lead-stack" : "service-lead-aside"}>
-            <figure>
-              <LeadVideo src={sitePath(voice.video)} poster={sitePath(voice.image)} />
-              <figcaption className="service-lead-sign">{voice.name}<span>{voice.role}</span></figcaption>
-            </figure>
-            <blockquote>{voice.quote}</blockquote>
-          </aside>
-        ) : null}
       </section>
-      {slug === "finance" ? (
-        <section className="finance-method">
-          <h2>Как это делается</h2>
-          <p>Мы проводим все необходимые интервью и расчёты: что за объект, какие решения уже есть, откуда берутся деньги и доход. Потом собираем все цифры в таблицы, перепроверяем их на достоверность и полноту. После этого показываем результат инфографикой на закрытом сайте проекта, который мы делаем для каждого заказчика и храним там этот архив всех данных по его проекту.</p>
-          <p className="finance-method-next">Ниже — пример.</p>
-        </section>
-      ) : null}
-      {slug === "brand" ? (
-        <section className="finance-method brand-method">
-          <h2>Как это делаем мы</h2>
-        </section>
-      ) : null}
-      {slug === "finance" ? <FinanceExample /> : null}
-      {slug === "finance" ? <FinanceRecord /> : null}
-      {slug === "brand" ? <BrandPath /> : null}
-      {slug === "finance" || slug === "brand" ? null : (
-      <section className="section service-sections">
-        {sections.map(([key, label]) => (
-          <div key={key}>
-            <p className="section-label">{label}</p>
-            <p>{product[key]}</p>
-          </div>
-        ))}
-      </section>
-      )}
+      <ProductCard product={product} />
     </main>
   );
 }
