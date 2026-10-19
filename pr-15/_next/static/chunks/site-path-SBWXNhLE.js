@@ -1,0 +1,1 @@
+var e=`/site-AB-IM/pr-15`;function t(t){return!t.startsWith(`/`)||t.startsWith(`//`)||t===`/site-AB-IM/pr-15`||t.startsWith(`/site-AB-IM/pr-15/`)?t:`${e}${t}`}function n(e){return e===`/site-AB-IM/pr-15`||e.startsWith(`/site-AB-IM/pr-15/`)?e.slice(17)||`/`:e}export{t as n,n as r,e as t};
