@@ -320,7 +320,7 @@
     .hero-panel img {
       height: 100%;
       object-fit: cover;
-      filter: saturate(0.45) contrast(1.04);
+      filter: saturate(0.64) contrast(1.04);
       transform: scale(1.015);
       transition: filter 700ms ease, transform 1.2s cubic-bezier(.2,.7,.2,1);
     }
@@ -330,7 +330,7 @@
     }
 
     .hero-panel:last-child img {
-      object-position: 56% 50%;
+      object-position: 50% 50%;
     }
 
     .hero:hover .hero-panel img {
@@ -1068,7 +1068,7 @@
       }
 
       .hero-panel:last-child img {
-        object-position: 56% 50%;
+        object-position: 50% 50%;
       }
 
       .hero::before {
