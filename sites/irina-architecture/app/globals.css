@@ -330,7 +330,7 @@
     }
 
     .hero-panel:last-child img {
-      object-position: 56% 50%;
+      object-position: 56% 70%;
     }
 
     .hero:hover .hero-panel img {
@@ -1068,7 +1068,7 @@
       }
 
       .hero-panel:last-child img {
-        object-position: 56% 50%;
+        object-position: 56% 70%;
       }
 
       .hero::before {
