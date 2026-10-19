@@ -1,4 +1,4 @@
-0:{"page:/architect":"$L1","layout:/":"$L2","route:/architect":"$L3","__route":"route:/architect","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/architect":"[\"page\",\"page:/architect\",\"root-boundary:/\",\"[\\\"architect\\\"]\"]"},"__srcPage":["architect","page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:5f4fc57c4c7b75c2","deploymentVersion":"ccf43b32-7321-41d0-b72b-4434e588d1d9","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
+0:{"page:/architect":"$L1","layout:/":"$L2","route:/architect":"$L3","__route":"route:/architect","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/architect":"[\"page\",\"page:/architect\",\"root-boundary:/\",\"[\\\"architect\\\"]\"]"},"__srcPage":["architect","page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:5f4fc57c4c7b75c2","deploymentVersion":"cc5d6a62-6618-4f81-8d7f-dafef7e7f717","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
 4:I["4715d14f82e4",[],"Header",1]
 5:I["74f944bd09a9",[],"Children",1]
 6:I["eedcf459879d",[],"Footer",1]
@@ -15,7 +15,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
 :HL["https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap","style"     ]
 2:[[["$","link","css:/site-AB-IM/mihail/_next/static/css/index.C-LsaBna.css",{"rel":"stylesheet","precedence":"vite-rsc/importer-resources","href":"/site-AB-IM/mihail/_next/static/css/index.C-LsaBna.css","data-rsc-css-href":"/site-AB-IM/mihail/_next/static/css/index.C-LsaBna.css"}],"$undefined"],["$","html",null,{"lang":"ru","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#content","children":"Перейти к содержанию"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]
 3:[[["$","meta",null,{"charSet":"utf-8"}],[["$","title","0",{"children":"Ирина Михейкина — архитектор"}],["$","meta","1",{"name":"description","content":"Современная архитектура в контексте места. Архитектор Ирина Михейкина, проектное бюро полного цикла и лаборатория «Владимир»."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"data-vinext-streamed-icon":"$undefined","rel":"shortcut icon","href":"/site-AB-IM/mihail/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}],["$","link","4",{"data-vinext-streamed-icon":"$undefined","rel":"icon","href":"/site-AB-IM/mihail/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}]],[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]],["$","$L8",null,{"fallback":"$9","children":["$","$La",null,{"fallback":"$9","children":["$","$Lb",null,{"providerId":"layout:/","segmentMap":{"children":["architect"]},"children":["$","$Lc",null,{"id":"layout:/","parallelSlots":"$undefined","children":["$","$Ld",null,{"resetKey":"architect","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/mihail/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Ld",null,{"resetKey":"[\"architect\"]","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/mihail/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Le",null,{"children":["$","$Lf",null,{"children":[["$","$Lb",null,{"providerId":"page:/architect","segmentMap":{"children":["__PAGE__"]},"children":["$","$Lc",null,{"id":"page:/architect"}]}],null]}]}]}]}]}]}]}]}],null,null]
-10:T3cf9,
+10:T3cbf,
     <section class="hero" id="top" aria-label="Создаю многослойные, осмысленные проекты">
       <div class="hero-media" aria-hidden="true">
         <div class="hero-panel">
@@ -160,65 +160,66 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
       </div>
 
       <div class="project-grid">
-        <a href="/site-AB-IM/mihail/portfolio/usadba" class="project-card reveal">
+        <a href="/site-AB-IM/mihail/portfolio/pokrovskiy-pryanik" class="project-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/mihail/assets/mansion.jpg" alt="Дом у бора" loading="lazy">
-            <span class="image-tag">Реализован · 2024</span>
+            <img src="/site-AB-IM/mihail/assets/portfolio/pokrovskiy-pryanik/img_0356.jpg" alt="Покровский пряник" loading="lazy" style="object-position:center 22%">
+            <span class="image-tag">В работе · 2026</span>
           </div>
           <div class="project-meta">
             <div>
-              <span class="project-kicker">Частный дом · Владимирский край</span>
-              <h3>Дом у бора</h3>
-              <p>Спокойная архитектурная рама для света и лесного ландшафта.</p>
+              <span class="project-kicker">Гостеприимство · Покров</span>
+              <h3>Покровский пряник</h3>
+              <p>Печатный пряник, который стал местом.</p>
             </div>
             
           </div>
         </a>
 
-        <a href="/site-AB-IM/mihail/portfolio/complex" class="project-card reveal">
+        <a href="/site-AB-IM/mihail/portfolio/dobrograd" class="project-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/mihail/assets/resort.jpg" alt="Двор на склоне" loading="lazy">
-            <span class="image-tag">Реализован · 2024</span>
+            <img src="/site-AB-IM/mihail/assets/portfolio/dobrograd/01.jpg" alt="Доброград" loading="lazy">
+            <span class="image-tag">Построено</span>
           </div>
           <div class="project-meta">
             <div>
-              <span class="project-kicker">Гостеприимство · Владимирский край</span>
-              <h3>Двор на склоне</h3>
-              <p>Каменные и деревянные павильоны вокруг живого общего двора.</p>
+              <span class="project-kicker">Гостеприимство · Доброград</span>
+              <h3>Доброград</h3>
+              <p>Кирпич и дерево, которые уже стоят на снегу.</p>
             </div>
             
           </div>
         </a>
 
-        <a href="/site-AB-IM/mihail/portfolio/lodge" class="project-card reveal">
+        <a href="/site-AB-IM/mihail/portfolio/kabardinka" class="project-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/mihail/assets/lodge.jpg" alt="Ночной сруб" loading="lazy">
-            <span class="image-tag">В работе · 2024</span>
+            <img src="/site-AB-IM/mihail/assets/portfolio/kabardinka/01.jpg" alt="Гостиница Кабардинка" loading="lazy">
+            <span class="image-tag">Проект</span>
           </div>
           <div class="project-meta">
             <div>
-              <span class="project-kicker">Гостеприимство · Владимирский край</span>
-              <h3>Ночной сруб</h3>
-              <p>Спа-лодж со сдержанным внутренним светом и выразительной фактурой дерева.</p>
+              <span class="project-kicker">Гостеприимство · Кабардинка</span>
+              <h3>Гостиница Кабардинка</h3>
+              <p>Гостиница, которую сначала читаешь со въезда.</p>
             </div>
             
           </div>
         </a>
 
-        <a href="/site-AB-IM/mihail/portfolio/chapel" class="project-card reveal">
+        <a href="/site-AB-IM/mihail/portfolio/ivan-zaitsev" class="project-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/mihail/assets/chapel.jpg" alt="Белая щель" loading="lazy">
-            <span class="image-tag">Реализован · 2024</span>
+            <img src="/site-AB-IM/mihail/assets/portfolio/ivan-zaitsev/01.jpg" alt="Иван Зайцев" loading="lazy">
+            <span class="image-tag">Построено</span>
           </div>
           <div class="project-meta">
             <div>
-              <span class="project-kicker">Храм · Владимирский край</span>
-              <h3>Белая щель</h3>
-              <p>Белый камень, дерево и одно высокое окно как главный источник света.</p>
+              <span class="project-kicker">Баня · Камешково</span>
+              <h3>Иван Зайцев</h3>
+              <p>Баня, которая держит луг и воду одним навесом.</p>
             </div>
             
           </div>
         </a>
+</a>
       </div>
     </section>
 
