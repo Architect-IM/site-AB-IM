@@ -9,7 +9,7 @@ const steps = [
   ["05", "До результата", "Если стратегия принята и в ней нужна наша помощь, мы будем работать. Коммуникации, сайт, СМИ, дизайн — любые маркетинговые задачи. Поможем пройти весь путь. Вы творите замысел. Мы его держим."],
 ];
 
-const shown = ["pokrovskiy-pryanik", "usadba", "complex"].map((slug) => projects.find((project) => project.slug === slug)!);
+const shown = ["pokrovskiy-pryanik", "dobrograd", "ivan-zaitsev"].map((slug) => projects.find((project) => project.slug === slug)!);
 
 export function BrandPath() {
   return (

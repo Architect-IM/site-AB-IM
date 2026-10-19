@@ -52,7 +52,7 @@ export function PortfolioGrid() {
             <a href={sitePath(`/portfolio/${project.slug}`)}>
               <div className="work-image media-frame">
                 <img src={sitePath(`/assets/${project.image}.jpg`)} alt={project.name} loading={index === 0 ? "eager" : "lazy"} style={"imagePosition" in project && project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
-                <span className="image-tag">{project.status} · {project.year}</span>
+                <span className="image-tag">{project.year ? `${project.status} · ${project.year}` : project.status}</span>
                 <span className="work-view">Смотреть</span>
               </div>
             </a>
@@ -60,7 +60,7 @@ export function PortfolioGrid() {
               <div>
                 {project.tags.length === 0 ? <span className="project-kicker">{project.category} · {project.place}</span> : null}
                 <h2><a href={sitePath(`/portfolio/${project.slug}`)}>{project.name}</a></h2>
-                {project.slug === "pokrovskiy-pryanik" ? <p className="work-quote">— Печатный пряник, который стал местом.</p> : project.tags.length === 0 ? <p>{project.description}</p> : null}
+                <p className="work-quote">— {project.caption}</p>
                 {project.tags.length ? (
                   <ul className="work-tags">
                     {project.tags.map((id) => {
