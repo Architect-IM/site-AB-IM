@@ -29,7 +29,7 @@ export default async function VladimirService({ params }: Props) {
         <h1>{service.title}</h1>
         <p className={styles.detailLead}>{service.description}</p>
       </header>
-      <figure className={styles.detailImage}>
+      <figure className={`${styles.detailImage}${service.slug === "ago" ? ` ${styles.agoDetailImage}` : ""}`}>
         <img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" />
       </figure>
       <div className={styles.detailSections}>
