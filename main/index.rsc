@@ -1,4 +1,4 @@
-0:{"page:/":"$L1","layout:/":"$L2","route:/":"$L3","__route":"route:/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/":"[\"page\",\"page:/\",\"root-boundary:/\",\"\"]"},"__srcPage":["page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:1177fd80f83fa7b0","deploymentVersion":"9c2cc116-b69e-49e7-ac01-41840361e1b6","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
+0:{"page:/":"$L1","layout:/":"$L2","route:/":"$L3","__route":"route:/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/":"[\"page\",\"page:/\",\"root-boundary:/\",\"\"]"},"__srcPage":["page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:1177fd80f83fa7b0","deploymentVersion":"f63cf875-1eca-40a6-a2cc-78e5d1b77c48","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
 4:I["4715d14f82e4",[],"Header",1]
 5:I["74f944bd09a9",[],"Children",1]
 6:I["eedcf459879d",[],"Footer",1]
@@ -11,18 +11,18 @@ c:I["74f944bd09a9",[],"Slot",1]
 d:I["52529b92208a",[],"NotFoundBoundary",1]
 e:I["78579b1089e4",[],"AppRouterScrollTarget",1]
 f:I["52529b92208a",[],"RedirectBoundary",1]
-:HL["/site-AB-IM/main/_next/static/css/index.9rPDUOVh.css","style"     ]
+:HL["/site-AB-IM/main/_next/static/css/index.C-LsaBna.css","style"     ]
 :HL["https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap","style"     ]
-2:[[["$","link","css:/site-AB-IM/main/_next/static/css/index.9rPDUOVh.css",{"rel":"stylesheet","precedence":"vite-rsc/importer-resources","href":"/site-AB-IM/main/_next/static/css/index.9rPDUOVh.css","data-rsc-css-href":"/site-AB-IM/main/_next/static/css/index.9rPDUOVh.css"}],"$undefined"],["$","html",null,{"lang":"ru","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#content","children":"Перейти к содержанию"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]
+2:[[["$","link","css:/site-AB-IM/main/_next/static/css/index.C-LsaBna.css",{"rel":"stylesheet","precedence":"vite-rsc/importer-resources","href":"/site-AB-IM/main/_next/static/css/index.C-LsaBna.css","data-rsc-css-href":"/site-AB-IM/main/_next/static/css/index.C-LsaBna.css"}],"$undefined"],["$","html",null,{"lang":"ru","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#content","children":"Перейти к содержанию"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]
 3:[[["$","meta",null,{"charSet":"utf-8"}],[["$","title","0",{"children":"Ирина Михейкина — архитектор"}],["$","meta","1",{"name":"description","content":"Современная архитектура в контексте места. Архитектор Ирина Михейкина, проектное бюро полного цикла и лаборатория «Владимир»."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"data-vinext-streamed-icon":"$undefined","rel":"shortcut icon","href":"/site-AB-IM/main/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}],["$","link","4",{"data-vinext-streamed-icon":"$undefined","rel":"icon","href":"/site-AB-IM/main/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}]],[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]],["$","$L8",null,{"fallback":"$9","children":["$","$La",null,{"fallback":"$9","children":["$","$Lb",null,{"providerId":"layout:/","segmentMap":{"children":[]},"children":["$","$Lc",null,{"id":"layout:/","parallelSlots":"$undefined","children":["$","$Ld",null,{"resetKey":"","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/main/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Ld",null,{"resetKey":"","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/main/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Le",null,{"children":["$","$Lf",null,{"children":[["$","$Lb",null,{"providerId":"page:/","segmentMap":{"children":["__PAGE__"]},"children":["$","$Lc",null,{"id":"page:/"}]}],null]}]}]}]}]}]}]}]}],null,null]
-10:T3d9a,
+10:T3c8f,
     <section class="hero" id="top" aria-label="Создаю многослойные, осмысленные проекты">
       <div class="hero-media" aria-hidden="true">
         <div class="hero-panel">
           <img src="/site-AB-IM/main/assets/portrait.jpg" alt="">
         </div>
         <div class="hero-panel">
-          <img src="/site-AB-IM/main/assets/mansion.jpg" alt="">
+          <img src="/site-AB-IM/main/assets/mansion-hero.jpg?flip=1" alt="">
         </div>
       </div>
 
@@ -82,7 +82,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
       <div class="section-head reveal">
         <div>
           <p class="section-label home-section-label">02 — Направления</p>
-          <h2>Четыре масштаба работы</h2>
+          <h2>Четыре направления работы</h2>
         </div>
         <span class="section-index">FIELDS / 04</span>
       </div>
@@ -120,7 +120,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
 
         <a href="/site-AB-IM/main/consulting" class="direction-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/main/assets/chapel.jpg" alt="Современная часовня из светлого камня" loading="lazy">
+            <img src="/site-AB-IM/main/assets/consulting-meeting.jpg?v=3" alt="Разговор в кабинете: стол, бумаги и два кресла" loading="lazy">
             
           </div>
           <div class="direction-meta">
@@ -135,7 +135,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
 
         <a href="/site-AB-IM/main/portfolio" class="direction-card direction-fullbleed reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/main/assets/house.jpg" alt="Современный частный дом" loading="lazy">
+            <img src="/site-AB-IM/main/assets/private-zaitsev.jpg?v=3" alt="Баня Ивана Зайцева" loading="lazy" style="object-position:center 48%">
             
           </div>
           <div class="direction-meta">
@@ -160,68 +160,75 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
       </div>
 
       <div class="project-grid">
-        <a href="/site-AB-IM/main/portfolio/usadba" class="project-card reveal">
+        <a href="/site-AB-IM/main/portfolio/pokrovskiy-pryanik" class="project-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/main/assets/architect-usadba-family.jpg" alt="Дом у бора" loading="lazy">
-            <span class="image-tag">Реализован · 2024</span>
+            <img src="/site-AB-IM/main/assets/portfolio/pokrovskiy-pryanik/img_0356.jpg" alt="Покровский пряник" loading="lazy" style="object-position:center 22%">
+            <span class="image-tag">В работе · 2026</span>
           </div>
           <div class="project-meta">
             <div>
-              <span class="project-kicker">Частный дом · Владимирский край</span>
-              <h3>Дом у бора</h3>
-              <p>Спокойная архитектурная рама для света и лесного ландшафта.</p>
+              <span class="project-kicker">Гостеприимство · Покров</span>
+              <h3>Покровский пряник</h3>
+              <p>Печатный пряник, который стал местом.</p>
             </div>
             
           </div>
         </a>
 
-        <a href="/site-AB-IM/main/portfolio/complex" class="project-card reveal">
+        <a href="/site-AB-IM/main/portfolio/dobrograd" class="project-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/main/assets/resort.jpg" alt="Двор на склоне" loading="lazy">
-            <span class="image-tag">Реализован · 2024</span>
+            <img src="/site-AB-IM/main/assets/portfolio/dobrograd/01.jpg" alt="Доброград" loading="lazy">
+            <span class="image-tag">Построено</span>
           </div>
           <div class="project-meta">
             <div>
-              <span class="project-kicker">Гостеприимство · Владимирский край</span>
-              <h3>Двор на склоне</h3>
-              <p>Каменные и деревянные павильоны вокруг живого общего двора.</p>
+              <span class="project-kicker">Гостеприимство · Доброград</span>
+              <h3>Доброград</h3>
+              <p>Кирпич и дерево, которые уже стоят на снегу.</p>
             </div>
             
           </div>
         </a>
 
-        <a href="/site-AB-IM/main/portfolio/lodge" class="project-card reveal">
+        <a href="/site-AB-IM/main/portfolio/kabardinka" class="project-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/main/assets/lodge.jpg" alt="Ночной сруб" loading="lazy">
-            <span class="image-tag">В работе · 2024</span>
+            <img src="/site-AB-IM/main/assets/portfolio/kabardinka/01.jpg" alt="Гостиница Кабардинка" loading="lazy">
+            <span class="image-tag">Проект</span>
           </div>
           <div class="project-meta">
             <div>
-              <span class="project-kicker">Гостеприимство · Владимирский край</span>
-              <h3>Ночной сруб</h3>
-              <p>Спа-лодж со сдержанным внутренним светом и выразительной фактурой дерева.</p>
+              <span class="project-kicker">Гостеприимство · Кабардинка</span>
+              <h3>Гостиница Кабардинка</h3>
+              <p>Гостиница, которую сначала читаешь со въезда.</p>
             </div>
             
           </div>
         </a>
 
-        <a href="/site-AB-IM/main/portfolio/chapel" class="project-card reveal">
+        <a href="/site-AB-IM/main/portfolio/ivan-zaitsev" class="project-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/main/assets/chapel.jpg" alt="Белая щель" loading="lazy">
-            <span class="image-tag">Реализован · 2024</span>
+            <img src="/site-AB-IM/main/assets/portfolio/ivan-zaitsev/01.jpg" alt="Иван Зайцев" loading="lazy">
+            <span class="image-tag">Построено</span>
           </div>
           <div class="project-meta">
             <div>
-              <span class="project-kicker">Храм · Владимирский край</span>
-              <h3>Белая щель</h3>
-              <p>Белый камень, дерево и одно высокое окно как главный источник света.</p>
+              <span class="project-kicker">Баня · Камешково</span>
+              <h3>Иван Зайцев</h3>
+              <p>Баня, которая держит луг и воду одним навесом.</p>
             </div>
             
           </div>
         </a>
+</a>
       </div>
     </section>
 
-    <div class="practice-overview"><section class="practice-panel reveal" id="bureau" aria-labelledby="bureau-overview-title"><div class="practice-panel-image" aria-hidden="true"><img src="/site-AB-IM/main/assets/bureau.jpg" alt="" loading="lazy"></div><div><p class="section-label home-section-label">04 — Проектное бюро</p><h2 id="bureau-overview-title">От замысла до площадки</h2></div><div class="practice-panel-copy"><p>Инженерная, градостроительная, экономическая и сервисная экспертиза. Своя команда ведёт проект как единую систему — от предпроектного анализа и рабочей документации до авторского надзора и управления строительством.</p><a class="hero-action" href="/site-AB-IM/main/bureau"><span class="hero-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Начать диалог с бюро</span></a></div></section><section class="practice-panel reveal" id="lab" aria-labelledby="lab-overview-title"><div class="practice-panel-image" aria-hidden="true"><img src="/site-AB-IM/main/assets/lab.jpg" alt="" loading="lazy"></div><div><p class="section-label home-section-label">05 — Лаборатория</p><h2 id="lab-overview-title">Лаборатория «Владимир»</h2></div><div class="practice-panel-copy"><p>Независимый исследовательский проект по сохранению и развитию архитектурно-пространственного кода Владимирской земли. Исследуем наследие и ищем, как его принципы работают в современных условиях.</p><a class="hero-action" href="/site-AB-IM/main/lab"><span class="hero-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Узнать о лаборатории</span></a></div></section></div>
+    <div class="practice-overview"><section class="practice-panel reveal" id="bureau" aria-labelledby="bureau-overview-title"><div><p class="section-label home-section-label">04 — Проектное бюро</p><h2 id="bureau-overview-title">От замысла до площадки</h2></div><div class="practice-panel-copy"><p>Инженерная, градостроительная, экономическая и сервисная экспертиза. Своя команда ведёт проект как единую систему — от предпроектного анализа и рабочей документации до авторского надзора и управления строительством.</p><div class="practice-panel-image"><img src="/site-AB-IM/main/assets/bureau.jpg" alt="Работа архитектурного бюро" loading="lazy"></div><a class="text-link" href="/site-AB-IM/main/bureau">
+            <span>Начать диалог с бюро</span>
+            
+          </a></div></section><section class="practice-panel reveal" id="lab" aria-labelledby="lab-overview-title"><div><p class="section-label home-section-label">05 — Лаборатория</p><h2 id="lab-overview-title">Лаборатория «Владимир»</h2></div><div class="practice-panel-copy"><p>Независимый исследовательский проект по сохранению и развитию архитектурно-пространственного кода Владимирской земли. Исследуем наследие и ищем, как его принципы работают в современных условиях.</p><div class="practice-panel-image"><img src="/site-AB-IM/main/assets/lab.jpg" alt="Исследование архитектурного наследия Владимира" loading="lazy"></div><a class="text-link" href="/site-AB-IM/main/lab">
+          <span>Узнать о лаборатории</span>
+          
+        </a></div></section></div>
 
     1:["$","main",null,{"id":"content","dangerouslySetInnerHTML":{"__html":"$10"}}]
