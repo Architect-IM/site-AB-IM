@@ -2,6 +2,7 @@
 import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import { vladimir, vladimirServices } from "@/lib/vladimir";
+import { VladimirVideo } from "./video-player";
 import styles from "./vladimir.module.css";
 
 export const metadata: Metadata = {
@@ -9,75 +10,67 @@ export const metadata: Metadata = {
   description: "Владимирский контекст: мастер-план территории, идеологическое и концептуальное проектирование, архитектурно-градостроительный облик и исследования. Архитектор Ирина Михейкина.",
 };
 
-function ServiceCopy({ index }: { index: number }) {
-  const service = vladimirServices[index];
+function CircleLink({ href, label, back = false, ariaLabel }: { href: string; label: string; back?: boolean; ariaLabel?: string }) {
   return (
-    <>
-      <p className={styles.eyebrow}>{service.number}</p>
-      <h2 id={`${service.slug}-title`}>{service.title}</h2>
-      <p>{service.description}</p>
-      <a className={styles.link} href={sitePath(service.href)} aria-label={`Подробнее: ${service.title}`}>
-        Подробнее <span aria-hidden="true">↗</span>
-      </a>
-    </>
+    <a className={styles.overviewLink} href={sitePath(href)} aria-label={ariaLabel}>
+      <span className={styles.linkIcon} aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d={back ? "M20 12H4m5-5-5 5 5 5" : "M4 12h16m-5-5 5 5-5 5"} stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      </span>
+      <span>{label}</span>
+    </a>
   );
 }
 
 export default function Vladimir() {
   return (
     <main id="content" className={`inner-page ${styles.page}`}>
-      <nav className={styles.breadcrumbs} aria-label="Навигация по разделу">
-        <a href={sitePath("/")}>← На главную</a>
-        <span aria-current="page">Владимирский контекст</span>
-      </nav>
-
       <section className={styles.hero} aria-labelledby="vladimir-title">
-        <div className={styles.heroImage}>
-          <img src={sitePath("/assets/territory.jpg")} alt="Поселение, храмы и зелёные берега реки в вечернем свете" fetchPriority="high" />
-        </div>
+        <VladimirVideo />
+        <nav className={styles.breadcrumbs} aria-label="Навигация по разделу">
+          <a href={sitePath("/")}>← На главную</a>
+          <span aria-current="page">Владимирский контекст</span>
+        </nav>
         <div className={styles.heroCopy}>
-          <h1 id="vladimir-title">{vladimir.title}</h1>
-          <p className={styles.subtitle}>{vladimir.subtitle}</p>
+          <div className={styles.heroTitle}>
+            <h1 id="vladimir-title">{vladimir.title}</h1>
+            <h2 id="vladimir-subtitle" className={styles.subtitle}>{vladimir.subtitle}</h2>
+          </div>
           <p className={styles.lead}>{vladimir.intro}</p>
         </div>
       </section>
 
-      <div className={styles.divider} aria-hidden="true" />
-
-      <section id="master-plan" className={styles.format} aria-labelledby="master-plan-title">
-        <div className={styles.row}>
-          <figure className={styles.image}>
-            <img src={sitePath(vladimirServices[0].image)} alt={vladimirServices[0].alt} loading="lazy" />
-          </figure>
-          <div className={styles.copy}><ServiceCopy index={0} /></div>
+      <section id="directions" className="section directions" aria-label="Четыре продукта Владимирского контекста">
+        <div className="direction-grid">
+          {vladimirServices.map((service, index) => (
+            <a
+              key={service.slug}
+              id={service.slug}
+              className={`direction-card${index % 2 ? " direction-fullbleed" : ""}${service.slug === "concept" ? ` ${styles.conceptBackdrop}` : ""}`}
+              href={sitePath(service.href)}
+              aria-labelledby={`${service.slug}-title`}
+              aria-describedby={`${service.slug}-description`}
+            >
+              <div className="direction-meta">
+                <span className="direction-kicker">{service.number}</span>
+                <h3 id={`${service.slug}-title`}>{service.title}</h3>
+                <p id={`${service.slug}-description`}>{service.description}</p>
+                <span className="direction-action">
+                  <span className="direction-link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </span>
+                  <span>Подробнее</span>
+                </span>
+              </div>
+              <div className="media-frame">
+                <img className={service.slug === "ago" ? styles.templeImage : undefined} src={sitePath(service.image)} alt={index === 1 ? "" : service.alt} loading="lazy" />
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
-      <section id="concept" className={styles.panorama} aria-labelledby="concept-title">
-        <img className={styles.panoramaImage} src={sitePath(vladimirServices[1].image)} alt="" loading="lazy" />
-        <div className={styles.panoramaInner}>
-          <div className={styles.copy}><ServiceCopy index={1} /></div>
-        </div>
-      </section>
-
-      <section id="ago" className={styles.format} aria-labelledby="ago-title">
-        <div className={`${styles.row} ${styles.reversed}`}>
-          <div className={styles.copy}><ServiceCopy index={2} /></div>
-          <figure className={styles.image}>
-            <img src={sitePath(vladimirServices[2].image)} alt={vladimirServices[2].alt} loading="lazy" />
-          </figure>
-        </div>
-      </section>
-
-      <section id="research" className={styles.split} aria-labelledby="research-title">
-        <div className={styles.splitImage}>
-          <img src={sitePath(vladimirServices[3].image)} alt={vladimirServices[3].alt} loading="lazy" />
-        </div>
-        <div className={`${styles.copy} ${styles.splitCopy}`}><ServiceCopy index={3} /></div>
-      </section>
-
-      <nav className={styles.return} aria-label="Другие направления">
-        <a className={styles.link} href={sitePath("/#directions")}>← Чем я занимаюсь?</a>
+      <nav className={`${styles.return} ${styles.overviewReturn}`} aria-label="Другие направления">
+        <CircleLink href="/#directions" label="Чем я занимаюсь?" back />
       </nav>
     </main>
   );
