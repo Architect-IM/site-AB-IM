@@ -1,4 +1,4 @@
-0:{"page:/":"$L1","layout:/":"$L2","route:/":"$L3","__route":"route:/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/":"[\"page\",\"page:/\",\"root-boundary:/\",\"\"]"},"__srcPage":["page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:1177fd80f83fa7b0","deploymentVersion":"dae3f7ab-daf8-481a-8566-bc5fba667bb9","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
+0:{"page:/":"$L1","layout:/":"$L2","route:/":"$L3","__route":"route:/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/":"[\"page\",\"page:/\",\"root-boundary:/\",\"\"]"},"__srcPage":["page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:1177fd80f83fa7b0","deploymentVersion":"0b81f487-be88-4538-9a8c-28ba35d3c02a","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
 4:I["4715d14f82e4",[],"Header",1]
 5:I["74f944bd09a9",[],"Children",1]
 6:I["eedcf459879d",[],"Footer",1]
@@ -120,7 +120,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
 
         <a href="/site-AB-IM/mihail/consulting" class="direction-card reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/mihail/assets/consulting-meeting.jpg?v=2" alt="Разговор в кабинете: стол, бумаги и два кресла" loading="lazy">
+            <img src="/site-AB-IM/mihail/assets/consulting-meeting.jpg?v=3" alt="Разговор в кабинете: стол, бумаги и два кресла" loading="lazy">
             
           </div>
           <div class="direction-meta">
