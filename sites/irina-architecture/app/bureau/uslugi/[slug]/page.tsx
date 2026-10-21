@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import { LeadVideo } from "@/components/lead-video";
 import { FinanceExample } from "@/components/finance-example";
 import { BrandPath } from "@/components/brand-path";
-import { BrandRecord } from "@/components/brand-record";
 import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -112,8 +111,6 @@ function MarketingObject() {
           <h2>Как это делаем мы</h2>
         </section>
         <BrandPath />
-        <BrandRecord />
-        <ProductCard product={brand} />
       </article>
 
       <article className="marketing-chapter" id="comms">
