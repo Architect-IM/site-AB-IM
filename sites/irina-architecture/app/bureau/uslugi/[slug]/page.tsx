@@ -77,6 +77,12 @@ function MarketingObject() {
         <p className="service-essence">Если вы еще находитесь на этапе формирования, уточнения или даже пересмотра маркетинговой стратегии - мы можем помочь вам принять верные решения, увязав их с проектными решениями будущего строительства. Только для клиентов бюро.</p>
       </section>
 
+      <nav className="marketing-nav" aria-label="Разделы">
+        <a href="#finance"><span>01</span>{finance.title}</a>
+        <a href="#brand"><span>02</span>{brand.title}</a>
+        <a href="#comms"><span>03</span>{comms.title}</a>
+      </nav>
+
       <article className="marketing-chapter" id="finance">
         <section className="page-intro service-lead">
           <div>

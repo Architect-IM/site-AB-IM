@@ -1430,7 +1430,15 @@ p {text-wrap:pretty}
 .service-prose{padding-top:6px}
 .service-prose>p{margin:0;max-width:38rem;font-size:18px;line-height:1.65}
 .service-prose>a{display:inline-block;margin-top:22px;color:var(--ink);text-decoration:underline;text-underline-offset:5px;font-size:14px}
-.marketing-chapter{border-top:1px solid var(--line)}
+.marketing-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 36px;margin-top:36px;padding:28px var(--side) 0;border-top:1px solid var(--line)}
+.marketing-nav a{display:flex;flex-direction:column;gap:10px;padding-bottom:18px;border-bottom:1px solid var(--line);color:var(--muted);text-decoration:none;font-size:18px;line-height:1.35}
+.marketing-nav a span{font:12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em}
+.service-page:not(:has(.marketing-chapter:target)) .marketing-nav a:first-child,
+.service-page:has(#finance:target) .marketing-nav a[href="#finance"],
+.service-page:has(#brand:target) .marketing-nav a[href="#brand"],
+.service-page:has(#comms:target) .marketing-nav a[href="#comms"]{color:var(--ink);border-bottom-color:var(--ink)}
+.marketing-chapter{border-top:1px solid var(--line);scroll-margin-top:calc(var(--header-h) + 12px)}
+.marketing-chapter:first-of-type{border-top:none}
 .marketing-chapter .page-intro{padding-top:48px;padding-bottom:12px}
 .marketing-chapter h2{margin:16px 0 14px;font-size:clamp(32px,3.4vw,48px);font-weight:500;letter-spacing:-.04em;line-height:1.1}
 .service-page .page-intro h1{font-size:clamp(40px,4.2vw,64px);margin:28px 0 22px;max-width:none}
@@ -1945,6 +1953,9 @@ textarea.form-input {resize:vertical;min-height:135px}
  .practice-panel + .practice-panel { border-left: 0; border-top: 1px solid var(--line-dark); }
  .practice-panel h2 { font-size: 38px; }
  .practice-panel-copy > p { font-size: 16px; }
+}
+@media (max-width:820px){
+ .marketing-nav{grid-template-columns:1fr;gap:0}
 }
 .filter[aria-pressed=true]{color:var(--ink)}
 .filter[aria-pressed=true]::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--ink)}
