@@ -11,6 +11,8 @@
       --header-h: 77px;
       --side: clamp(20px, 4vw, 52px);
       --radius: 0;
+      --photo-shade-bottom: linear-gradient(180deg,rgba(12,15,17,.04) 0%,rgba(12,15,17,.16) 28%,rgba(12,15,17,.58) 55%,rgba(12,15,17,.8) 100%);
+      --photo-shade-side: linear-gradient(90deg,rgba(12,15,17,.68) 0%,rgba(12,15,17,.58) 48%,rgba(12,15,17,.14) 72%,rgba(12,15,17,.04) 100%);
     }
 
     *,
@@ -333,6 +335,18 @@
       object-position: 50% 50%;
     }
 
+    #top .hero-panel img {
+      filter: brightness(1.14) saturate(.9) contrast(.96);
+    }
+
+    #top .hero-panel:first-child img {
+      filter: brightness(1.1) saturate(.95) contrast(.94);
+    }
+
+    #top .hero-topline {
+      text-shadow: 0 1px 8px rgba(13,14,17,.55);
+    }
+
     .hero:hover .hero-panel img {
       transform: scale(1.035);
     }
@@ -343,6 +357,12 @@
       z-index: -2;
       inset: 0;
       background: linear-gradient(0deg, rgba(13, 14, 17, 0.62), transparent 42%);
+    }
+
+    #top::before {
+      background:
+        linear-gradient(180deg, rgba(13,14,17,.16), transparent 22%),
+        var(--photo-shade-bottom);
     }
 
     .hero::after {
@@ -1071,6 +1091,10 @@
         object-position: 50% 50%;
       }
 
+      #top .hero-panel:last-child img {
+        object-position: 64% 50%;
+      }
+
       .hero::before {
         background:
           linear-gradient(0deg, rgba(13, 14, 17, 0.83), rgba(13, 14, 17, 0.08) 78%),
@@ -1787,7 +1811,7 @@ textarea.form-input {resize:vertical;min-height:135px}
 
 #directions .direction-fullbleed {
  position: relative; isolation: isolate; overflow: hidden;
- min-height: clamp(520px,46vw,700px); margin-inline: calc(-1 * var(--side));
+ min-height: calc(100svh - var(--header-h)); margin-inline: calc(-1 * var(--side));
  padding: var(--direction-space) var(--side); background: var(--ink); color: var(--white);
 }
 #directions .direction-fullbleed .media-frame {
@@ -1797,6 +1821,14 @@ textarea.form-input {resize:vertical;min-height:135px}
 #directions .direction-fullbleed::before {
  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
  background: linear-gradient(90deg,rgba(12,15,17,.12) 0%,rgba(12,15,17,.26) 32%,rgba(12,15,17,.82) 64%,rgba(12,15,17,.85) 100%);
+}
+#directions .direction-private .media-frame img { object-position: 55% 50%; }
+#directions .direction-hospitality .media-frame img { object-position: 75% 50%; }
+@media (max-width: 820px) {
+ #directions .direction-private .media-frame img { object-position: 22% 50%; }
+}
+@media (max-width: 680px) {
+ #directions .direction-hospitality .media-frame img { object-position: 42% 50%; }
 }
 #directions .direction-fullbleed .direction-kicker { color: rgba(255,255,255,.7); }
 #directions .direction-fullbleed h3 { color: var(--white); }
@@ -1812,7 +1844,7 @@ textarea.form-input {resize:vertical;min-height:135px}
  #directions .direction-card .media-frame, #directions .direction-meta { grid-column: 1; }
  #directions .direction-card .media-frame { aspect-ratio: 4 / 3; }
  #directions .direction-kicker { margin-bottom: 16px; }
- #directions .direction-fullbleed { min-height: 600px; padding-block: 64px 40px; align-items: end; }
+ #directions .direction-fullbleed { padding-block: 64px 40px; align-items: end; }
  #directions .direction-fullbleed .media-frame { grid-column: auto; aspect-ratio: auto; }
  #directions .direction-fullbleed::before {
   background: linear-gradient(180deg,rgba(12,15,17,.15),rgba(12,15,17,.7) 35%,rgba(12,15,17,.92));
@@ -1848,9 +1880,31 @@ textarea.form-input {resize:vertical;min-height:135px}
 
 #directions .direction-action { cursor: pointer; }
 
+#directions .direction-consulting .media-frame img {
+ transform: none; transition: none; filter: saturate(.64);
+}
+
 /* The final direction meets the white projects section directly. */
 #directions { padding-bottom: 0; }
 #projects { background: var(--paper); }
+
+/* Both photographic homepage directions fill the visible area below the menu. */
+#directions .direction-card.direction-screen {
+ width: calc(100% + 2 * var(--side)); max-width: none;
+ min-height: calc(100svh - var(--header-h));
+ min-height: calc(100dvh - var(--header-h));
+}
+#directions .direction-screen .media-frame img {
+ filter: brightness(1.06) saturate(.88) contrast(.98);
+}
+#directions .direction-screen::before {
+ background: var(--photo-shade-side);
+}
+@media (max-width: 680px) {
+ #directions .direction-screen::before {
+  background: var(--photo-shade-bottom);
+ }
+}
 
 /* Bureau and laboratory photographs fill the existing two-column spread. */
 .practice-overview {

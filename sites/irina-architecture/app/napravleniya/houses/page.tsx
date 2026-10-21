@@ -19,17 +19,16 @@ function ProductCard({ service }: { service: HouseService }) {
 }
 
 export default function Houses() {
-  const [analysis, masterplan, concept, appearance, brief, implementation, supervision] = houseServices;
+  const [analysis, masterplan, concept, appearance, brief, implementation] = houseServices;
 
   return <main id="content" className={`inner-page ${styles.page}`}>
-    <nav className={styles.breadcrumbs} aria-label="Навигация по разделу">
-      <a href={sitePath("/#directions")}>← На главную</a>
-      <span aria-current="page">Частные владения</span>
-    </nav>
-
     <section className={styles.hero} aria-labelledby="houses-title">
+      <nav className={`${styles.breadcrumbs} ${styles.heroBreadcrumbs}`} aria-label="Навигация по разделу">
+        <a href={sitePath("/#directions")}>← На главную</a>
+        <span aria-current="page">Частные владения</span>
+      </nav>
       <div className={styles.heroImage}>
-        <img src={sitePath(houses.image)} alt={houses.alt} fetchPriority="high" />
+        <img src={sitePath("/assets/home-private-meadow-life.jpg")} alt="Деревянный дом с резными фронтонами, девушка на крыльце и козы на лугу" fetchPriority="high" />
       </div>
       <div className={styles.heroCopy}>
         <p className={styles.eyebrow}>Private / 04</p>
@@ -51,9 +50,9 @@ export default function Houses() {
       </div>
     </section>
 
-    <section id={masterplan.slug} className={styles.splitBand} aria-labelledby="masterplan-title">
-      <div className={styles.bandImage}><img src={sitePath(masterplan.image)} alt={masterplan.alt} loading="lazy" /></div>
-      <div className={styles.bandCopy}>
+    <section id={masterplan.slug} className={`${styles.videoBand} ${styles.masterplanBand}`} aria-labelledby="masterplan-title">
+      <div className={styles.motionBackdrop}><img className={styles.masterplanPhoto} src={sitePath("/assets/houses-masterplan-ruza.jpg")} alt="Частное владение в Рузе: деревянные дома у воды в вечернем свете" loading="lazy" /></div>
+      <div className={`${styles.bandCopy} ${styles.videoCopy}`}>
         <h2 id="masterplan-title">{masterplan.title}</h2>
         <p>{masterplan.description}</p>
         <HouseLink href={houseServicePath(masterplan.slug)}>Подробнее</HouseLink>
@@ -75,11 +74,7 @@ export default function Houses() {
       </div>
     </section>
 
-    <section className={styles.products} aria-label="Авторский надзор">
-      <div className={styles.productGrid}><ProductCard service={supervision} /></div>
-    </section>
-
-    <nav className={styles.return} aria-label="Другие направления">
+    <nav className={`${styles.return} ${styles.mainReturn}`} aria-label="Другие направления">
       <HouseLink href="/#directions" back>Чем я занимаюсь?</HouseLink>
     </nav>
   </main>;

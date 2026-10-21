@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { sitePath } from "@/lib/site-path";
 import { houseServices } from "@/lib/houses";
 import { HouseLink } from "../links";
+import { ImplementationBlocks } from "../implementation-blocks";
 import styles from "../houses.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -24,7 +25,7 @@ export default async function HouseServicePage({ params }: Props) {
   return <main id="content" className={`inner-page ${styles.page}`}>
     <nav className={styles.breadcrumbs} aria-label="Навигация по разделу">
       <a href={sitePath(back)}>← Частные владения</a>
-      <span>{service.number} / 07</span>
+      <span>{service.number} / {String(houseServices.length).padStart(2, "0")}</span>
     </nav>
     <header className={styles.detailIntro}>
       <p className={styles.eyebrow}>Частные владения / Дома и территории</p>
@@ -32,6 +33,7 @@ export default async function HouseServicePage({ params }: Props) {
       <p className={styles.detailLead}>{service.description}</p>
     </header>
     <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
+    {service.slug === "estate-implementation" && <ImplementationBlocks />}
     <div className={styles.detailSections}>
       {service.blocks.map((block, index) => <section key={block.heading} className={styles.detailSection} aria-labelledby={`block-${index}`}>
         <h2 id={`block-${index}`}>{block.heading}</h2>

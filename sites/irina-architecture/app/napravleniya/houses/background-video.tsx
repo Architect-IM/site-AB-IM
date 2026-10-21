@@ -4,7 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import { sitePath } from "@/lib/site-path";
 import styles from "./houses.module.css";
 
-export function ImplementationVideo() {
+export function ImplementationVideo({
+  source = "/assets/houses-implementation-10-28.mp4",
+  posterSource = "/assets/houses-implementation-10-poster.jpg",
+}: { source?: string; posterSource?: string }) {
   const frame = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const [motionAllowed, setMotionAllowed] = useState(false);
@@ -53,14 +56,14 @@ export function ImplementationVideo() {
     }
   };
 
-  const poster = sitePath("/assets/houses-implementation-10-poster.jpg");
+  const poster = sitePath(posterSource);
   return <>
     <div ref={frame} className={styles.motionBackdrop} aria-hidden="true">
       <img className={styles.motionPoster} src={poster} alt="" loading="lazy" />
       <video
         ref={video}
         className={`${styles.motionVideo}${ready && !failed ? ` ${styles.motionReady}` : ""}`}
-        src={motionAllowed && loaded && !failed ? sitePath("/assets/houses-implementation-10-28.mp4") : undefined}
+        src={motionAllowed && loaded && !failed ? sitePath(source) : undefined}
         poster={poster}
         autoPlay={motionAllowed}
         muted

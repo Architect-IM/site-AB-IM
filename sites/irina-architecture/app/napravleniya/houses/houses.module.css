@@ -12,10 +12,21 @@
   font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   font-size: 12px; line-height: 1.4; letter-spacing: .1em; text-transform: uppercase;
 }
-.hero { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); background: var(--paper-deep); }
-.heroImage { position: relative; overflow: hidden; min-height: clamp(540px,35vw,700px); }
-.heroImage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: saturate(.64); }
-.heroCopy { align-self: center; min-width: 0; padding: clamp(48px,5vw,80px) var(--side); }
+.hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  display: grid; grid-template-columns: repeat(12,minmax(0,1fr)); grid-template-rows: auto 1fr;
+  min-height: calc(100svh - var(--header-h)); min-height: calc(100dvh - var(--header-h));
+  background: var(--ink); color: var(--white);
+}
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: var(--photo-shade-side); }
+.heroImage { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.heroImage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; filter: brightness(1.06) saturate(.88) contrast(.98); }
+.heroBreadcrumbs { grid-column: 1 / -1; grid-row: 1; color: rgba(251,251,249,.78); text-shadow: 0 1px 6px rgba(12,15,17,.45); background: linear-gradient(180deg,rgba(12,15,17,.2),transparent); }
+.heroBreadcrumbs a:hover { color: var(--white); }
+.heroCopy { grid-column: 1 / 7; grid-row: 2; align-self: center; min-width: 0; max-width: 740px; padding: clamp(48px,5vw,80px) var(--side); }
+.hero .eyebrow { color: rgba(251,251,249,.72); }
+.hero .subtitle { color: rgba(251,251,249,.88); }
+.hero .intro { color: rgba(251,251,249,.9); }
 .hero h1 {
   max-width: 16ch; margin: 0; font-size: clamp(44px,4.6vw,76px); font-weight: 500;
   line-height: 1.02; letter-spacing: -.055em; text-wrap: balance; overflow-wrap: break-word;
@@ -58,6 +69,9 @@
 .motionPoster, .motionVideo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 25% 50%; filter: saturate(.64) contrast(1.02); }
 .motionVideo { opacity: 0; pointer-events: none; transition: opacity .5s; }
 .motionVideo.motionReady { opacity: 1; }
+.masterplanPhoto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; filter: saturate(.64) contrast(1.02); }
+.masterplanBand::before { background: linear-gradient(90deg,rgba(12,15,17,.9) 0%,rgba(12,15,17,.78) 38%,rgba(12,15,17,.18) 65%,rgba(12,15,17,.08) 100%); }
+.videoBand.masterplanBand .videoCopy { grid-column: 1 / 7; }
 .videoBand .videoCopy { grid-column: 7 / -1; position: relative; z-index: 1; padding-block: 80px; }
 .motionToggle {
   position: absolute; right: var(--side); bottom: 24px; z-index: 2;
@@ -80,6 +94,7 @@
 .productCard .actionLabel { margin-top: 24px; }
 .return { max-width: 1344px; margin-inline: auto; padding: 0 var(--side) clamp(64px,6vw,100px); }
 .return .action { margin: 0; }
+.return.mainReturn { padding-top: clamp(56px,6vw,88px); }
 .detailIntro { max-width: 1344px; padding: 64px var(--side) 80px; margin-inline: auto; }
 .detailIntro h1 { max-width: 1120px; margin: 0; font-size: clamp(42px,5.5vw,84px); font-weight: 500; line-height: 1.05; letter-spacing: -.05em; overflow-wrap: break-word; text-wrap: balance; }
 .detailLead { max-width: 760px; margin: 36px 0 0; font-size: 20px; line-height: 1.65; color: var(--muted); }
@@ -90,10 +105,32 @@
 .detailSection h2 { margin: 0; font-size: 26px; font-weight: 500; letter-spacing: -.035em; line-height: 1.2; }
 .detailSection p { max-width: 660px; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.75; }
 .detailContact { margin-top: 12px; }
+.implementationWelcome {
+  max-width: 1344px; margin-inline: auto; padding: clamp(64px,6vw,96px) var(--side);
+  display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(36px,4vw,64px); align-items: start;
+}
+.welcomeCopy h2, .supervisionDetail h3 {
+  margin: 0; font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size: 12px; font-weight: 400; line-height: 1.6; letter-spacing: .1em; text-transform: uppercase;
+}
+.welcomeCopy p { margin: 24px 0 0; font-size: 18px; line-height: 1.7; }
+.welcomeCopy .welcomeNote { margin-top: 18px; color: var(--muted); }
+.welcomeImage { aspect-ratio: 1 / 1; overflow: hidden; }
+.welcomeImage img, .supervisionImage img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: saturate(.64); }
+.supervisionBlock { border-block: 1px solid var(--line); }
+.supervisionIntro { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.supervisionCopy { min-width: 0; align-self: end; padding: clamp(48px,5vw,80px) var(--side); }
+.supervisionCopy h2 { max-width: 22ch; margin: 0; font-size: clamp(34px,3.1vw,50px); font-weight: 500; line-height: 1.12; letter-spacing: -.045em; text-wrap: balance; overflow-wrap: break-word; }
+.supervisionCopy p { max-width: 54ch; margin: 28px 0 0; font-size: 18px; line-height: 1.7; }
+.supervisionImage { min-width: 0; aspect-ratio: 10 / 7; overflow: hidden; }
+.supervisionDetails { max-width: 840px; margin-inline: auto; padding: clamp(56px,6vw,88px) var(--side); }
+.supervisionDetail + .supervisionDetail { margin-top: 44px; }
+.supervisionDetail h3 { color: var(--muted); }
+.supervisionDetail p { margin: 14px 0 0; font-size: 19px; line-height: 1.65; }
 
 @media (max-width: 1000px) {
-  .hero, .splitBand { grid-template-columns: minmax(0,1fr); }
-  .heroImage, .bandImage { min-height: 0; aspect-ratio: 3 / 2; }
+  .splitBand { grid-template-columns: minmax(0,1fr); }
+  .bandImage { min-height: 0; aspect-ratio: 3 / 2; }
   .heroCopy, .bandCopy { padding: 56px var(--side) 64px; }
   .hero h1 { font-size: clamp(44px,7vw,72px); }
   .intro { max-width: 74ch; }
@@ -101,7 +138,18 @@
   .productGrid { gap: 24px; }
 }
 @media (max-width: 820px) {
+  .hero { grid-template-columns: minmax(0,1fr); }
+  .hero::before { background: linear-gradient(180deg,rgba(12,15,17,.04) 0%,rgba(12,15,17,.16) 14%,rgba(12,15,17,.58) 30%,rgba(12,15,17,.8) 100%); }
+  .heroImage img { object-position: 22% 50%; }
+  .heroCopy { grid-column: 1; align-self: end; max-width: none; padding-block: clamp(140px,24svh,220px) 64px; }
+  .implementationWelcome { grid-template-columns: minmax(0,1fr); }
+  .welcomeImage { aspect-ratio: 4 / 3; }
+  .supervisionIntro { grid-template-columns: minmax(0,1fr); }
+  .supervisionCopy { padding-block: 56px 40px; }
+  .supervisionCopy h2 { max-width: 25ch; }
+  .supervisionImage { aspect-ratio: 3 / 2; }
   .videoBand .videoCopy { grid-column: 6 / -1; }
+  .videoBand.masterplanBand .videoCopy { grid-column: 1 / 8; }
   .analysisGrid { grid-template-columns: minmax(0,1fr); gap: 36px; }
   .analysisImage { aspect-ratio: 4 / 3; }
   .analysisCopy h2 { max-width: 22ch; }
@@ -111,13 +159,21 @@
   .detailSection { grid-template-columns: minmax(0,1fr); gap: 24px; }
 }
 @media (max-width: 560px) {
+  .welcomeCopy p, .supervisionCopy p, .supervisionDetail p { font-size: 16px; }
+  .welcomeCopy h2, .supervisionDetail h3 { font-size: 11px; }
+  .supervisionCopy h2 { font-size: 34px; }
+  .supervisionDetail + .supervisionDetail { margin-top: 36px; }
   .videoBand { min-height: clamp(840px,105svh,980px); align-items: end; }
   .videoBand::before { background: linear-gradient(180deg,rgba(12,15,17,.08) 0%,rgba(12,15,17,.12) 35%,rgba(12,15,17,.72) 56%,rgba(12,15,17,.94) 78%,rgba(12,15,17,.96) 100%); }
   .videoBand .videoCopy { grid-column: 1 / -1; padding-block: 420px 96px; }
+  .videoBand.masterplanBand .videoCopy { grid-column: 1 / -1; }
+  .masterplanBand::before { background: linear-gradient(180deg,rgba(12,15,17,.08) 0%,rgba(12,15,17,.12) 35%,rgba(12,15,17,.72) 56%,rgba(12,15,17,.94) 78%,rgba(12,15,17,.96) 100%); }
   .motionPoster, .motionVideo { object-position: 18% 50%; }
+  .masterplanPhoto { object-position: 72% 40%; }
   .breadcrumbs { font-size: 10px; gap: 18px; padding-block: 24px; }
   .breadcrumbs > span { text-align: right; }
-  .heroCopy, .bandCopy { padding-block: 44px 52px; }
+  .heroCopy { padding-block: 144px 52px; }
+  .bandCopy { padding-block: 44px 52px; }
   .hero h1 { font-size: clamp(40px,10vw,54px); }
   .eyebrow { margin-bottom: 22px; }
   .subtitle { margin-top: 20px; font-size: 21px; }
