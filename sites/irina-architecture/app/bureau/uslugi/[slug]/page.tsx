@@ -74,7 +74,7 @@ function MarketingObject() {
     <main id="content" className="inner-page bureau-page service-page">
       <section className="page-intro">
         <h1>Маркетинг</h1>
-        <p className="service-essence">Деньги, смысл и разговор об объекте ведутся вместе.</p>
+        <p className="service-essence">Если вы еще находитесь на этапе формирования, уточнения или даже пересмотра маркетинговой стратегии - мы можем помочь вам принять верные решения, увязав их с проектными решениями будущего строительства. Только для клиентов бюро.</p>
       </section>
 
       <article className="marketing-chapter" id="finance">
