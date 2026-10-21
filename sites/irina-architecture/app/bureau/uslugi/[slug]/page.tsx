@@ -73,8 +73,8 @@ function MarketingObject() {
   return (
     <main id="content" className="inner-page bureau-page service-page">
       <section className="page-intro">
-        <p className="section-label"><a href={sitePath("/bureau#marketing")}>← Маркетинг объекта</a></p>
-        <h1>Маркетинг объекта</h1>
+        <p className="section-label"><a href={sitePath("/bureau#marketing")}>← Маркетинг</a></p>
+        <h1>Маркетинг</h1>
         <p className="service-essence">Деньги, смысл и разговор об объекте ведутся вместе.</p>
       </section>
 
@@ -129,7 +129,7 @@ function MarketingObject() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   if (marketingSlugs.has(slug)) {
-    return { title: "Маркетинг объекта — бюро", description: "Финансовая модель, бренд и коммуникации объекта — одним материалом." };
+    return { title: "Маркетинг — бюро", description: "Финансовая модель, бренд и коммуникации объекта — одним материалом." };
   }
   const product = bureauProduct(slug);
   return { title: product ? `${product.title} — бюро` : "Страница не найдена", description: product?.essence };
