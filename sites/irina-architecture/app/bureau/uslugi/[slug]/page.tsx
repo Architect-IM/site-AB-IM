@@ -73,7 +73,6 @@ function MarketingObject() {
   return (
     <main id="content" className="inner-page bureau-page service-page">
       <section className="page-intro">
-        <p className="section-label"><a href={sitePath("/bureau#marketing")}>← Маркетинг</a></p>
         <h1>Маркетинг</h1>
         <p className="service-essence">Деньги, смысл и разговор об объекте ведутся вместе.</p>
       </section>
