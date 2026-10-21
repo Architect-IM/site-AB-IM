@@ -1,4 +1,4 @@
-0:{"page:/architect":"$L1","layout:/":"$L2","route:/architect":"$L3","__route":"route:/architect","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/architect":"[\"page\",\"page:/architect\",\"root-boundary:/\",\"[\\\"architect\\\"]\"]"},"__srcPage":["architect","page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:5f4fc57c4c7b75c2","deploymentVersion":"a51362af-da89-4db9-b389-b57cd497fc19","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
+0:{"page:/architect":"$L1","layout:/":"$L2","route:/architect":"$L3","__route":"route:/architect","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/architect":"[\"page\",\"page:/architect\",\"root-boundary:/\",\"[\\\"architect\\\"]\"]"},"__srcPage":["architect","page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:5f4fc57c4c7b75c2","deploymentVersion":"24068e99-ebf8-4402-8997-ae6bfcd23c58","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
 4:I["4715d14f82e4",[],"Header",1]
 5:I["74f944bd09a9",[],"Children",1]
 6:I["eedcf459879d",[],"Footer",1]
@@ -11,18 +11,18 @@ c:I["74f944bd09a9",[],"Slot",1]
 d:I["52529b92208a",[],"NotFoundBoundary",1]
 e:I["78579b1089e4",[],"AppRouterScrollTarget",1]
 f:I["52529b92208a",[],"RedirectBoundary",1]
-:HL["/site-AB-IM/irina/_next/static/css/index.C-LsaBna.css","style"     ]
+:HL["/site-AB-IM/irina/_next/static/css/index.Dl7BVV7O.css","style"     ]
 :HL["https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap","style"     ]
-2:[[["$","link","css:/site-AB-IM/irina/_next/static/css/index.C-LsaBna.css",{"rel":"stylesheet","precedence":"vite-rsc/importer-resources","href":"/site-AB-IM/irina/_next/static/css/index.C-LsaBna.css","data-rsc-css-href":"/site-AB-IM/irina/_next/static/css/index.C-LsaBna.css"}],"$undefined"],["$","html",null,{"lang":"ru","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#content","children":"Перейти к содержанию"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]
+2:[[["$","link","css:/site-AB-IM/irina/_next/static/css/index.Dl7BVV7O.css",{"rel":"stylesheet","precedence":"vite-rsc/importer-resources","href":"/site-AB-IM/irina/_next/static/css/index.Dl7BVV7O.css","data-rsc-css-href":"/site-AB-IM/irina/_next/static/css/index.Dl7BVV7O.css"}],"$undefined"],["$","html",null,{"lang":"ru","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#content","children":"Перейти к содержанию"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]
 3:[[["$","meta",null,{"charSet":"utf-8"}],[["$","title","0",{"children":"Ирина Михейкина — архитектор"}],["$","meta","1",{"name":"description","content":"Современная архитектура в контексте места. Архитектор Ирина Михейкина, проектное бюро полного цикла и лаборатория «Владимир»."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"data-vinext-streamed-icon":"$undefined","rel":"shortcut icon","href":"/site-AB-IM/irina/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}],["$","link","4",{"data-vinext-streamed-icon":"$undefined","rel":"icon","href":"/site-AB-IM/irina/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}]],[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]],["$","$L8",null,{"fallback":"$9","children":["$","$La",null,{"fallback":"$9","children":["$","$Lb",null,{"providerId":"layout:/","segmentMap":{"children":["architect"]},"children":["$","$Lc",null,{"id":"layout:/","parallelSlots":"$undefined","children":["$","$Ld",null,{"resetKey":"architect","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/irina/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Ld",null,{"resetKey":"[\"architect\"]","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/irina/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Le",null,{"children":["$","$Lf",null,{"children":[["$","$Lb",null,{"providerId":"page:/architect","segmentMap":{"children":["__PAGE__"]},"children":["$","$Lc",null,{"id":"page:/architect"}]}],null]}]}]}]}]}]}]}]}],null,null]
-10:T3dc8,
+10:T3eb3,
     <section class="hero" id="top" aria-label="Создаю многослойные, осмысленные проекты">
       <div class="hero-media" aria-hidden="true">
         <div class="hero-panel">
-          <img src="/site-AB-IM/irina/assets/portrait.jpg" alt="">
+          <img src="/site-AB-IM/irina/assets/home-hero-irina-soft-smile.jpg" alt="">
         </div>
         <div class="hero-panel">
-          <img src="/site-AB-IM/irina/assets/mansion-hero.jpg?flip=1" alt="">
+          <img src="/site-AB-IM/irina/assets/home-hero-ladoga.jpg" alt="">
         </div>
       </div>
 
@@ -103,9 +103,9 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
           </div>
         </a>
 
-        <a href="/site-AB-IM/irina/portfolio" id="hospitality" class="direction-card direction-fullbleed reveal">
+        <a href="/site-AB-IM/irina/portfolio" id="hospitality" class="direction-card direction-fullbleed direction-screen direction-hospitality reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/irina/assets/resort.jpg" alt="Туристический комплекс в природном ландшафте" loading="lazy">
+            <img src="/site-AB-IM/irina/assets/home-hospitality-ruza-life.jpg" alt="Дом в Рузе: гости на террасе, дети с собакой на лугу и пасущаяся лошадь" loading="lazy">
             
           </div>
           <div class="direction-meta">
@@ -118,9 +118,9 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
           </div>
         </a>
 
-        <a href="/site-AB-IM/irina/consulting" class="direction-card reveal">
+        <a href="/site-AB-IM/irina/consulting" class="direction-card direction-consulting reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/irina/assets/consulting-meeting.jpg?v=3" alt="Разговор в кабинете: стол, бумаги и два кресла" loading="lazy">
+            <img src="/site-AB-IM/irina/assets/home-consulting-drawings.jpg" alt="Ирина за столом с архитектурными чертежами" loading="lazy">
             
           </div>
           <div class="direction-meta">
@@ -133,9 +133,9 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
           </div>
         </a>
 
-        <a href="/site-AB-IM/irina/napravleniya/houses" class="direction-card direction-fullbleed reveal">
+        <a href="/site-AB-IM/irina/napravleniya/houses" class="direction-card direction-fullbleed direction-screen direction-private reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/irina/assets/private-zaitsev.jpg?v=3" alt="Баня Ивана Зайцева" loading="lazy" style="object-position:center 48%">
+            <img src="/site-AB-IM/irina/assets/home-private-meadow-life.jpg" alt="Деревянный дом с резными фронтонами, девушка на крыльце и козы на лугу" loading="lazy">
             
           </div>
           <div class="direction-meta">
