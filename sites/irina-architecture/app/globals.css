@@ -1442,6 +1442,9 @@ p {text-wrap:pretty}
 .marketing-chapter .page-intro{padding-top:48px;padding-bottom:12px}
 .marketing-chapter h2{margin:16px 0 14px;font-size:clamp(32px,3.4vw,48px);font-weight:500;letter-spacing:-.04em;line-height:1.1}
 .service-page .page-intro h1{font-size:clamp(40px,4.2vw,64px);margin:28px 0 22px;max-width:none}
+.marketing-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:9vw;align-items:start}
+.service-page .marketing-intro h1{margin:0}
+.marketing-intro .service-essence{max-width:38rem;padding-top:10px}
 .service-essence{max-width:34ch;font-size:22px;line-height:1.5;margin:0}
 .service-lead{display:grid;grid-template-columns:minmax(0,1fr) minmax(520px,.9fr);column-gap:56px;align-items:start}
 .service-lead-aside{display:grid;grid-template-columns:264px minmax(0,1fr);gap:0 26px;align-items:start;padding-top:46px}
@@ -1956,6 +1959,8 @@ textarea.form-input {resize:vertical;min-height:135px}
 }
 @media (max-width:820px){
  .marketing-nav{grid-template-columns:1fr;gap:0}
+ .marketing-intro{grid-template-columns:1fr;row-gap:22px}
+ .marketing-intro .service-essence{padding-top:0}
 }
 .filter[aria-pressed=true]{color:var(--ink)}
 .filter[aria-pressed=true]::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--ink)}
