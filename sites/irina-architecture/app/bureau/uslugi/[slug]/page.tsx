@@ -5,7 +5,6 @@ import { LeadVideo } from "@/components/lead-video";
 import { FinanceExample } from "@/components/finance-example";
 import { BrandPath } from "@/components/brand-path";
 import { BrandRecord } from "@/components/brand-record";
-import { FinanceRecord } from "@/components/finance-record";
 import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -98,8 +97,6 @@ function MarketingObject() {
           <p className="finance-method-next">Ниже — пример простого расчёта эффективности модели бизнеса. Его можно делать сколь угодно подробно, но нельзя делать слабее. А часто нет и такого, даже когда инвестиции уже идут. Мы предлагаем считать.</p>
         </section>
         <FinanceExample />
-        <FinanceRecord />
-        <ProductCard product={finance} />
       </article>
 
       <article className="marketing-chapter" id="brand">
