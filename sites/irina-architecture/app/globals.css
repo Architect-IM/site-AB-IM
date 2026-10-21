@@ -1437,7 +1437,7 @@ p {text-wrap:pretty}
 .service-page:has(#finance:target) .marketing-nav a[href="#finance"],
 .service-page:has(#brand:target) .marketing-nav a[href="#brand"],
 .service-page:has(#comms:target) .marketing-nav a[href="#comms"]{color:var(--ink);border-bottom-color:var(--ink)}
-.marketing-chapter{border-top:1px solid var(--line);scroll-margin-top:calc(var(--header-h) + 156px)}
+.marketing-chapter{border-top:1px solid var(--line);scroll-margin-top:var(--marketing-scroll, var(--header-h))}
 .marketing-chapter:first-of-type,.marketing-chapter#comms{border-top:none}
 .marketing-chapter .page-intro{padding-top:48px;padding-bottom:12px}
 .marketing-chapter h2{margin:16px 0 14px;font-size:clamp(32px,3.4vw,48px);font-weight:500;letter-spacing:-.04em;line-height:1.1}
@@ -1960,7 +1960,6 @@ textarea.form-input {resize:vertical;min-height:135px}
 }
 @media (max-width:820px){
  .marketing-nav{position:static;grid-template-columns:1fr;gap:0}
- .marketing-chapter{scroll-margin-top:calc(var(--header-h) + 16px)}
  .marketing-intro{grid-template-columns:1fr;row-gap:22px}
  .marketing-intro .service-essence{padding-top:0}
 }

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { LeadVideo } from "@/components/lead-video";
 import { FinanceExample } from "@/components/finance-example";
 import { BrandPath } from "@/components/brand-path";
+import { MarketingNavOffset } from "@/components/marketing-nav-offset";
 import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -77,6 +78,7 @@ function MarketingObject() {
       </section>
 
       <nav className="marketing-nav" aria-label="Разделы">
+        <MarketingNavOffset />
         <a href="#finance"><span>01</span>{finance.title}</a>
         <a href="#brand"><span>02</span>{brand.title}</a>
         <a href="#comms"><span>03</span>{comms.title}</a>
