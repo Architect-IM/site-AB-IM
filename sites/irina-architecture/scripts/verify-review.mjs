@@ -20,7 +20,7 @@ for (const file of walk(root)) {
 const files = walk(root);
 const pages = files.filter(file => file.endsWith('.html'));
 const errors = [];
-for (const route of ['', 'consulting', 'contacts', 'portfolio', 'bureau', 'lab', 'napravleniya/vladimir', ...['master-plan','concept','ago','research'].map(s => `napravleniya/vladimir/${s}`)]) {
+for (const route of ['', 'consulting', 'contacts', 'portfolio', 'bureau', 'lab', 'napravleniya/houses', 'napravleniya/houses/estate-supervision', 'napravleniya/vladimir', ...['master-plan','concept','ago','research'].map(s => `napravleniya/vladimir/${s}`)]) {
   if (!existsSync(path.join(root, route, 'index.html')) && !existsSync(path.join(root, `${route}.html`))) errors.push(`Missing page: /${route}`);
 }
 for (const file of pages) {
