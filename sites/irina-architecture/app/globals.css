@@ -2031,6 +2031,12 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-products span{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#686963}
 .pp-products strong{font-size:clamp(26px,2.6vw,38px);font-weight:500;letter-spacing:-.04em;line-height:1.1}
 .pp-products a:hover strong{text-decoration:underline;text-underline-offset:4px}
+.pp-saburovo .pp-hero-copy h1{font-family:Unbounded,Onest,sans-serif;font-weight:500;letter-spacing:-.03em}
+.pp-saburovo .pp-hero-quote{border-left:3px solid #70a549;padding-left:18px}
+.pp-saburovo .pp-open .pp-kicker,.pp-saburovo .pp-turn .pp-kicker,.pp-saburovo .pp-products .pp-kicker{color:#3d6b34}
+.pp-saburovo .pp-path div{background:#f4f1e8}
+.pp-saburovo .pp-path img{background:#f7f6f2;object-fit:contain;padding:28px}
+.pp-saburovo .pp-moves article{border-top-color:#70a549}
 @media(max-width:800px){
 .pp-open-grid,.pp-portrait,.pp-path,.pp-pair,.pp-work,.pp-moves,.pp-two,.pp-products div{grid-template-columns:1fr}
 .pp-hero-copy h1{font-size:46px}
