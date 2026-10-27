@@ -343,6 +343,24 @@
       filter: brightness(1.1) saturate(.95) contrast(.94);
     }
 
+    #top.hero-single,
+    #top.hero-single .hero-inner {
+      min-height: max(calc(100svh - var(--header-h)),40vw);
+    }
+
+    #top.hero-single .hero-media {
+      grid-template-columns: minmax(0,1fr);
+    }
+
+    #top.hero-single .hero-media .hero-panel {
+      display: block; border: 0;
+    }
+
+    #top.hero-single .hero-media .hero-panel img {
+      width: 100%; object-position: 50% 90%; transform: none;
+      filter: brightness(1.1) saturate(.9) contrast(.96);
+    }
+
     #top .hero-topline {
       text-shadow: 0 1px 8px rgba(13,14,17,.55);
     }
