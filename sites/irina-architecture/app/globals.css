@@ -2037,6 +2037,9 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-saburovo .pp-path div{background:#f4f1e8}
 .pp-saburovo .pp-path img{background:#f7f6f2;object-fit:contain;padding:28px}
 .pp-saburovo .pp-moves article{border-top-color:#70a549}
+.pp-dobrograd .pp-hero-quote{border-left:3px solid #a35a3a;padding-left:18px}
+.pp-dobrograd .pp-open .pp-kicker,.pp-dobrograd .pp-turn .pp-kicker,.pp-dobrograd .pp-products .pp-kicker{color:#8a4b32}
+.pp-dobrograd .pp-moves article{border-top-color:#a35a3a}
 .sab-voice{display:grid;grid-template-columns:minmax(200px,280px) minmax(0,1fr);gap:12px 48px;align-items:center;padding:48px var(--side) 12px}
 .sab-voice figure{margin:0}
 .sab-voice .lead-video video{aspect-ratio:3/4;object-position:50% 18%}
