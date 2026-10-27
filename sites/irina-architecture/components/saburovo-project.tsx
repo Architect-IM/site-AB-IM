@@ -27,7 +27,7 @@ export function SaburovoProject({ project, next }: { project: Project; next: Pro
 
       <section className="sab-voice">
         <figure>
-          <LeadVideo src={sitePath("/assets/portfolio/saburovo/voice.mp4")} poster={photo("voice")} />
+          <LeadVideo src={`${sitePath("/assets/portfolio/saburovo/voice.mp4")}?v=2`} poster={photo("voice")} />
           <figcaption className="service-lead-sign">Инженер бюро<span>рассказ о проекте</span></figcaption>
         </figure>
         <blockquote>{told}</blockquote>
