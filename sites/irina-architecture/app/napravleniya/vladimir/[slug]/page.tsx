@@ -40,7 +40,6 @@ export default async function VladimirService({ params }: Props) {
             <p>{block.text}</p>
           </section>
         ))}
-        <a className={styles.link} href={sitePath(`/contacts?topic=${encodeURIComponent(service.title)}`)}>Обсудить задачу <span aria-hidden="true">↗</span></a>
       </div>
       <nav className={styles.return} aria-label="Навигация по разделу">
         <a className={styles.link} href={sitePath(`/napravleniya/vladimir#${service.slug}`)}>← Владимирский контекст</a>

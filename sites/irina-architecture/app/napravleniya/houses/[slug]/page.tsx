@@ -40,7 +40,6 @@ export default async function HouseServicePage({ params }: Props) {
         <h2 id={`block-${index}`}>{block.heading}</h2>
         <p>{block.text}</p>
       </section>)}
-      <div className={styles.detailContact}><HouseLink href={`/contacts?topic=${encodeURIComponent(service.title)}`}>Обсудить задачу</HouseLink></div>
     </div>
     <nav className={styles.return} aria-label="Вернуться к направлению"><HouseLink href={back} back>Частные владения</HouseLink></nav>
   </main>;

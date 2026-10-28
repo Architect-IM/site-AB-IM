@@ -43,7 +43,6 @@ export default async function HospitalityService({ params }: Props) {
             <p>{block.text}</p>
           </section>
         ))}
-        <div className={styles.detailContact}><HouseLink href={`/contacts?topic=${encodeURIComponent(service.title)}`}>Обсудить задачу</HouseLink></div>
       </div>
       <nav className={styles.return} aria-label="Вернуться к направлению">
         <HouseLink href={back} back>Живое гостеприимство</HouseLink>
