@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Hospitality() {
   return (
     <main id="content" className={`inner-page ${styles.page}`}>
-      <section className={`${styles.hero} ${styles.heroEnd}`} aria-labelledby="hospitality-title">
+      <section className={styles.hero} aria-label="Живое гостеприимство">
         <nav className={`${styles.breadcrumbs} ${styles.heroBreadcrumbs}`} aria-label="Навигация по разделу">
           <a href={sitePath("/#directions")}>← На главную</a>
           <span aria-current="page">Живое гостеприимство</span>
@@ -21,14 +21,9 @@ export default function Hospitality() {
         <div className={styles.heroImage}>
           <img src={sitePath(hospitality.image)} alt={hospitality.alt} fetchPriority="high" />
         </div>
-        <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>02</p>
-          <h1 id="hospitality-title">{hospitality.title}</h1>
-          <p className={styles.subtitle}>{hospitality.subtitle}</p>
-        </div>
       </section>
 
-      <section className="product-talk" aria-label="Коротко о продукте">
+      <section className="product-talk" aria-labelledby="hospitality-title">
         <figure>
           <div className="lead-video">
             <img src={sitePath("/assets/portrait.jpg")} alt="" />
@@ -38,7 +33,12 @@ export default function Hospitality() {
           </div>
           <figcaption className="service-lead-sign">Ирина Михейкина<span>архитектор</span></figcaption>
         </figure>
-        <p>{hospitality.intro}</p>
+        <div className="product-talk-copy">
+          <p className={styles.eyebrow}>02</p>
+          <h1 id="hospitality-title">{hospitality.title}</h1>
+          <p className="product-talk-sub">{hospitality.subtitle}</p>
+          <p>{hospitality.intro}</p>
+        </div>
       </section>
 
       {hospitalityServices.map((service, index) => (
