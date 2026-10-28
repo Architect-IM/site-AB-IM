@@ -1,15 +1,16 @@
 import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
 import { PhotoRail } from "@/components/photo-rail";
+import { ProjectTalk } from "@/components/project-talk";
 
 type Project = (typeof projects)[number];
 
 const photo = (name: string) => sitePath(`/assets/portfolio/pokrovskiy-pryanik/${name}.jpg`);
 
 const products = [
-  ["Живое гостеприимство", "Архитектор", "/#hospitality"],
-  ["Мастер-план раскрытия потенциала территории", "Архитектор", "/#hospitality"],
-  ["Мастер-план живого туристического объекта", "Архитектор", "/#hospitality"],
+  ["Живое гостеприимство", "Архитектор", "/napravleniya/hospitality"],
+  ["Мастер-план раскрытия потенциала территории", "Архитектор", "/napravleniya/vladimir/master-plan"],
+  ["Мастер-план живого туристического объекта", "Архитектор", "/napravleniya/hospitality/tourism"],
   ["Проектная документация — стадия П", "Бюро", "/bureau/uslugi/stage-p"],
   ["Рабочая документация — стадия Р", "Бюро", "/bureau/uslugi/stage-r"],
   ["Обследование зданий", "Бюро", "/bureau/uslugi/survey"],
@@ -27,6 +28,8 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
           <p className="pp-hero-quote">— Печатный пряник, который стал местом.</p>
         </div>
       </section>
+
+      <ProjectTalk project={project} />
 
       <section className="pp-open">
         <p className="pp-kicker">1998 — сегодня</p>

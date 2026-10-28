@@ -1,31 +1,14 @@
 import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { LeadVideo } from "@/components/lead-video";
 import { FinanceExample } from "@/components/finance-example";
 import { BrandPath } from "@/components/brand-path";
 import { MarketingNavOffset } from "@/components/marketing-nav-offset";
+import { TalkSlot } from "@/components/talk-slot";
+import { ProductClients } from "@/components/product-clients";
 import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
-
-const voices: Record<string, { image: string; video: string; name: string; role: string; quote: string; stacked?: boolean }> = {
-  finance: {
-    image: "/assets/finance-voice.jpg",
-    video: "/assets/finance-voice.mp4",
-    name: "Михаил Лункин",
-    role: "маркетолог бюро",
-    quote: "Мы не собираем максимально полную модель и без нужды не подгоняем её под МСФО и другие стандарты, а скорее помогаем сделать первый шаг к будущему подробному учёту. Вместе ответим на вопросы — как здесь вообще считаются деньги, как создаётся добавленная стоимость и как на это влияют проектные решения. Разбираем разные сценарии, чтобы было видно, что живёт, а где деньги не возвращаются.",
-  },
-  brand: {
-    image: "/assets/finance-voice.jpg",
-    video: "/assets/brand-voice.mp4",
-    name: "Михаил Лункин",
-    role: "маркетолог бюро",
-    stacked: true,
-    quote: "Говорят, что нужно быть, а не казаться. Всё так. Но казаться тоже надо уметь. Даже если у вас золото: любой товар важно уметь представить лицом. Мы помогаем любое дело превратить в продукт и сформировать на него платежеспособный спрос.",
-  },
-};
 
 const sections = [
   ["who", "Для кого и когда"],
@@ -50,17 +33,22 @@ function ProductCard({ product }: { product: BureauProduct }) {
   );
 }
 
-function Voice({ slug }: { slug: string }) {
-  const voice = voices[slug];
-  if (!voice) return null;
+function CommsSheet({ product }: { product: BureauProduct }) {
   return (
-    <aside className={voice.stacked ? "service-lead-aside service-lead-stack" : "service-lead-aside"}>
-      <figure>
-        <LeadVideo src={sitePath(voice.video)} poster={sitePath(voice.image)} />
-        <figcaption className="service-lead-sign">{voice.name}<span>{voice.role}</span></figcaption>
-      </figure>
-      <blockquote>{voice.quote}</blockquote>
-    </aside>
+    <section className="comms-sheet">
+      <div className="comms-row">
+        <h3>Для кого и когда</h3>
+        <p>{product.who}</p>
+      </div>
+      <div className="comms-row">
+        <h3>Что в результате?</h3>
+        <p>{product.gets}</p>
+      </div>
+      <div className="comms-row">
+        <h3>Как работаем</h3>
+        <p>{product.how}</p>
+      </div>
+    </section>
   );
 }
 
@@ -74,24 +62,47 @@ function MarketingObject() {
       <section className="page-intro marketing-intro">
         <p className="section-label"><a href={sitePath("/bureau#marketing")}>← Бюро</a></p>
         <h1>Маркетинг</h1>
-        <p className="service-essence">Если вы находитесь на этапе формирования, уточнения или даже пересмотра маркетинговой стратегии - мы можем помочь её собрать и увязать с проектными решениями будущего строительства. Только для клиентов бюро.</p>
+        <div className="marketing-lead">
+          <figure>
+            <div className="lead-video">
+              <img src={sitePath("/assets/finance-voice.jpg")} alt="" />
+              <button type="button" className="lead-play" aria-disabled="true" aria-label="Видео ещё не снято">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.8v10.4L18.2 12z" /></svg>
+              </button>
+            </div>
+            <figcaption className="service-lead-sign">Михаил Лункин<span>маркетолог бюро</span></figcaption>
+          </figure>
+          <p className="service-essence">Если вы находитесь на этапе формирования, уточнения или даже пересмотра маркетинговой стратегии - мы можем помочь её собрать и увязать с проектными решениями будущего строительства. Только для клиентов бюро.</p>
+        </div>
       </section>
 
       <nav className="marketing-nav" aria-label="Разделы">
         <MarketingNavOffset />
-        <a href="#finance"><span>01</span>{finance.title}</a>
-        <a href="#brand"><span>02</span>{brand.title}</a>
+        <p className="marketing-rank marketing-rank-main">Главное</p>
+        <p className="marketing-rank marketing-rank-extra">Дополнительно</p>
+        <a href="#brand"><span>01</span>{brand.title}</a>
+        <a href="#finance"><span>02</span>{finance.title}</a>
         <a href="#comms"><span>03</span>{comms.title}</a>
       </nav>
 
+      <article className="marketing-chapter" id="brand">
+        <section className="page-intro">
+          <p className="section-label">01</p>
+          <h2>{brand.title}</h2>
+          <p className="service-essence">{brand.essence}</p>
+        </section>
+        <section className="finance-method brand-method">
+          <h2>Как это делаем мы</h2>
+        </section>
+        <BrandPath />
+        <ProductClients slug="brand" />
+      </article>
+
       <article className="marketing-chapter" id="finance">
-        <section className="page-intro service-lead">
-          <div>
-            <p className="section-label">01</p>
-            <h2>{finance.title}</h2>
-            <p className="service-essence">{finance.essence}</p>
-          </div>
-          <Voice slug="finance" />
+        <section className="page-intro">
+          <p className="section-label">02</p>
+          <h2>{finance.title}</h2>
+          <p className="service-essence">{finance.essence}</p>
         </section>
         <section className="finance-method">
           <h2>Как это делается</h2>
@@ -99,21 +110,7 @@ function MarketingObject() {
           <p className="finance-method-next">Ниже — пример простого расчёта эффективности модели бизнеса. Его можно делать сколь угодно подробно, но нельзя делать слабее. А часто нет и такого, даже когда инвестиции уже идут. Мы предлагаем считать.</p>
         </section>
         <FinanceExample />
-      </article>
-
-      <article className="marketing-chapter" id="brand">
-        <section className="page-intro service-lead">
-          <div>
-            <p className="section-label">02</p>
-            <h2>{brand.title}</h2>
-            <p className="service-essence">{brand.essence}</p>
-          </div>
-          <Voice slug="brand" />
-        </section>
-        <section className="finance-method brand-method">
-          <h2>Как это делаем мы</h2>
-        </section>
-        <BrandPath />
+        <ProductClients slug="finance" />
       </article>
 
       <article className="marketing-chapter" id="comms">
@@ -122,7 +119,8 @@ function MarketingObject() {
           <h2>{comms.title}</h2>
           <p className="service-essence">{comms.essence}</p>
         </section>
-        <ProductCard product={comms} />
+        <CommsSheet product={comms} />
+        <ProductClients slug="comms" />
       </article>
     </main>
   );
@@ -153,7 +151,11 @@ export default async function BureauService({ params }: Props) {
           <p className="service-essence">{product.essence}</p>
         </div>
       </section>
+      <section className="talk-band">
+        <TalkSlot name="Бюро" role="видео ещё не снято" quote={product.why} />
+      </section>
       <ProductCard product={product} />
+      <ProductClients slug={product.slug} />
     </main>
   );
 }

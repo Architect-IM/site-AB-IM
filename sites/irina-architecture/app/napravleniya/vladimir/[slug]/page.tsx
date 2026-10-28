@@ -3,6 +3,7 @@ import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { vladimirServices } from "@/lib/vladimir";
+import { ProductLead } from "@/components/product-lead";
 import styles from "../vladimir.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -24,11 +25,7 @@ export default async function VladimirService({ params }: Props) {
         <a href={sitePath(`/napravleniya/vladimir#${service.slug}`)}>← Владимирский контекст</a>
         <span className={styles.eyebrow}>{service.number} / 04</span>
       </nav>
-      <header className={styles.detailIntro}>
-        <p className={styles.eyebrow}>Владимирский контекст</p>
-        <h1>{service.title}</h1>
-        <p className={styles.detailLead}>{service.description}</p>
-      </header>
+      <ProductLead title={service.title} quote={service.description} />
       <figure className={`${styles.detailImage}${service.slug === "ago" ? ` ${styles.agoDetailImage}` : ""}`}>
         <img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" />
       </figure>
@@ -39,7 +36,6 @@ export default async function VladimirService({ params }: Props) {
             <p>{block.text}</p>
           </section>
         ))}
-        <a className={styles.link} href={sitePath(`/contacts?topic=${encodeURIComponent(service.title)}`)}>Обсудить задачу <span aria-hidden="true">↗</span></a>
       </div>
       <nav className={styles.return} aria-label="Навигация по разделу">
         <a className={styles.link} href={sitePath(`/napravleniya/vladimir#${service.slug}`)}>← Владимирский контекст</a>

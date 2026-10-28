@@ -1,7 +1,7 @@
 export const productTags = [
-  { id: "hospitality", label: "Живое гостеприимство", side: "architect", href: "/#hospitality" },
-  { id: "territory-plan", label: "Мастер-план территории", side: "architect", href: "/#hospitality" },
-  { id: "tourism-plan", label: "Мастер-план туркомплекса", side: "architect", href: "/#hospitality" },
+  { id: "hospitality", label: "Живое гостеприимство", side: "architect", href: "/napravleniya/hospitality" },
+  { id: "territory-plan", label: "Мастер-план территории", side: "architect", href: "/napravleniya/vladimir/master-plan" },
+  { id: "tourism-plan", label: "Мастер-план туркомплекса", side: "architect", href: "/napravleniya/hospitality/tourism" },
   { id: "stage-p", label: "Стадия П", side: "bureau", href: "/bureau/uslugi/stage-p" },
   { id: "stage-r", label: "Стадия Р", side: "bureau", href: "/bureau/uslugi/stage-r" },
   { id: "survey", label: "Обследование", side: "bureau", href: "/bureau/uslugi/survey" },
@@ -13,7 +13,7 @@ export type Surface = "home" | "bureau";
 
 export const projects = [
   { slug: "pokrovskiy-pryanik", name: "Покровский пряник", category: "Гостеприимство", image: "portfolio/pokrovskiy-pryanik/img_0356", imagePosition: "center 22%", status: "В работе", year: "2026", place: "Покров", caption: "Печатный пряник, который стал местом.", description: "Печатный пряник, который стал местом.", tags: ["hospitality", "territory-plan", "tourism-plan", "stage-p", "stage-r", "survey", "client"] as ProductTagId[], surfaces: ["home", "bureau"] as Surface[] },
-  { slug: "dobrograd", name: "Доброград", category: "Гостеприимство", image: "portfolio/dobrograd/01", status: "Построено", year: "", place: "Доброград", caption: "Кирпич и дерево, которые уже стоят на снегу.", description: "Построенный квартал в Доброграде: кирпич, дерево и вода.", tags: [] as ProductTagId[], surfaces: ["home"] as Surface[] },
+  { slug: "dobrograd", name: "Доброград", category: "Гостеприимство", image: "portfolio/dobrograd/01", status: "Построено", year: "2020", place: "Доброград", caption: "Вторая очередь: образ тот же, конструкция уже сборная.", description: "Таунхаусы второй очереди на улице Цветочной: петля, рельеф и сборные конструкции.", tags: ["stage-p", "stage-r"] as ProductTagId[], surfaces: ["home"] as Surface[] },
   { slug: "kabardinka", name: "Гостиница Кабардинка", category: "Гостеприимство", image: "portfolio/kabardinka/01", status: "Проект", year: "", place: "Кабардинка", caption: "Гостиница, которую сначала читаешь со въезда.", description: "Гостиничный комплекс у гор: въезд, двор, бассейн, ресторан.", tags: [] as ProductTagId[], surfaces: ["home"] as Surface[] },
   { slug: "altai", name: "Гостиница Алтай", category: "Гостеприимство", image: "portfolio/altai/01", status: "Проект", year: "", place: "Алтай", caption: "Стеклянный объём над склоном, а не вместо него.", description: "Гостиница на алтайском склоне: стекло, настил и вода.", tags: [] as ProductTagId[], surfaces: [] as Surface[] },
   { slug: "gostec", name: "Гостиница Гостец", category: "Гостеприимство", image: "portfolio/gostec/01", status: "Проект", year: "", place: "Гостец", caption: "Тёмные дома с крутыми кровлями держат луг.", description: "Гостиничный посёлок из тёмных домов с общими дворами.", tags: [] as ProductTagId[], surfaces: [] as Surface[] },

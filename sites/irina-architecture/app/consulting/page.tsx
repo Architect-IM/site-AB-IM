@@ -2,6 +2,7 @@
 import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import styles from "./consulting.module.css";
+import { ProductLead } from "@/components/product-lead";
 
 export const metadata: Metadata = {
   title: "Консалтинг",
@@ -26,11 +27,11 @@ export default function Consulting() {
           <p className={styles.eyebrow}>Архитектор / Консультации</p>
           <h1 id="consulting-title">Консалтинг</h1>
           <p className={styles.subtitle}>Взгляд до проекта</p>
-          <p className={styles.lead}>С нами можно просто консультироваться — не запуская сразу проектирование или стройку. Я сама предлагаю этот шаг: разобраться в деталях, понять, что нужно делать сейчас, и наметить путь.</p>
-          <p className={styles.intro}>Рекомендации берутся из исследования и практики реализации. Смотрю задачу целиком: от смысла и архитектуры до экономики, согласований и того, как объект будет жить.</p>
           <a className={styles.link} href="#formats">С чем можно прийти</a>
         </div>
       </section>
+
+      <ProductLead quote="С нами можно просто консультироваться — не запуская сразу проектирование или стройку. Я сама предлагаю этот шаг: разобраться в деталях, понять, что нужно делать сейчас, и наметить путь. Рекомендации берутся из исследования и практики реализации. Смотрю задачу целиком: от смысла и архитектуры до экономики, согласований и того, как объект будет жить." />
 
       <div className={styles.divider} aria-hidden="true" />
 

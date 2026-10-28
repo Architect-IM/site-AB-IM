@@ -2,6 +2,7 @@ import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
 import { essays } from "@/lib/essays";
 import { PhotoRail } from "@/components/photo-rail";
+import { ProjectTalk } from "@/components/project-talk";
 
 type Project = (typeof projects)[number];
 
@@ -22,6 +23,8 @@ export function ProjectEssay({ project, next }: { project: Project; next: Projec
           <p className="pp-hero-quote">— {essay.quote}</p>
         </div>
       </section>
+
+      <ProjectTalk project={project} />
 
       <section className="pp-open">
         <p className="pp-kicker">{project.place}</p>

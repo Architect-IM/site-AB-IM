@@ -1,5 +1,4 @@
 import { sitePath } from "@/lib/site-path";
-import { projects } from "@/lib/projects";
 
 const steps = [
   ["01", "Аудит", "Изучаем ценностное предложение, смотрим, насколько далеко ваше обещание можно развернуть, не выдумав того, чего нет. Ищем на рынке целевой сегмент, смотрим окружение, считаем, какая цена делает дело интересным для всех. Мы не пытаемся обойти всех, скорее мы стараемся не заговорить чужим голосом."],
@@ -8,8 +7,6 @@ const steps = [
   ["04", "Стратегия", "Коктейль из метода, способа и плана. Такой, который все стороны без оговорок принимают за эталон вкуса и гармонии. Задача непростая. Когда берёмся — решаем."],
   ["05", "До результата", "Если стратегия принята и в ней нужна наша помощь, мы будем работать. Коммуникации, сайт, СМИ, дизайн — любые маркетинговые задачи. Поможем пройти весь путь. Вы творите замысел. Мы его держим."],
 ];
-
-const shown = ["pokrovskiy-pryanik", "dobrograd", "ivan-zaitsev"].map((slug) => projects.find((project) => project.slug === slug)!);
 
 export function BrandPath() {
   return (
@@ -31,19 +28,8 @@ export function BrandPath() {
       </ol>
       <section className="brand-close">
         <h2>Сначала место.</h2>
-        <p>Прежде всего — мы архитектурное бюро. Обычно мы берёмся за маркетинг тогда, когда проектируем или ведём какую-то стройку: опыт начинается с места, а не с объявления. Чаще всего это <a href={sitePath("/#directions")}>живое гостеприимство</a>, хотя бывает и другое. Если вам нужна помощь — приходите, договоримся.</p>
+        <p>Прежде всего — мы архитектурное бюро. Обычно мы берёмся за маркетинг тогда, когда проектируем или ведём какую-то стройку: опыт начинается с места, а не с объявления. Чаще всего это <a href={sitePath("/napravleniya/hospitality")}>живое гостеприимство</a>, хотя бывает и другое. Если вам нужна помощь — приходите, договоримся.</p>
         <p className="brand-close-sign">Ирина Михейкина<span>архитектор</span></p>
-      </section>
-      <section className="brand-been" aria-label="Примеры">
-        <h2>Наши клиенты</h2>
-        <div className="brand-been-grid">
-          {shown.map((project) => (
-            <a href={sitePath(`/portfolio/${project.slug}`)} key={project.slug}>
-              <img src={sitePath(`/assets/${project.image}.jpg`)} alt="" style={"imagePosition" in project && project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
-              <h3>{project.name}</h3>
-            </a>
-          ))}
-        </div>
       </section>
     </div>
   );
