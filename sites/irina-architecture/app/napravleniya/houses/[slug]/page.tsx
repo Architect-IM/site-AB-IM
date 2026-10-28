@@ -28,11 +28,7 @@ export default async function HouseServicePage({ params }: Props) {
       <a href={sitePath(back)}>← Частные владения</a>
       <span>{service.number} / {String(houseServices.length).padStart(2, "0")}</span>
     </nav>
-    <header className={styles.detailIntro}>
-      <p className={styles.eyebrow}>Частные владения / Дома и территории</p>
-      <h1>{service.title}</h1>
-    </header>
-    <ProductLead quote={service.description} />
+    <ProductLead kicker="Частные владения" title={service.title} quote={service.description} />
     <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
     {service.slug === "estate-implementation" && <ImplementationBlocks />}
     <div className={styles.detailSections}>

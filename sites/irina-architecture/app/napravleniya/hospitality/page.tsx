@@ -25,6 +25,11 @@ export default function Hospitality() {
       </section>
 
       <section className="product-talk" aria-labelledby="hospitality-title">
+        <div className="product-talk-copy">
+          <p className={styles.eyebrow}>02</p>
+          <h1 id="hospitality-title">{hospitality.title}</h1>
+          <p>{hospitality.intro}</p>
+        </div>
         <figure>
           <div className="lead-video">
             <img src={sitePath("/assets/portrait.jpg")} alt="" />
@@ -34,11 +39,6 @@ export default function Hospitality() {
           </div>
           <figcaption className="service-lead-sign">Ирина Михейкина<span>архитектор</span></figcaption>
         </figure>
-        <div className="product-talk-copy">
-          <p className={styles.eyebrow}>02</p>
-          <h1 id="hospitality-title">{hospitality.title}</h1>
-          <p>{hospitality.intro}</p>
-        </div>
       </section>
 
       {hospitalityServices.map((service, index) => (

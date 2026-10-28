@@ -25,11 +25,7 @@ export default async function VladimirService({ params }: Props) {
         <a href={sitePath(`/napravleniya/vladimir#${service.slug}`)}>← Владимирский контекст</a>
         <span className={styles.eyebrow}>{service.number} / 04</span>
       </nav>
-      <header className={styles.detailIntro}>
-        <p className={styles.eyebrow}>Владимирский контекст</p>
-        <h1>{service.title}</h1>
-      </header>
-      <ProductLead quote={service.description} />
+      <ProductLead kicker="Владимирский контекст" title={service.title} quote={service.description} />
       <figure className={`${styles.detailImage}${service.slug === "ago" ? ` ${styles.agoDetailImage}` : ""}`}>
         <img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" />
       </figure>

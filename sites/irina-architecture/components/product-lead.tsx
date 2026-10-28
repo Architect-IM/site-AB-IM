@@ -1,8 +1,13 @@
 import { sitePath } from "@/lib/site-path";
 
-export function ProductLead({ quote }: { quote: string }) {
+export function ProductLead({ title, kicker, quote }: { title?: string; kicker?: string; quote: string }) {
   return (
-    <section className="product-talk">
+    <section className="product-talk" aria-labelledby={title ? "product-lead-title" : undefined}>
+      <div className="product-talk-copy">
+        {kicker ? <p className="product-talk-kicker">{kicker}</p> : null}
+        {title ? <h1 id="product-lead-title">{title}</h1> : null}
+        <p>{quote}</p>
+      </div>
       <figure>
         <div className="lead-video">
           <img src={sitePath("/assets/portrait.jpg")} alt="" />
@@ -12,7 +17,6 @@ export function ProductLead({ quote }: { quote: string }) {
         </div>
         <figcaption className="service-lead-sign">Ирина Михейкина<span>архитектор</span></figcaption>
       </figure>
-      <div className="product-talk-copy"><p>{quote}</p></div>
     </section>
   );
 }

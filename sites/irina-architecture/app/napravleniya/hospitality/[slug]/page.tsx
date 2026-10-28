@@ -30,11 +30,7 @@ export default async function HospitalityService({ params }: Props) {
         <a href={sitePath(back)}>← Живое гостеприимство</a>
         <span>{service.number} / {String(hospitalityServices.length).padStart(2, "0")}</span>
       </nav>
-      <header className={styles.detailIntro}>
-        <p className={styles.eyebrow}>Живое гостеприимство</p>
-        <h1>{service.title}</h1>
-      </header>
-      <ProductLead quote={service.description} />
+      <ProductLead kicker="Живое гостеприимство" title={service.title} quote={service.description} />
       <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
       <div className={styles.detailSections}>
         {service.blocks.map((block, index) => (
