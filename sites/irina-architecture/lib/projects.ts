@@ -1,7 +1,7 @@
 export const productTags = [
-  { id: "hospitality", label: "Живое гостеприимство", side: "architect", href: "/#hospitality" },
-  { id: "territory-plan", label: "Мастер-план территории", side: "architect", href: "/#hospitality" },
-  { id: "tourism-plan", label: "Мастер-план туркомплекса", side: "architect", href: "/#hospitality" },
+  { id: "hospitality", label: "Живое гостеприимство", side: "architect", href: "/napravleniya/hospitality" },
+  { id: "territory-plan", label: "Мастер-план территории", side: "architect", href: "/napravleniya/hospitality/territory" },
+  { id: "tourism-plan", label: "Мастер-план туркомплекса", side: "architect", href: "/napravleniya/hospitality/tourism" },
   { id: "stage-p", label: "Стадия П", side: "bureau", href: "/bureau/uslugi/stage-p" },
   { id: "stage-r", label: "Стадия Р", side: "bureau", href: "/bureau/uslugi/stage-r" },
   { id: "survey", label: "Обследование", side: "bureau", href: "/bureau/uslugi/survey" },
