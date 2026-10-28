@@ -51,6 +51,32 @@ function ProductCard({ product }: { product: BureauProduct }) {
   );
 }
 
+function CommsSheet({ product }: { product: BureauProduct }) {
+  const words = ["что говорить", "как", "кому", "когда", "через какие каналы", "как понимать, что это работает"];
+  const steps = product.how.split(/(?<=\.)\s+/);
+  return (
+    <section className="comms-sheet">
+      <div className="comms-who">
+        <p className="section-label">Для кого и когда</p>
+        <p>{product.who}</p>
+      </div>
+      <div className="comms-result">
+        <p className="section-label">Что в результате?</p>
+        <p className="comms-frame">Детализированная рамка</p>
+        <ol>
+          {words.map((word) => <li key={word}>{word}</li>)}
+        </ol>
+      </div>
+      <div className="comms-how">
+        <p className="section-label">Как работаем</p>
+        <ol>
+          {steps.map((step) => <li key={step}>{step}</li>)}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
 function Voice({ slug }: { slug: string }) {
   const voice = voices[slug];
   if (!voice) return null;
@@ -131,7 +157,7 @@ function MarketingObject() {
             quote="Коммуникации должны расти из сути проекта, а не из разовых акций. Нужна рамка: что говорить, кому, через какие каналы и как понять, что это работает."
           />
         </section>
-        <ProductCard product={comms} />
+        <CommsSheet product={comms} />
       </article>
     </main>
   );
