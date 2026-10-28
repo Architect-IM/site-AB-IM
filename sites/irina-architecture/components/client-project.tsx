@@ -1,6 +1,7 @@
 import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
 import { PhotoRail } from "@/components/photo-rail";
+import { ProjectTalk } from "@/components/project-talk";
 
 type Project = (typeof projects)[number];
 
@@ -27,6 +28,8 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
           <p className="pp-hero-quote">— Печатный пряник, который стал местом.</p>
         </div>
       </section>
+
+      <ProjectTalk project={project} />
 
       <section className="pp-open">
         <p className="pp-kicker">1998 — сегодня</p>

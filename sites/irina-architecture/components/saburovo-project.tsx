@@ -1,6 +1,6 @@
 import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
-import { LeadVideo } from "@/components/lead-video";
+import { ProjectTalk } from "@/components/project-talk";
 
 type Project = (typeof projects)[number];
 
@@ -10,8 +10,6 @@ const products = [
   ["Рабочая документация — стадия Р", "Бюро", "/bureau/uslugi/stage-r"],
   ["Авторский надзор", "Бюро", "/bureau/uslugi/supervision"],
 ] as const;
-
-const told = "Сабурово: сто тридцать четыре дома в соснах. Посадили каждый на свой участок. Воду собрали в резервуар и отдали насосом, двадцать литров в секунду. Четыре года вместе со стройкой.";
 
 export function SaburovoProject({ project, next }: { project: Project; next: Project }) {
   return (
@@ -25,13 +23,7 @@ export function SaburovoProject({ project, next }: { project: Project; next: Pro
         </div>
       </section>
 
-      <section className="sab-voice">
-        <figure>
-          <LeadVideo src={`${sitePath("/assets/portfolio/saburovo/voice.mp4")}?v=2`} poster={photo("voice")} />
-          <figcaption className="service-lead-sign">Инженер бюро<span>рассказ о проекте</span></figcaption>
-        </figure>
-        <blockquote>{told}</blockquote>
-      </section>
+      <ProjectTalk project={project} />
 
       <section className="pp-open">
         <p className="pp-kicker">14 га · 134 дома · 10 км от Москвы</p>

@@ -5,6 +5,7 @@ import { LeadVideo } from "@/components/lead-video";
 import { FinanceExample } from "@/components/finance-example";
 import { BrandPath } from "@/components/brand-path";
 import { MarketingNavOffset } from "@/components/marketing-nav-offset";
+import { TalkSlot } from "@/components/talk-slot";
 import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -117,10 +118,18 @@ function MarketingObject() {
       </article>
 
       <article className="marketing-chapter" id="comms">
-        <section className="page-intro">
-          <p className="section-label">03</p>
-          <h2>{comms.title}</h2>
-          <p className="service-essence">{comms.essence}</p>
+        <section className="page-intro service-lead">
+          <div>
+            <p className="section-label">03</p>
+            <h2>{comms.title}</h2>
+            <p className="service-essence">{comms.essence}</p>
+          </div>
+          <TalkSlot
+            image={sitePath("/assets/finance-voice.jpg")}
+            name="Михаил Лункин"
+            role="маркетолог бюро"
+            quote="Коммуникации должны расти из сути проекта, а не из разовых акций. Нужна рамка: что говорить, кому, через какие каналы и как понять, что это работает."
+          />
         </section>
         <ProductCard product={comms} />
       </article>
@@ -152,6 +161,9 @@ export default async function BureauService({ params }: Props) {
           <h1>{product.title}</h1>
           <p className="service-essence">{product.essence}</p>
         </div>
+      </section>
+      <section className="talk-band">
+        <TalkSlot name="Бюро" role="видео ещё не снято" quote={product.why} />
       </section>
       <ProductCard product={product} />
     </main>

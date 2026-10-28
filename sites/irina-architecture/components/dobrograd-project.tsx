@@ -1,5 +1,6 @@
 import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
+import { ProjectTalk } from "@/components/project-talk";
 
 type Project = (typeof projects)[number];
 
@@ -23,6 +24,8 @@ export function DobrogradProject({ project, next }: { project: Project; next: Pr
           <p className="pp-hero-quote">— Образ первой очереди. Конструкция уже другая.</p>
         </div>
       </section>
+
+      <ProjectTalk project={project} />
 
       <section className="pp-open">
         <p className="pp-kicker">Улица Цветочная · 20 домов · 2800 м² · 2020</p>
