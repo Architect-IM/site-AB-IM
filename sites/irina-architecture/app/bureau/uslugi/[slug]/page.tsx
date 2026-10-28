@@ -34,26 +34,19 @@ function ProductCard({ product }: { product: BureauProduct }) {
 }
 
 function CommsSheet({ product }: { product: BureauProduct }) {
-  const words = ["что говорить", "как", "кому", "когда", "через какие каналы", "как понимать, что это работает"];
-  const steps = product.how.split(/(?<=\.)\s+/);
   return (
     <section className="comms-sheet">
-      <div className="comms-who">
-        <p className="section-label">Для кого и когда</p>
+      <div className="comms-row">
+        <h3>Для кого и когда</h3>
         <p>{product.who}</p>
       </div>
-      <div className="comms-result">
-        <p className="section-label">Что в результате?</p>
-        <p className="comms-frame">Детализированная рамка</p>
-        <ol>
-          {words.map((word) => <li key={word}>{word}</li>)}
-        </ol>
+      <div className="comms-row">
+        <h3>Что в результате?</h3>
+        <p>{product.gets}</p>
       </div>
-      <div className="comms-how">
-        <p className="section-label">Как работаем</p>
-        <ol>
-          {steps.map((step) => <li key={step}>{step}</li>)}
-        </ol>
+      <div className="comms-row">
+        <h3>Как работаем</h3>
+        <p>{product.how}</p>
       </div>
     </section>
   );
