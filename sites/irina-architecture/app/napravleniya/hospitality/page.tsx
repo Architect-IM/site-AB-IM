@@ -4,7 +4,6 @@ import { hospitality, hospitalityServices, hospitalityServicePath } from "@/lib/
 import { ProductClients } from "@/components/product-clients";
 import { HouseLink } from "../houses/links";
 import styles from "../houses/houses.module.css";
-import local from "./hospitality.module.css";
 
 export const metadata: Metadata = {
   title: hospitality.title,
@@ -27,19 +26,6 @@ export default function Hospitality() {
           <h1 id="hospitality-title">{hospitality.title}</h1>
           <p className={styles.subtitle}>{hospitality.subtitle}</p>
           <p className={styles.intro}>{hospitality.intro}</p>
-        </div>
-      </section>
-
-      <section className={local.matter} aria-labelledby="hospitality-matter">
-        <h2 id="hospitality-matter">Одна система, не здание на участке.</h2>
-        <div>
-          <p>Я беру туристический объект только если вижу, как он будет привлекать гостей, удерживать их и вызывать повторный спрос. Архитектура здесь не декорация, а одна из причин, почему место выбирают — и точка роста территории. Соединяю образ, экономику, опыт гостя и реализацию в одну систему; при необходимости подключаю нужных специалистов. Опыт российских гостиничных и туристических проектов помогает отличать то, что красиво открывается, от того, что потом живёт.</p>
-          <ol className={local.layers}>
-            <li><b>Образ</b><span>Причина выбрать место, а не украшение участка.</span></li>
-            <li><b>Экономика</b><span>Проверка, сможет ли идея зарабатывать, а не только открыться.</span></li>
-            <li><b>Опыт гостя</b><span>Привлечь, удержать и дать повод вернуться.</span></li>
-            <li><b>Реализация</b><span>Довести характер места до площадки, не потеряв его в мелочах.</span></li>
-          </ol>
         </div>
       </section>
 
