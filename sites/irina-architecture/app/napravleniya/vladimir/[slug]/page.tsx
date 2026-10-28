@@ -3,6 +3,7 @@ import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { vladimirServices } from "@/lib/vladimir";
+import { ProductLead } from "@/components/product-lead";
 import styles from "../vladimir.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -27,8 +28,8 @@ export default async function VladimirService({ params }: Props) {
       <header className={styles.detailIntro}>
         <p className={styles.eyebrow}>Владимирский контекст</p>
         <h1>{service.title}</h1>
-        <p className={styles.detailLead}>{service.description}</p>
       </header>
+      <ProductLead quote={service.description} />
       <figure className={`${styles.detailImage}${service.slug === "ago" ? ` ${styles.agoDetailImage}` : ""}`}>
         <img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" />
       </figure>

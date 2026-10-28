@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { sitePath } from "@/lib/site-path";
 import { hospitalityServices } from "@/lib/hospitality";
 import { HouseLink } from "../../houses/links";
+import { ProductLead } from "@/components/product-lead";
 import styles from "../../houses/houses.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -32,8 +33,8 @@ export default async function HospitalityService({ params }: Props) {
       <header className={styles.detailIntro}>
         <p className={styles.eyebrow}>Живое гостеприимство</p>
         <h1>{service.title}</h1>
-        <p className={styles.detailLead}>{service.description}</p>
       </header>
+      <ProductLead quote={service.description} />
       <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
       <div className={styles.detailSections}>
         {service.blocks.map((block, index) => (

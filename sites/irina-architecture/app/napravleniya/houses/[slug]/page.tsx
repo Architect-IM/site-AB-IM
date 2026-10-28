@@ -4,6 +4,7 @@ import { sitePath } from "@/lib/site-path";
 import { houseServices } from "@/lib/houses";
 import { HouseLink } from "../links";
 import { ImplementationBlocks } from "../implementation-blocks";
+import { ProductLead } from "@/components/product-lead";
 import styles from "../houses.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -30,8 +31,8 @@ export default async function HouseServicePage({ params }: Props) {
     <header className={styles.detailIntro}>
       <p className={styles.eyebrow}>Частные владения / Дома и территории</p>
       <h1>{service.title}</h1>
-      <p className={styles.detailLead}>{service.description}</p>
     </header>
+    <ProductLead quote={service.description} />
     <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
     {service.slug === "estate-implementation" && <ImplementationBlocks />}
     <div className={styles.detailSections}>

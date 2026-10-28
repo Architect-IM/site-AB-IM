@@ -3,6 +3,7 @@ import { sitePath } from "@/lib/site-path";
 import { houses, houseServices, houseServicePath, type HouseService } from "@/lib/houses";
 import { ActionLabel, HouseLink } from "./links";
 import { ImplementationVideo } from "./background-video";
+import { ProductLead } from "@/components/product-lead";
 import styles from "./houses.module.css";
 
 export const metadata: Metadata = {
@@ -34,9 +35,10 @@ export default function Houses() {
         <p className={styles.eyebrow}>04</p>
         <h1 id="houses-title">{houses.title}</h1>
         <p className={styles.subtitle}>{houses.subtitle}</p>
-        <p className={styles.intro}>{houses.intro}</p>
       </div>
     </section>
+
+    <ProductLead quote={houses.intro} />
 
     <section id={analysis.slug} className={styles.analysis} aria-labelledby="analysis-title">
       <div className={styles.analysisGrid}>

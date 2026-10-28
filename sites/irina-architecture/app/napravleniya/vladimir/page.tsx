@@ -3,6 +3,7 @@ import { sitePath } from "@/lib/site-path";
 import type { Metadata } from "next";
 import { vladimir, vladimirServices } from "@/lib/vladimir";
 import { VladimirVideo } from "./video-player";
+import { ProductLead } from "@/components/product-lead";
 import styles from "./vladimir.module.css";
 
 export const metadata: Metadata = {
@@ -35,9 +36,10 @@ export default function Vladimir() {
             <h1 id="vladimir-title">{vladimir.title}</h1>
             <h2 id="vladimir-subtitle" className={styles.subtitle}>{vladimir.subtitle}</h2>
           </div>
-          <p className={styles.lead}>{vladimir.intro}</p>
         </div>
       </section>
+
+      <ProductLead quote={vladimir.intro} />
 
       <section id="directions" className="section directions" aria-label="Четыре продукта Владимирского контекста">
         <div className="direction-grid">
