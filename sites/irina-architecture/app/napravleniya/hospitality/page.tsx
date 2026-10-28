@@ -22,7 +22,7 @@ export default function Hospitality() {
           <img src={sitePath(hospitality.image)} alt={hospitality.alt} fetchPriority="high" />
         </div>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Архитектор / 02</p>
+          <p className={styles.eyebrow}>02</p>
           <h1 id="hospitality-title">{hospitality.title}</h1>
           <p className={styles.subtitle}>{hospitality.subtitle}</p>
         </div>

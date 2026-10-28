@@ -31,7 +31,7 @@ export default function Houses() {
         <img src={sitePath("/assets/home-private-meadow-life.jpg")} alt="Деревянный дом с резными фронтонами, девушка на крыльце и козы на лугу" fetchPriority="high" />
       </div>
       <div className={styles.heroCopy}>
-        <p className={styles.eyebrow}>Private / 04</p>
+        <p className={styles.eyebrow}>04</p>
         <h1 id="houses-title">{houses.title}</h1>
         <p className={styles.subtitle}>{houses.subtitle}</p>
         <p className={styles.intro}>{houses.intro}</p>
