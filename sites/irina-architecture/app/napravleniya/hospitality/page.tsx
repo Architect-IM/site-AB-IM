@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Hospitality() {
   return (
     <main id="content" className={`inner-page ${styles.page}`}>
-      <section className={styles.hero} aria-labelledby="hospitality-title">
+      <section className={`${styles.hero} ${styles.heroEnd}`} aria-labelledby="hospitality-title">
         <nav className={`${styles.breadcrumbs} ${styles.heroBreadcrumbs}`} aria-label="Навигация по разделу">
           <a href={sitePath("/#directions")}>← На главную</a>
           <span aria-current="page">Живое гостеприимство</span>
@@ -22,7 +22,7 @@ export default function Hospitality() {
           <img src={sitePath(hospitality.image)} alt={hospitality.alt} fetchPriority="high" />
         </div>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Hospitality / 02</p>
+          <p className={styles.eyebrow}>Архитектор / 02</p>
           <h1 id="hospitality-title">{hospitality.title}</h1>
           <p className={styles.subtitle}>{hospitality.subtitle}</p>
         </div>
