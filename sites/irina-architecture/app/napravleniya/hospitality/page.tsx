@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { sitePath } from "@/lib/site-path";
 import { hospitality, hospitalityServices, hospitalityServicePath } from "@/lib/hospitality";
-import { ProductClients } from "@/components/product-clients";
 import { HouseLink } from "../houses/links";
 import styles from "../houses/houses.module.css";
+import local from "./hospitality.module.css";
 
 export const metadata: Metadata = {
   title: hospitality.title,
-  description: "Живое гостеприимство: визионерская концепция, мастер-план живого объекта, стратегическая сессия и сопровождение. Архитектор Ирина Михейкина.",
+  description: "Живое гостеприимство: туристический объект как система — образ, экономика, опыт гостя и реализация. Архитектор Ирина Михейкина.",
 };
 
 export default function Hospitality() {
@@ -29,36 +29,44 @@ export default function Hospitality() {
         </div>
       </section>
 
-      <section id="directions" className="section directions" aria-label="Продукты живого гостеприимства">
-        <div className="direction-grid">
-          {hospitalityServices.map((service, index) => (
-            <a
-              key={service.slug}
-              id={service.slug}
-              className={`direction-card${index % 2 ? " direction-fullbleed" : ""}`}
-              href={sitePath(hospitalityServicePath(service.slug))}
-              aria-labelledby={`${service.slug}-title`}
-            >
-              <div className="direction-meta">
-                <span className="direction-kicker">{service.number}</span>
-                <h3 id={`${service.slug}-title`}>{service.title}</h3>
-                <p>{service.description}</p>
-                <span className="direction-action">
-                  <span className="direction-link-arrow" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                  </span>
-                  <span>Подробнее</span>
-                </span>
-              </div>
-              <div className="media-frame">
-                <img src={sitePath(service.image)} alt={service.alt} loading="lazy" />
-              </div>
-            </a>
-          ))}
+      <section className={local.matter} aria-labelledby="hospitality-matter">
+        <h2 id="hospitality-matter">Одна система, не здание на участке.</h2>
+        <div>
+          <p>Я беру туристический объект только если вижу, как он будет привлекать гостей, удерживать их и вызывать повторный спрос. Архитектура здесь не декорация, а одна из причин, почему место выбирают — и точка роста территории. Соединяю образ, экономику, опыт гостя и реализацию в одну систему; при необходимости подключаю нужных специалистов. Опыт российских гостиничных и туристических проектов помогает отличать то, что красиво открывается, от того, что потом живёт.</p>
+          <ol className={local.layers}>
+            <li><b>Образ</b><span>Причина выбрать место, а не украшение участка.</span></li>
+            <li><b>Экономика</b><span>Проверка, сможет ли идея зарабатывать, а не только открыться.</span></li>
+            <li><b>Опыт гостя</b><span>Привлечь, удержать и дать повод вернуться.</span></li>
+            <li><b>Реализация</b><span>Довести характер места до площадки, не потеряв его в мелочах.</span></li>
+          </ol>
         </div>
       </section>
 
-      <ProductClients slug="hospitality" />
+      {hospitalityServices.map((service, index) => (
+        index % 2 === 0 ? (
+          <section id={service.slug} className={styles.analysis} aria-labelledby={`${service.slug}-title`} key={service.slug}>
+            <div className={styles.analysisGrid}>
+              <div className={styles.analysisImage}><img src={sitePath(service.image)} alt={service.alt} loading="lazy" /></div>
+              <div className={styles.analysisCopy}>
+                <p className={styles.eyebrow}>{service.number}</p>
+                <h2 id={`${service.slug}-title`}>{service.title}</h2>
+                <p>{service.description}</p>
+                <HouseLink href={hospitalityServicePath(service.slug)}>Подробнее</HouseLink>
+              </div>
+            </div>
+          </section>
+        ) : (
+          <section id={service.slug} className={`${styles.videoBand} ${styles.masterplanBand}`} aria-labelledby={`${service.slug}-title`} key={service.slug}>
+            <div className={styles.motionBackdrop}><img className={styles.masterplanPhoto} src={sitePath(service.image)} alt={service.alt} loading="lazy" /></div>
+            <div className={`${styles.bandCopy} ${styles.videoCopy}`}>
+              <p className={styles.eyebrow}>{service.number}</p>
+              <h2 id={`${service.slug}-title`}>{service.title}</h2>
+              <p>{service.description}</p>
+              <HouseLink href={hospitalityServicePath(service.slug)}>Подробнее</HouseLink>
+            </div>
+          </section>
+        )
+      ))}
 
       <nav className={`${styles.return} ${styles.mainReturn}`} aria-label="Другие направления">
         <HouseLink href="/#directions" back>Чем я занимаюсь?</HouseLink>
