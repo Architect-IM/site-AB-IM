@@ -25,8 +25,20 @@ export default function Hospitality() {
           <p className={styles.eyebrow}>Hospitality / 02</p>
           <h1 id="hospitality-title">{hospitality.title}</h1>
           <p className={styles.subtitle}>{hospitality.subtitle}</p>
-          <p className={styles.intro}>{hospitality.intro}</p>
         </div>
+      </section>
+
+      <section className="product-talk" aria-label="Коротко о продукте">
+        <figure>
+          <div className="lead-video">
+            <img src={sitePath("/assets/portrait.jpg")} alt="" />
+            <button type="button" className="lead-play" aria-disabled="true" aria-label="Видео ещё не снято">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.8v10.4L18.2 12z" /></svg>
+            </button>
+          </div>
+          <figcaption className="service-lead-sign">Ирина Михейкина<span>архитектор</span></figcaption>
+        </figure>
+        <p>{hospitality.intro}</p>
       </section>
 
       {hospitalityServices.map((service, index) => (
