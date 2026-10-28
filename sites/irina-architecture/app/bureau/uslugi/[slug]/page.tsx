@@ -100,7 +100,7 @@ function MarketingObject() {
 
       <article className="marketing-chapter" id="finance">
         <section className="page-intro">
-          <p className="section-label"><span className="marketing-rank">Дополнительно</span></p>
+          <p className="section-label">02</p>
           <h2>{finance.title}</h2>
           <p className="service-essence">{finance.essence}</p>
         </section>
@@ -115,7 +115,7 @@ function MarketingObject() {
 
       <article className="marketing-chapter" id="comms">
         <section className="page-intro">
-          <p className="section-label"><span className="marketing-rank">Дополнительно</span></p>
+          <p className="section-label">03</p>
           <h2>{comms.title}</h2>
           <p className="service-essence">{comms.essence}</p>
         </section>
