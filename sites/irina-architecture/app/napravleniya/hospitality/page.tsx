@@ -7,12 +7,10 @@ import styles from "../houses/houses.module.css";
 
 export const metadata: Metadata = {
   title: hospitality.title,
-  description: "Живое гостеприимство: туристический объект, который привлекает, удерживает и возвращает гостя. Мастер-план территории и мастер-план объекта. Архитектор Ирина Михейкина.",
+  description: "Живое гостеприимство: визионерская концепция, мастер-план живого объекта, стратегическая сессия и сопровождение. Архитектор Ирина Михейкина.",
 };
 
 export default function Hospitality() {
-  const [territory, tourism] = hospitalityServices;
-
   return (
     <main id="content" className={`inner-page ${styles.page}`}>
       <section className={styles.hero} aria-labelledby="hospitality-title">
@@ -31,24 +29,32 @@ export default function Hospitality() {
         </div>
       </section>
 
-      <section id={territory.slug} className={styles.analysis} aria-labelledby="territory-title">
-        <div className={styles.analysisGrid}>
-          <div className={styles.analysisImage}><img src={sitePath(territory.image)} alt={territory.alt} loading="lazy" /></div>
-          <div className={styles.analysisCopy}>
-            <p className={styles.eyebrow}>{territory.number}</p>
-            <h2 id="territory-title">{territory.title}</h2>
-            <p>{territory.description}</p>
-            <HouseLink href={hospitalityServicePath(territory.slug)}>Подробнее</HouseLink>
-          </div>
-        </div>
-      </section>
-
-      <section id={tourism.slug} className={`${styles.videoBand} ${styles.masterplanBand}`} aria-labelledby="tourism-title">
-        <div className={styles.motionBackdrop}><img className={styles.masterplanPhoto} src={sitePath(tourism.image)} alt={tourism.alt} loading="lazy" /></div>
-        <div className={`${styles.bandCopy} ${styles.videoCopy}`}>
-          <h2 id="tourism-title">{tourism.title}</h2>
-          <p>{tourism.description}</p>
-          <HouseLink href={hospitalityServicePath(tourism.slug)}>Подробнее</HouseLink>
+      <section id="directions" className="section directions" aria-label="Продукты живого гостеприимства">
+        <div className="direction-grid">
+          {hospitalityServices.map((service, index) => (
+            <a
+              key={service.slug}
+              id={service.slug}
+              className={`direction-card${index % 2 ? " direction-fullbleed" : ""}`}
+              href={sitePath(hospitalityServicePath(service.slug))}
+              aria-labelledby={`${service.slug}-title`}
+            >
+              <div className="direction-meta">
+                <span className="direction-kicker">{service.number}</span>
+                <h3 id={`${service.slug}-title`}>{service.title}</h3>
+                <p>{service.description}</p>
+                <span className="direction-action">
+                  <span className="direction-link-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  </span>
+                  <span>Подробнее</span>
+                </span>
+              </div>
+              <div className="media-frame">
+                <img src={sitePath(service.image)} alt={service.alt} loading="lazy" />
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
