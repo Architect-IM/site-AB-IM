@@ -78,14 +78,29 @@ function MarketingObject() {
 
       <nav className="marketing-nav" aria-label="Разделы">
         <MarketingNavOffset />
-        <a href="#finance"><span>01</span>{finance.title}</a>
-        <a href="#brand"><span>02</span>{brand.title}</a>
+        <p className="marketing-rank marketing-rank-main">Главное</p>
+        <p className="marketing-rank marketing-rank-extra">Дополнительно</p>
+        <a href="#brand"><span>01</span>{brand.title}</a>
+        <a href="#finance"><span>02</span>{finance.title}</a>
         <a href="#comms"><span>03</span>{comms.title}</a>
       </nav>
 
+      <article className="marketing-chapter" id="brand">
+        <section className="page-intro">
+          <p className="section-label"><span className="marketing-rank marketing-rank-main">Главное</span></p>
+          <h2>{brand.title}</h2>
+          <p className="service-essence">{brand.essence}</p>
+        </section>
+        <section className="finance-method brand-method">
+          <h2>Как это делаем мы</h2>
+        </section>
+        <BrandPath />
+        <ProductClients slug="brand" />
+      </article>
+
       <article className="marketing-chapter" id="finance">
         <section className="page-intro">
-          <p className="section-label">01</p>
+          <p className="section-label"><span className="marketing-rank">Дополнительно</span></p>
           <h2>{finance.title}</h2>
           <p className="service-essence">{finance.essence}</p>
         </section>
@@ -98,22 +113,9 @@ function MarketingObject() {
         <ProductClients slug="finance" />
       </article>
 
-      <article className="marketing-chapter" id="brand">
-        <section className="page-intro">
-          <p className="section-label">02</p>
-          <h2>{brand.title}</h2>
-          <p className="service-essence">{brand.essence}</p>
-        </section>
-        <section className="finance-method brand-method">
-          <h2>Как это делаем мы</h2>
-        </section>
-        <BrandPath />
-        <ProductClients slug="brand" />
-      </article>
-
       <article className="marketing-chapter" id="comms">
         <section className="page-intro">
-          <p className="section-label">03</p>
+          <p className="section-label"><span className="marketing-rank">Дополнительно</span></p>
           <h2>{comms.title}</h2>
           <p className="service-essence">{comms.essence}</p>
         </section>
