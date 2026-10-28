@@ -1606,7 +1606,7 @@ p {text-wrap:pretty}
 .service-sections{display:grid;gap:42px;max-width:760px}
 .comms-sheet{padding:8px var(--side) 72px}
 .comms-row{display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,34rem);gap:12px 48px;align-items:start;padding:32px 0 36px;border-top:1px solid var(--ink)}
-.comms-row h3{margin:0;max-width:8em;font-size:clamp(36px,4vw,60px);font-weight:500;letter-spacing:-.045em;line-height:.95}
+.comms-row h3{margin:0;max-width:9em;font-size:clamp(28px,2.8vw,40px);font-weight:500;letter-spacing:-.04em;line-height:1.05}
 .comms-row p{margin:8px 0 0;font-size:16px;line-height:1.55;color:#3a3b3e}
 @media(max-width:700px){.comms-row{grid-template-columns:1fr;gap:14px}.comms-row h3{font-size:34px}}
 .service-sections p:not(.section-label){margin:12px 0 0;font-size:18px;line-height:1.65}
