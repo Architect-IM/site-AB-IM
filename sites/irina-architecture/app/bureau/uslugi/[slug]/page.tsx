@@ -87,7 +87,7 @@ function MarketingObject() {
 
       <article className="marketing-chapter" id="brand">
         <section className="page-intro">
-          <p className="section-label"><span className="marketing-rank marketing-rank-main">Главное</span></p>
+          <p className="section-label">01</p>
           <h2>{brand.title}</h2>
           <p className="service-essence">{brand.essence}</p>
         </section>
