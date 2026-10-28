@@ -1501,8 +1501,8 @@ p {text-wrap:pretty}
 .product-talk figure{margin:0}
 .product-talk .lead-video img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:center 18%;filter:saturate(.55) contrast(1.04);background:#d8d6d1}
 .product-talk .lead-play{cursor:default}
-.product-talk h1{margin:0 0 14px;max-width:9em;font-size:clamp(40px,4.2vw,64px);font-weight:500;letter-spacing:-.05em;line-height:.98}
-.product-talk-sub{margin:0 0 22px;max-width:28em;font-size:clamp(18px,1.5vw,22px);line-height:1.35;color:var(--muted)}
+.hospitality-formula{position:absolute;z-index:1;left:var(--side);bottom:clamp(28px,4vw,52px);max-width:14em;margin:0;color:#fff;font-size:clamp(22px,2.1vw,32px);font-weight:500;letter-spacing:-.03em;line-height:1.2;text-shadow:0 1px 14px rgba(12,15,17,.45)}
+.product-talk h1{margin:0 0 18px;max-width:9em;font-size:clamp(40px,4.2vw,64px);font-weight:500;letter-spacing:-.05em;line-height:.98}
 .product-talk-copy>p:last-child{margin:0;max-width:46em;font-size:17px;line-height:1.6}
 @media(max-width:700px){.product-talk{grid-template-columns:1fr}.product-talk .lead-video{width:min(280px,72%)}}
 .talk-band .service-lead-stack{padding-top:0;grid-template-columns:minmax(220px,360px) minmax(0,1fr)}
