@@ -5,6 +5,7 @@ import { FinanceExample } from "@/components/finance-example";
 import { BrandPath } from "@/components/brand-path";
 import { MarketingNavOffset } from "@/components/marketing-nav-offset";
 import { TalkSlot } from "@/components/talk-slot";
+import { ProductClients } from "@/components/product-clients";
 import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -101,6 +102,7 @@ function MarketingObject() {
           <p className="finance-method-next">Ниже — пример простого расчёта эффективности модели бизнеса. Его можно делать сколь угодно подробно, но нельзя делать слабее. А часто нет и такого, даже когда инвестиции уже идут. Мы предлагаем считать.</p>
         </section>
         <FinanceExample />
+        <ProductClients slug="finance" />
       </article>
 
       <article className="marketing-chapter" id="brand">
@@ -113,6 +115,7 @@ function MarketingObject() {
           <h2>Как это делаем мы</h2>
         </section>
         <BrandPath />
+        <ProductClients slug="brand" />
       </article>
 
       <article className="marketing-chapter" id="comms">
@@ -122,6 +125,7 @@ function MarketingObject() {
           <p className="service-essence">{comms.essence}</p>
         </section>
         <CommsSheet product={comms} />
+        <ProductClients slug="comms" />
       </article>
     </main>
   );
@@ -156,6 +160,7 @@ export default async function BureauService({ params }: Props) {
         <TalkSlot name="Бюро" role="видео ещё не снято" quote={product.why} />
       </section>
       <ProductCard product={product} />
+      <ProductClients slug={product.slug} />
     </main>
   );
 }
