@@ -1497,7 +1497,7 @@ p {text-wrap:pretty}
 .service-lead-stack .lead-video img,.talk-still{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center;filter:saturate(.5) contrast(1.04);background:#d8d6d1}
 .talk-slot .lead-play{cursor:default}
 .talk-band{padding:40px var(--side) 12px}
-.product-talk{display:grid;grid-template-columns:minmax(0,42rem) minmax(220px,360px);gap:32px 64px;align-items:center;padding:clamp(48px,6vw,88px) var(--side)}
+.product-talk{display:grid;grid-template-columns:minmax(0,42rem) minmax(220px,360px);gap:32px 64px;align-items:center;padding:12px var(--side) clamp(48px,6vw,88px)}
 .product-talk figure{margin:0}
 .product-talk .lead-video img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:center 18%;filter:saturate(.55) contrast(1.04);background:#d8d6d1}
 .product-talk .lead-play{cursor:default}
