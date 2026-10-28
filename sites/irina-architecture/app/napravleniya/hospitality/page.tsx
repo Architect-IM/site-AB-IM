@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { sitePath } from "@/lib/site-path";
 import { hospitality, hospitalityServices, hospitalityServicePath } from "@/lib/hospitality";
+import { ProductClients } from "@/components/product-clients";
 import { HouseLink } from "../houses/links";
 import styles from "../houses/houses.module.css";
 import local from "./hospitality.module.css";
@@ -67,6 +68,8 @@ export default function Hospitality() {
           </section>
         )
       ))}
+
+      <ProductClients slug="hospitality" />
 
       <nav className={`${styles.return} ${styles.mainReturn}`} aria-label="Другие направления">
         <HouseLink href="/#directions" back>Чем я занимаюсь?</HouseLink>
