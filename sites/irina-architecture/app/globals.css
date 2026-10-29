@@ -1922,12 +1922,13 @@ textarea.form-input {resize:vertical;min-height:135px}
  grid-column: 7 / -1; display: block; min-width: 0; padding: 0;
 }
 #directions .direction-kicker {
- display: block; margin-bottom: 20px; color: var(--muted);
+ display: inline; margin: 0 2.6em 0 0; color: var(--muted);
  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
- font-size: 12px; line-height: 1.4; letter-spacing: .1em; text-transform: uppercase;
+ font-size: 12px; line-height: 1; letter-spacing: .1em; text-transform: uppercase;
+ vertical-align: 0.35em;
 }
 #directions .direction-card .direction-meta h3 {
- margin: 0; font-size: clamp(24px,2vw,28px); font-weight: 600;
+ display: inline; margin: 0; font-size: clamp(24px,2vw,28px); font-weight: 600;
  line-height: 1.2; letter-spacing: -.01em;
 }
 #directions .direction-meta p {
@@ -1978,7 +1979,7 @@ textarea.form-input {resize:vertical;min-height:135px}
  #directions .direction-card { grid-template-columns: minmax(0,1fr); gap: 28px; }
  #directions .direction-card .media-frame, #directions .direction-meta { grid-column: 1; }
  #directions .direction-card .media-frame { aspect-ratio: 4 / 3; }
- #directions .direction-kicker { margin-bottom: 16px; }
+ #directions .direction-kicker { margin-bottom: 0; }
  #directions .direction-fullbleed { padding-block: 64px 40px; align-items: end; }
  #directions .direction-fullbleed .media-frame { grid-column: auto; aspect-ratio: auto; }
  #directions .direction-fullbleed::before {
@@ -2052,11 +2053,9 @@ textarea.form-input {resize:vertical;min-height:135px}
  z-index: 1;
  margin-inline: calc(-1 * var(--side));
  margin-bottom: calc(-1 * clamp(28px, 4vh, 48px));
- padding: 22px var(--side) clamp(20px, 2.8vh, 32px);
- background: rgba(10, 12, 11, .74);
- box-shadow: 0 -32px 40px rgba(10, 12, 11, .42);
- -webkit-backdrop-filter: blur(10px);
- backdrop-filter: blur(10px);
+ padding: 16px var(--side) clamp(15px, 2.1vh, 24px);
+ background: linear-gradient(180deg, rgba(10,12,11,.08) 0%, rgba(10,12,11,.42) 46%, rgba(10,12,11,.72) 100%);
+ box-shadow: none;
 }
 #directions .direction-hospitality .direction-meta > div,
 #directions .direction-private .direction-meta > div { flex: 1 1 18rem; min-width: 0; }
