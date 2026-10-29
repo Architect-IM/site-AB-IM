@@ -4,6 +4,14 @@ import type { BureauProduct } from "@/lib/bureau-products";
 
 const examples = ["pokrovskiy-pryanik", "dobrograd", "saburovo", "kabardinka", "ples"];
 
+const contextFrames = [
+  { src: "/assets/territory.jpg", wide: true },
+  { src: "/assets/portfolio/dobrograd/street.jpg" },
+  { src: "/assets/vladimir-assumption-context.jpg", narrow: true },
+  { src: "/assets/portfolio/ples/01.jpg" },
+  { src: "/assets/portfolio/kabardinka/01.jpg", wide: true },
+];
+
 export function StageStandard({ product }: { product: BureauProduct }) {
   const shown = examples
     .map((slug) => projects.find((item) => item.slug === slug))
@@ -24,12 +32,21 @@ export function StageStandard({ product }: { product: BureauProduct }) {
         <p>{product.who}</p>
       </section>
 
-      <section className="p-take">
-        <div>
+      <section className="p-reel" aria-label="Глубокое чтение контекста">
+        <div className="p-reel-copy">
           <h2>Глубокое чтение контекста.</h2>
           <p>Учитываем архитектурный код места и культурный код заказчика, сообщества и территории, а также культурные тенденции.</p>
         </div>
-        <img src={sitePath("/assets/territory.jpg")} alt="" />
+        <div className="p-reel-track">
+          {contextFrames.map((frame) => (
+            <img
+              key={frame.src}
+              src={sitePath(frame.src)}
+              alt=""
+              className={frame.wide ? "is-wide" : frame.narrow ? "is-narrow" : undefined}
+            />
+          ))}
+        </div>
       </section>
 
       <section className="p-quiet">
@@ -37,12 +54,12 @@ export function StageStandard({ product }: { product: BureauProduct }) {
         <p>{product.gets}</p>
       </section>
 
-      <section className="p-take">
+      <section className="p-take p-take-wide">
+        <img src={sitePath("/assets/lodge.jpg")} alt="" />
         <div>
           <h2>Оптимизация и уникальные решения.</h2>
           <p>Проектируем не для галочки или экспертизы, а так, чтобы решения закрывали текущие задачи и оставляли возможность для развития объекта.</p>
         </div>
-        <img src={sitePath("/assets/lodge.jpg")} alt="" />
       </section>
 
       <section className="p-quiet">
@@ -60,7 +77,7 @@ export function StageStandard({ product }: { product: BureauProduct }) {
         </div>
       </section>
 
-      <section className="p-take">
+      <section className="p-take p-take-note">
         <div>
           <h2>100% гарантия положительного заключения экспертизы.</h2>
           <p>По нашим проектам не было ни одного отказа в выдаче разрешения на строительство или положительного заключения экспертизы.</p>
@@ -73,12 +90,12 @@ export function StageStandard({ product }: { product: BureauProduct }) {
         <p>{product.why}</p>
       </section>
 
-      <section className="p-take">
+      <section className="p-take p-take-left">
+        <img src={sitePath("/assets/house.jpg")} alt="" />
         <div>
           <h2>Глубокая инженерная экспертиза.</h2>
           <p>Сильные компетенции в конструкциях, технологиях и инженерных решениях.</p>
         </div>
-        <img src={sitePath("/assets/house.jpg")} alt="" />
       </section>
 
       <section className="p-quiet">
