@@ -1527,7 +1527,6 @@ p {text-wrap:pretty}
 .product-talk-key h1{font-size:clamp(40px,4vw,56px)}
 .product-talk-key .product-talk-copy>p:last-child{font-size:20px;line-height:1.5;max-width:28em}
 .stage-page .page-intro{background:#f4f1eb;padding-top:32px;padding-bottom:0}
-.hospitality-formula{position:absolute;z-index:1;left:var(--side);bottom:clamp(28px,4vw,52px);max-width:14em;margin:0;color:#fff;font-size:clamp(22px,2.1vw,32px);font-weight:500;letter-spacing:-.03em;line-height:1.2;text-shadow:0 1px 14px rgba(12,15,17,.45)}
 @media(max-width:700px){.product-talk{grid-template-columns:1fr}.product-talk .lead-video{width:min(280px,72%)}}
 .talk-band .service-lead-stack{padding-top:0;grid-template-columns:minmax(220px,360px) minmax(0,1fr)}
 @media(max-width:700px){.talk-band .service-lead-stack{grid-template-columns:1fr}.talk-band .lead-video{width:72%}}

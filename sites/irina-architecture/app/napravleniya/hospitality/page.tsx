@@ -21,7 +21,6 @@ export default function Hospitality() {
         <div className={styles.heroImage}>
           <img className={styles.hospitalityHero} src={sitePath(hospitality.image)} alt={hospitality.alt} fetchPriority="high" />
         </div>
-        <p className="hospitality-formula">{hospitality.subtitle}</p>
       </section>
 
       <section className="product-talk" aria-labelledby="hospitality-title">
