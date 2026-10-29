@@ -1,0 +1,1 @@
+import{r as e}from"./framework-DMTR1Sr3.js";var t=e();function n({footer:e=!1}){return(0,t.jsx)(`span`,{className:`brand-mark${e?` brand-mark-footer`:``}`,"aria-hidden":`true`,children:`ИМ`})}export{n as t};
