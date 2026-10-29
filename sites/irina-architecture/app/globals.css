@@ -2046,13 +2046,22 @@ textarea.form-input {resize:vertical;min-height:135px}
  align-items: flex-end;
  justify-content: space-between;
  gap: 28px 40px;
+ position: relative;
+ z-index: 1;
+ margin-inline: calc(-1 * var(--side));
+ margin-bottom: calc(-1 * clamp(28px, 4vh, 48px));
+ padding: 22px var(--side) clamp(20px, 2.8vh, 32px);
+ background: rgba(10, 12, 11, .74);
+ box-shadow: 0 -32px 40px rgba(10, 12, 11, .42);
+ -webkit-backdrop-filter: blur(10px);
+ backdrop-filter: blur(10px);
 }
 #directions .direction-hospitality .direction-meta > div { flex: 1 1 18rem; min-width: 0; }
-#directions .direction-hospitality .direction-meta p { margin-top: 12px; }
+#directions .direction-hospitality .direction-meta p { margin-top: 12px; color: #fff; }
+#directions .direction-hospitality .direction-kicker,
+#directions .direction-hospitality h3 { color: #fff; text-shadow: 0 1px 10px rgba(12,15,17,.35); }
 #directions .direction-hospitality .direction-action { margin-top: 0; margin-left: auto; }
-#directions .direction-hospitality.direction-screen::before {
- background: linear-gradient(180deg, transparent 46%, rgba(12,15,17,.12) 70%, rgba(12,15,17,.55) 100%);
-}
+#directions .direction-hospitality.direction-screen::before { background: none; }
 @media (max-width: 680px) {
  #directions .direction-hospitality .direction-meta { flex-direction: column; align-items: stretch; gap: 22px; }
  #directions .direction-hospitality .direction-action { align-self: flex-end; }
