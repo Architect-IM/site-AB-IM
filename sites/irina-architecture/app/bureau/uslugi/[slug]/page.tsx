@@ -6,6 +6,7 @@ import { BrandPath } from "@/components/brand-path";
 import { MarketingNavOffset } from "@/components/marketing-nav-offset";
 import { TalkSlot } from "@/components/talk-slot";
 import { ProductClients } from "@/components/product-clients";
+import { StageStandard } from "@/components/stage-standard";
 import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -154,8 +155,12 @@ export default async function BureauService({ params }: Props) {
       <section className="talk-band">
         <TalkSlot name="Бюро" role="видео ещё не снято" quote={product.why} />
       </section>
-      <ProductCard product={product} />
-      <ProductClients slug={product.slug} />
+      {product.slug === "stage-p" ? <StageStandard product={product} /> : (
+        <>
+          <ProductCard product={product} />
+          <ProductClients slug={product.slug} />
+        </>
+      )}
     </main>
   );
 }
