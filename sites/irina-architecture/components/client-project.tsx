@@ -19,10 +19,18 @@ const products = [
 
 export function ClientProject({ project, next }: { project: Project; next: Project }) {
   return (
-    <main id="content" className="inner-page pp">
+    <main id="content" className="inner-page pp pp-pokrovskiy">
       <section className="pp-hero">
         <img src={photo("img_0387")} alt="Фабрика «Покровский пряник» в Нагорном" />
         <div className="pp-hero-copy">
+          <img
+            className="pp-client-logo"
+            src={sitePath("/assets/portfolio/pokrovskiy-pryanik/logo-inverse.svg")}
+            width={1280}
+            height={1280}
+            alt=""
+            aria-hidden="true"
+          />
           <p className="section-label">Заказчик · Нагорный</p>
           <h1>{project.name}</h1>
           <p className="pp-hero-quote">— Печатный пряник, который стал местом.</p>
