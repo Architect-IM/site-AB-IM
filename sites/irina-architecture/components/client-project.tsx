@@ -65,16 +65,16 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
         </div>
       </section>
 
-      <PhotoRail photos={[
-        { src: photo("img_0350"), alt: "Фасад шоколадной фабрики" },
-        { src: photo("img_0276"), alt: "Зал фабрики: часы, лестница, витрина" },
-        { src: photo("img_0334"), alt: "Шоколадные фонтаны" },
-        { src: photo("img_0323"), alt: "Корпус на территории, вид сквозь сосны" },
-        { src: photo("img_0359"), alt: "Настил среди берёз" },
+      <PhotoRail viewport photos={[
+        { src: photo("img_0356"), alt: "Кирпичный корпус шоколадной фабрики", position: "62% 50%" },
+        { src: photo("img_0396"), alt: "Вход в пряничную фабрику с площади" },
+        { src: photo("img_0300"), alt: "Фирменный магазин «Покровский пряник»", standardLayout: true },
+        { src: photo("img_0300"), alt: "Фирменный магазин «Покровский пряник»", position: "47% 0%", keepVisible: true },
+        { src: photo("img_0317"), alt: "Печатный пряник в фирменном магазине" },
       ]} />
 
       <section className="pp-path">
-        <img src={photo("img_0361")} alt="Фасад шоколадной фабрики" />
+        <img src={photo("img_0374")} alt="Пешеходный настил среди берёз на пути к шоколадной фабрике" />
         <div>
           <p className="pp-kicker">Маршрут уже есть</p>
           <h2>От пряника к шоколаду — пешком.</h2>
@@ -97,6 +97,27 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
         <img src={photo("img_0356")} alt="Кирпичный корпус шоколадной фабрики" />
         <div>
           <p>Половина здания была закрыта: аварийные конструкции, снаружи вид катакомб. В другой половине уже готовили конфеты. Нужно было быстро обследовать, починить и не трогать несущие конструкции. Вписать туристов в действующее производство. Добавить мастер-классы, магазин, кафе и другую необходимую инфраструктуру. Развести путь гостя и путь персонала. Вот уже три года проект работает и набирает обороты — по-моему получилось хорошо!</p>
+          <figure className="pp-archive">
+            <div className="pp-archive-grid">
+              <img
+                src={photo("before-reconstruction")}
+                alt="Вход и фасад бывшего овощехранилища до реконструкции"
+                width={1200}
+                height={900}
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                src={photo("before-reconstruction-masonry")}
+                alt="Повреждённая кирпичная кладка и штукатурка до реконструкции"
+                width={1200}
+                height={900}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <figcaption>До реконструкции</figcaption>
+          </figure>
           <p className="pp-line">— Увидели не руины, а возможности.</p>
         </div>
       </section>
@@ -119,13 +140,65 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
         </article>
       </section>
 
-      <PhotoRail photos={[
+      <PhotoRail viewport photos={[
+        { src: photo("nagorny-territory-development-photoreal"), alt: "Комплексное развитие территории, в рамках которого была реконструирована шоколадная фабрика", keepVisible: true },
         { src: photo("img_0366"), alt: "Уличный настил у шоколадной фабрики" },
-        { src: photo("img_0396"), alt: "Вход пряничной фабрики с площади" },
-        { src: photo("img_0300"), alt: "Фирменный магазин «Покровский пряник»" },
-        { src: photo("img_0413"), alt: "Парк: вид с настила через берёзы" },
-        { src: photo("img_0407"), alt: "Домик в парке среди берёз" },
+        { src: photo("img_0360"), alt: "Вход в шоколадную фабрику и пандус", position: "35% 50%" },
+        { src: photo("img_0334"), alt: "Шоколадные фонтаны в интерьере фабрики", position: "38% 20%" },
+        { src: photo("img_0356"), alt: "Кирпичный корпус шоколадной фабрики", position: "62% 50%" },
       ]} />
+
+      <section className="pp-related" aria-labelledby="pp-related-title">
+        <div className="section-head pp-related-heading">
+          <h2 id="pp-related-title">Одно КРТ.<br />Три проекта</h2>
+          <p className="pp-kicker">Нагорный / Развитие территории</p>
+        </div>
+        <div className="pp-related-grid">
+          <article className="pp-related-card">
+            <div className="pp-related-image">
+              <img
+                className="pp-related-restaurant"
+                src={photo("nagorny-restaurant-construction")}
+                alt="Ресторан в Нагорном на этапе строительства, вид через сосновые ветви"
+                width={1365}
+                height={2048}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div className="pp-related-meta">
+              <div>
+                <h3>Ресторан в Нагорном</h3>
+                <p>На этапе строительства</p>
+              </div>
+              <span className="pp-related-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.5" /></svg>
+              </span>
+            </div>
+          </article>
+          <article className="pp-related-card">
+            <div className="pp-related-image">
+              <img
+                src={photo("nagorny-hotel-project")}
+                alt="Проект гостиничного комплекса в Нагорном: кирпичные фасады и озеленение"
+                width={2048}
+                height={1143}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div className="pp-related-meta">
+              <div>
+                <h3>Гостиничный комплекс в Нагорном</h3>
+                <p>Стадия проект</p>
+              </div>
+              <span className="pp-related-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.5" /></svg>
+              </span>
+            </div>
+          </article>
+        </div>
+      </section>
 
       <section className="pp-two">
         <div>
