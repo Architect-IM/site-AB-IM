@@ -1957,6 +1957,7 @@ textarea.form-input {resize:vertical;min-height:135px}
 }
 #directions .direction-private .media-frame img { object-position: 55% 50%; }
 #directions .direction-hospitality .media-frame img { object-position: 46% 48%; }
+#directions .direction-hospitality { align-items: end; padding-bottom: clamp(48px, 7vh, 88px); }
 @media (max-width: 820px) {
  #directions .direction-private .media-frame img { object-position: 22% 50%; }
 }
