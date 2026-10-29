@@ -262,7 +262,7 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
     works: works.brief,
     takes: [
       {
-        kind: "wide",
+        kind: "review",
         title: "Независимость.",
         text: "Разрабатываем ТЗ не под себя, а делаем универсальный документ, с которым заказчик может пойти в любое другое бюро или в частную практику.",
         image: "/assets/home-consulting-drawings.jpg",

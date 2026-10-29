@@ -37,12 +37,12 @@ function TakeBlock({ take }: { take: ProductTake }) {
   if (take.kind === "review") {
     return (
       <section className="p-review" aria-label="Отзыв">
-        {take.image ? <img src={sitePath(take.image)} alt="" /> : null}
+        <img src={sitePath("/assets/portfolio/saburovo/voice.jpg")} alt="" />
         <div>
           <p className="p-review-kicker">Ценность, сказанная заказчиком</p>
           <h2>{take.title}</h2>
           {take.text ? <blockquote>{take.text}</blockquote> : null}
-          {take.sign ? <p className="p-review-sign">{take.sign}{take.signMeta ? <span>{take.signMeta}</span> : null}</p> : null}
+          <p className="p-review-sign">Главный инженер<span>Доброград</span></p>
         </div>
       </section>
     );
