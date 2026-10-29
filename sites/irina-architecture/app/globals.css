@@ -137,6 +137,10 @@
       letter-spacing: -0.055em;
     }
 
+    .brand-mark-footer {
+      font-size: 32px;
+    }
+
     .brand-role {
       padding-left: 15px;
       border-left: 1px solid var(--line);
