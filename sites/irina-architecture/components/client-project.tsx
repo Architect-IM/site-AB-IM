@@ -20,6 +20,15 @@ const products = [
 export function ClientProject({ project, next }: { project: Project; next: Project }) {
   return (
     <main id="content" className="inner-page pp pp-pokrovskiy">
+      <style>{`
+        @font-face {
+          font-family: "Pokrovskiy Lettering";
+          src: url("${sitePath("/assets/portfolio/pokrovskiy-pryanik/pokrovskiy-lettering.woff2")}") format("woff2");
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+        }
+      `}</style>
       <section className="pp-hero">
         <img src={photo("img_0387")} alt="Фабрика «Покровский пряник» в Нагорном" />
         <div className="pp-hero-copy">
