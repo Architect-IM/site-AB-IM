@@ -13,8 +13,8 @@ export function StageStandard({ product }: { product: BureauProduct }) {
     <>
       <section className="p-take">
         <div>
-          <h2>Чертежи начинаются, когда у проекта уже есть срок.</h2>
-          <p>Дорожная карта собрана раньше разделов. Комплект идёт по ней, а не наоборот.</p>
+          <h2>Сначала карта проекта.</h2>
+          <p>Исходные данные, эскизная концепция, задание и график жизни проекта собираются до разделов.</p>
         </div>
         <img src={sitePath("/assets/bureau.jpg")} alt="" />
       </section>
@@ -27,8 +27,8 @@ export function StageStandard({ product }: { product: BureauProduct }) {
       <section className="p-bleed">
         <img src={sitePath("/assets/territory.jpg")} alt="" />
         <div>
-          <h2>Место входит в чертёж.</h2>
-          <p>Не в пояснительную записку.</p>
+          <h2>Код места и код заказчика.</h2>
+          <p>Архитектурный код территории и культурный код заказчика, сообщества и времени входят в решение.</p>
         </div>
       </section>
 
@@ -39,8 +39,8 @@ export function StageStandard({ product }: { product: BureauProduct }) {
 
       <section className="p-take p-take-flip">
         <div>
-          <h2>Лишнего запаса нет. Нужный — есть.</h2>
-          <p>Параметры держат сегодняшнюю задачу и не запечатывают объект.</p>
+          <h2>Не для галочки и не только для экспертизы.</h2>
+          <p>Решения закрывают текущую задачу и оставляют объекту возможность развиваться.</p>
         </div>
         <img src={sitePath("/assets/lodge.jpg")} alt="" />
       </section>
@@ -51,10 +51,13 @@ export function StageStandard({ product }: { product: BureauProduct }) {
       </section>
 
       <section className="p-review" aria-label="Отзыв">
-        <p className="p-review-kicker">Ценность, сказанная заказчиком</p>
-        <h2>Пятнадцать разделов. Один замысел.</h2>
-        <blockquote>Нам не собирали папку из чужих кусков. Архитектура, конструкции и инженерия спорили в одном комплекте и пришли к одному решению. На экспертизу ушёл проект, а не набор разделов.</blockquote>
-        <p className="p-review-sign">Пример отзыва · заказчик стадии П<span>Живую цитату поставим, когда она будет.</span></p>
+        <img src={sitePath("/assets/portfolio/saburovo/voice.jpg")} alt="" />
+        <div>
+          <p className="p-review-kicker">Ценность, сказанная заказчиком</p>
+          <h2>Пятнадцать разделов — один замысел.</h2>
+          <blockquote>Разделы не собирали из чужих кусков. Все пятнадцать велись согласованно и были подчинены генеральному замыслу. На экспертизу ушёл один проект.</blockquote>
+          <p className="p-review-sign">Главный инженер<span>Доброград</span></p>
+        </div>
       </section>
 
       <section className="p-quiet">
