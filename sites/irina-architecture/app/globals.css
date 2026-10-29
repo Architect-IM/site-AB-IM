@@ -1936,11 +1936,11 @@ textarea.form-input {resize:vertical;min-height:135px}
  line-height: 1.6; color: var(--muted);
 }
 #directions .direction-link-arrow {
- display: grid; place-items: center; width: 42px; height: 42px;
+ display: grid; place-items: center; width: 48px; height: 48px;
  margin-top: 28px; border: 1px solid var(--line); border-radius: 50%;
  transition: background-color 200ms ease, color 200ms ease;
 }
-#directions .direction-link-arrow svg { display: block; width: 18px; height: 18px; }
+#directions .direction-link-arrow svg { display: block; width: 21px; height: 21px; }
 #directions .direction-card:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
 
 #directions .direction-fullbleed {
@@ -2012,7 +2012,7 @@ textarea.form-input {resize:vertical;min-height:135px}
  display: inline-flex; align-items: center; gap: 14px; margin-top: 28px;
  min-height: 44px; font-size: 14px; font-weight: 500; white-space: nowrap;
 }
-#directions .direction-action .direction-link-arrow { margin-top: 0; flex: 0 0 42px; }
+#directions .direction-action .direction-link-arrow { margin-top: 0; flex: 0 0 48px; }
 
 #directions .direction-action { cursor: pointer; }
 
@@ -2066,7 +2066,13 @@ textarea.form-input {resize:vertical;min-height:135px}
 #directions .direction-private .direction-kicker,
 #directions .direction-private h3 { color: #fff; text-shadow: 0 1px 10px rgba(12,15,17,.35); }
 #directions .direction-hospitality .direction-action,
-#directions .direction-private .direction-action { margin-top: 0; margin-left: auto; }
+#directions .direction-private .direction-action {
+ position: absolute;
+ right: 16px;
+ bottom: 16px;
+ margin: 0;
+ z-index: 2;
+}
 #directions .direction-hospitality.direction-screen::before,
 #directions .direction-private.direction-screen::before { background: none; }
 @media (max-width: 680px) {
