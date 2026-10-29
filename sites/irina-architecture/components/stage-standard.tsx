@@ -13,8 +13,8 @@ export function StageStandard({ product }: { product: BureauProduct }) {
     <>
       <section className="p-take">
         <div>
-          <h2>Сначала карта проекта.</h2>
-          <p>Исходные данные, эскизная концепция, задание и график жизни проекта собираются до разделов.</p>
+          <h2>Предпроектный анализ.</h2>
+          <p>Уточняем исходные данные, эскизную концепцию, помогаем с заданием, формируем график и дорожную карту жизни проекта.</p>
         </div>
         <img src={sitePath("/assets/bureau.jpg")} alt="" />
       </section>
@@ -27,8 +27,8 @@ export function StageStandard({ product }: { product: BureauProduct }) {
       <section className="p-bleed">
         <img src={sitePath("/assets/territory.jpg")} alt="" />
         <div>
-          <h2>Код места и код заказчика.</h2>
-          <p>Архитектурный код территории и культурный код заказчика, сообщества и времени входят в решение.</p>
+          <h2>Глубокое чтение контекста.</h2>
+          <p>Учитываем архитектурный код места и культурный код заказчика, сообщества и территории, а также культурные тенденции.</p>
         </div>
       </section>
 
@@ -39,8 +39,8 @@ export function StageStandard({ product }: { product: BureauProduct }) {
 
       <section className="p-take p-take-flip">
         <div>
-          <h2>Не для галочки и не только для экспертизы.</h2>
-          <p>Решения закрывают текущую задачу и оставляют объекту возможность развиваться.</p>
+          <h2>Оптимизация и уникальные решения.</h2>
+          <p>Проектируем не для галочки или экспертизы, а так, чтобы решения закрывали текущие задачи и оставляли возможность для развития объекта.</p>
         </div>
         <img src={sitePath("/assets/lodge.jpg")} alt="" />
       </section>
@@ -54,15 +54,31 @@ export function StageStandard({ product }: { product: BureauProduct }) {
         <img src={sitePath("/assets/portfolio/saburovo/voice.jpg")} alt="" />
         <div>
           <p className="p-review-kicker">Ценность, сказанная заказчиком</p>
-          <h2>Пятнадцать разделов — один замысел.</h2>
-          <blockquote>Разделы не собирали из чужих кусков. Все пятнадцать велись согласованно и были подчинены генеральному замыслу. На экспертизу ушёл один проект.</blockquote>
+          <h2>Проект как единая система.</h2>
+          <blockquote>Все 15 разделов велись согласованно и были подчинены генеральному замыслу. Комплект не собирали из разрозненных частей.</blockquote>
           <p className="p-review-sign">Главный инженер<span>Доброград</span></p>
         </div>
+      </section>
+
+      <section className="p-take">
+        <div>
+          <h2>100% гарантия положительного заключения экспертизы.</h2>
+          <p>По нашим проектам не было ни одного отказа в выдаче разрешения на строительство или положительного заключения экспертизы.</p>
+        </div>
+        <img src={sitePath("/assets/mansion-hero.jpg")} alt="" />
       </section>
 
       <section className="p-quiet">
         <h2>Почему это важно</h2>
         <p>{product.why}</p>
+      </section>
+
+      <section className="p-bleed">
+        <img src={sitePath("/assets/house.jpg")} alt="" />
+        <div>
+          <h2>Глубокая инженерная экспертиза.</h2>
+          <p>Сильные компетенции в конструкциях, технологиях и инженерных решениях.</p>
+        </div>
       </section>
 
       <section className="p-quiet">
