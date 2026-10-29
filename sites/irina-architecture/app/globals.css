@@ -1907,7 +1907,9 @@ textarea.form-input {resize:vertical;min-height:135px}
 #directions {
  --direction-gap: clamp(20px, 2.4vw, 36px);
  --direction-space: clamp(56px, 6vw, 88px);
+ padding-top: 28px;
 }
+#directions .section-head h2 { margin-top: 0; }
 #directions .direction-grid {
  display: grid; grid-template-columns: minmax(0,1fr); gap: var(--direction-space);
 }
