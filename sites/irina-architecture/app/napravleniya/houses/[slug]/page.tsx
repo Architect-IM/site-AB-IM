@@ -25,7 +25,10 @@ export default async function HouseServicePage({ params }: Props) {
 
   return <main id="content" className={`inner-page ${styles.page}`}>
     <nav className={styles.breadcrumbs} aria-label="Навигация по разделу">
-      <a href={sitePath(back)}>← Частные владения</a>
+      <span className={styles.crumbLevels}>
+        <a href={sitePath("/#directions")}>← На главную</a>
+        <a href={sitePath(back)}>← Частные владения</a>
+      </span>
       <span>{service.number} / {String(houseServices.length).padStart(2, "0")}</span>
     </nav>
     <ProductLead title={service.title} quote={service.description} />

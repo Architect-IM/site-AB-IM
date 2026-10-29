@@ -6,6 +6,7 @@
   font-size: 11px; line-height: 1.5; letter-spacing: .09em; text-transform: uppercase;
 }
 .breadcrumbs a:hover { color: var(--ink); }
+.crumbLevels { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; min-width: 0; }
 .breadcrumbs a:focus-visible, .action:focus-visible, .productCard:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
 .eyebrow {
   margin: 0 0 26px; color: var(--muted);
