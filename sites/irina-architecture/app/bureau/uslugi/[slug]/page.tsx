@@ -6,6 +6,7 @@ import { BrandPath } from "@/components/brand-path";
 import { MarketingNavOffset } from "@/components/marketing-nav-offset";
 import { ProductLead } from "@/components/product-lead";
 import { ProductClients } from "@/components/product-clients";
+import { StagePlace } from "@/components/stage-place";
 import { StageStandard } from "@/components/stage-standard";
 import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
 
@@ -143,6 +144,7 @@ export default async function BureauService({ params }: Props) {
         <p className="section-label crumb-levels"><a href={sitePath("/bureau")}>← Бюро</a><a href={sitePath(`/bureau#${product.groupId}`)}>← {product.groupTitle}</a></p>
       </section>
       <ProductLead title={product.title} quote={product.essence} name="Ирина Михейкина" role="руководитель бюро" featured={product.slug === "stage-p"} />
+      {product.slug === "stage-p" ? <StagePlace title={product.title} /> : null}
       {product.slug === "stage-p" ? <StageStandard product={product} /> : (
         <>
           <ProductCard product={product} />
