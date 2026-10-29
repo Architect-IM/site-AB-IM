@@ -33,7 +33,7 @@ export default async function HospitalityService({ params }: Props) {
         </span>
         <span>{service.number} / {String(hospitalityServices.length).padStart(2, "0")}</span>
       </nav>
-      <ProductLead title={service.title} quote={service.description} />
+      <ProductLead kicker={service.number} title={service.title} quote={service.description} />
       <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
       <div className={styles.detailSections}>
         {service.blocks.map((block, index) => (

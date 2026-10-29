@@ -19,19 +19,13 @@ export default function Consulting() {
         <span aria-current="page">Консалтинг</span>
       </nav>
 
-      <section className={styles.hero} aria-labelledby="consulting-title">
+      <section className={styles.hero} aria-label="Консалтинг">
         <div className={styles.heroImage}>
           <img src={sitePath("/assets/bureau.jpg")} alt="Архитектурная мастерская: чертежи и макеты на рабочих столах" fetchPriority="high" />
         </div>
-        <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Архитектор / Консультации</p>
-          <h1 id="consulting-title">Консалтинг</h1>
-          <p className={styles.subtitle}>Взгляд до проекта</p>
-          <a className={styles.link} href="#formats">С чем можно прийти</a>
-        </div>
       </section>
 
-      <ProductLead quote="С нами можно просто консультироваться — не запуская сразу проектирование или стройку. Я сама предлагаю этот шаг: разобраться в деталях, понять, что нужно делать сейчас, и наметить путь. Рекомендации берутся из исследования и практики реализации. Смотрю задачу целиком: от смысла и архитектуры до экономики, согласований и того, как объект будет жить." />
+      <ProductLead kicker="03" title="Консалтинг" quote="С нами можно просто консультироваться — не запуская сразу проектирование или стройку. Я сама предлагаю этот шаг: разобраться в деталях, понять, что нужно делать сейчас, и наметить путь. Рекомендации берутся из исследования и практики реализации. Смотрю задачу целиком: от смысла и архитектуры до экономики, согласований и того, как объект будет жить." />
 
       <div className={styles.divider} aria-hidden="true" />
 

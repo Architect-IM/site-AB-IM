@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { FinanceExample } from "@/components/finance-example";
 import { BrandPath } from "@/components/brand-path";
 import { MarketingNavOffset } from "@/components/marketing-nav-offset";
-import { TalkSlot } from "@/components/talk-slot";
+import { ProductLead } from "@/components/product-lead";
 import { ProductClients } from "@/components/product-clients";
 import { StageStandard } from "@/components/stage-standard";
 import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
@@ -62,20 +62,14 @@ function MarketingObject() {
     <main id="content" className="inner-page bureau-page service-page">
       <section className="page-intro marketing-intro">
         <p className="section-label crumb-levels"><a href={sitePath("/")}>← На главную</a><a href={sitePath("/bureau#marketing")}>← Бюро</a></p>
-        <h1>Маркетинг</h1>
-        <div className="marketing-lead">
-          <figure>
-            <div className="lead-video">
-              <img src={sitePath("/assets/finance-voice.jpg")} alt="" />
-              <button type="button" className="lead-play" aria-disabled="true" aria-label="Видео ещё не снято">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.8v10.4L18.2 12z" /></svg>
-              </button>
-            </div>
-            <figcaption className="service-lead-sign">Михаил Лункин<span>маркетолог бюро</span></figcaption>
-          </figure>
-          <p className="service-essence">Если вы находитесь на этапе формирования, уточнения или даже пересмотра маркетинговой стратегии - мы можем помочь её собрать и увязать с проектными решениями будущего строительства. Только для клиентов бюро.</p>
-        </div>
       </section>
+      <ProductLead
+        title="Маркетинг"
+        quote="Если вы находитесь на этапе формирования, уточнения или даже пересмотра маркетинговой стратегии - мы можем помочь её собрать и увязать с проектными решениями будущего строительства. Только для клиентов бюро."
+        name="Михаил Лункин"
+        role="маркетолог бюро"
+        image="/assets/finance-voice.jpg"
+      />
 
       <nav className="marketing-nav" aria-label="Разделы">
         <MarketingNavOffset />
@@ -146,15 +140,9 @@ export default async function BureauService({ params }: Props) {
   return (
     <main id="content" className="inner-page bureau-page service-page">
       <section className="page-intro">
-        <div>
-          <p className="section-label crumb-levels"><a href={sitePath("/bureau")}>← Бюро</a><a href={sitePath(`/bureau#${product.groupId}`)}>← {product.groupTitle}</a></p>
-          <h1>{product.title}</h1>
-          <p className="service-essence">{product.essence}</p>
-        </div>
+        <p className="section-label crumb-levels"><a href={sitePath("/bureau")}>← Бюро</a><a href={sitePath(`/bureau#${product.groupId}`)}>← {product.groupTitle}</a></p>
       </section>
-      <section className="talk-band">
-        <TalkSlot name="Бюро" role="видео ещё не снято" quote={product.why} />
-      </section>
+      <ProductLead title={product.title} quote={product.essence} name="Ирина Михейкина" role="руководитель бюро" />
       {product.slug === "stage-p" ? <StageStandard product={product} /> : (
         <>
           <ProductCard product={product} />
