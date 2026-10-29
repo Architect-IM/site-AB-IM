@@ -24,12 +24,12 @@ export function StageStandard({ product }: { product: BureauProduct }) {
         <p>{product.who}</p>
       </section>
 
-      <section className="p-bleed">
-        <img src={sitePath("/assets/territory.jpg")} alt="" />
+      <section className="p-take">
         <div>
           <h2>Глубокое чтение контекста.</h2>
           <p>Учитываем архитектурный код места и культурный код заказчика, сообщества и территории, а также культурные тенденции.</p>
         </div>
+        <img src={sitePath("/assets/territory.jpg")} alt="" />
       </section>
 
       <section className="p-quiet">
@@ -37,7 +37,7 @@ export function StageStandard({ product }: { product: BureauProduct }) {
         <p>{product.gets}</p>
       </section>
 
-      <section className="p-take p-take-flip">
+      <section className="p-take">
         <div>
           <h2>Оптимизация и уникальные решения.</h2>
           <p>Проектируем не для галочки или экспертизы, а так, чтобы решения закрывали текущие задачи и оставляли возможность для развития объекта.</p>
@@ -73,12 +73,12 @@ export function StageStandard({ product }: { product: BureauProduct }) {
         <p>{product.why}</p>
       </section>
 
-      <section className="p-bleed">
-        <img src={sitePath("/assets/house.jpg")} alt="" />
+      <section className="p-take">
         <div>
           <h2>Глубокая инженерная экспертиза.</h2>
           <p>Сильные компетенции в конструкциях, технологиях и инженерных решениях.</p>
         </div>
+        <img src={sitePath("/assets/house.jpg")} alt="" />
       </section>
 
       <section className="p-quiet">

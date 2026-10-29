@@ -7,6 +7,7 @@ export function ProductLead({
   name = "Ирина Михейкина",
   role = "архитектор",
   image = "/assets/portrait.jpg",
+  featured = false,
 }: {
   title?: string;
   kicker?: string;
@@ -14,9 +15,10 @@ export function ProductLead({
   name?: string;
   role?: string;
   image?: string;
+  featured?: boolean;
 }) {
   return (
-    <section className="product-talk" aria-labelledby={title ? "product-lead-title" : undefined}>
+    <section className={`product-talk${featured ? " product-talk-key" : ""}`} aria-labelledby={title ? "product-lead-title" : undefined}>
       <div className="product-talk-copy">
         {kicker ? <p className="product-talk-kicker">{kicker}</p> : null}
         {title ? <h1 id="product-lead-title">{title}</h1> : null}

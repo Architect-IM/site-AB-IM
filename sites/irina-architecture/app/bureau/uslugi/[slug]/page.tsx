@@ -138,11 +138,11 @@ export default async function BureauService({ params }: Props) {
   if (!product) notFound();
 
   return (
-    <main id="content" className="inner-page bureau-page service-page">
+    <main id="content" className={`inner-page bureau-page service-page${product.slug === "stage-p" ? " stage-page" : ""}`}>
       <section className="page-intro">
         <p className="section-label crumb-levels"><a href={sitePath("/bureau")}>← Бюро</a><a href={sitePath(`/bureau#${product.groupId}`)}>← {product.groupTitle}</a></p>
       </section>
-      <ProductLead title={product.title} quote={product.essence} name="Ирина Михейкина" role="руководитель бюро" />
+      <ProductLead title={product.title} quote={product.essence} name="Ирина Михейкина" role="руководитель бюро" featured={product.slug === "stage-p"} />
       {product.slug === "stage-p" ? <StageStandard product={product} /> : (
         <>
           <ProductCard product={product} />
