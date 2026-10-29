@@ -3,6 +3,22 @@ import { projects } from "@/lib/projects";
 import type { BureauProduct } from "@/lib/bureau-products";
 import { productStory, type ProductTake } from "@/lib/product-takes";
 
+const worksFor: Record<string, string> = {
+  "stage-p": "Стадия П",
+  "stage-r": "Стадия Р",
+  survey: "Обследование зданий",
+  spatial: "Объёмно-планировочные решения",
+  feasibility: "ТЭО",
+  sketch: "Эскизная концепция",
+  analysis: "Предпроектный анализ",
+  brief: "Разработка ТЗ",
+  ago: "АГО",
+  consulting: "Консалтинг",
+  client: "Технический заказчик",
+  cm: "Управление строительством",
+  supervision: "Авторский надзор",
+};
+
 const quietLabels = ["Для кого и когда", "Что в результате?", "Как работаем", "Почему это важно", "Формат и следующий шаг"] as const;
 
 function takeClass(take: ProductTake) {
@@ -102,7 +118,7 @@ export function StageStandard({ product }: { product: BureauProduct }) {
         ),
       )}
       <section className="p-works" aria-label="Проекты">
-        <h2>Этот продукт</h2>
+        <h2>{worksFor[product.slug] ?? product.title} для:</h2>
         <div>
           {shown.map((project) => (
             <a href={sitePath(`/portfolio/${project.slug}`)} key={project.slug}>
