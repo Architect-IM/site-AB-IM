@@ -19,7 +19,7 @@ export default function Hospitality() {
           <span aria-current="page">Живое гостеприимство</span>
         </nav>
         <div className={styles.heroImage}>
-          <img src={sitePath(hospitality.image)} alt={hospitality.alt} fetchPriority="high" />
+          <img className={styles.hospitalityHero} src={sitePath(hospitality.image)} alt={hospitality.alt} fetchPriority="high" />
         </div>
         <p className="hospitality-formula">{hospitality.subtitle}</p>
       </section>
