@@ -8,6 +8,7 @@ import { ProductLead } from "@/components/product-lead";
 import { ProductClients } from "@/components/product-clients";
 import { StagePlace } from "@/components/stage-place";
 import { StageStandard } from "@/components/stage-standard";
+import { productStory } from "@/lib/product-takes";
 import { bureauProduct, bureauProducts, type BureauProduct } from "@/lib/bureau-products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -138,14 +139,16 @@ export default async function BureauService({ params }: Props) {
   const product = bureauProduct(slug);
   if (!product) notFound();
 
+  const story = productStory(product.slug);
+
   return (
-    <main id="content" className={`inner-page bureau-page service-page${product.slug === "stage-p" ? " stage-page" : ""}`}>
+    <main id="content" className={`inner-page bureau-page service-page${story ? " stage-page" : ""}`}>
       <section className="page-intro">
         <p className="section-label crumb-levels"><a href={sitePath("/bureau")}>← Бюро</a><a href={sitePath(`/bureau#${product.groupId}`)}>← {product.groupTitle}</a></p>
       </section>
-      <ProductLead title={product.title} quote={product.essence} name="Ирина Михейкина" role="руководитель бюро" featured={product.slug === "stage-p"} />
-      {product.slug === "stage-p" ? <StagePlace title={product.title} /> : null}
-      {product.slug === "stage-p" ? <StageStandard product={product} /> : (
+      <ProductLead title={product.title} quote={product.essence} name="Ирина Михейкина" role="руководитель бюро" featured={Boolean(story)} />
+      {story ? <StagePlace title={product.title} /> : null}
+      {story ? <StageStandard product={product} /> : (
         <>
           <ProductCard product={product} />
           <ProductClients slug={product.slug} />

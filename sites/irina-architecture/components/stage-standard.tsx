@@ -1,44 +1,27 @@
 import { sitePath } from "@/lib/site-path";
 import { projects } from "@/lib/projects";
 import type { BureauProduct } from "@/lib/bureau-products";
+import { productStory, type ProductTake } from "@/lib/product-takes";
 
-const examples = ["pokrovskiy-pryanik", "dobrograd", "saburovo", "kabardinka", "ples"];
+const quietLabels = ["Для кого и когда", "Что в результате?", "Как работаем", "Почему это важно", "Формат и следующий шаг"] as const;
 
-const contextFrames = [
-  { src: "/assets/territory.jpg", wide: true },
-  { src: "/assets/portfolio/dobrograd/street.jpg" },
-  { src: "/assets/vladimir-assumption-context.jpg", narrow: true },
-  { src: "/assets/portfolio/ples/01.jpg" },
-  { src: "/assets/portfolio/kabardinka/01.jpg", wide: true },
-];
+function takeClass(take: ProductTake) {
+  if (take.kind === "left") return "p-take p-take-left";
+  if (take.kind === "wide") return "p-take p-take-wide";
+  if (take.kind === "note") return "p-take p-take-note";
+  return "p-take";
+}
 
-export function StageStandard({ product }: { product: BureauProduct }) {
-  const shown = examples
-    .map((slug) => projects.find((item) => item.slug === slug))
-    .filter((item) => item !== undefined);
-
-  return (
-    <>
-      <section className="p-take">
-        <div>
-          <h2>Предпроектный анализ.</h2>
-          <p>Уточняем исходные данные, эскизную концепцию, помогаем с заданием, формируем график и дорожную карту жизни проекта.</p>
-        </div>
-        <img src={sitePath("/assets/bureau.jpg")} alt="" />
-      </section>
-
-      <section className="p-quiet">
-        <h2>Для кого и когда</h2>
-        <p>{product.who}</p>
-      </section>
-
-      <section className="p-reel" aria-label="Глубокое чтение контекста">
+function TakeBlock({ take }: { take: ProductTake }) {
+  if (take.kind === "reel") {
+    return (
+      <section className="p-reel" aria-label={take.title}>
         <div className="p-reel-copy">
-          <h2>Глубокое чтение контекста.</h2>
-          <p>Учитываем архитектурный код места и культурный код заказчика, сообщества и территории, а также культурные тенденции.</p>
+          <h2>{take.title}</h2>
+          {take.text ? <p>{take.text}</p> : null}
         </div>
         <div className="p-reel-track">
-          {contextFrames.map((frame) => (
+          {take.frames?.map((frame) => (
             <img
               key={frame.src}
               src={sitePath(frame.src)}
@@ -48,61 +31,76 @@ export function StageStandard({ product }: { product: BureauProduct }) {
           ))}
         </div>
       </section>
+    );
+  }
 
-      <section className="p-quiet">
-        <h2>Что в результате?</h2>
-        <p>{product.gets}</p>
-      </section>
-
-      <section className="p-take p-take-wide">
-        <img src={sitePath("/assets/lodge.jpg")} alt="" />
-        <div>
-          <h2>Оптимизация и уникальные решения.</h2>
-          <p>Проектируем не для галочки или экспертизы, а так, чтобы решения закрывали текущие задачи и оставляли возможность для развития объекта.</p>
-        </div>
-      </section>
-
-      <section className="p-quiet">
-        <h2>Как работаем</h2>
-        <p>{product.how}</p>
-      </section>
-
+  if (take.kind === "review") {
+    return (
       <section className="p-review" aria-label="Отзыв">
-        <img src={sitePath("/assets/portfolio/saburovo/voice.jpg")} alt="" />
+        {take.image ? <img src={sitePath(take.image)} alt="" /> : null}
         <div>
           <p className="p-review-kicker">Ценность, сказанная заказчиком</p>
-          <h2>Проект как единая система.</h2>
-          <blockquote>Все 15 разделов велись согласованно и были подчинены генеральному замыслу. Комплект не собирали из разрозненных частей.</blockquote>
-          <p className="p-review-sign">Главный инженер<span>Доброград</span></p>
+          <h2>{take.title}</h2>
+          {take.text ? <blockquote>{take.text}</blockquote> : null}
+          {take.sign ? <p className="p-review-sign">{take.sign}{take.signMeta ? <span>{take.signMeta}</span> : null}</p> : null}
         </div>
       </section>
+    );
+  }
 
-      <section className="p-take p-take-note">
-        <div>
-          <h2>100% гарантия положительного заключения экспертизы.</h2>
-          <p>По нашим проектам не было ни одного отказа в выдаче разрешения на строительство или положительного заключения экспертизы.</p>
-        </div>
-        <img src={sitePath("/assets/mansion-hero.jpg")} alt="" />
-      </section>
+  const imageFirst = take.kind === "left" || take.kind === "wide";
+  const copy = (
+    <div>
+      <h2>{take.title}</h2>
+      {take.text ? <p>{take.text}</p> : null}
+    </div>
+  );
+  const image = take.image ? <img src={sitePath(take.image)} alt="" /> : null;
 
-      <section className="p-quiet">
-        <h2>Почему это важно</h2>
-        <p>{product.why}</p>
-      </section>
+  return (
+    <section className={takeClass(take)}>
+      {imageFirst ? image : copy}
+      {imageFirst ? copy : image}
+    </section>
+  );
+}
 
-      <section className="p-take p-take-left">
-        <img src={sitePath("/assets/house.jpg")} alt="" />
-        <div>
-          <h2>Глубокая инженерная экспертиза.</h2>
-          <p>Сильные компетенции в конструкциях, технологиях и инженерных решениях.</p>
-        </div>
-      </section>
+export function StageStandard({ product }: { product: BureauProduct }) {
+  const story = productStory(product.slug);
+  if (!story) return null;
 
-      <section className="p-quiet">
-        <h2>Формат и следующий шаг</h2>
-        <p>{product.next}</p>
-      </section>
+  const quiets = [product.who, product.gets, product.how, product.why, product.next];
+  const nodes: Array<{ key: string; take?: ProductTake; label?: string; text?: string }> = [];
+  let quietIndex = 0;
 
+  story.takes.forEach((take, index) => {
+    nodes.push({ key: `take-${index}`, take });
+    if (take.kind !== "review" && quietIndex < quiets.length) {
+      nodes.push({ key: `quiet-${quietIndex}`, label: quietLabels[quietIndex], text: quiets[quietIndex] });
+      quietIndex += 1;
+    }
+  });
+  while (quietIndex < quiets.length) {
+    nodes.push({ key: `quiet-${quietIndex}`, label: quietLabels[quietIndex], text: quiets[quietIndex] });
+    quietIndex += 1;
+  }
+
+  const shown = story.works
+    .map((slug) => projects.find((item) => item.slug === slug))
+    .filter((item) => item !== undefined);
+
+  return (
+    <>
+      {nodes.map((node) =>
+        node.take ? (
+          <TakeBlock key={node.key} take={node.take} />
+        ) : (
+          <section className="p-quiet" key={node.key}>
+            <h2>{node.label}</h2>
+            <p>{node.text}</p>
+          </section>
+        ),
+      )}
       <section className="p-works" aria-label="Проекты">
         <h2>Этот продукт</h2>
         <div>
