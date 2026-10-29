@@ -1957,7 +1957,8 @@ textarea.form-input {resize:vertical;min-height:135px}
 }
 #directions .direction-private .media-frame img { object-position: 55% 50%; }
 #directions .direction-hospitality .media-frame img { object-position: 46% 48%; }
-#directions .direction-hospitality { align-items: end; padding-bottom: clamp(28px, 4vh, 48px); }
+#directions .direction-hospitality,
+#directions .direction-private { align-items: end; padding-bottom: clamp(28px, 4vh, 48px); }
 @media (max-width: 820px) {
  #directions .direction-private .media-frame img { object-position: 22% 50%; }
 }
@@ -2040,7 +2041,8 @@ textarea.form-input {resize:vertical;min-height:135px}
  }
 }
 
-#directions .direction-hospitality .direction-meta {
+#directions .direction-hospitality .direction-meta,
+#directions .direction-private .direction-meta {
  grid-column: 1 / -1;
  display: flex;
  align-items: flex-end;
@@ -2056,15 +2058,23 @@ textarea.form-input {resize:vertical;min-height:135px}
  -webkit-backdrop-filter: blur(10px);
  backdrop-filter: blur(10px);
 }
-#directions .direction-hospitality .direction-meta > div { flex: 1 1 18rem; min-width: 0; }
-#directions .direction-hospitality .direction-meta p { margin-top: 12px; color: #fff; }
+#directions .direction-hospitality .direction-meta > div,
+#directions .direction-private .direction-meta > div { flex: 1 1 18rem; min-width: 0; }
+#directions .direction-hospitality .direction-meta p,
+#directions .direction-private .direction-meta p { margin-top: 12px; color: #fff; }
 #directions .direction-hospitality .direction-kicker,
-#directions .direction-hospitality h3 { color: #fff; text-shadow: 0 1px 10px rgba(12,15,17,.35); }
-#directions .direction-hospitality .direction-action { margin-top: 0; margin-left: auto; }
-#directions .direction-hospitality.direction-screen::before { background: none; }
+#directions .direction-hospitality h3,
+#directions .direction-private .direction-kicker,
+#directions .direction-private h3 { color: #fff; text-shadow: 0 1px 10px rgba(12,15,17,.35); }
+#directions .direction-hospitality .direction-action,
+#directions .direction-private .direction-action { margin-top: 0; margin-left: auto; }
+#directions .direction-hospitality.direction-screen::before,
+#directions .direction-private.direction-screen::before { background: none; }
 @media (max-width: 680px) {
- #directions .direction-hospitality .direction-meta { flex-direction: column; align-items: stretch; gap: 22px; }
- #directions .direction-hospitality .direction-action { align-self: flex-end; }
+ #directions .direction-hospitality .direction-meta,
+ #directions .direction-private .direction-meta { flex-direction: column; align-items: stretch; gap: 22px; }
+ #directions .direction-hospitality .direction-action,
+ #directions .direction-private .direction-action { align-self: flex-end; }
 }
 
 /* Bureau and laboratory photographs fill the existing two-column spread. */
