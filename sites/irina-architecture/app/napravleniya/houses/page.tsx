@@ -23,7 +23,7 @@ export default function Houses() {
   const [analysis, masterplan, concept, appearance, brief, implementation] = houseServices;
 
   return <main id="content" className={`inner-page ${styles.page}`}>
-    <section className={styles.hero} aria-labelledby="houses-title">
+    <section className={styles.hero} aria-label="Частные владения">
       <nav className={`${styles.breadcrumbs} ${styles.heroBreadcrumbs}`} aria-label="Навигация по разделу">
         <a href={sitePath("/#directions")}>← На главную</a>
         <span aria-current="page">Частные владения</span>
@@ -31,14 +31,9 @@ export default function Houses() {
       <div className={styles.heroImage}>
         <img src={sitePath("/assets/home-private-meadow-life.jpg")} alt="Деревянный дом с резными фронтонами, девушка на крыльце и козы на лугу" fetchPriority="high" />
       </div>
-      <div className={styles.heroCopy}>
-        <p className={styles.eyebrow}>04</p>
-        <h1 id="houses-title">{houses.title}</h1>
-        <p className={styles.subtitle}>{houses.subtitle}</p>
-      </div>
     </section>
 
-    <ProductLead quote={houses.intro} />
+    <ProductLead kicker="04" title={houses.title} quote={houses.intro} />
 
     <section id={analysis.slug} className={styles.analysis} aria-labelledby="analysis-title">
       <div className={styles.analysisGrid}>

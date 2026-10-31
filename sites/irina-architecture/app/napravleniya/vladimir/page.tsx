@@ -25,21 +25,15 @@ function CircleLink({ href, label, back = false, ariaLabel }: { href: string; la
 export default function Vladimir() {
   return (
     <main id="content" className={`inner-page ${styles.page}`}>
-      <section className={styles.hero} aria-labelledby="vladimir-title">
+      <section className={styles.hero} aria-label="Владимирский контекст">
         <VladimirVideo />
         <nav className={styles.breadcrumbs} aria-label="Навигация по разделу">
           <a href={sitePath("/")}>← На главную</a>
           <span aria-current="page">Владимирский контекст</span>
         </nav>
-        <div className={styles.heroCopy}>
-          <div className={styles.heroTitle}>
-            <h1 id="vladimir-title">{vladimir.title}</h1>
-            <h2 id="vladimir-subtitle" className={styles.subtitle}>{vladimir.subtitle}</h2>
-          </div>
-        </div>
       </section>
 
-      <ProductLead quote={vladimir.intro} />
+      <ProductLead kicker="01" title={vladimir.title} quote={vladimir.intro} />
 
       <section id="directions" className="section directions" aria-label="Четыре продукта Владимирского контекста">
         <div className="direction-grid">
