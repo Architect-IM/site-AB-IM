@@ -2,6 +2,7 @@ import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
 import { PhotoRail } from "@/components/photo-rail";
 import { ProjectTalk } from "@/components/project-talk";
+import { NextProject } from "@/components/next-project";
 
 type Project = (typeof projects)[number];
 
@@ -142,11 +143,7 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
         </div>
       </section>
 
-      <a className="next-project" href={sitePath(`/portfolio/${next.slug}`)}>
-        <span className="section-label">Следующий проект</span>
-        <span>{next.name}</span>
-        <img src={sitePath(`/assets/${next.image}.jpg`)} alt="" loading="lazy" />
-      </a>
+      <NextProject next={next} />
     </main>
   );
 }

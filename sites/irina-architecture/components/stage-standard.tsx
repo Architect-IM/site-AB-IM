@@ -124,6 +124,7 @@ export function StageStandard({ product }: { product: BureauProduct }) {
             <a href={sitePath(`/portfolio/${project.slug}`)} key={project.slug}>
               <img src={sitePath(`/assets/${project.image}.jpg`)} alt="" style={"imagePosition" in project && project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
               <h3>{project.name}</h3>
+              <p className="p-work-slogan">— {project.caption}</p>
               <p>{project.place}</p>
             </a>
           ))}
