@@ -121,6 +121,15 @@ export function ClientProject({ project, next }: { project: Project; next: Proje
         </div>
       </section>
 
+      <section className="pp-voice" aria-label="Отзыв заказчика">
+        <div className="pp-voice-plaque">
+          <blockquote>
+            — У меня не было никаких головняков: не нужно было включаться и вникать в детали. Включённость команды сопоставима с хорошим консьерж-сервисом. Выбрал бы снова — обеими руками.
+          </blockquote>
+          <p className="pp-voice-sign">Виктор Геннадьевич Вахлин<span>генеральный директор</span></p>
+        </div>
+      </section>
+
       <section className="pp-products">
         <p className="pp-kicker">Из чего собрана эта работа</p>
         <div>
