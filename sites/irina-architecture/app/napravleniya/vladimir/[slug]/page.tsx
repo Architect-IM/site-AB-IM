@@ -22,10 +22,13 @@ export default async function VladimirService({ params }: Props) {
   return (
     <main id="content" className={`inner-page ${styles.page}`}>
       <nav className={styles.breadcrumbs} aria-label="Навигация по разделу">
-        <a href={sitePath(`/napravleniya/vladimir#${service.slug}`)}>← Владимирский контекст</a>
+        <span className={styles.crumbLevels}>
+          <a href={sitePath("/#directions")}>← На главную</a>
+          <a href={sitePath(`/napravleniya/vladimir#${service.slug}`)}>← Владимирский контекст</a>
+        </span>
         <span className={styles.eyebrow}>{service.number} / 04</span>
       </nav>
-      <ProductLead title={service.title} quote={service.description} />
+      <ProductLead kicker={service.number} title={service.title} quote={service.description} />
       <figure className={`${styles.detailImage}${service.slug === "ago" ? ` ${styles.agoDetailImage}` : ""}`}>
         <img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" />
       </figure>
