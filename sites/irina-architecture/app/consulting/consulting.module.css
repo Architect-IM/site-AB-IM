@@ -17,13 +17,14 @@
 .breadcrumbs a:hover { color: var(--ink); }
 
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--paper-deep);
+  display: block;
+  position: relative;
   min-height: min(760px, 85svh);
+  background: var(--paper-deep);
 }
 
 .heroImage, .splitImage { position: relative; overflow: hidden; }
+.hero .heroImage { position: absolute; inset: 0; }
 .heroImage img, .splitImage img {
   position: absolute;
   inset: 0;

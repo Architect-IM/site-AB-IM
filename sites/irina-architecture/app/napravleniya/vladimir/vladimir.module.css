@@ -4,6 +4,7 @@
   padding: 28px var(--side); font-size: 14px; color: var(--muted);
 }
 .breadcrumbs a:hover { color: var(--ink); }
+.crumbLevels { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; min-width: 0; }
 .breadcrumbs .eyebrow { margin: 0; }
 .hero {
   position: relative; isolation: isolate; overflow: hidden;

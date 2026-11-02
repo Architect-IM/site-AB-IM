@@ -12,6 +12,7 @@ export function ProductClients({ slug }: { slug: string }) {
           <a href={sitePath(`/portfolio/${project.slug}`)} key={project.slug}>
             <img src={sitePath(`/assets/${project.image}.jpg`)} alt="" style={"imagePosition" in project && project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
             <h3>{project.name}</h3>
+            <p>— {project.caption}</p>
           </a>
         ))}
       </div>

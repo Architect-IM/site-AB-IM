@@ -3,6 +3,7 @@ import type { projects } from "@/lib/projects";
 import { essays } from "@/lib/essays";
 import { PhotoRail } from "@/components/photo-rail";
 import { ProjectTalk } from "@/components/project-talk";
+import { NextProject } from "@/components/next-project";
 
 type Project = (typeof projects)[number];
 
@@ -90,11 +91,7 @@ export function ProjectEssay({ project, next }: { project: Project; next: Projec
         ))}
       </section>
 
-      <a className="next-project" href={sitePath(`/portfolio/${next.slug}`)}>
-        <span className="section-label">Следующий проект</span>
-        <span>{next.name}</span>
-        <img src={sitePath(`/assets/${next.image}.jpg`)} alt="" loading="lazy" />
-      </a>
+      <NextProject next={next} />
     </main>
   );
 }
