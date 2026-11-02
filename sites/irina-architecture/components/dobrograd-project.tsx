@@ -1,6 +1,7 @@
 import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
 import { ProjectTalk } from "@/components/project-talk";
+import { NextProject } from "@/components/next-project";
 
 type Project = (typeof projects)[number];
 
@@ -114,11 +115,7 @@ export function DobrogradProject({ project, next }: { project: Project; next: Pr
         </div>
       </section>
 
-      <a className="next-project" href={sitePath(`/portfolio/${next.slug}`)}>
-        <span className="section-label">Следующий проект</span>
-        <span>{next.name}</span>
-        <img src={sitePath(`/assets/${next.image}.jpg`)} alt="" loading="lazy" />
-      </a>
+      <NextProject next={next} />
     </main>
   );
 }

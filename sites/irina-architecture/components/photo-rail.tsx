@@ -1,16 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 
-export function PhotoRail({ photos }: { photos: { src: string; alt: string }[] }) {
+export function PhotoRail({ photos, viewport = false }: { photos: { src: string; alt: string; position?: string; keepVisible?: boolean; standardLayout?: boolean }[]; viewport?: boolean }) {
   const [index, setIndex] = useState(0);
   const count = photos.length;
   const photo = photos[index];
   const go = (step: number) => setIndex((index + step + count) % count);
 
   return (
-    <figure className="pp-rail">
-      <img src={photo.src} alt={photo.alt} />
+    <figure className={viewport && !photo.standardLayout ? "pp-rail pp-rail-viewport" : "pp-rail"}>
+      <img
+        src={photo.src}
+        alt={photo.alt}
+        data-keep-visible={photo.keepVisible || undefined}
+        style={photo.position ? ({ "--rail-position": photo.position } as CSSProperties) : undefined}
+      />
       <figcaption>
         <span>{photo.alt}</span>
         <span className="pp-rail-nav">

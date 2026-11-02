@@ -1,6 +1,7 @@
 import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
 import { ProjectTalk } from "@/components/project-talk";
+import { NextProject } from "@/components/next-project";
 
 type Project = (typeof projects)[number];
 
@@ -43,17 +44,13 @@ export function SaburovoProject({ project, next }: { project: Project; next: Pro
         </div>
       </section>
 
-      <section className="pp-turn">
-        <p className="pp-kicker">Дальше — наша работа</p>
-        <h2>Генплан, на котором дом уже стоит на своём месте.</h2>
-        <p className="pp-facts">Красногорск · 14 га · 134 участка · с 2022 · четыре года · построено</p>
-      </section>
-
       <section className="pp-work">
         <img src={photo("01")} alt="Въезд и петля дороги среди леса" />
         <div>
+          <p className="pp-kicker">Дальше — наша работа</p>
+          <h2>Генплан, на котором дом уже стоит на своём месте.</h2>
+          <p className="pp-facts">Красногорск · 14 га · 134 участка · с 2022 · четыре года · построено</p>
           <p>Чертежи водоснабжения и канализации собраны по ГОСТ: аксонометрии с углами и привязками, чтобы не доделывать на месте. Один подрядчик закрыл рабочую документацию, гидравлику, подбор насосной, эскиз проездов и расстановку домов.</p>
-          <p className="pp-line">— Сначала участок. Потом дом.</p>
         </div>
       </section>
 
@@ -80,11 +77,7 @@ export function SaburovoProject({ project, next }: { project: Project; next: Pro
         </div>
       </section>
 
-      <a className="next-project" href={sitePath(`/portfolio/${next.slug}`)}>
-        <span className="section-label">Следующий проект</span>
-        <span>{next.name}</span>
-        <img src={sitePath(`/assets/${next.image}.jpg`)} alt="" loading="lazy" />
-      </a>
+      <NextProject next={next} />
     </main>
   );
 }
