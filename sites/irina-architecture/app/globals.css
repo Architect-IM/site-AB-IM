@@ -2218,9 +2218,7 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-saburovo .pp-hero-copy h1{font-family:Unbounded,Onest,sans-serif;font-weight:500;letter-spacing:-.03em}
 .pp-saburovo .pp-hero-quote{border-left:3px solid #70a549;padding-left:18px}
 .pp-saburovo .pp-work{align-items:center;padding-top:48px}
-.pp-saburovo .pp-work h2{margin:0;max-width:12em;font-size:clamp(32px,3.2vw,52px);font-weight:500;letter-spacing:-.045em;line-height:1.02}
-.pp-saburovo .pp-work .pp-facts{margin:16px 0 22px}
-.pp-saburovo .pp-work .pp-kicker{color:#3d6b34}
+.pp-saburovo .pp-work h2{margin:0 0 22px;max-width:16em;font-size:clamp(28px,2.8vw,44px);font-weight:500;letter-spacing:-.04em;line-height:1.08}
 .pp-saburovo a.pp-ext{text-decoration:underline;text-underline-offset:3px}
 .pp-saburovo a.pp-ext:hover{opacity:.65}
 .pp-saburovo .pp-path div{background:#f4f1e8}
