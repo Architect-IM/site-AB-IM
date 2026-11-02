@@ -2202,6 +2202,8 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-saburovo .pp-hero-copy h1{font-family:Unbounded,Onest,sans-serif;font-weight:500;letter-spacing:-.03em}
 .pp-saburovo .pp-hero-quote{border-left:3px solid #70a549;padding-left:18px}
 .pp-saburovo .pp-open .pp-kicker,.pp-saburovo .pp-turn .pp-kicker,.pp-saburovo .pp-products .pp-kicker{color:#3d6b34}
+.pp-saburovo a.pp-ext{text-decoration:underline;text-underline-offset:3px}
+.pp-saburovo a.pp-ext:hover{opacity:.65}
 .pp-saburovo .pp-path div{background:#f4f1e8}
 .pp-saburovo .pp-path img{background:#f7f6f2;object-fit:contain;padding:28px}
 .pp-saburovo .pp-moves article{border-top-color:#70a549}
