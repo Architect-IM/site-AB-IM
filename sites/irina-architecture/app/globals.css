@@ -1532,6 +1532,8 @@ p {text-wrap:pretty}
 .talk-band .service-lead-stack{padding-top:0;grid-template-columns:minmax(220px,360px) minmax(0,1fr)}
 @media(max-width:700px){.talk-band .service-lead-stack{grid-template-columns:1fr}.talk-band .lead-video{width:72%}}
 .service-lead-stack blockquote{grid-column:2;grid-row:1 / span 2;align-self:center;margin:0;max-width:none;font-size:14.4px;line-height:1.5;font-weight:400;letter-spacing:0;color:#2a2b2e}
+.service-lead-stack blockquote p{margin:0}
+.service-lead-stack blockquote p+p{margin-top:.85em}
 .service-lead-stack blockquote::before{content:"«";display:block;margin:0 0 10px;font-size:72px;line-height:.72;font-weight:500;letter-spacing:-.04em;color:var(--ink)}
 .service-lead-stack .service-lead-sign{grid-column:1;grid-row:2;margin-top:12px}
 @media(max-width:1099px){.service-lead{display:block}.service-lead-aside{margin-top:36px;padding-top:0;grid-template-columns:min(264px,42vw) minmax(0,1fr)}.service-lead-stack{grid-template-columns:1fr 1fr;margin-top:36px;padding-top:0}}
@@ -2224,8 +2226,28 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-saburovo .pp-path div{background:#f4f1e8}
 .pp-saburovo .pp-path img{background:#f7f6f2;object-fit:contain;padding:28px}
 .pp-saburovo .pp-moves article{border-top-color:#70a549}
-.pp-dobrograd .pp-hero-quote{border-left:3px solid #a35a3a;padding-left:18px}
 .pp-dobrograd .pp-open .pp-kicker,.pp-dobrograd .pp-turn .pp-kicker,.pp-dobrograd .pp-products .pp-kicker{color:#8a4b32}
+.pp-dobrograd .pp-street-title{max-width:13.2em;font-size:clamp(32px,3.5vw,48px);line-height:1.05}
+.pp-dobrograd .pp-rest-open .pp-open-row{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:28px 56px;align-items:start}
+.pp-dobrograd .pp-rest-open h2{max-width:none}
+.pp-dobrograd .pp-rest-open .pp-open-row p{margin:0;font-size:18px;line-height:1.55}
+@media(max-width:800px){.pp-dobrograd .pp-rest-open .pp-open-row{grid-template-columns:1fr}}
+
+.pp-dobrograd .pp-hero-quote{border-left:3px solid #a35a3a;padding-left:18px}
+.pp-dobrograd-head{padding:28px var(--side) 26px;background:var(--paper)}
+.pp-dobrograd-head h1{margin:10px 0 16px;color:var(--ink);font-size:clamp(56px,8vw,120px);font-weight:500;letter-spacing:-.055em;line-height:.9}
+.pp-dobrograd-head .pp-hero-quote{color:var(--ink);max-width:none;white-space:nowrap}
+@media(max-width:720px){.pp-dobrograd-head .pp-hero-quote{white-space:normal}}
+.pp-dobrograd .pp-hero{min-height:calc(100svh - var(--header-h) - 230px)}
+.pp-dobrograd .pp-path div{justify-content:flex-start}
+.pp-dobrograd .pp-hero::after{display:none}
+.pp-dobrograd a.pp-ext{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.pp-dobrograd a.pp-ext:hover{opacity:.65}
+.pp-switch{position:sticky;top:var(--header-h);z-index:40;display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-bottom:1px solid var(--line)}
+.pp-switch a{display:flex;flex-direction:column;gap:6px;padding:16px var(--side) 18px;color:var(--muted);text-decoration:none;font-size:clamp(22px,2.2vw,32px);font-weight:500;letter-spacing:-.03em;line-height:1}
+.pp-switch a+a{border-left:1px solid var(--line)}
+.pp-switch small{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:#8a4b32}
+.pp-switch a[aria-current="page"]{color:var(--ink);box-shadow:inset 0 -3px 0 #a35a3a}
 .pp-dobrograd .pp-moves article{border-top-color:#a35a3a}
 .sab-voice{display:grid;grid-template-columns:minmax(200px,280px) minmax(0,1fr);gap:12px 48px;align-items:center;padding:48px var(--side) 12px}
 .sab-voice figure{margin:0}
