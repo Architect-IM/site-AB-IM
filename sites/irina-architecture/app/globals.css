@@ -2277,7 +2277,8 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-dobrograd .pp-hero-quote{border-left:3px solid #a35a3a;padding-left:18px}
 .pp-dobrograd-head{padding:28px var(--side) 26px;background:var(--paper)}
 .pp-dobrograd-head h1{margin:10px 0 16px;color:var(--ink);font-size:clamp(56px,8vw,120px);font-weight:500;letter-spacing:-.055em;line-height:.9}
-.pp-dobrograd-head .pp-hero-quote{color:var(--ink)}
+.pp-dobrograd-head .pp-hero-quote{color:var(--ink);max-width:none;white-space:nowrap}
+@media(max-width:720px){.pp-dobrograd-head .pp-hero-quote{white-space:normal}}
 .pp-dobrograd .pp-hero{min-height:calc(100svh - var(--header-h) - 230px)}
 .pp-dobrograd .pp-hero::after{display:none}
 .pp-dobrograd a.pp-ext{color:inherit;text-decoration:underline;text-underline-offset:3px}
