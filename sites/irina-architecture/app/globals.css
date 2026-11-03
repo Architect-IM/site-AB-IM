@@ -2154,6 +2154,23 @@ textarea.form-input {resize:vertical;min-height:135px}
   display:block;width:clamp(160px,min(22vw,28svh),260px);height:auto;
   aspect-ratio:1;object-fit:contain;margin:0 0 24px;
 }
+.pp-zhar .pp-hero img{object-position:center 68%}
+.pp-zhar .pp-hero-copy{
+  display:flex;align-items:flex-end;gap:18px 22px;
+  width:100%;max-width:none;padding:0 var(--side) 28px;
+}
+.pp-zhar .pp-hero-copy .pp-client-logo{
+  width:clamp(64px,7vw,84px);margin:0;flex:0 0 auto;aspect-ratio:111/140;
+}
+.pp-zhar .pp-hero-copy h1{
+  margin:2px 0 8px;font-size:clamp(34px,3.6vw,56px);line-height:.92;letter-spacing:-.045em;
+}
+.pp-zhar .pp-hero-quote{font-size:clamp(16px,1.4vw,22px);max-width:24em}
+@media(max-width:800px){
+  .pp-zhar .pp-hero-copy{align-items:flex-end;padding-bottom:20px}
+  .pp-zhar .pp-hero-copy .pp-client-logo{width:56px}
+  .pp-zhar .pp-hero-copy h1{font-size:34px}
+}
 .pp-pokrovskiy .pp-hero-copy h1{
   font-family:"Pokrovskiy Lettering",Georgia,serif;font-weight:400;font-style:normal;
   font-synthesis:none;text-transform:uppercase;
@@ -2284,7 +2301,22 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-dobrograd-head h1{margin:10px 0 16px;color:var(--ink);font-size:clamp(56px,8vw,120px);font-weight:500;letter-spacing:-.055em;line-height:.9}
 .pp-dobrograd-head .pp-hero-quote{color:var(--ink);max-width:none;white-space:nowrap}
 @media(max-width:720px){.pp-dobrograd-head .pp-hero-quote{white-space:normal}}
-.pp-dobrograd .pp-hero{min-height:calc(100svh - var(--header-h) - 230px)}
+.pp-dobrograd .pp-hero{min-height:100vh}
+.pp-dobrograd .pp-hero img{object-position:center 46%}
+.pp-dobrograd .pp-houses-hero .pp-hero-mark{
+  right:auto;left:46%;top:11%;bottom:auto;
+  color:#fff;text-shadow:0 1px 2px rgba(22,23,27,.35),0 8px 22px rgba(22,23,27,.25);
+}
+.pp-dobrograd .pp-hero-mark{
+  position:absolute;z-index:1;right:8%;bottom:14%;margin:0;
+  color:#f7f6f2;font-size:clamp(14px,1.25vw,18px);font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;line-height:1;
+  text-shadow:0 1px 2px rgba(0,0,0,.35),0 8px 22px rgba(0,0,0,.4);
+  pointer-events:none;
+}
+@media(max-width:800px){
+  .pp-dobrograd .pp-hero-mark{right:auto;left:42%;bottom:7%}
+}
 .pp-dobrograd .pp-path div{justify-content:flex-start}
 .pp-dobrograd .pp-hero::after{display:none}
 .pp-dobrograd a.pp-ext{color:inherit;text-decoration:underline;text-underline-offset:3px}

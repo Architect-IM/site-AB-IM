@@ -10,7 +10,7 @@ const shot = (name: string) => sitePath(`/assets/portfolio/zhar-ptitsa/${name}.j
 
 export function ZharProject({ project, next }: { project: Project; next: Project }) {
   return (
-    <main id="content" className="inner-page pp">
+    <main id="content" className="inner-page pp pp-zhar">
       <section className="pp-hero">
         <img src={shot("evening")} alt="Банный комплекс на Истре вечером: терраса и бассейн" />
         <div className="pp-hero-copy">
@@ -22,9 +22,11 @@ export function ZharProject({ project, next }: { project: Project; next: Project
             alt=""
             aria-hidden="true"
           />
-          <p className="section-label">Истра · 2025</p>
-          <h1>{project.name}</h1>
-          <p className="pp-hero-quote">— Сказка начинается здесь.</p>
+          <div>
+            <p className="section-label">Истра · 2025</p>
+            <h1>{project.name}</h1>
+            <p className="pp-hero-quote">— Сказка начинается здесь.</p>
+          </div>
         </div>
       </section>
 
@@ -77,8 +79,7 @@ export function ZharProject({ project, next }: { project: Project; next: Project
       <section className="pp-work">
         <img src={shot("evening")} alt="Комплекс вечером" />
         <div>
-          <p>Заказчику нужно обновлять тёплую купель в 3 м³ за 60 минут — за время уборки между гостями. Мощный котёл не разрешили: дорого. Поставили несколько малых, они работают в паре. Параллельно котлы греют помещения, вентиляцию и эту воду. Котельная газовая, от газгольдера. Для парной — двойное утепление, пароизоляция и гидроизоляция. Всё оборудование котельной и водоподготовки собрано в одном помещении.</p>
-          <p className="pp-line">— Мощный котёл не разрешили. Поставили несколько малых, в паре.</p>
+          <p>В банях, особенно таких — современных, технологичных, красивых, — всегда хватает сложных вопросов при проектировании. Двойное утепление, паро- и гидроизоляция, и ещё больше — водоподготовка: высокие требования к качеству и количеству воды, помноженные на технико-экономическое обоснование. Словом, просто здесь не было. Но все вопросы были решены, объект находится на стадии строительства и, надеюсь, совсем скоро порадует нас своим лёгким паром!</p>
         </div>
       </section>
 

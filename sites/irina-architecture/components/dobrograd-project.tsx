@@ -71,8 +71,9 @@ export function DobrogradProject({ project, next, part = "houses" }: { project: 
 function Houses({ project }: { project: Project }) {
   return (
     <>
-      <section className="pp-hero">
+      <section className="pp-hero pp-houses-hero">
         <img src={photo("street")} alt="Петля улицы Цветочной: кирпич и дерево второй очереди" />
+        <p className="pp-hero-mark">Доброград</p>
       </section>
 
       <ProjectTalk project={project} />
@@ -135,6 +136,7 @@ function Restaurant({ project }: { project: Project }) {
     <>
       <section className="pp-hero">
         <img src={photo("restaurant")} alt="Ресторан в Доброграде: стеклянная веранда и лес" />
+        <p className="pp-hero-mark">Доброград</p>
       </section>
 
       <ProjectTalk
