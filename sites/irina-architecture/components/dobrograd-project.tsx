@@ -53,8 +53,14 @@ function Products({ items }: { items: typeof houseProducts | typeof restaurantPr
 }
 
 export function DobrogradProject({ project, next, part = "houses" }: { project: Project; next: Project; part?: Part }) {
+  const quote = part === "restaurant" ? "— Веранда к свадьбе. За пять месяцев." : "— Образ первой очереди. Конструкция уже другая.";
   return (
     <main id="content" className="inner-page pp pp-dobrograd">
+      <header className="pp-dobrograd-head">
+        <p className="section-label">Заказчик · Доброград</p>
+        <h1>{project.name}</h1>
+        <p className="pp-hero-quote">{quote}</p>
+      </header>
       <Switch part={part} />
       {part === "restaurant" ? <Restaurant project={project} /> : <Houses project={project} />}
       <NextProject next={next} />
@@ -67,11 +73,6 @@ function Houses({ project }: { project: Project }) {
     <>
       <section className="pp-hero">
         <img src={photo("street")} alt="Петля улицы Цветочной: кирпич и дерево второй очереди" />
-        <div className="pp-hero-copy">
-          <p className="section-label">Заказчик · Доброград</p>
-          <h1>{project.name}</h1>
-          <p className="pp-hero-quote">— Образ первой очереди. Конструкция уже другая.</p>
-        </div>
       </section>
 
       <ProjectTalk project={project} />
@@ -152,11 +153,6 @@ function Restaurant({ project }: { project: Project }) {
     <>
       <section className="pp-hero">
         <img src={photo("restaurant")} alt="Ресторан в Доброграде: стеклянная веранда и лес" />
-        <div className="pp-hero-copy">
-          <p className="section-label">Заказчик · Доброград</p>
-          <h1>{project.name}</h1>
-          <p className="pp-hero-quote">— Веранда к свадьбе. За пять месяцев.</p>
-        </div>
       </section>
 
       <ProjectTalk

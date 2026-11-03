@@ -2272,8 +2272,13 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-saburovo .pp-path div{background:#f4f1e8}
 .pp-saburovo .pp-path img{background:#f7f6f2;object-fit:contain;padding:28px}
 .pp-saburovo .pp-moves article{border-top-color:#70a549}
-.pp-dobrograd .pp-hero-quote{border-left:3px solid #a35a3a;padding-left:18px}
 .pp-dobrograd .pp-open .pp-kicker,.pp-dobrograd .pp-turn .pp-kicker,.pp-dobrograd .pp-products .pp-kicker{color:#8a4b32}
+.pp-dobrograd .pp-hero-quote{border-left:3px solid #a35a3a;padding-left:18px}
+.pp-dobrograd-head{padding:28px var(--side) 26px;background:var(--paper)}
+.pp-dobrograd-head h1{margin:10px 0 16px;color:var(--ink);font-size:clamp(56px,8vw,120px);font-weight:500;letter-spacing:-.055em;line-height:.9}
+.pp-dobrograd-head .pp-hero-quote{color:var(--ink)}
+.pp-dobrograd .pp-hero{min-height:calc(100svh - var(--header-h) - 230px)}
+.pp-dobrograd .pp-hero::after{display:none}
 .pp-dobrograd a.pp-ext{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .pp-dobrograd a.pp-ext:hover{opacity:.65}
 .pp-switch{position:sticky;top:var(--header-h);z-index:40;display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-bottom:1px solid var(--line)}
