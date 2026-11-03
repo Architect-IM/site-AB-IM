@@ -1,6 +1,5 @@
 import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
-import { PhotoRail } from "@/components/photo-rail";
 import { ProjectTalk } from "@/components/project-talk";
 import { NextProject } from "@/components/next-project";
 
@@ -39,13 +38,6 @@ export function ZharProject({ project, next }: { project: Project; next: Project
           <h2>Четыре модуля за короткий срок.</h2>
         </div>
       </section>
-
-      <PhotoRail photos={[
-        { src: shot("evening"), alt: "Вечерний вид комплекса" },
-        { src: shot("garden"), alt: "Озеленение вдоль террас" },
-        { src: shot("terrace"), alt: "Терраса с бассейном" },
-        { src: shot("existing"), alt: "Существующий корпус" },
-      ]} />
 
       <section className="pp-path">
         <img src={shot("garden")} alt="Террасы и посадки у банного комплекса" />
