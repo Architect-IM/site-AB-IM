@@ -68,12 +68,6 @@ export function ZharProject({ project, next }: { project: Project; next: Project
         <figure><img src={shot("existing")} alt="Модуль, который уже работает" /><figcaption>Модуль, который уже работает</figcaption></figure>
       </div>
 
-      <section className="pp-turn">
-        <p className="pp-kicker">Дальше — наша работа</p>
-        <h2>Тёплая купель за час, пока идёт уборка.</h2>
-        <p className="pp-facts">Истра · 850 м² · 4 блока · 2025 · строится</p>
-      </section>
-
       <section className="pp-moves">
         <article>
           <span>01</span>
