@@ -14,9 +14,17 @@ export function ZharProject({ project, next }: { project: Project; next: Project
       <section className="pp-hero">
         <img src={shot("evening")} alt="Банный комплекс на Истре вечером: терраса и бассейн" />
         <div className="pp-hero-copy">
+          <img
+            className="pp-client-logo"
+            src={sitePath("/assets/portfolio/zhar-ptitsa/logo.svg")}
+            width={111}
+            height={140}
+            alt=""
+            aria-hidden="true"
+          />
           <p className="section-label">Истра · 2025</p>
           <h1>{project.name}</h1>
-          <p className="pp-hero-quote">— Похожий модуль уже стоит. Нужен ещё один.</p>
+          <p className="pp-hero-quote">— Сказка начинается здесь.</p>
         </div>
       </section>
 

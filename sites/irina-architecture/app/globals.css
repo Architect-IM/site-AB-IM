@@ -2148,7 +2148,8 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-hero-copy{position:relative;padding:48px var(--side) 64px;max-width:1100px}
 .pp-hero-copy h1{margin:10px 0 18px;font-size:clamp(56px,8vw,120px);font-weight:500;letter-spacing:-.055em;line-height:.9}
 .pp-hero-quote{margin:0;font-size:clamp(22px,2.4vw,34px);line-height:1.25;letter-spacing:-.03em;max-width:16em}
-.pp-pokrovskiy .pp-hero-copy .pp-client-logo{
+/* Client mark sits above the name on a portfolio hero, the same way as Pokrovskiy Pryanik. */
+.pp-hero-copy .pp-client-logo{
   position:static;inset:auto;z-index:auto;
   display:block;width:clamp(160px,min(22vw,28svh),260px);height:auto;
   aspect-ratio:1;object-fit:contain;margin:0 0 24px;
@@ -2159,7 +2160,7 @@ textarea.form-input {resize:vertical;min-height:135px}
   font-size:clamp(44px,6.4vw,98px);line-height:1.04;letter-spacing:.018em;padding-top:.17em;max-width:9em;
 }
 @media(max-width:800px){
-  .pp-pokrovskiy .pp-hero-copy .pp-client-logo{width:clamp(148px,46vw,200px);margin-bottom:20px}
+  .pp-hero-copy .pp-client-logo{width:clamp(148px,46vw,200px);margin-bottom:20px}
   .pp-pokrovskiy .pp-hero-copy h1{font-size:clamp(36px,6.4vw,50px);line-height:1.06}
 }
 .pp-open{padding:88px var(--side) 36px}
