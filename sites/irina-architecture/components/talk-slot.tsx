@@ -20,7 +20,11 @@ export function TalkSlot({
         </div>
         <figcaption className="service-lead-sign">{name}<span>{role}</span></figcaption>
       </figure>
-      <blockquote>{quote}</blockquote>
+      <blockquote>
+        {quote.split(/\n\n+/).map((part) => (
+          <p key={part}>{part}</p>
+        ))}
+      </blockquote>
     </aside>
   );
 }
