@@ -114,24 +114,6 @@ function Houses({ project }: { project: Project }) {
         </div>
       </section>
 
-      <section className="pp-moves">
-        <article>
-          <span>01</span>
-          <h3>Ритм</h3>
-          <p>Три дома, у каждого свой шаг по рельефу. Петля не выглядит случайной нарезкой.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Сборное</h3>
-          <p>Образ первой очереди остаётся. Несущая схема уже не монолит, а то, из чего дешевле строить.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Смета рядом</h3>
-          <p>Объёмы и сметы вели по ходу проекта. Красиво согласовывали с тем, что заказчик реально строит.</p>
-        </article>
-      </section>
-
       <section className="pp-two">
         <div>
           <p className="pp-kicker">Ирина</p>
