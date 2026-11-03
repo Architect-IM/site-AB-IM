@@ -4,19 +4,67 @@ import { ProjectTalk } from "@/components/project-talk";
 import { NextProject } from "@/components/next-project";
 
 type Project = (typeof projects)[number];
+type Part = "houses" | "restaurant";
 
 const photo = (name: string) => sitePath(`/assets/portfolio/dobrograd/${name}.jpg`);
 
-const products = [
+const houseProducts = [
   ["АГО — комплект под градсовет", "Бюро", "/bureau/uslugi/ago"],
   ["Проектная документация — стадия П", "Бюро", "/bureau/uslugi/stage-p"],
   ["Рабочая документация — стадия Р", "Бюро", "/bureau/uslugi/stage-r"],
   ["Сопровождение строительства", "Бюро", "/bureau/uslugi/supervision"],
 ] as const;
 
-export function DobrogradProject({ project, next }: { project: Project; next: Project }) {
+const restaurantProducts = [
+  ["Обследование зданий", "Бюро", "/bureau/uslugi/survey"],
+  ["Проектная документация — стадия П", "Бюро", "/bureau/uslugi/stage-p"],
+  ["Рабочая документация — стадия Р", "Бюро", "/bureau/uslugi/stage-r"],
+] as const;
+
+function Switch({ part }: { part: Part }) {
+  return (
+    <nav className="pp-switch" aria-label="Проекты в Доброграде">
+      <a href={sitePath("/portfolio/dobrograd")} aria-current={part === "houses" ? "page" : undefined}>
+        <small>Улица Цветочная</small>
+        Таунхаусы
+      </a>
+      <a href={sitePath("/portfolio/dobrograd/restoran")} aria-current={part === "restaurant" ? "page" : undefined}>
+        <small>Реконструкция</small>
+        Ресторан
+      </a>
+    </nav>
+  );
+}
+
+function Products({ items }: { items: typeof houseProducts | typeof restaurantProducts }) {
+  return (
+    <section className="pp-products">
+      <p className="pp-kicker">Из чего собрана эта работа</p>
+      <div>
+        {items.map(([title, side, href]) => (
+          <a key={title} href={sitePath(href)}>
+            <span>{side}</span>
+            <strong>{title}</strong>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export function DobrogradProject({ project, next, part = "houses" }: { project: Project; next: Project; part?: Part }) {
   return (
     <main id="content" className="inner-page pp pp-dobrograd">
+      <Switch part={part} />
+      {part === "restaurant" ? <Restaurant project={project} /> : <Houses project={project} />}
+      <NextProject next={next} />
+    </main>
+  );
+}
+
+function Houses({ project }: { project: Project }) {
+  return (
+    <>
       <section className="pp-hero">
         <img src={photo("street")} alt="Петля улицы Цветочной: кирпич и дерево второй очереди" />
         <div className="pp-hero-copy">
@@ -83,15 +131,6 @@ export function DobrogradProject({ project, next }: { project: Project; next: Pr
         </article>
       </section>
 
-      <section className="pp-path">
-        <img src={photo("restaurant")} alt="Ресторан в Доброграде, стеклянный фасад и лес" />
-        <div>
-          <p className="pp-kicker">Отдельно</p>
-          <h2>Реконструкция ресторана.</h2>
-          <p>Второй объект в том же городе. В анкете по нему пока только состав работ: обследование, стадии П и Р, сопровождение. Текста о задаче и ходе ещё нет. Кадр уже есть.</p>
-        </div>
-      </section>
-
       <section className="pp-two">
         <div>
           <p className="pp-kicker">Ирина</p>
@@ -103,19 +142,68 @@ export function DobrogradProject({ project, next }: { project: Project; next: Pr
         </div>
       </section>
 
-      <section className="pp-products">
-        <p className="pp-kicker">Из чего собрана эта работа</p>
-        <div>
-          {products.map(([title, side, href]) => (
-            <a key={title} href={sitePath(href)}>
-              <span>{side}</span>
-              <strong>{title}</strong>
-            </a>
-          ))}
+      <Products items={houseProducts} />
+    </>
+  );
+}
+
+function Restaurant({ project }: { project: Project }) {
+  return (
+    <>
+      <section className="pp-hero">
+        <img src={photo("restaurant")} alt="Ресторан в Доброграде: стеклянная веранда и лес" />
+        <div className="pp-hero-copy">
+          <p className="section-label">Заказчик · Доброград</p>
+          <h1>{project.name}</h1>
+          <p className="pp-hero-quote">— Веранда к свадьбе. За пять месяцев.</p>
         </div>
       </section>
 
-      <NextProject next={next} />
-    </main>
+      <ProjectTalk
+        project={project}
+        image={photo("restaurant")}
+        quote="Ресторан в Доброграде нужно было увеличить и открыть к свадьбе, на которую уже взяли аванс. Пять месяцев, работы параллельно с дизайнерами Елены Крыловой. Витражи веранды от трёх до восьми метров. Свадьбу провели в срок."
+      />
+
+      <section className="pp-open">
+        <p className="pp-kicker">2021 · 680 м² → 790 м²</p>
+        <h2>Посадочный зал вырос за счёт веранды.</h2>
+        <div className="pp-open-grid">
+          <p>Нужно было увеличить зал остеклением веранды, оформить стадию П для регистрации реконструкции и сделать архитектурно-строительные решения вместе с дизайнерами. Срок — пять месяцев, чтобы ресторан вышел на мероприятие.</p>
+          <p>Все работы шли параллельно со <a className="pp-ext" href="https://helendesign.ru/portfolio/restoran-dobrograd/" target="_blank" rel="noreferrer">студией дизайна Елены Крыловой</a>: реконструкцию требовалось закончить до 1 июля, в ресторан уже внесли аванс за свадьбу. Строили с листа. Балки считали и сразу заказывали на площадку. Фасады держали архитектурный код Доброграда.</p>
+        </div>
+      </section>
+
+      <section className="pp-moves">
+        <article>
+          <span>01</span>
+          <h3>Веранда</h3>
+          <p>Витражи от трёх до восьми метров. Узлы примыкания к несущим конструкциям не типовые. Под остекление запроектирован металлокаркас.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>С листа</h3>
+          <p>Обследование конструкций веранд, точки подключения сетей, нагрузки на электричество, отопление и вентиляцию. Балки уходили на площадку сразу после расчёта.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Кухня</h3>
+          <p>Запроектировали цех для суши, с технологом по ресторанам. Посадочных мест стало больше, кухня мощнее. Свадьбу провели в назначенный день.</p>
+        </article>
+      </section>
+
+      <section className="pp-two">
+        <div>
+          <p className="pp-kicker">Вместе</p>
+          <p>Студия дизайна Елены Крыловой. Архитектурно-строительная часть — бюро. Фасад в коде города.</p>
+        </div>
+        <div>
+          <p className="pp-kicker">Бюро</p>
+          <p>Обследование, стадия П и стадия Р. Ресторан открылся к дате, на которую уже был аванс.</p>
+        </div>
+      </section>
+
+      <Products items={restaurantProducts} />
+    </>
   );
 }

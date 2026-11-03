@@ -14,16 +14,16 @@ const spoken: Record<string, string> = {
   ruza: "В Рузе восстанавливали дачу отца владельца, известного художника. Первый этаж почти повторяет дом его детских каникул. Наверху — галерея работ отца и мастерская сына, с окнами в крыше.",
 };
 
-export function ProjectTalk({ project }: { project: Project }) {
+export function ProjectTalk({ project, quote, image }: { project: Project; quote?: string; image?: string }) {
   const essay = essays[project.slug];
-  const quote = spoken[project.slug] ?? essay?.voice ?? project.caption;
+  const line = quote ?? spoken[project.slug] ?? essay?.voice ?? project.caption;
   return (
     <section className="talk-band">
       <TalkSlot
-        image={sitePath(`/assets/${project.image}.jpg`)}
+        image={image ?? sitePath(`/assets/${project.image}.jpg`)}
         name="Ирина Михейкина"
         role="архитектор"
-        quote={quote}
+        quote={line}
       />
     </section>
   );
