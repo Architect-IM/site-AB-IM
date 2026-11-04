@@ -6,6 +6,7 @@ export const productTags = [
   { id: "stage-r", label: "Стадия Р", side: "bureau", href: "/bureau/uslugi/stage-r" },
   { id: "survey", label: "Обследование", side: "bureau", href: "/bureau/uslugi/survey" },
   { id: "client", label: "Технический заказчик", side: "bureau", href: "/bureau/uslugi/client" },
+  { id: "marketing", label: "Маркетинг", side: "bureau", href: "/bureau/uslugi/marketing" },
 ] as const;
 
 export type ProductTagId = (typeof productTags)[number]["id"];
@@ -14,7 +15,7 @@ export type Surface = "home" | "bureau";
 export const projects = [
   { slug: "pokrovskiy-pryanik", name: "Покровский пряник", category: "Гостеприимство", image: "portfolio/pokrovskiy-pryanik/img_0356", imagePosition: "center 22%", status: "В работе", year: "2026", place: "Покров", caption: "Печатный пряник, который стал местом.", description: "Печатный пряник, который стал местом.", tags: ["hospitality", "territory-plan", "tourism-plan", "stage-p", "stage-r", "survey", "client"] as ProductTagId[], surfaces: ["home", "bureau"] as Surface[] },
   { slug: "dobrograd", name: "Доброград", category: "Гостеприимство", image: "portfolio/dobrograd/01", status: "Построено", year: "2020", place: "Доброград", caption: "Частный город во Владимирской области.", description: "Таунхаусы второй очереди на улице Цветочной: петля, рельеф и сборные конструкции.", tags: ["stage-p", "stage-r"] as ProductTagId[], surfaces: ["home"] as Surface[] },
-  { slug: "kabardinka", name: "Гостиница Кабардинка", category: "Гостеприимство", image: "portfolio/kabardinka/court", status: "Проект", year: "2025", place: "Приэльбрусье", caption: "Где пять звёзд на земле встречают миллионы на небе.", description: "Горная резиденция: два корпуса, двор и бассейн на кровле. Концепция, 2025.", tags: ["hospitality"] as ProductTagId[], surfaces: ["home"] as Surface[] },
+  { slug: "kabardinka", name: "Гостиница Кабардинка", category: "Гостеприимство", image: "portfolio/kabardinka/court", status: "Проект", year: "2025", place: "Приэльбрусье", caption: "Где пять звёзд на земле встречают миллионы на небе.", description: "Горная резиденция: два корпуса, двор и бассейн на кровле. Концепция, 2025.", tags: ["hospitality", "marketing"] as ProductTagId[], surfaces: ["home"] as Surface[] },
   { slug: "altai", name: "Гостиница Алтай", category: "Гостеприимство", image: "portfolio/altai/01", status: "Проект", year: "", place: "Алтай", caption: "Стеклянный объём над склоном, а не вместо него.", description: "Гостиница на алтайском склоне: стекло, настил и вода.", tags: [] as ProductTagId[], surfaces: [] as Surface[] },
   { slug: "gostec", name: "Гостиница Гостец", category: "Гостеприимство", image: "portfolio/gostec/01", status: "Строится", year: "2024", place: "Гостец", caption: "Гостиничный мини-посёлок в настоящей деревне.", description: "Эко-отель у поймы Шередари: гостиница со спа, гостевые дома и глэмпинг.", tags: ["hospitality"] as ProductTagId[], surfaces: ["home"] as Surface[] },
   { slug: "sokol", name: "Гостиница сокол", category: "Гостиница", image: "portfolio/sokol/01", status: "Проект", year: "", place: "Сокол", caption: "Фасад, который снова можно назвать входом.", description: "Ремонт фасадов гостиницы «Сокол».", tags: [] as ProductTagId[], surfaces: ["bureau"] as Surface[] },

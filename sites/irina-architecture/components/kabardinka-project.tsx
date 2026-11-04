@@ -9,6 +9,7 @@ const shot = (name: string) => sitePath(`/assets/portfolio/kabardinka/${name}.jp
 
 const products = [
   ["Живое гостеприимство", "Архитектор", "/napravleniya/hospitality"],
+  ["Маркетинг", "Бюро", "/bureau/uslugi/marketing"],
   ["АГО — комплект под градсовет", "Бюро", "/bureau/uslugi/ago"],
 ] as const;
 
