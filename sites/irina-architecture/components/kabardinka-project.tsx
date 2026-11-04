@@ -66,7 +66,7 @@ export function KabardinkaProject({ project, next }: { project: Project; next: P
         </div>
         <div>
           <p className="pp-kicker">Сейчас</p>
-          <p>Концепция. 660 номеров, 35 000 м², 2025. В проектирование не ушла.</p>
+          <p>Концепция. 660 номеров, 35 000 м², 2025.</p>
         </div>
       </section>
 
