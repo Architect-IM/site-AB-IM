@@ -7,6 +7,11 @@ type Project = (typeof projects)[number];
 
 const shot = (name: string) => sitePath(`/assets/portfolio/zhar-ptitsa/${name}.jpg`);
 
+const products = [
+  ["Обследование зданий", "Бюро", "/bureau/uslugi/survey"],
+  ["Рабочая документация — стадия Р", "Бюро", "/bureau/uslugi/stage-r"],
+] as const;
+
 export function ZharProject({ project, next }: { project: Project; next: Project }) {
   return (
     <main id="content" className="inner-page pp pp-zhar">
@@ -78,6 +83,18 @@ export function ZharProject({ project, next }: { project: Project; next: Project
         <div>
           <p className="pp-kicker">Сейчас</p>
           <p>Объект строится. Четыре блока, 850 м², Истра, 2025.</p>
+        </div>
+      </section>
+
+      <section className="pp-products">
+        <p className="pp-kicker">Из чего собрана эта работа</p>
+        <div>
+          {products.map(([title, side, href]) => (
+            <a key={title} href={sitePath(href)}>
+              <span>{side}</span>
+              <strong>{title}</strong>
+            </a>
+          ))}
         </div>
       </section>
 
