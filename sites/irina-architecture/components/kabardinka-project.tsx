@@ -1,6 +1,7 @@
 import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
 import { ProjectTalk } from "@/components/project-talk";
+import { PhotoRail } from "@/components/photo-rail";
 import { NextProject } from "@/components/next-project";
 
 type Project = (typeof projects)[number];
@@ -40,6 +41,15 @@ export function KabardinkaProject({ project, next }: { project: Project; next: P
         <figure><img src={shot("roof")} alt="Терраса ресторана вечером, горы за лесом" /><figcaption>Ресторан на кровле</figcaption></figure>
         <figure><img src={shot("lobby")} alt="Общий зал с камином и видом на горы" /><figcaption>Общий зал</figcaption></figure>
       </div>
+
+      <PhotoRail viewport photos={[
+        { src: shot("rail-pines"), alt: "Два корпуса в соснах" },
+        { src: shot("rail-day"), alt: "Двор днём" },
+        { src: shot("rail-roofpool"), alt: "Бассейн и снежные вершины" },
+        { src: shot("rail-indoor"), alt: "Крытый бассейн" },
+        { src: shot("rail-dinner"), alt: "Ресторан к горам" },
+        { src: shot("rail-room"), alt: "Номер" },
+      ]} />
 
       <section className="pp-moves">
         <article>
