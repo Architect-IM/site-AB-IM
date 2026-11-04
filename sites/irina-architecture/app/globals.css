@@ -2155,7 +2155,8 @@ textarea.form-input {resize:vertical;min-height:135px}
   aspect-ratio:1;object-fit:contain;margin:0 0 24px;
 }
 .pp-zhar .pp-hero img{object-position:center 68%}
-.pp-zhar .pp-portrait h2{margin:0;max-width:8em;font-size:clamp(40px,4.6vw,72px);font-weight:500;letter-spacing:-.05em;line-height:.96;color:#fbfbf9}
+.pp-zhar .pp-portrait h2{margin:0;max-width:9em;font-size:clamp(40px,4.6vw,72px);font-weight:500;letter-spacing:-.05em;line-height:.96;color:#fbfbf9}
+.pp-zhar .pp-portrait h2 + p{margin-top:22px}
 .pp-zhar .pp-hero-copy{
   display:flex;align-items:flex-end;gap:18px 22px;
   width:100%;max-width:none;padding:0 var(--side) 28px;
