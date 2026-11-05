@@ -1,4 +1,4 @@
-0:{"page:/":"$L1","layout:/":"$L2","route:/":"$L3","__route":"route:/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/":"[\"page\",\"page:/\",\"root-boundary:/\",\"\"]"},"__srcPage":["page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:1177fd80f83fa7b0","deploymentVersion":"590a197c-839c-44e6-8fc0-c76a382ffd23","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
+0:{"page:/":"$L1","layout:/":"$L2","route:/":"$L3","__route":"route:/","__interceptionContext":null,"__layoutIds":["layout:/"],"__rootLayout":"/","__bfcacheSegmentIdentities":{"layout:/":"[\"layout\",\"layout:/\",\"root-boundary:/\",\"\"]","page:/":"[\"page\",\"page:/\",\"root-boundary:/\",\"\"]"},"__srcPage":["page"],"__layoutFlags":{"layout:/":"s"},"__artifactCompatibility":{"schemaVersion":1,"graphVersion":"app-route-graph:1177fd80f83fa7b0","deploymentVersion":"0380c15d-bf0f-4ce8-90bf-35a894bae73f","appElementsSchemaVersion":1,"rscPayloadSchemaVersion":1,"rootBoundaryId":"/","renderEpoch":null}}
 4:I["4715d14f82e4",[],"Header",1]
 5:I["74f944bd09a9",[],"Children",1]
 6:I["eedcf459879d",[],"Footer",1]
@@ -11,15 +11,15 @@ c:I["74f944bd09a9",[],"Slot",1]
 d:I["52529b92208a",[],"NotFoundBoundary",1]
 e:I["78579b1089e4",[],"AppRouterScrollTarget",1]
 f:I["52529b92208a",[],"RedirectBoundary",1]
-:HL["/site-AB-IM/mihail/_next/static/css/index.BPHO-1zM.css","style"     ]
+:HL["/site-AB-IM/mihail/_next/static/css/index.BSK4pMMD.css","style"     ]
 :HL["https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&family=Unbounded:wght@500&display=swap","style"     ]
-2:[[["$","link","css:/site-AB-IM/mihail/_next/static/css/index.BPHO-1zM.css",{"rel":"stylesheet","precedence":"vite-rsc/importer-resources","href":"/site-AB-IM/mihail/_next/static/css/index.BPHO-1zM.css","data-rsc-css-href":"/site-AB-IM/mihail/_next/static/css/index.BPHO-1zM.css"}],"$undefined"],["$","html",null,{"lang":"ru","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&family=Unbounded:wght@500&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#content","children":"Перейти к содержанию"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]
+2:[[["$","link","css:/site-AB-IM/mihail/_next/static/css/index.BSK4pMMD.css",{"rel":"stylesheet","precedence":"vite-rsc/importer-resources","href":"/site-AB-IM/mihail/_next/static/css/index.BSK4pMMD.css","data-rsc-css-href":"/site-AB-IM/mihail/_next/static/css/index.BSK4pMMD.css"}],"$undefined"],["$","html",null,{"lang":"ru","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&family=Onest:wght@400;500;600&family=Source+Serif+4:ital@1&family=Unbounded:wght@500&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#content","children":"Перейти к содержанию"}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}]]}]]}]]
 3:[[["$","meta",null,{"charSet":"utf-8"}],[["$","title","0",{"children":"Ирина Михейкина — архитектор"}],["$","meta","1",{"name":"description","content":"Современная архитектура в контексте места. Архитектор Ирина Михейкина, проектное бюро полного цикла и лаборатория «Владимир»."}],["$","meta","2",{"name":"robots","content":"noindex, nofollow"}],["$","link","3",{"data-vinext-streamed-icon":"$undefined","rel":"shortcut icon","href":"/site-AB-IM/mihail/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}],["$","link","4",{"data-vinext-streamed-icon":"$undefined","rel":"icon","href":"/site-AB-IM/mihail/favicon.svg","type":"$undefined","sizes":"$undefined","color":"$undefined","media":"$undefined","fetchPriority":"$undefined"}]],[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]],["$","$L8",null,{"fallback":"$9","children":["$","$La",null,{"fallback":"$9","children":["$","$Lb",null,{"providerId":"layout:/","segmentMap":{"children":[]},"children":["$","$Lc",null,{"id":"layout:/","parallelSlots":"$undefined","children":["$","$Ld",null,{"resetKey":"","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/mihail/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Ld",null,{"resetKey":"","fallback":["$","main",null,{"className":"inner-page","id":"content","children":["$","section",null,{"className":"page-intro","children":[["$","p",null,{"className":"section-label","children":"404 / Страница не найдена"}],["$","h1",null,{"children":["Здесь пока",["$","br",null,{}],"нет проекта."]}],["$","a",null,{"href":"/site-AB-IM/mihail/portfolio","className":"text-link","children":"Перейти в портфолио"}]]}]}],"children":["$","$Le",null,{"children":["$","$Lf",null,{"children":[["$","$Lb",null,{"providerId":"page:/","segmentMap":{"children":["__PAGE__"]},"children":["$","$Lc",null,{"id":"page:/"}]}],null]}]}]}]}]}]}]}]}],null,null]
-10:T3363,
+10:T3e1e,
     <section class="hero hero-single" id="top" aria-label="Создаю многослойные, осмысленные проекты">
       <div class="hero-media" aria-hidden="true">
         <div class="hero-panel">
-          <img src="/site-AB-IM/mihail/assets/home-hero-irina-odk-img8521.jpg" alt="" fetchpriority="high">
+          <img src="/site-AB-IM/mihail/assets/home-hero-irina-building-4k-original-face.jpg" alt="" fetchpriority="high">
         </div>
       </div>
 
@@ -41,6 +41,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
 
     <section class="section" id="about">
       <div class="intro-grid">
+        <p class="section-label reveal home-section-label">01 — Подход</p>
         <h2 class="intro-title reveal">Проект = решение</h2>
         <div class="intro-copy reveal">
           <p>Я создаю современную архитектуру, всегда глубоко в контексте задачи. За каждым проектом стоит моё проектное бюро, комплексная экспертиза и умение решать задачи любой сложности на своей земле. Наши проекты живут, работают и помогают заказчикам достигать их целей — уверенно и надолго.</p>
@@ -77,7 +78,8 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
     <section class="section directions" id="directions">
       <div class="section-head reveal">
         <div>
-          <h2>Чем я занимаюсь?</h2>
+          <p class="section-label home-section-label">02 — Направления</p>
+          <h2>Четыре направления работы</h2>
         </div>
         <span class="section-index">FIELDS / 04</span>
       </div>
@@ -90,24 +92,26 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
           </div>
           <div class="direction-meta">
             <div>
+              <span class="direction-kicker">01</span>
               <h3>Владимирский контекст</h3>
               <p>Владимирская земля для меня не фон, а родной контекст. Развиваю местную школу и собираю решение, уместное именно здесь. Мы дома: знаем людей, процессы и ограничения. Главное — исследование, концепция, облик и мастер-план, с которыми можно выходить на защиту.</p>
             </div>
-            <span class="direction-action"><span class="direction-link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+            <span class="direction-action"><span class="direction-link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Как я работаю</span></span>
           </div>
         </a>
 
         <a href="/site-AB-IM/mihail/napravleniya/hospitality" id="hospitality" class="direction-card direction-fullbleed direction-screen direction-hospitality reveal">
           <div class="media-frame">
-            <img src="/site-AB-IM/mihail/assets/home-hospitality-gostec.jpg" alt="Гостиница Гостец: тёмные дома в тумане и лошади на лугу" loading="lazy">
+            <img src="/site-AB-IM/mihail/assets/home-hospitality-ruza-life.jpg" alt="Дом в Рузе: гости на террасе, дети с собакой на лугу и пасущаяся лошадь" loading="lazy">
             
           </div>
           <div class="direction-meta">
             <div>
+              <span class="direction-kicker">02</span>
               <h3>Живое гостеприимство</h3>
-              <p>Место + архитектура + маркетинг = туристические комплексы, которые живут</p>
+              <p>Беру туристический объект только если вижу, как он будет привлекать гостей, удерживать их и вызывать повторный спрос. Архитектура здесь не декорация, а причина выбрать место и точка роста территории, а не просто здание на участке. Соединяю образ, экономику, опыт гостя и реализацию. Отличаю то, что красиво открывается, от того, что потом живёт.</p>
             </div>
-            <span class="direction-action"><span class="direction-link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+            <span class="direction-action"><span class="direction-link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Как я работаю</span></span>
           </div>
         </a>
 
@@ -118,10 +122,11 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
           </div>
           <div class="direction-meta">
             <div>
+              <span class="direction-kicker">03</span>
               <h3>Консалтинг</h3>
               <p>Можно консультироваться, не запуская проектирование или стройку. Я сама предлагаю этот шаг: разобраться в деталях и наметить путь. Рекомендации — из исследования и практики, не из общих схем. Смотрю задачу целиком: смысл, архитектура, экономика, согласования и то, как объект будет жить.</p>
             </div>
-            <span class="direction-action"><span class="direction-link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+            <span class="direction-action"><span class="direction-link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Как я работаю</span></span>
           </div>
         </a>
 
@@ -132,10 +137,11 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
           </div>
           <div class="direction-meta">
             <div>
+              <span class="direction-kicker">04</span>
               <h3>Частные владения</h3>
-              <p>Когда человек и место красят друг друга</p>
+              <p>Частный дом для меня — не метраж, а способ жить на своей земле. Собираю без лишнего: характер из вашей жизни, традиции места и природа в ансамбле, быт на своих местах. На площадке — прямой разговор между вами, проектом и теми, кто строит: комфорт сегодня и запас на годы вперёд.</p>
             </div>
-            <span class="direction-action"><span class="direction-link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+            <span class="direction-action"><span class="direction-link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Как я работаю</span></span>
           </div>
         </a>
       </div>
@@ -144,6 +150,7 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
     <section class="section projects" id="projects">
       <div class="section-head reveal">
         <div>
+          <p class="section-label home-section-label">03 — Избранные проекты</p>
           <h2>Работы, которые живут</h2>
         </div>
         <a class="text-link" href="/site-AB-IM/mihail/portfolio">Все проекты</a>
@@ -213,6 +220,6 @@ f:I["52529b92208a",[],"RedirectBoundary",1]
       </div>
     </section>
 
-    <div class="practice-overview"><section class="practice-panel reveal" id="bureau" aria-labelledby="bureau-overview-title"><div class="practice-panel-image" aria-hidden="true"><img src="/site-AB-IM/mihail/assets/bureau.jpg" alt="" loading="lazy"></div><div><p class="section-label home-section-label">04 — Проектное бюро</p><h2 id="bureau-overview-title">От замысла до площадки</h2></div><div class="practice-panel-copy"><p>Инженерная, градостроительная, экономическая и сервисная экспертиза. Своя команда ведёт проект как единую систему — от предпроектного анализа и рабочей документации до авторского надзора и управления строительством.</p><a class="hero-action" href="/site-AB-IM/mihail/bureau"><span class="hero-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Познакомиться с бюро</span></a></div></section></div>
+    <div class="practice-overview"><section class="practice-panel reveal" id="bureau" aria-labelledby="bureau-overview-title"><div class="practice-panel-image" aria-hidden="true"><img src="/site-AB-IM/mihail/assets/bureau.jpg" alt="" loading="lazy"></div><div><p class="section-label home-section-label">04 — Проектное бюро</p><h2 id="bureau-overview-title">От замысла до площадки</h2></div><div class="practice-panel-copy"><p>Инженерная, градостроительная, экономическая и сервисная экспертиза. Своя команда ведёт проект как единую систему — от предпроектного анализа и рабочей документации до авторского надзора и управления строительством.</p><a class="hero-action" href="/site-AB-IM/mihail/bureau"><span class="hero-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Начать диалог с бюро</span></a></div></section><section class="practice-panel reveal" id="lab" aria-labelledby="lab-overview-title"><div class="practice-panel-image" aria-hidden="true"><img src="/site-AB-IM/mihail/assets/lab.jpg" alt="" loading="lazy"></div><div><p class="section-label home-section-label">05 — Лаборатория</p><h2 id="lab-overview-title">Лаборатория «Владимир»</h2></div><div class="practice-panel-copy"><p>Независимый исследовательский проект по сохранению и развитию архитектурно-пространственного кода Владимирской земли. Исследуем наследие и ищем, как его принципы работают в современных условиях.</p><a class="hero-action" href="/site-AB-IM/mihail/lab"><span class="hero-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12h16m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Узнать о лаборатории</span></a></div></section></div>
 
     1:["$","main",null,{"id":"content","dangerouslySetInnerHTML":{"__html":"$10"}}]
