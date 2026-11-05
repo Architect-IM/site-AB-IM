@@ -1,6 +1,5 @@
 import { sitePath } from "@/lib/site-path";
 import type { projects } from "@/lib/projects";
-import { PhotoRail } from "@/components/photo-rail";
 import { ProjectTalk } from "@/components/project-talk";
 import { NextProject } from "@/components/next-project";
 
@@ -8,50 +7,48 @@ type Project = (typeof projects)[number];
 
 const shot = (name: string) => sitePath(`/assets/portfolio/zhar-ptitsa/${name}.jpg`);
 
+const products = [
+  ["Обследование зданий", "Бюро", "/bureau/uslugi/survey"],
+  ["Рабочая документация — стадия Р", "Бюро", "/bureau/uslugi/stage-r"],
+] as const;
+
 export function ZharProject({ project, next }: { project: Project; next: Project }) {
   return (
-    <main id="content" className="inner-page pp">
+    <main id="content" className="inner-page pp pp-zhar">
       <section className="pp-hero">
         <img src={shot("evening")} alt="Банный комплекс на Истре вечером: терраса и бассейн" />
         <div className="pp-hero-copy">
-          <p className="section-label">Истра · 2025</p>
-          <h1>{project.name}</h1>
-          <p className="pp-hero-quote">— Похожий модуль уже стоит. Нужен ещё один.</p>
+          <img
+            className="pp-client-logo"
+            src={sitePath("/assets/portfolio/zhar-ptitsa/logo.svg")}
+            width={111}
+            height={140}
+            alt=""
+            aria-hidden="true"
+          />
+          <div>
+            <p className="section-label">Истра · 2025</p>
+            <h1>{project.name}</h1>
+            <p className="pp-hero-quote">— Сказка начинается здесь.</p>
+          </div>
         </div>
       </section>
 
       <ProjectTalk project={project} />
 
-      <section className="pp-open">
-        <p className="pp-kicker">Bulldozer Group</p>
-        <h2>Четыре модуля за короткий срок.</h2>
-        <div className="pp-open-grid">
-          <p>На Новой Риге уже работает банный комплекс «Жар-Птица»: модуль стоит, спрос есть. Заказчику нужен ещё один комплекс, на четыре модуля, и полный проект — в максимально короткий срок. Площадь 850 м².</p>
-          <p>Кроме корпусов сразу закладывали инженерию. Газовая котельная от газгольдера, бюджетно. Анализ воды и система водоочистки. Всё это должно было поместиться в работу комплекса, который сдают между гостями быстро.</p>
-        </div>
-      </section>
-
       <section className="pp-portrait">
         <img src={shot("existing")} alt="Действующий корпус «Жар-Птицы»" />
         <div>
           <p className="pp-kicker">Бюро</p>
-          <p>Архитектуру и конструкции сделали с нуля. Самым сложным оказалась инженерия: отопление и водоподготовка. К ним подключили партнёров. Потребителей много, скважина одна — и она уже кормит действующий комплекс.</p>
+          <h2>Четыре модуля за короткий срок.</h2>
+          <p>Сначала по проекту собрали ведомости объёмов работ. Это позволило провести тендер по проектной документации и выбрать подрядчиков-строителей по прозрачным ценам. Удалось привязать корпус на существующем участке, сохранив технические и пожарные разрывы от существующих зданий, а также обойдя существующие деревья.</p>
         </div>
       </section>
-
-      <PhotoRail photos={[
-        { src: shot("evening"), alt: "Вечерний вид комплекса" },
-        { src: shot("garden"), alt: "Озеленение вдоль террас" },
-        { src: shot("terrace"), alt: "Терраса с бассейном" },
-        { src: shot("existing"), alt: "Существующий корпус" },
-      ]} />
 
       <section className="pp-path">
         <img src={shot("garden")} alt="Террасы и посадки у банного комплекса" />
         <div>
-          <p className="pp-kicker">Вода</p>
-          <h2>Одна скважина на старый комплекс и новые бани.</h2>
-          <p>Водобаланс считали по всем расходам действующего комплекса. К общим нуждам новых бань добавилось обновление воды в холодной и горячей купелях. По анализу воды в той же котельной подобрали очистку для общего водоснабжения и фильтрацию для обеих купелей.</p>
+          <p>В банях, особенно таких — современных, технологичных, красивых, — всегда хватает сложных вопросов при проектировании. Двойное утепление, паро- и гидроизоляция, и ещё больше — водоподготовка: высокие требования к качеству и количеству воды, помноженные на технико-экономическое обоснование. Словом, просто здесь не было. Но все вопросы были решены, объект находится на стадии строительства и, надеюсь, совсем скоро порадует лёгким паром своих гостей!</p>
         </div>
       </section>
 
@@ -60,35 +57,21 @@ export function ZharProject({ project, next }: { project: Project; next: Project
         <figure><img src={shot("existing")} alt="Модуль, который уже работает" /><figcaption>Модуль, который уже работает</figcaption></figure>
       </div>
 
-      <section className="pp-turn">
-        <p className="pp-kicker">Дальше — наша работа</p>
-        <h2>Тёплая купель за час, пока идёт уборка.</h2>
-        <p className="pp-facts">Истра · 850 м² · 4 блока · 2025 · строится</p>
-      </section>
-
-      <section className="pp-work">
-        <img src={shot("evening")} alt="Комплекс вечером" />
-        <div>
-          <p>Заказчику нужно обновлять тёплую купель в 3 м³ за 60 минут — за время уборки между гостями. Мощный котёл не разрешили: дорого. Поставили несколько малых, они работают в паре. Параллельно котлы греют помещения, вентиляцию и эту воду. Котельная газовая, от газгольдера. Для парной — двойное утепление, пароизоляция и гидроизоляция. Всё оборудование котельной и водоподготовки собрано в одном помещении.</p>
-          <p className="pp-line">— Мощный котёл не разрешили. Поставили несколько малых, в паре.</p>
-        </div>
-      </section>
-
       <section className="pp-moves">
         <article>
           <span>01</span>
           <h3>Четыре модуля</h3>
-          <p>Образец уже стоит на Новой Риге и сдаётся. Здесь тот же тип, но полный проект на четыре блока, в короткий срок.</p>
+          <p>Четыре дома одного типа, каждый со своей террасой. Внутри парная, снаружи холодная купель и бассейн.</p>
         </article>
         <article>
           <span>02</span>
           <h3>Час на купель</h3>
-          <p>Три кубометра тёплой воды должны обновиться, пока убирают номер. Мощности хватает без одного дорогого котла.</p>
+          <p>Три кубометра тёплой воды должны обновиться, пока убирают номер. Подобрали насосы, фильтры и котлы с учётом ТЭО.</p>
         </article>
         <article>
           <span>03</span>
           <h3>Одна котельная</h3>
-          <p>Отопление, вентиляция, нагрев купели и очистка воды живут в одном помещении. Скважина считается вместе со старым комплексом.</p>
+          <p>Отопление, вентиляция, нагрев купели и очистка воды живут в одном помещении. Котельная спроектирована полностью, газовое оборудование работает от газгольдера.</p>
         </article>
       </section>
 
@@ -100,6 +83,18 @@ export function ZharProject({ project, next }: { project: Project; next: Project
         <div>
           <p className="pp-kicker">Сейчас</p>
           <p>Объект строится. Четыре блока, 850 м², Истра, 2025.</p>
+        </div>
+      </section>
+
+      <section className="pp-products">
+        <p className="pp-kicker">Из чего собрана эта работа</p>
+        <div>
+          {products.map(([title, side, href]) => (
+            <a key={title} href={sitePath(href)}>
+              <span>{side}</span>
+              <strong>{title}</strong>
+            </a>
+          ))}
         </div>
       </section>
 
