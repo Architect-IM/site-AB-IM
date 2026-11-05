@@ -1521,6 +1521,8 @@ p {text-wrap:pretty}
 .product-talk .lead-video img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:center 18%;filter:saturate(.55) contrast(1.04);background:#d8d6d1}
 .product-talk .lead-play{cursor:default;width:72px;height:72px;margin:-36px 0 0 -36px}
 .product-talk .lead-play svg{width:28px;height:28px;margin-left:3px}
+.product-talk-film .lead-video video{aspect-ratio:1;object-position:center;filter:none}
+.product-talk-film .lead-play{cursor:pointer}
 .product-talk-kicker{margin:0 0 16px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.1em;line-height:1.4;text-transform:uppercase}
 .product-talk h1{margin:0 0 18px;max-width:16em;font-size:clamp(40px,4.2vw,64px);font-weight:500;letter-spacing:-.05em;line-height:.98}
 .product-talk-copy>p:last-child{margin:0;max-width:40em;font-size:17px;line-height:1.6}
