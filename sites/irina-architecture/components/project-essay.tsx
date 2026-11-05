@@ -11,13 +11,16 @@ export function ProjectEssay({ project, next }: { project: Project; next: Projec
   const essay = essays[project.slug];
   if (!essay) return null;
   const src = (index: number) => sitePath(`/assets/portfolio/${project.slug}/${String(index + 1).padStart(2, "0")}.jpg`);
+  const heroSrc = essay.heroImage ? sitePath(`/assets/${essay.heroImage}.jpg`) : src(0);
   const count = essay.alts.length;
-  const rail = essay.alts.slice(2, Math.max(count - 1, 2)).map((alt, index) => ({ src: src(index + 2), alt }));
+  const rail = essay.gallery
+    ? essay.gallery.map(({ path, alt, position }) => ({ src: sitePath(`/assets/${path}.jpg`), alt, position, keepVisible: true }))
+    : essay.alts.slice(2, Math.max(count - 1, 2)).map((alt, index) => ({ src: src(index + 2), alt }));
 
   return (
-    <main id="content" className="inner-page pp">
+    <main id="content" className={project.slug === "novoe" ? "inner-page pp pp-nerl" : "inner-page pp"}>
       <section className="pp-hero">
-        <img src={src(0)} alt={essay.alts[0] ?? project.name} />
+        <img src={heroSrc} alt={essay.alts[0] ?? project.name} />
         <div className="pp-hero-copy">
           <p className="section-label">{essay.label}</p>
           <h1>{project.name}</h1>
@@ -38,7 +41,11 @@ export function ProjectEssay({ project, next }: { project: Project; next: Projec
 
       {count > 1 ? (
         <section className="pp-portrait">
-          <img src={src(1)} alt={essay.alts[1]} />
+          <img
+            src={essay.portraitImage ? sitePath(`/assets/${essay.portraitImage.path}.jpg`) : src(1)}
+            alt={essay.alts[1]}
+            style={essay.portraitImage ? { objectPosition: essay.portraitImage.position } : undefined}
+          />
           <div>
             <p className="pp-kicker">Ирина Михейкина</p>
             <p>{essay.voice}</p>
@@ -54,7 +61,7 @@ export function ProjectEssay({ project, next }: { project: Project; next: Projec
         </section>
       )}
 
-      {rail.length > 1 ? <PhotoRail photos={rail} /> : null}
+      {rail.length > 1 ? <PhotoRail viewport={Boolean(essay.gallery)} photos={rail} /> : null}
 
       {count > 2 ? (
         <section className="pp-path">
@@ -74,7 +81,10 @@ export function ProjectEssay({ project, next }: { project: Project; next: Projec
       </section>
 
       <section className="pp-work">
-        <img src={src(Math.min(2, count - 1))} alt="" />
+        <img
+          src={essay.workImage ? sitePath(`/assets/${essay.workImage.path}.jpg`) : src(Math.min(2, count - 1))}
+          alt={essay.workImage?.alt ?? ""}
+        />
         <div>
           <p>{essay.work}</p>
           <p className="pp-line">— {essay.line}</p>

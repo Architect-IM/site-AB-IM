@@ -3,13 +3,14 @@ import path from "node:path";
 import sharp from "sharp";
 import { gradeRgb, photoGrade } from "../lib/grade-photo.ts";
 
-const args = process.argv.slice(2);
+const detail = process.argv.includes("--detail");
+const args = process.argv.slice(2).filter((arg) => arg !== "--detail");
 const outFlag = args.indexOf("--out");
 const output = outFlag >= 0 ? args[outFlag + 1] : "";
 const inputs = args.filter((arg, index) => outFlag < 0 || (index !== outFlag && index !== outFlag + 1));
 
 if (!inputs.length || (outFlag >= 0 && !output)) {
-  console.error("Использование: node --experimental-strip-types scripts/grade-photos.mjs снимок.jpg [--out public/assets/снимок.jpg]");
+  console.error("Использование: node --experimental-strip-types scripts/grade-photos.mjs снимок.jpg [--detail] [--out public/assets/снимок.jpg]");
   process.exit(1);
 }
 if (output && inputs.length !== 1) {
@@ -41,7 +42,9 @@ for (const input of inputs) {
   const target = destination(input);
   await mkdir(path.dirname(target), { recursive: true });
   await sharp(pixels, { raw: { width: info.width, height: info.height, channels: 3 } })
-    .jpeg({ quality: Math.round(photoGrade.jpegQuality * 100), mozjpeg: true })
+    .jpeg(detail
+      ? { quality: 94, chromaSubsampling: "4:4:4", mozjpeg: true }
+      : { quality: Math.round(photoGrade.jpegQuality * 100), mozjpeg: true })
     .toFile(target);
   console.log(`${input} → ${target} (${info.width}×${info.height})`);
 }

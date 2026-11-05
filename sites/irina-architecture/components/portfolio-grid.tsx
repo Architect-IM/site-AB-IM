@@ -50,8 +50,8 @@ export function PortfolioGrid() {
         {visible.map((project, index) => (
           <article key={project.slug} className="work-card">
             <a href={sitePath(`/portfolio/${project.slug}`)}>
-              <div className="work-image media-frame">
-                <img src={sitePath(`/assets/${project.image}.jpg`)} alt={project.name} loading={index === 0 ? "eager" : "lazy"} style={"imagePosition" in project && project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
+              <div className={`work-image media-frame${project.slug === "dobrograd" ? " work-image-dobrograd" : ""}`}>
+                <img src={sitePath(`/assets/${"portfolioImage" in project ? project.portfolioImage : project.image}.jpg`)} alt={project.name} loading={index === 0 ? "eager" : "lazy"} style={"imagePosition" in project && project.imagePosition ? { objectPosition: project.imagePosition } : undefined} />
                 <span className="image-tag">{project.year ? `${project.status} · ${project.year}` : project.status}</span>
                 <span className="work-view">Смотреть</span>
               </div>
