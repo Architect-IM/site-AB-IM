@@ -119,6 +119,7 @@ function MarketingObject() {
         <CommsSheet product={comms} />
         <ProductClients slug="comms" />
       </article>
+      <ProductClients slug="marketing" />
     </main>
   );
 }
