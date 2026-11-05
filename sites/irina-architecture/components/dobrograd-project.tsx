@@ -24,15 +24,52 @@ const restaurantProducts = [
 function Switch({ part }: { part: Part }) {
   return (
     <nav className="pp-switch" aria-label="Проекты в Доброграде">
-      <a href={sitePath("/portfolio/dobrograd")} aria-current={part === "houses" ? "page" : undefined}>
-        <small>Улица Цветочная</small>
-        Таунхаусы
+      <a className="pp-switch-panel pp-switch-houses" href={sitePath("/portfolio/dobrograd/taunhausy")} aria-current={part === "houses" ? "page" : undefined}>
+        <img src={photo("street")} alt="" width={1800} height={1013} decoding="async" />
+        <small>01 / Улица Цветочная</small>
+        <span className="pp-switch-copy">
+          <span className="pp-switch-title">Таунхаусы</span>
+          <span className="pp-switch-description">Новое строительство</span>
+          <span className="pp-switch-action">Смотреть проект <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.5" /></svg></span>
+        </span>
       </a>
-      <a href={sitePath("/portfolio/dobrograd/restoran")} aria-current={part === "restaurant" ? "page" : undefined}>
-        <small>Реконструкция</small>
-        Ресторан
+      <a className="pp-switch-panel pp-switch-restaurant" href={sitePath("/portfolio/dobrograd/restoran")} aria-current={part === "restaurant" ? "page" : undefined}>
+        <img src={photo("restaurant")} alt="" width={1800} height={1200} decoding="async" />
+        <small>02 / Реконструкция</small>
+        <span className="pp-switch-copy">
+          <span className="pp-switch-title">Ресторан</span>
+          <span className="pp-switch-description">Стеклянная веранда и лес</span>
+          <span className="pp-switch-action">Смотреть проект <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" strokeWidth="1.5" /></svg></span>
+        </span>
       </a>
     </nav>
+  );
+}
+
+function SelectedProject({ part }: { part: Part }) {
+  const restaurant = part === "restaurant";
+  return (
+    <div className="pp-selected-project">
+      <nav className="pp-project-tabs" aria-label="Проекты в Доброграде">
+        <a href={sitePath("/portfolio/dobrograd/taunhausy")} aria-current={!restaurant ? "page" : undefined}>Таунхаусы</a>
+        <a href={sitePath("/portfolio/dobrograd/restoran")} aria-current={restaurant ? "page" : undefined}>Ресторан</a>
+        <a className="pp-project-back" href={sitePath("/portfolio/dobrograd")}><span aria-hidden="true">←</span> Все проекты</a>
+      </nav>
+      <section className={`pp-selected-hero${restaurant ? "" : " pp-selected-houses"}`} aria-labelledby="pp-selected-title">
+        <img
+          src={photo(restaurant ? "restaurant" : "street")}
+          alt={restaurant ? "Ресторан в Доброграде: стеклянная веранда и лес" : "Петля улицы Цветочной: кирпич и дерево второй очереди"}
+          width={1800}
+          height={restaurant ? 1200 : 1013}
+          decoding="async"
+        />
+        <div className="pp-selected-copy">
+          <p className="pp-kicker">{restaurant ? "02 / Реконструкция" : "01 / Улица Цветочная"}</p>
+          <h2 id="pp-selected-title">{restaurant ? "Ресторан" : "Таунхаусы"}</h2>
+          <p>{restaurant ? "Стеклянная веранда и лес" : "Новое строительство"}</p>
+        </div>
+      </section>
+    </div>
   );
 }
 
@@ -52,16 +89,40 @@ function Products({ items }: { items: typeof houseProducts | typeof restaurantPr
   );
 }
 
-export function DobrogradProject({ project, next, part = "houses" }: { project: Project; next: Project; part?: Part }) {
+export function DobrogradProject({ project, next, part = "houses", selected = false }: { project: Project; next: Project; part?: Part; selected?: boolean }) {
   const quote = part === "restaurant" ? "— Веранда к свадьбе. За пять месяцев." : "— Частный город во Владимирской области.";
+  const Brand = selected ? "a" : "div";
   return (
     <main id="content" className="inner-page pp pp-dobrograd">
+      <style>{`
+        @font-face {
+          font-family: "Dobrograd Lettering";
+          src: url("${sitePath("/assets/portfolio/dobrograd/dobrograd-lettering.woff")}") format("woff");
+          font-weight: 400;
+          font-style: normal;
+          font-display: swap;
+        }
+      `}</style>
       <header className="pp-dobrograd-head">
         <p className="section-label">Заказчик · Доброград</p>
-        <h1>{project.name}</h1>
+        <Brand
+          className="pp-dobrograd-brand"
+          href={selected ? sitePath("/portfolio/dobrograd") : undefined}
+          aria-label={selected ? "Доброград — вернуться к выбору проектов" : undefined}
+        >
+          <img
+            className="pp-dobrograd-logo"
+            src={sitePath("/assets/portfolio/dobrograd/logo-black.svg")}
+            width={3384}
+            height={1576}
+            alt=""
+            aria-hidden="true"
+          />
+          <h1>{project.name}</h1>
+        </Brand>
         <p className="pp-hero-quote">{quote}</p>
       </header>
-      <Switch part={part} />
+      {selected ? <SelectedProject part={part} /> : <Switch part={part} />}
       {part === "restaurant" ? <Restaurant project={project} /> : <Houses project={project} />}
       <NextProject next={next} />
     </main>
@@ -71,10 +132,6 @@ export function DobrogradProject({ project, next, part = "houses" }: { project: 
 function Houses({ project }: { project: Project }) {
   return (
     <>
-      <section className="pp-hero">
-        <img src={photo("street")} alt="Петля улицы Цветочной: кирпич и дерево второй очереди" />
-      </section>
-
       <ProjectTalk project={project} />
 
       <section className="pp-open">
@@ -133,10 +190,6 @@ function Houses({ project }: { project: Project }) {
 function Restaurant({ project }: { project: Project }) {
   return (
     <>
-      <section className="pp-hero">
-        <img src={photo("restaurant")} alt="Ресторан в Доброграде: стеклянная веранда и лес" />
-      </section>
-
       <ProjectTalk
         project={project}
         image={photo("restaurant")}
