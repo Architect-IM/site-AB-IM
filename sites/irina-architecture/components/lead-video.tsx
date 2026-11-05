@@ -27,7 +27,7 @@ export function LeadVideo({ src, poster }: { src: string; poster: string }) {
         ref={video}
         src={src}
         poster={poster}
-        preload="auto"
+        preload="metadata"
         playsInline
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
