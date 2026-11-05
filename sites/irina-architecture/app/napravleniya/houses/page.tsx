@@ -33,7 +33,13 @@ export default function Houses() {
       </div>
     </section>
 
-    <ProductLead kicker="04" title={houses.title} quote={houses.intro} />
+    <ProductLead
+      kicker="04"
+      title={houses.title}
+      quote={houses.intro}
+      video="/assets/houses-talk.mp4"
+      poster="/assets/houses-talk-poster.jpg"
+    />
 
     <section id={analysis.slug} className={styles.analysis} aria-labelledby="analysis-title">
       <div className={styles.analysisGrid}>
