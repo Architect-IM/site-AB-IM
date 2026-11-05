@@ -12,5 +12,5 @@ export default function DobrogradRestaurant() {
   const project = projects.find((item) => item.slug === "dobrograd");
   if (!project) notFound();
   const next = projects[(projects.indexOf(project) + 1) % projects.length];
-  return <DobrogradProject project={project} next={next} part="restaurant" />;
+  return <DobrogradProject project={project} next={next} part="restaurant" selected />;
 }
