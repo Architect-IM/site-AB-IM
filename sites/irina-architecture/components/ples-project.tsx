@@ -28,7 +28,6 @@ export function PlesProject({ project, next }: { project: Project; next: Project
       <section className="pp-path">
         <img src={shot("court")} alt="Приёмный дом летом: несколько скатов, крыльца и пруд перед фасадом" />
         <div>
-          <p className="pp-kicker">Фасад</p>
           <h2>Фасады в ажурной резьбе</h2>
           <p>Скаты, наличники, орнамент и крыльца взяты из русского деревянного зодчества. Фасады — натуральная лиственница. Это дом с очевидным характером, в духе своего места.</p>
         </div>
