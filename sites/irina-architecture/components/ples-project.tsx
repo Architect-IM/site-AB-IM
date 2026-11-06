@@ -19,7 +19,7 @@ export function PlesProject({ project, next }: { project: Project; next: Project
         <div className="pp-hero-copy">
           <p className="section-label">Плёс · 2021</p>
           <h1>{project.name}</h1>
-          <p className="pp-hero-quote">— Русская одежда, современный дом.</p>
+          <p className="pp-hero-quote">— Традиционный фасад, современный дом.</p>
         </div>
       </section>
 
@@ -29,8 +29,8 @@ export function PlesProject({ project, next }: { project: Project; next: Project
         <img src={shot("court")} alt="Приёмный дом летом: несколько скатов, крыльца и пруд перед фасадом" />
         <div>
           <p className="pp-kicker">Фасад</p>
-          <h2>Деревянная одежда, не декорация.</h2>
-          <p>Скаты, наличники, орнамент и крыльца взяты из русского деревянного зодчества. Фасады — натуральная лиственница. Это одежда дома, а не отделка, которую снимают к лету.</p>
+          <h2>Резьба встроена в фасад.</h2>
+          <p>Скаты, наличники, орнамент и крыльца взяты из русского деревянного зодчества. Фасады — натуральная лиственница. Это характер дома, а не отделка, которую снимают к лету.</p>
         </div>
       </section>
 
