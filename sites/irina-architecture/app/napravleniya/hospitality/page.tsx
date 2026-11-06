@@ -66,7 +66,7 @@ export default function Hospitality() {
         )
       ))}
 
-      <ProductClients slug="hospitality" />
+      <ProductClients slugs={["vision", "tourism-plan"]} />
 
       <nav className={`${styles.return} ${styles.mainReturn}`} aria-label="Другие направления">
         <HouseLink href="/#directions" back>Чем я занимаюсь?</HouseLink>

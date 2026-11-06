@@ -8,7 +8,6 @@ type Project = (typeof projects)[number];
 const photo = (name: string) => sitePath(`/assets/portfolio/ruza/${name}.jpg`);
 
 const products = [
-  ["Частные владения", "Архитектор", "/napravleniya/houses"],
   ["Идеологическое и концептуальное проектирование частных владений", "Архитектор", "/napravleniya/houses/estate-concept"],
 ] as const;
 
