@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 module.exports = async function ({github, context, core}) {
-  const run = context.payload.workflow_run;
+  const run = context.payload.workflow_run || JSON.parse(fs.readFileSync('chosen-run.json', 'utf8'));
   const meta = JSON.parse(fs.readFileSync('incoming/review.json', 'utf8'));
   const associated = run.pull_requests || [];
   let pr;
