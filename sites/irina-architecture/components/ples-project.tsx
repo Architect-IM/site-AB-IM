@@ -74,7 +74,7 @@ export function PlesProject({ project, next }: { project: Project; next: Project
         </div>
         <div>
           <p className="pp-kicker">Сейчас</p>
-          <p>Концепция, 2021. В стройку не ушла. Позже на усадьбе было видно: дом вставал в уже сложившуюся архитектуру.</p>
+          <p>Концепция, 2021. В стройку не ушла. Пока)</p>
         </div>
       </section>
 
