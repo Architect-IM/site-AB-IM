@@ -15,15 +15,30 @@ module.exports = async function deploy({github, context, core,
   if (!/^(main|irina|mihail|pr-\d+)$/.test(expected.key)) throw new Error('Invalid review key.');
   const token = await core.getIDToken();
   core.setSecret(token);
+  const failureText = error => String(error?.response?.data?.message || error?.message || '').replaceAll(token, '[redacted]');
   let deployment;
-  try {
-    deployment = (await github.request('POST /repos/{owner}/{repo}/pages/deployments', {
-      ...context.repo, artifact_id:artifact, pages_build_version:version,
-      environment:'github-pages', oidc_token:token
-    })).data;
-  } catch (error) {
-    // Do not include Octokit's request object: it contains the OIDC token.
-    throw new Error(`Pages deployment request failed (HTTP ${error.status || 'unknown'}).`);
+  for (let tryNo = 0; tryNo < 16; tryNo++) {
+    try {
+      deployment = (await github.request('POST /repos/{owner}/{repo}/pages/deployments', {
+        ...context.repo, artifact_id:artifact, pages_build_version:version,
+        environment:'github-pages', oidc_token:token
+      })).data;
+      break;
+    } catch (error) {
+      const detail = failureText(error);
+      const busy = error.status === 400 && /in progress/i.test(detail);
+      if (!busy || tryNo === 15) {
+        throw new Error(`Pages deployment request failed (HTTP ${error.status || 'unknown'}). ${detail}`.trim());
+      }
+      for (const sha of detail.match(/[a-f0-9]{40}/gi) || []) {
+        try {
+          await github.request('POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel', {
+            ...context.repo, pages_deployment_id:sha
+          });
+        } catch { /* The blocking deploy may not be cancellable yet. */ }
+      }
+      await sleep(20000);
+    }
   }
   let ready = false;
   for (let attempt = 0; attempt < 108; attempt++) {

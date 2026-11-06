@@ -38,6 +38,21 @@ test('failed and stalled deployments cannot produce a preview link',async()=>{
     const {args,outputs}=fixture({status}); await assert.rejects(deploy(args)); assert.deepEqual(outputs,{});
   }
 });
+test('a busy pages deploy is retried instead of failing the preview',async()=>{
+  const {args,outputs}=fixture();
+  let posts=0;
+  const original=args.github.request;
+  args.github.request=async(route,params)=>{
+    if(route.startsWith('POST /repos/{owner}/{repo}/pages/deployments') && !route.includes('cancel')) {
+      posts++;
+      if(posts===1) throw {status:400,message:'Deployment request failed due to in progress deployment.'};
+    }
+    return original(route,params);
+  };
+  await deploy(args);
+  assert.equal(posts,2);
+  assert.equal(outputs.page_url,'https://example.github.io/site/');
+});
 test('request failures do not expose the OIDC token',async()=>{
   const {args}=fixture({reject:true});
   await assert.rejects(deploy(args),error=>error.message.includes('403')&&!error.message.includes('test-token'));
