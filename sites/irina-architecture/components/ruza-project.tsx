@@ -61,7 +61,8 @@ export function RuzaProject({ project, next }: { project: Project; next: Project
             <p>Рисунок фасада не сплошной. Часть орнамента накладная, часть прорезана окнами.</p>
           </article>
         </div>
-        <img src={photo("04")} alt="Дом-дача у пруда: сосны, закат и отражение в воде" />
+        <img className="pp-pond" src={photo("04")} alt="Дом-дача у пруда: сосны, закат и отражение в воде" />
+        <img className="pp-balcony" src={photo("05")} alt="Дом-дача в соснах: балкон, светлые стойки и солнце" />
       </section>
 
       <section className="pp-two">
