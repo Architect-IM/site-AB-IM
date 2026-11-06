@@ -2261,6 +2261,10 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-ruza .pp-work{align-items:center;padding-top:48px}
 .pp-ruza .pp-work img{aspect-ratio:16/9;object-position:center}
 .pp-ruza .pp-work h2{margin:0 0 22px;max-width:16em;font-size:clamp(28px,2.8vw,44px);font-weight:500;letter-spacing:-.04em;line-height:1.08}
+.pp-ruza .pp-moves{grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr);align-items:stretch;gap:36px 48px}
+.pp-ruza .pp-ruza-moves{display:flex;flex-direction:column;justify-content:space-between;gap:32px;height:100%}
+.pp-ruza .pp-moves img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+@media(max-width:800px){.pp-ruza .pp-moves{grid-template-columns:1fr}}
 .pp-saburovo .pp-work h2{margin:0 0 22px;max-width:16em;font-size:clamp(28px,2.8vw,44px);font-weight:500;letter-spacing:-.04em;line-height:1.08}
 .pp-saburovo a.pp-ext{text-decoration:underline;text-underline-offset:3px}
 .pp-saburovo a.pp-ext:hover{opacity:.65}
