@@ -36,14 +36,16 @@ export function RuzaProject({ project, next }: { project: Project; next: Project
       </section>
 
       <section className="pp-work">
-        <img src={photo("03")} alt="Антресоль дом-дачи: деревянный объём, галерея и картина на стене" />
         <div>
           <h2>Антресоль в скате кровли.</h2>
           <p>Уклон кровли дал второй уровень над мастерской. В скат врезали большие окна, и выставку с работой развели по высоте. Заказчик отметил именно этот ход.</p>
         </div>
+        <img src={photo("03")} alt="Антресоль дом-дачи: деревянный объём, галерея и картина на стене" />
       </section>
 
       <section className="pp-moves">
+        <img className="pp-pond" src={photo("04")} alt="Дом-дача у пруда: сосны, закат и отражение в воде" />
+        <img className="pp-balcony" src={photo("05")} alt="Дом-дача в соснах: балкон, светлые стойки и солнце" />
         <div className="pp-ruza-moves">
           <article>
             <span>01</span>
@@ -61,8 +63,6 @@ export function RuzaProject({ project, next }: { project: Project; next: Project
             <p>Рисунок фасада не сплошной. Часть орнамента накладная, часть прорезана окнами.</p>
           </article>
         </div>
-        <img className="pp-pond" src={photo("04")} alt="Дом-дача у пруда: сосны, закат и отражение в воде" />
-        <img className="pp-balcony" src={photo("05")} alt="Дом-дача в соснах: балкон, светлые стойки и солнце" />
       </section>
 
       <section className="pp-two">
