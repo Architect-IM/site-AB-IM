@@ -27,7 +27,7 @@ export function RuzaProject({ project, next }: { project: Project; next: Project
       <ProjectTalk project={project} />
 
       <section className="pp-portrait">
-        <img src={photo("02")} alt="Дом-дача в Рузе: остеклённый фронтон и окна в скате кровли" />
+        <img src={sitePath("/assets/portfolio/ruza/loop.gif")} alt="Сборка дом-дачи: от плана к кровле" />
         <div>
           <p className="pp-kicker">2023 · Руза · 300 м² · 3 этажа · 2 спальни</p>
           <h2>Комната хозяев и прежние места мебели.</h2>
@@ -68,7 +68,7 @@ export function RuzaProject({ project, next }: { project: Project; next: Project
         </div>
         <div>
           <p className="pp-kicker">Сейчас</p>
-          <p>О реализации пока неизвестно.</p>
+          <p>Концепт принят заказчиком.</p>
         </div>
       </section>
 
