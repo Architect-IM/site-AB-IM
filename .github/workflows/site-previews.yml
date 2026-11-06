@@ -32,7 +32,7 @@ jobs:
       - name: Read trusted publishing scripts
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
-          ref: main
+          ref: ${{ github.sha }}
           path: source
           sparse-checkout: scripts
           persist-credentials: false
