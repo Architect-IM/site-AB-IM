@@ -18,7 +18,7 @@
 
 1. Михаил копирует первое сообщение из [инструкции для Grok Build](docs/GROK-START.md) в свой чат и проверяет получение `main`, запуск сайта и отправку своей ветки.
 2. Ирина открывает [общую версию](https://architect-im.github.io/site-AB-IM/main/), [свои правки](https://architect-im.github.io/site-AB-IM/irina/) или [правки Михаила](https://architect-im.github.io/site-AB-IM/mihail/). До первой правки личные версии одинаковы.
-3. Для проверки изменений открыть [Pull requests](https://github.com/Architect-IM/site-AB-IM/pulls), перейти по ссылке предпросмотра в комментарии и дождаться зелёного `site-checks`. Второй участник выбирает **Files changed → Review changes → Approve** либо оставляет замечания. После одобрения можно объединить изменения кнопкой **Merge pull request**.
+3. Для проверки изменений открыть [Pull requests](https://github.com/Architect-IM/site-AB-IM/pulls) и дождаться зелёного `site-checks`. Ссылка предпросмотра обновляется отдельно, командой **Publish review copies**, а не после каждой правки. Второй участник выбирает **Files changed → Review changes → Approve** либо оставляет замечания. После одобрения можно объединить изменения кнопкой **Merge pull request**.
 
 Подробный порядок и готовое задание для Ирины — в [памятке совместной работы](docs/COLLABORATION.md).
 

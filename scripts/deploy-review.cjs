@@ -26,7 +26,7 @@ module.exports = async function deploy({github, context, core,
     throw new Error(`Pages deployment request failed (HTTP ${error.status || 'unknown'}).`);
   }
   let ready = false;
-  for (let attempt = 0; attempt < 60; attempt++) {
+  for (let attempt = 0; attempt < 108; attempt++) {
     const {data} = await github.request('GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}', {
       ...context.repo, pages_deployment_id:deployment.id
     });
@@ -34,7 +34,7 @@ module.exports = async function deploy({github, context, core,
     if (['failed','failure','errored','cancelled'].includes(data.status)) throw new Error(`Pages deployment ${data.status}.`);
     await sleep(5000);
   }
-  if (!ready) throw new Error('Pages deployment did not complete within five minutes.');
+  if (!ready) throw new Error('Pages deployment did not complete within nine minutes.');
   const pageUrl = new URL(deployment.page_url.startsWith('https://') ? deployment.page_url : `https://${deployment.page_url}`);
   if (!pageUrl.pathname.endsWith('/')) pageUrl.pathname += '/';
   const manifestUrl = new URL(`${expected.key}/review.json`, pageUrl);

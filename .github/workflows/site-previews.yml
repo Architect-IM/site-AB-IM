@@ -1,9 +1,12 @@
 name: Publish review copies
 
 on:
-  workflow_run:
-    workflows: ['Site checks']
-    types: [completed]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Ветка: main, irina/… или mihail/…'
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -14,9 +17,8 @@ concurrency:
 
 jobs:
   publish:
-    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == github.repository
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     permissions:
       actions: read
       contents: write
@@ -34,6 +36,13 @@ jobs:
           path: source
           sparse-checkout: scripts
           persist-credentials: false
+      - name: Choose the checked revision
+        id: choose
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          script: |
+            const choose = require('./source/scripts/choose-review-run.cjs');
+            await choose({github, context, core});
       - name: Get existing review copies
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -43,7 +52,7 @@ jobs:
         with:
           name: site-review
           path: incoming
-          run-id: ${{ github.event.workflow_run.id }}
+          run-id: ${{ steps.choose.outputs.run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Validate revision and publish files
         id: publish
