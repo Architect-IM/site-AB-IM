@@ -2277,6 +2277,8 @@ textarea.form-input {resize:vertical;min-height:135px}
   .pp-ruza .pp-moves img{height:auto;aspect-ratio:4/5;max-height:72vh}
 }
 .pp-saburovo .pp-work h2{margin:0 0 22px;max-width:16em;font-size:clamp(28px,2.8vw,44px);font-weight:500;letter-spacing:-.04em;line-height:1.08}
+.pp-ples .pp-plan{background:#f3f1ec;padding:36px var(--side) 8px}
+.pp-ples .pp-plan img{display:block;width:100%;height:auto;max-height:78vh;margin:0 auto;object-fit:contain;background:#f3f1ec}
 .pp-saburovo a.pp-ext{text-decoration:underline;text-underline-offset:3px}
 .pp-saburovo a.pp-ext:hover{opacity:.65}
 .pp-saburovo .pp-path div{background:#f4f1e8}
