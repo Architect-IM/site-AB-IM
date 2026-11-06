@@ -2254,6 +2254,8 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-saburovo .pp-hero-copy h1{font-family:Unbounded,Onest,sans-serif;font-weight:500;letter-spacing:-.03em}
 .pp-saburovo .pp-hero-quote{border-left:3px solid #70a549;padding-left:18px}
 .pp-ruza .pp-hero img{object-position:center 32%}
+.pp-ruza .pp-portrait h2{margin:0;max-width:9em;font-size:clamp(36px,3.6vw,58px);font-weight:500;letter-spacing:-.05em;line-height:.98;color:#fbfbf9}
+.pp-ruza .pp-portrait h2 + p{margin:28px 0 0;max-width:28em}
 .pp-ruza .pp-work{align-items:center;padding-top:48px}
 .pp-ruza .pp-work h2{margin:0 0 22px;max-width:16em;font-size:clamp(28px,2.8vw,44px);font-weight:500;letter-spacing:-.04em;line-height:1.08}
 .pp-saburovo .pp-work h2{margin:0 0 22px;max-width:16em;font-size:clamp(28px,2.8vw,44px);font-weight:500;letter-spacing:-.04em;line-height:1.08}
