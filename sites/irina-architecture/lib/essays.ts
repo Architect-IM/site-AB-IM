@@ -1,5 +1,9 @@
 export type Essay = {
   label: string;
+  heroImage?: string;
+  portraitImage?: { path: string; position: string };
+  workImage?: { path: string; alt: string };
+  gallery?: { path: string; alt: string; position?: string }[];
   quote: string;
   openTitle: string;
   open: [string, string];
@@ -478,6 +482,16 @@ export const essays: Record<string, Essay> = {
   },
   novoe: {
     label: "Дом · Новое",
+    heroImage: "portfolio/novoe/portfolio-front",
+    portraitImage: { path: "portfolio/novoe/facade-soft-light", position: "16% center" },
+    workImage: { path: "portfolio/novoe/night-portrait", alt: "Усадьба Нерль вечером: фасад и подсвеченная садовая дорожка" },
+    gallery: [
+      { path: "portfolio/novoe/gallery-garden-view", alt: "Усадьба со стороны сада" },
+      { path: "portfolio/novoe/gallery-side-terrace", alt: "Боковая терраса и сад", position: "66% center" },
+      { path: "portfolio/novoe/gallery-entrance", alt: "Крыльцо и въезд во двор" },
+      { path: "portfolio/novoe/facade-soft-light", alt: "Дом и гараж со стороны подъезда", position: "38% center" },
+      { path: "portfolio/novoe/portfolio-front", alt: "Главный фасад усадьбы" },
+    ],
     quote: "Светлый дом с террасой, которая шире парадного входа.",
     openTitle: "Терраса здесь главный фасад.",
     open: [

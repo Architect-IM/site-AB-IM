@@ -16,9 +16,18 @@ const products = [
 
 export function GostecProject({ project, next }: { project: Project; next: Project }) {
   return (
-    <main id="content" className="inner-page pp">
+    <main id="content" className="inner-page pp pp-gostec">
+      <style>{`
+        @font-face {
+          font-family: "Gostec Lettering";
+          src: url("${sitePath("/assets/portfolio/gostec/gostec-lettering.woff")}") format("woff");
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+        }
+      `}</style>
       <section className="pp-hero">
-        <img src={horses} alt="Гостец: тёмные дома в тумане и лошади на лугу" />
+        <img src={shot("hero-meadow-horses")} alt="Гостец: гостиница и гостевые дома за туманным лугом с лошадьми" style={{ objectPosition: "14% 65%" }} />
         <div className="pp-hero-copy">
           <p className="section-label">Деревня Гостец · 2024</p>
           <h1>{project.name}</h1>
@@ -54,7 +63,7 @@ export function GostecProject({ project, next }: { project: Project; next: Proje
       ]} />
 
       <section className="pp-path">
-        <img src={shot("01")} alt="Посадка домов ближе к пойме, деревья остаются" />
+        <img src={shot("territory-entrance")} alt="Главный корпус Гостеца с остеклённым фронтоном и вывеской над входом" style={{ objectPosition: "60% 10%" }} />
         <div>
           <p className="pp-kicker">Территория</p>
           <h2>Дома ближе к пойме. Деревья остаются.</h2>
@@ -64,7 +73,7 @@ export function GostecProject({ project, next }: { project: Project; next: Proje
 
       <div className="pp-pair">
         <figure><img src={shot("02")} alt="Гостевые дома на склоне" /><figcaption>Гостевые дома у склона</figcaption></figure>
-        <figure><img src={shot("night")} alt="Дома и фонари вечером" /><figcaption>Вечер у поймы</figcaption></figure>
+        <figure><img src={shot("evening-fire-terrace")} alt="Вечерний вид гостевых домов с террасы у костра" /><figcaption>Вечер у поймы</figcaption></figure>
       </div>
 
       <section className="pp-turn">
