@@ -34,7 +34,36 @@ export default async function HospitalityService({ params }: Props) {
         <span>{service.number} / {String(hospitalityServices.length).padStart(2, "0")}</span>
       </nav>
       <ProductLead kicker={service.number} title={service.title} quote={service.lead ?? service.description} />
-      <div className={`${styles.detailVisual} ${service.slug === "vision" ? styles.detailBoard : ""}`}><img src={sitePath(service.slug === "vision" ? "/assets/vision-board.jpg" : service.image)} alt={service.slug === "vision" ? "Деньги комплекса: горный отель, ресторан и спальня" : service.alt} fetchPriority="high" /></div>
+      {service.slug === "vision" ? (
+        <section className={styles.moneyBoard} aria-label="Деньги">
+          <img className={styles.moneyHero} src={sitePath("/assets/vision-hotel.jpg")} alt="Горный отель у склона" />
+          <div className={styles.moneyRow}>
+            <div className={styles.moneyCopy}>
+              <h2>Деньги</h2>
+              <p className={styles.moneyGroup}>Сколько вложить</p>
+              <dl>
+                <div><dt>Всего</dt><dd>0,6 млрд ₽</dd></div>
+                <div><dt>Номеров</dt><dd>60</dd></div>
+              </dl>
+              <p className={styles.moneyGroup}>Обычный год</p>
+              <dl>
+                <div><dt>Цена ночи</dt><dd>14 000 ₽</dd></div>
+                <div><dt>В среднем заняты</dt><dd>60%</dd></div>
+                <div><dt>Грязная прибыль</dt><dd>35%</dd></div>
+              </dl>
+              <p className={styles.moneyGroup}>Что возвращается</p>
+              <dl>
+                <div><dt>В год</dt><dd>18%</dd></div>
+                <div><dt>Окупается</dt><dd>за 5,5 года</dd></div>
+              </dl>
+            </div>
+            <img src={sitePath("/assets/vision-restaurant.jpg")} alt="Зал ресторана у окна на горы" />
+            <img src={sitePath("/assets/vision-room.jpg")} alt="Спальня с видом на горы" />
+          </div>
+        </section>
+      ) : (
+        <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
+      )}
       <div className={styles.detailSections}>
         {service.blocks.map((block, index) => (
           <section key={block.heading} className={styles.detailSection} aria-labelledby={`block-${index}`}>
