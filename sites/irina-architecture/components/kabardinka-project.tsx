@@ -9,7 +9,7 @@ type Project = (typeof projects)[number];
 const shot = (name: string) => sitePath(`/assets/portfolio/kabardinka/${name}.jpg`);
 
 const products = [
-  ["Живое гостеприимство", "Архитектор", "/napravleniya/hospitality"],
+  ["Визионерская концепция туристического комплекса", "Архитектор", "/napravleniya/hospitality/vision"],
   ["Маркетинг", "Бюро", "/bureau/uslugi/marketing"],
   ["АГО — комплект под градсовет", "Бюро", "/bureau/uslugi/ago"],
 ] as const;
@@ -72,7 +72,7 @@ export function KabardinkaProject({ project, next }: { project: Project; next: P
       <section className="pp-two">
         <div>
           <p className="pp-kicker">Архитектор</p>
-          <p>Живое гостеприимство и АГО. Образ пятизвёздочного отеля, который читается с дороги и не спорит с ущельем.</p>
+          <p>Визионерская концепция и АГО. Образ пятизвёздочного отеля, который читается с дороги и не спорит с ущельем.</p>
         </div>
         <div>
           <p className="pp-kicker">Сейчас</p>

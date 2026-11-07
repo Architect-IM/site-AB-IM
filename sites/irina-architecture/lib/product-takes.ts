@@ -13,14 +13,14 @@ export type ProductTake = {
 };
 
 const works = {
-  stageP: ["pokrovskiy-pryanik", "dobrograd", "saburovo", "kabardinka", "ples"],
+  stageP: ["pokrovskiy-pryanik", "dobrograd", "saburovo", "kabardinka"],
   stageR: ["dobrograd", "saburovo", "pokrovskiy-pryanik", "lomonosova", "ksk"],
   survey: ["lomonosova", "monastyr", "dobrograd", "saburovo", "pokrovskiy-pryanik"],
-  spatial: ["ples", "zagoryansky", "novoe", "dobrograd", "kabardinka"],
+  spatial: ["zagoryansky", "novoe", "dobrograd", "kabardinka"],
   feasibility: ["pokrovskiy-pryanik", "altai", "gostec", "hatminki", "dobrograd"],
-  sketch: ["ples", "barmino", "ivan-zaitsev", "agalarov", "novoe"],
-  analysis: ["lomonosova", "monastyr", "balyaga", "kadala", "ples"],
-  brief: ["saburovo", "dobrograd", "kabardinka", "pokrovskiy-pryanik", "ples"],
+  sketch: ["barmino", "ivan-zaitsev", "agalarov", "novoe"],
+  analysis: ["lomonosova", "monastyr", "balyaga", "kadala"],
+  brief: ["saburovo", "dobrograd", "kabardinka", "pokrovskiy-pryanik"],
   ago: ["monastyr", "balyaga", "darasun", "kadala", "kalga"],
   consulting: ["pokrovskiy-pryanik", "saburovo", "dobrograd", "lomonosova", "kabardinka"],
   client: ["pokrovskiy-pryanik", "dobrograd", "saburovo", "kabardinka", "monastyr"],
