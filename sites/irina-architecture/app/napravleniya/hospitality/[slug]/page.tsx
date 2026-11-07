@@ -11,7 +11,7 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = hospitalityServices.find((item) => item.slug === slug);
-  return { title: service?.title ?? "Страница не найдена", description: service?.description };
+  return { title: service?.title ?? "Страница не найдена", description: service?.lead ?? service?.description };
 }
 
 export function generateStaticParams() {
@@ -33,7 +33,7 @@ export default async function HospitalityService({ params }: Props) {
         </span>
         <span>{service.number} / {String(hospitalityServices.length).padStart(2, "0")}</span>
       </nav>
-      <ProductLead kicker={service.number} title={service.title} quote={service.description} />
+      <ProductLead kicker={service.number} title={service.title} quote={service.lead ?? service.description} />
       <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
       <div className={styles.detailSections}>
         {service.blocks.map((block, index) => (
