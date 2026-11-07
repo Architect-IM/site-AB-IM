@@ -53,8 +53,8 @@ export default async function HospitalityService({ params }: Props) {
               </dl>
               <p className={styles.moneyGroup}>Что возвращается</p>
               <dl>
-                <div><dt>В год</dt><dd>18%</dd></div>
-                <div><dt>Окупается</dt><dd>за 5,5 года</dd></div>
+                <div><dt>В год</dt><dd>около 11%</dd></div>
+                <div><dt>Окупается</dt><dd>около 9 лет</dd></div>
               </dl>
             </div>
             <img src={sitePath("/assets/vision-restaurant.jpg")} alt="Зал ресторана у окна на горы" />
