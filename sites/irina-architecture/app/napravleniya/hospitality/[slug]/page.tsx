@@ -49,7 +49,7 @@ export default async function HospitalityService({ params }: Props) {
               <dl>
                 <div><dt>Цена ночи</dt><dd>14 000 ₽</dd></div>
                 <div><dt>В среднем заняты</dt><dd>60%</dd></div>
-                <div><dt>Валовая прибыль</dt><dd>35%</dd></div>
+                <div><dt>Операционная прибыль</dt><dd>35%</dd></div>
               </dl>
               <p className={styles.moneyGroup}>Что возвращается</p>
               <dl>
