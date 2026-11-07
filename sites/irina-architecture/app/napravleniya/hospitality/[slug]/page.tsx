@@ -34,7 +34,7 @@ export default async function HospitalityService({ params }: Props) {
         <span>{service.number} / {String(hospitalityServices.length).padStart(2, "0")}</span>
       </nav>
       <ProductLead kicker={service.number} title={service.title} quote={service.lead ?? service.description} />
-      <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
+      <div className={`${styles.detailVisual} ${service.slug === "vision" ? styles.detailBoard : ""}`}><img src={sitePath(service.slug === "vision" ? "/assets/vision-board.jpg" : service.image)} alt={service.slug === "vision" ? "Альбом: горный отель и рамка доходности" : service.alt} fetchPriority="high" /></div>
       <div className={styles.detailSections}>
         {service.blocks.map((block, index) => (
           <section key={block.heading} className={styles.detailSection} aria-labelledby={`block-${index}`}>

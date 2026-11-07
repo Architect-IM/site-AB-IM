@@ -103,6 +103,8 @@
 .detailLead { max-width: 760px; margin: 36px 0 0; font-size: 20px; line-height: 1.65; color: var(--muted); }
 .detailVisual { aspect-ratio: 16 / 9; max-height: 760px; overflow: hidden; }
 .detailVisual img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: saturate(.64); }
+.detailBoard { max-height: none; }
+.detailBoard img { filter: none; }
 .detailSections { max-width: 1344px; padding: clamp(64px,7vw,104px) var(--side); margin-inline: auto; }
 .detailSection { display: grid; grid-template-columns: 1fr 1.45fr; gap: 60px; padding-block: 36px; border-top: 1px solid var(--line); }
 .detailSection h2 { margin: 0; font-size: 26px; font-weight: 500; letter-spacing: -.035em; line-height: 1.2; }
