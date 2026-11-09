@@ -11,7 +11,7 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = hospitalityServices.find((item) => item.slug === slug);
-  return { title: service?.title ?? "Страница не найдена", description: service?.description };
+  return { title: service?.title ?? "Страница не найдена", description: service?.lead ?? service?.description };
 }
 
 export function generateStaticParams() {
@@ -33,8 +33,37 @@ export default async function HospitalityService({ params }: Props) {
         </span>
         <span>{service.number} / {String(hospitalityServices.length).padStart(2, "0")}</span>
       </nav>
-      <ProductLead kicker={service.number} title={service.title} quote={service.description} />
-      <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
+      <ProductLead kicker={service.number} title={service.title} quote={service.lead ?? service.description} />
+      {service.slug === "vision" ? (
+        <section className={styles.moneyBoard} aria-label="Деньги">
+          <img className={styles.moneyHero} src={sitePath("/assets/vision-hotel.jpg")} alt="Горный отель у склона" />
+          <div className={styles.moneyRow}>
+            <div className={styles.moneyCopy}>
+              <h2>Деньги</h2>
+              <p className={styles.moneyGroup}>Сколько вложить</p>
+              <dl>
+                <div><dt>Всего</dt><dd>0,6 млрд ₽</dd></div>
+                <div><dt>Номеров</dt><dd>60</dd></div>
+              </dl>
+              <p className={styles.moneyGroup}>Обычный год</p>
+              <dl>
+                <div><dt>Цена ночи</dt><dd>14 000 ₽</dd></div>
+                <div><dt>В среднем заняты</dt><dd>60%</dd></div>
+                <div><dt>Операционная прибыль</dt><dd>35%</dd></div>
+              </dl>
+              <p className={styles.moneyGroup}>Что возвращается</p>
+              <dl>
+                <div><dt>В год</dt><dd>около 11%</dd></div>
+                <div><dt>Окупается</dt><dd>около 9 лет</dd></div>
+              </dl>
+            </div>
+            <img src={sitePath("/assets/vision-restaurant.jpg")} alt="Зал ресторана у окна на горы" />
+            <img src={sitePath("/assets/vision-room.jpg")} alt="Спальня с видом на горы" />
+          </div>
+        </section>
+      ) : (
+        <div className={styles.detailVisual}><img src={sitePath(service.image)} alt={service.alt} fetchPriority="high" /></div>
+      )}
       <div className={styles.detailSections}>
         {service.blocks.map((block, index) => (
           <section key={block.heading} className={styles.detailSection} aria-labelledby={`block-${index}`}>

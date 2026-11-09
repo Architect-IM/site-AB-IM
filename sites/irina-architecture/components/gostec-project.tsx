@@ -10,7 +10,7 @@ const shot = (name: string) => sitePath(`/assets/portfolio/gostec/${name}.jpg`);
 const horses = sitePath("/assets/home-hospitality-gostec.jpg");
 
 const products = [
-  ["Живое гостеприимство", "Архитектор", "/napravleniya/hospitality"],
+  ["Мастер-план живого туристического объекта", "Архитектор", "/napravleniya/hospitality/tourism"],
   ["АГО — комплект под градсовет", "Бюро", "/bureau/uslugi/ago"],
 ] as const;
 
@@ -111,7 +111,7 @@ export function GostecProject({ project, next }: { project: Project; next: Proje
       <section className="pp-two">
         <div>
           <p className="pp-kicker">Архитектор</p>
-          <p>Живое гостеприимство и АГО. Место, которое держит человека дольше одной остановки, и облик, который ссылается на деревню.</p>
+          <p>Мастер-план и АГО. Место, которое держит человека дольше одной остановки, и облик, который ссылается на деревню.</p>
         </div>
         <div>
           <p className="pp-kicker">Сейчас</p>

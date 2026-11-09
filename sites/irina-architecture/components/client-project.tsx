@@ -9,7 +9,6 @@ type Project = (typeof projects)[number];
 const photo = (name: string) => sitePath(`/assets/portfolio/pokrovskiy-pryanik/${name}.jpg`);
 
 const products = [
-  ["Живое гостеприимство", "Архитектор", "/napravleniya/hospitality"],
   ["Мастер-план раскрытия потенциала территории", "Архитектор", "/napravleniya/vladimir/master-plan"],
   ["Мастер-план живого туристического объекта", "Архитектор", "/napravleniya/hospitality/tourism"],
   ["Проектная документация — стадия П", "Бюро", "/bureau/uslugi/stage-p"],

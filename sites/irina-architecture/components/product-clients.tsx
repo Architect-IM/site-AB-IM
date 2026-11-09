@@ -1,8 +1,9 @@
 import { sitePath } from "@/lib/site-path";
 import { projects } from "@/lib/projects";
 
-export function ProductClients({ slug }: { slug: string }) {
-  const shown = projects.filter((project) => (project.tags as readonly string[]).includes(slug));
+export function ProductClients({ slug, slugs }: { slug?: string; slugs?: string[] }) {
+  const ids = slugs ?? (slug ? [slug] : []);
+  const shown = projects.filter((project) => ids.some((id) => (project.tags as readonly string[]).includes(id)));
   if (!shown.length) return null;
   return (
     <section className="product-clients" aria-label="Клиенты">
