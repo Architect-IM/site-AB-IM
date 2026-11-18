@@ -5,6 +5,7 @@ import { houseServices } from "@/lib/houses";
 import { HouseLink } from "../links";
 import { ImplementationBlocks } from "../implementation-blocks";
 import { ProductLead } from "@/components/product-lead";
+import { ProductClients } from "@/components/product-clients";
 import styles from "../houses.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -40,6 +41,7 @@ export default async function HouseServicePage({ params }: Props) {
         <p>{block.text}</p>
       </section>)}
     </div>
+    <ProductClients slug={service.slug} />
     <nav className={styles.return} aria-label="Вернуться к направлению"><HouseLink href={back} back>Частные владения</HouseLink></nav>
   </main>;
 }

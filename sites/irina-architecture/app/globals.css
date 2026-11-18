@@ -2281,6 +2281,8 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-ples .pp-path img{min-height:60vh}
 .pp-ples .pp-plan{background:#f3f1ec;padding:36px var(--side) 8px}
 .pp-ples .pp-plan img{display:block;width:100%;height:auto;max-height:78vh;margin:0 auto;object-fit:contain;background:#f3f1ec}
+.pp-novoe .pp-hero img{object-position:center 46%}
+.pp-novoe .pp-path img{object-position:center 42%}
 .pp-saburovo a.pp-ext{text-decoration:underline;text-underline-offset:3px}
 .pp-saburovo a.pp-ext:hover{opacity:.65}
 .pp-saburovo .pp-path div{background:#f4f1e8}
