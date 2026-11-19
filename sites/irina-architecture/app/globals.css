@@ -155,10 +155,31 @@
 
     .brand-role.brand-role-name {
       display: flex;
-      align-items: flex-end;
-      height: calc(2 * var(--brand-line-height));
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      height: 21px;
       line-height: 1;
       white-space: nowrap;
+    }
+
+    .brand-role.brand-role-name .brand-origin {
+      font-size: 8px;
+      letter-spacing: 0.11em;
+      color: #8a8b86;
+    }
+
+    .brand:has(.brand-symbol) .brand-role-name {
+      height: calc(2 * var(--brand-line-height));
+    }
+
+    @media (max-width: 820px) {
+      .brand-role.brand-role-name { height: 23px; }
+      .brand:has(.brand-symbol) .brand-role-name { height: calc(2 * var(--brand-line-height)); }
+    }
+
+    @media (max-width: 560px) {
+      .brand-role.brand-role-name { letter-spacing: 0.16em; }
     }
 
     .desktop-nav {
