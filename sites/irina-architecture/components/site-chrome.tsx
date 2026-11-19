@@ -50,8 +50,8 @@ export function Header() {
   return <>
     <header className={`site-header${isBureau ? " site-header-bureau" : ""}`}>
       <div className="header-inner">
-        <a className="brand" href={sitePath(isBureau ? "/bureau" : "/")} aria-label={isBureau ? "Бюро Ирины Михейкиной — в начало раздела" : "Ирина Михейкина, архитектор из Владимира — на главную"}>
-          <BrandLogo/><span className={isBureau ? "brand-role" : "brand-role brand-role-name"}>{isBureau ? <>Архитектурное бюро<br/>Ирины Михейкиной</> : <><span>Ирина Михейкина</span><span className="brand-origin">архитектор из Владимира</span></>}</span>
+        <a className="brand" href={sitePath(isBureau ? "/bureau" : "/")} aria-label={isBureau ? "Бюро Ирины Михейкиной — в начало раздела" : "Ирина Михейкина — на главную"}>
+          <BrandLogo/><span className={isBureau ? "brand-role" : "brand-role brand-role-name"}>{isBureau ? <>Архитектурное бюро<br/>Ирины Михейкиной</> : "Ирина Михейкина"}</span>
         </a>
         <nav className="desktop-nav" aria-label={isBureau ? "Навигация бюро" : "Основная навигация"}>
           {navigation}
