@@ -14,9 +14,9 @@ export type ProductTake = {
 
 const works = {
   stageP: ["pokrovskiy-pryanik", "dobrograd", "saburovo", "kabardinka"],
-  stageR: ["dobrograd", "saburovo", "pokrovskiy-pryanik", "lomonosova", "ksk"],
+  stageR: ["dobrograd", "saburovo", "pokrovskiy-pryanik", "lomonosova", "ksk", "novoe"],
   survey: ["lomonosova", "monastyr", "dobrograd", "saburovo", "pokrovskiy-pryanik"],
-  spatial: ["zagoryansky", "novoe", "dobrograd", "kabardinka"],
+  spatial: ["zagoryansky", "dobrograd", "kabardinka"],
   feasibility: ["pokrovskiy-pryanik", "altai", "gostec", "hatminki", "dobrograd"],
   sketch: ["barmino", "ivan-zaitsev", "agalarov", "novoe"],
   analysis: ["lomonosova", "monastyr", "balyaga", "kadala"],
