@@ -25,7 +25,7 @@ export function NovoeProject({ project, next }: { project: Project; next: Projec
         <div className="pp-hero-copy">
           <p className="section-label">Новое · 2024</p>
           <h1>{project.name}</h1>
-          <p className="pp-hero-quote">— Особняк в стилистике русской усадьбы.</p>
+          <p className="pp-hero-quote">— Русская усадьба с видом на Боголюбово.</p>
         </div>
       </section>
 
