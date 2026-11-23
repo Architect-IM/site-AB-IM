@@ -1,8 +1,22 @@
+type EssayPhoto = { path: string; alt: string; position?: string };
+
 export type Essay = {
   label: string;
   heroImage?: string;
   portraitImage?: { path: string; position: string };
-  workImage?: { path: string; alt: string };
+  workImage?: { path: string; alt: string; position?: string };
+  pathImage?: { path: string; alt: string; position?: string };
+  fullScreenImage?: EssayPhoto;
+  pairedImages?: [EssayPhoto, EssayPhoto];
+  pairedImagesProtected?: boolean;
+  afterMovesBlock?: {
+    image: EssayPhoto;
+    kicker: string;
+    title: string;
+    text: string;
+    pairedImages: [EssayPhoto, EssayPhoto];
+  };
+  keyMoveLayout?: boolean;
   gallery?: { path: string; alt: string; position?: string }[];
   quote: string;
   openTitle: string;
@@ -137,6 +151,15 @@ export const essays: Record<string, Essay> = {
   },
   hatminki: {
     label: "Клуб · Хатминки",
+    keyMoveLayout: true,
+    pairedImagesProtected: true,
+    pairedImages: [
+      { path: "portfolio/hatminki/paired-green-courtyard", alt: "Озеленённый двор Хатминки-Клаб", position: "8% 20%" },
+      { path: "portfolio/hatminki/04", alt: "Мостки и корпуса клуба у воды", position: "55% center" },
+    ],
+    heroImage: "portfolio/hatminki/hero-pond-view",
+    pathImage: { path: "portfolio/hatminki/key-move-benches", alt: "Двор Хатминки-Клаб: кирпичный фасад, лавочки и деревянный настил", position: "40% center" },
+    workImage: { path: "portfolio/hatminki/work-courtyard-v2", alt: "Белый объём клуба над озеленённым внутренним двором Хатминки-Клаб", position: "8% center" },
     quote: "Клуб начинается с мостков, не с ресепшена.",
     openTitle: "Сначала вода. Потом кирпич.",
     open: [
@@ -144,9 +167,19 @@ export const essays: Record<string, Essay> = {
       "Сверху видно, как здания обнимают протоки, а не выстраиваются в линейку вдоль парковки.",
     ],
     voice: "Клуб, который начинается с парковки, уже проиграл. Здесь первый жест — доски над водой. Кирпич потом подтверждает, что это не беседка, а место, где можно остаться.",
-    pathKicker: "План места",
+    pathKicker: "Ключевой ход",
     pathTitle: "Корпуса держат воду внутри.",
     path: "Общий вид показывает несколько дворов и воду между ними. Парковка есть, но она не фасад. Фасад — пирс и входной двор с людьми.",
+    afterMovesBlock: {
+      image: { path: "portfolio/hatminki/lighting-entry", alt: "Архитектурная подсветка въездной группы Хатминки-Клаб", position: "35% center" },
+      kicker: "Ключевой ход",
+      title: "Визитная карточка жилого района",
+      text: "Мы разработали архитектурную подсветку въездной группы «Хатминки Клаб» как визитную карточку проекта. Свет вдоль карниза подчёркивает силуэт здания и делает его заметным издалека, а акценты на арках выделяют вход. В проекте использована светодиодная лента LUX с дневным белым свечением (4000 К).",
+      pairedImages: [
+        { path: "portfolio/hatminki/lighting-white-volume", alt: "Белый объём и световая линия карниза", position: "50% center" },
+        { path: "portfolio/hatminki/lighting-veranda", alt: "Подсветка кирпичного фасада и веранды", position: "58% center" },
+      ],
+    },
     turn: "Клуб у воды.",
     facts: "Хатминки · кирпич · проект",
     work: "Собрать клуб так, чтобы вода была в середине маршрута, а корпуса не превратились в торговый ряд. Кирпич, дерево настилов, дворы.",
