@@ -9,6 +9,8 @@ import { ZharProject } from "@/components/zhar-project";
 import { RuzaProject } from "@/components/ruza-project";
 import { KabardinkaProject } from "@/components/kabardinka-project";
 import { PlesProject } from "@/components/ples-project";
+import { IvanovoProject } from "@/components/ivanovo-project";
+import { PozdnyakovoProject } from "@/components/pozdnyakovo-project";
 import { ProjectEssay } from "@/components/project-essay";
 import { projects } from "@/lib/projects";
 
@@ -31,6 +33,8 @@ export default async function Project({ params }: { params: Promise<{ slug: stri
   if (project.slug === "ruza") return <RuzaProject project={project} next={next} />;
   if (project.slug === "kabardinka") return <KabardinkaProject project={project} next={next} />;
   if (project.slug === "ples") return <PlesProject project={project} next={next} />;
+  if (project.slug === "ivanovo") return <IvanovoProject project={project} next={next} />;
+  if (project.slug === "pozdnyakovo") return <PozdnyakovoProject project={project} next={next} />;
   return <ProjectEssay project={project} next={next} />;
 }
 

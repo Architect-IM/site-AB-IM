@@ -18,9 +18,9 @@ export function SaburovoProject({ project, next }: { project: Project; next: Pro
       <section className="pp-hero">
         <img src={photo("01")} alt="Сабурово Клаб сверху: дома среди сосен" />
         <div className="pp-hero-copy">
-          <p className="section-label">Заказчик · Красногорск</p>
+          <p className="section-label">FSK FAMILY · Красногорск</p>
           <h1>{project.name}</h1>
-          <p className="pp-hero-quote">— Лес остаётся. Дома встают в него.</p>
+          <p className="pp-hero-quote">Лес остаётся. Дома встают в него.</p>
         </div>
       </section>
 
@@ -36,7 +36,11 @@ export function SaburovoProject({ project, next }: { project: Project; next: Pro
       </section>
 
       <section className="pp-path">
-        <img src={photo("02")} alt="План вертикальной планировки: посадка домов и въездная группа" />
+        <figure className="pp-plan">
+          <span className="pp-plan-crop">
+            <img src={photo("02")} alt="План вертикальной планировки: посадка домов и въездная группа" />
+          </span>
+        </figure>
         <div>
           <p className="pp-kicker">Посадка</p>
           <h2>Не рисовать посёлок заново.</h2>
