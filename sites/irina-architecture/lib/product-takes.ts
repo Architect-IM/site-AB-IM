@@ -66,7 +66,7 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
       },
       {
         kind: "note",
-        title: "100% гарантия положительного заключения экспертизы.",
+        title: "Гарантия положительного заключения экспертизы.",
         text: "По нашим проектам не было ни одного отказа в выдаче разрешения на строительство или положительного заключения экспертизы.",
         image: "/assets/mansion-hero.jpg",
       },
