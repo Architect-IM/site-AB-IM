@@ -7,6 +7,7 @@ export type ProductTake = {
   text: string;
   kind: TakeKind;
   image?: string;
+  logo?: string;
   frames?: TakeFrame[];
   sign?: string;
   signMeta?: string;
@@ -58,11 +59,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
       },
       {
         kind: "review",
-        title: "Проект как единая система.",
-        text: "Все 15 разделов велись согласованно и были подчинены генеральному замыслу. Комплект не собирали из разрозненных частей.",
-        image: "/assets/portfolio/saburovo/voice.jpg",
-        sign: "Главный инженер",
-        signMeta: "Доброград",
+        title: "",
+        text: "",
+        image: "/assets/vereshchagin.jpg",
+        logo: "/assets/dobrograd-logo.png",
+        sign: "Верещагин Вадим Сергеевич",
+        signMeta: "Руководитель проектов",
       },
       {
         kind: "note",
