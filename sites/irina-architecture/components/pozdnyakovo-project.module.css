@@ -1,0 +1,193 @@
+.project {
+  --brick: #854b37;
+  --stone: #f3f1ec;
+}
+
+.hero > img {
+  object-position: center 8%;
+}
+
+.hero h1 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: .98;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.hero :global(.pp-hero-quote) {
+  max-width: 27ch;
+}
+
+.intro {
+  padding-bottom: clamp(3rem, 7vw, 6.5rem);
+}
+
+.intro h2,
+.plans h2 {
+  max-width: 12ch;
+}
+
+.project :global(.pp-kicker) {
+  color: var(--brick);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: clamp(2.75rem, 6vw, 5.5rem) 0 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.facts div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: .5rem;
+  padding: 1.1rem clamp(.5rem, 3vw, 2rem) 1.25rem;
+}
+
+.facts div:first-child { padding-left: 0; }
+.facts div + div { border-left: 1px solid var(--line); }
+
+.facts dd {
+  margin: 0;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(1.45rem, 4vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+
+.facts dt {
+  font-size: .875rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.facades,
+.video {
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  min-height: auto;
+  background: var(--stone);
+}
+
+.facades > div,
+.video > div {
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 3.75rem);
+}
+
+.facades figure,
+.video figure,
+.plans figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.facades figure img,
+.video figure img {
+  display: block;
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 8 / 5;
+}
+
+.project figcaption {
+  color: var(--muted);
+  font-size: .875rem;
+  line-height: 1.45;
+}
+
+.facades figcaption,
+.video figcaption {
+  padding: .85rem clamp(1.25rem, 3.6vw, 3rem);
+}
+
+.details {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(.5rem, 1.6vw, 1.5rem);
+  padding: clamp(2.75rem, 7vw, 6.5rem) var(--side);
+}
+
+.details img {
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-position: center 38%;
+}
+
+.details figcaption { padding: .75rem 0 0; }
+
+.plans {
+  background: var(--stone);
+  padding-bottom: clamp(2.75rem, 7vw, 6.5rem);
+}
+
+.plans figure { margin: 0 var(--side); }
+
+.plans figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  object-fit: contain;
+  background: #fff;
+}
+
+.plans figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .5rem 1rem;
+  padding: 1rem 0 0;
+}
+
+.plans a { color: var(--ink); }
+
+.video { margin: clamp(2.75rem, 7vw, 6.5rem) 0; }
+
+.videoLink {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 1.1rem;
+  min-height: 46px;
+  margin-top: .9rem;
+  padding: .65rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  font-size: .9375rem;
+  text-decoration: none;
+}
+
+.videoLink:hover { background: var(--brick); }
+.videoLink span { font-variant-numeric: tabular-nums; opacity: .78; }
+
+@media (max-width: 800px) {
+  .hero {
+    display: block;
+    min-height: auto;
+    background: var(--stone);
+    color: var(--ink);
+  }
+
+  .hero::after { display: none; }
+
+  .hero > img {
+    position: static;
+    display: block;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero :global(.pp-hero-copy) { padding: 1.5rem var(--side) 2.25rem; }
+  .hero h1 { font-size: clamp(2.55rem, 8.4vw, 4.5rem); }
+  .hero :global(.pp-hero-quote) { font-size: 1.25rem; }
+  .intro, .plans :global(.pp-open) { padding-top: 3.5rem; }
+  .intro h2, .plans h2 { font-size: clamp(2.25rem, 10.5vw, 3.5rem); }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .facts div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .facts div:nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .facades, .video { grid-template-columns: minmax(0, 1fr); }
+  .facades figure img, .video figure img { aspect-ratio: 16 / 9; }
+}

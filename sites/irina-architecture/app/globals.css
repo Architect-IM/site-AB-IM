@@ -2162,6 +2162,8 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-nerl .pp-portrait{background:#f3f1ec;color:var(--ink)}
 .pp-nerl .pp-portrait .pp-kicker{color:var(--muted)}
 .pp-portrait p:last-child{margin:0;font-family:"Source Serif 4",Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(18px,1.5vw,23px);line-height:1.5;letter-spacing:0}
+.pp-photo-screen{margin:0;width:100%;height:calc(100vh - var(--header-h));height:calc(100svh - var(--header-h));overflow:hidden;scroll-margin-top:var(--header-h)}
+.pp-photo-screen img{width:100%;height:100%;object-fit:cover}
 .pp-rail{margin:0;background:#111}
 .pp-rail img{display:block;width:100%;max-height:88vh;object-fit:cover;object-position:var(--rail-position,50% 50%)}
 :is(.pp-pokrovskiy,.pp-nerl) .pp-rail-viewport{
@@ -2195,6 +2197,8 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-pair{display:grid;grid-template-columns:1.2fr .8fr}
 .pp-pair figure{margin:0}
 .pp-pair img{display:block;width:100%;height:72vh;object-fit:cover}
+.pp-pair--protected{container-type:inline-size}
+.pp-pair--protected img{height:clamp(15cqw,72vh,75cqw)}
 .pp-pair figcaption{padding:12px 16px 20px;color:#686963;font-size:13px}
 .pp-turn{padding:92px var(--side) 28px}
 .pp-turn h2{margin:0;max-width:12em;font-size:clamp(42px,5.5vw,78px);font-weight:500;letter-spacing:-.05em;line-height:.96}
@@ -2252,7 +2256,6 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-products strong{font-size:clamp(26px,2.6vw,38px);font-weight:500;letter-spacing:-.04em;line-height:1.1}
 .pp-products a:hover strong{text-decoration:underline;text-underline-offset:4px}
 .pp-saburovo .pp-hero-copy h1{font-family:Unbounded,Onest,sans-serif;font-weight:500;letter-spacing:-.03em}
-.pp-saburovo .pp-hero-quote{border-left:3px solid #70a549;padding-left:18px}
 .pp-ruza .pp-hero img{object-position:center 32%}
 .pp-ruza .pp-portrait{min-height:0}
 .pp-ruza .pp-portrait img{width:100%;height:auto;min-height:0;aspect-ratio:1;object-fit:contain;object-position:center;background:#eef1ee}
@@ -2285,8 +2288,19 @@ textarea.form-input {resize:vertical;min-height:135px}
 .pp-novoe .pp-path img{object-position:center 42%}
 .pp-saburovo a.pp-ext{text-decoration:underline;text-underline-offset:3px}
 .pp-saburovo a.pp-ext:hover{opacity:.65}
-.pp-saburovo .pp-path div{background:#f4f1e8}
-.pp-saburovo .pp-path img{background:#f7f6f2;object-fit:contain;padding:28px}
+.pp-saburovo .pp-path,.pp-saburovo .pp-path div{background:var(--paper)}
+.pp-saburovo .pp-plan{min-width:0;align-self:end;margin:28px 28px 48px}
+.pp-saburovo .pp-plan-crop{
+  display:block;position:relative;overflow:hidden;aspect-ratio:2127/1373;mix-blend-mode:multiply;
+}
+.pp-saburovo .pp-plan img{
+  position:absolute;left:-2.63281617%;top:-1.23816460%;width:103.43206394%;height:auto;
+  max-width:none;min-height:0;margin:0;padding:0;background:transparent;object-fit:fill;
+}
+@media(max-width:800px){
+  .pp-saburovo .pp-path{min-height:0}
+  .pp-saburovo .pp-plan{align-self:start;margin:24px 20px 0}
+}
 .pp-saburovo .pp-moves article{border-top-color:#70a549}
 .pp-dobrograd .pp-open .pp-kicker,.pp-dobrograd .pp-turn .pp-kicker,.pp-dobrograd .pp-products .pp-kicker{color:#8a4b32}
 .pp-dobrograd .pp-street-title{max-width:13.2em;font-size:clamp(32px,3.5vw,48px);line-height:1.05}
