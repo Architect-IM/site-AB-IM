@@ -58,8 +58,10 @@ function TakeBlock({ take }: { take: ProductTake }) {
           {take.text ? <p className="p-review-kicker">Ценность, сказанная заказчиком</p> : null}
           {take.title ? <h2>{take.title}</h2> : null}
           {take.text ? <blockquote>{take.text}</blockquote> : null}
-          <p className="p-review-sign">{take.sign || "Главный инженер"}<span>{take.signMeta || "Доброград"}</span></p>
-          {take.logo ? <img className="p-review-logo" src={sitePath(take.logo)} alt="Доброград" /> : null}
+          <p className="p-review-sign">
+            <span className="p-review-who">{take.sign || "Главный инженер"}<span>{take.signMeta || "Доброград"}</span></span>
+            {take.logo ? <img className="p-review-logo" src={sitePath(take.logo)} alt="Доброград" /> : null}
+          </p>
         </div>
       </section>
     );
