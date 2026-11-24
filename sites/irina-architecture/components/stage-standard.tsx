@@ -55,7 +55,6 @@ function TakeBlock({ take }: { take: ProductTake }) {
       <section className="p-review" aria-label="Отзыв">
         <img src={sitePath(take.sign ? take.image || "" : "/assets/portfolio/saburovo/voice.jpg")} alt="" />
         <div>
-          {take.text ? <p className="p-review-kicker">Ценность, сказанная заказчиком</p> : null}
           {take.title ? <h2>{take.title}</h2> : null}
           {take.text ? <blockquote>{take.text}</blockquote> : null}
           <p className="p-review-sign">
