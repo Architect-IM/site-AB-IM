@@ -50,6 +50,21 @@ function TakeBlock({ take }: { take: ProductTake }) {
     );
   }
 
+  if (take.kind === "review" && take.logo && take.image) {
+    return (
+      <section className="p-review p-review--customer" aria-label="Отзыв">
+        <img src={sitePath(take.image)} alt="" />
+        <div>
+          {take.title ? <h2>{take.title}</h2> : null}
+          {take.text ? <blockquote>{take.text}</blockquote> : null}
+          <p className="p-review-sign">
+            <span className="p-review-who">{take.sign || "Главный инженер"}<span>{take.signMeta || "Доброград"}</span></span>
+            <img className="p-review-logo" src={sitePath(take.logo)} alt="Доброград" />
+          </p>
+        </div>
+      </section>
+    );
+  }
   if (take.kind === "review") {
     return (
       <section className="p-review" aria-label="Отзыв">
