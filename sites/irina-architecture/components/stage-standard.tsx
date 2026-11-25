@@ -100,20 +100,39 @@ export function StageStandard({ product }: { product: BureauProduct }) {
   const story = productStory(product.slug);
   if (!story) return null;
 
-  const quiets = [product.who, product.gets, product.how, product.why, product.next];
   const nodes: Array<{ key: string; take?: ProductTake; label?: string; text?: string }> = [];
-  let quietIndex = 0;
 
-  story.takes.forEach((take, index) => {
-    nodes.push({ key: `take-${index}`, take });
-    if (take.kind !== "review" && quietIndex < quiets.length) {
+  if (product.slug === "survey") {
+    const early = [
+      { label: "Для кого и когда", text: product.who },
+      { label: "Что в результате?", text: product.gets },
+    ];
+    let earlyIndex = 0;
+    story.takes.forEach((take, index) => {
+      if (take.title === "Нормативная экспертиза.") {
+        nodes.push({ key: "quiet-why", label: "Почему это важно", text: product.why });
+      }
+      nodes.push({ key: `take-${index}`, take });
+      if (take.kind !== "review" && take.title !== "Нормативная экспертиза." && earlyIndex < early.length) {
+        nodes.push({ key: `quiet-${earlyIndex}`, ...early[earlyIndex] });
+        earlyIndex += 1;
+      }
+    });
+    nodes.push({ key: "quiet-next", label: "Формат и следующий шаг", text: product.next });
+  } else {
+    const quiets = [product.who, product.gets, product.how, product.why, product.next];
+    let quietIndex = 0;
+    story.takes.forEach((take, index) => {
+      nodes.push({ key: `take-${index}`, take });
+      if (take.kind !== "review" && quietIndex < quiets.length) {
+        nodes.push({ key: `quiet-${quietIndex}`, label: quietLabels[quietIndex], text: quiets[quietIndex] });
+        quietIndex += 1;
+      }
+    });
+    while (quietIndex < quiets.length) {
       nodes.push({ key: `quiet-${quietIndex}`, label: quietLabels[quietIndex], text: quiets[quietIndex] });
       quietIndex += 1;
     }
-  });
-  while (quietIndex < quiets.length) {
-    nodes.push({ key: `quiet-${quietIndex}`, label: quietLabels[quietIndex], text: quiets[quietIndex] });
-    quietIndex += 1;
   }
 
   const shown = story.works
