@@ -17,7 +17,7 @@ const works = {
   stageP: ["pokrovskiy-pryanik", "dobrograd", "saburovo", "kabardinka"],
   stageR: ["dobrograd", "saburovo", "pokrovskiy-pryanik", "lomonosova", "ksk", "novoe"],
   survey: ["lomonosova", "monastyr", "dobrograd", "saburovo", "pokrovskiy-pryanik"],
-  spatial: ["zagoryansky", "dobrograd", "kabardinka"],
+  spatial: ["zagoryansky", "novoe", "dobrograd", "kabardinka"],
   feasibility: ["pokrovskiy-pryanik", "altai", "gostec", "hatminki", "dobrograd"],
   sketch: ["barmino", "ivan-zaitsev", "agalarov", "novoe"],
   analysis: ["lomonosova", "monastyr", "balyaga", "kadala"],
@@ -109,7 +109,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "Проектируем рабочую документацию с учётом технологии и последовательности реальных строительных работ. Документация ёмкая: технологические описания и регламенты к каждому процессу строительства.",
         image: "/assets/portfolio/dobrograd/01.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Конструкция как продолжение архитектуры.",
+        text: "Проектируем так, чтобы инженерия поддерживала архитектуру и максимально раскрывала идею объекта.",
+        image: "/assets/portfolio/saburovo/01.jpg",
+      },
       {
         kind: "note",
         title: "Цифровые модели.",
@@ -151,7 +156,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "Используем современное оборудование и методы обследования.",
         image: "/assets/lab.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Основа для решений.",
+        text: "Полноценный отчёт, достаточный для принятия стратегических решений без риска ошибок.",
+        image: "/assets/bureau.jpg",
+      },
       {
         kind: "left",
         title: "Нормативная экспертиза.",
@@ -175,7 +185,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "Проверяем решения на соответствие нормативной и технологической базе.",
         image: "/assets/houses-masterplan-ruza.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Эффективные технико-экономические показатели.",
+        text: "В том числе с приглашёнными экспертами.",
+        image: "/assets/vladimir-master-plan-render.jpg",
+      },
       {
         kind: "left",
         title: "Связка с АГО.",
@@ -199,7 +214,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "Опираемся на актуальные рыночные цены, а не на усреднённые справочники.",
         image: "/assets/mansion.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Подбор оптимальных решений.",
+        text: "Обосновано стоимостью, техническим решением и эстетическим уровнем.",
+        image: "/assets/lodge.jpg",
+      },
     ],
   },
   sketch: {
@@ -217,7 +237,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "Эскизируем что хочешь.",
         image: "/assets/houses-concept.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Забота.",
+        text: "Памятка, чек-лист.",
+        image: "/assets/home-private-meadow-life.jpg",
+      },
     ],
   },
   analysis: {
@@ -229,13 +254,23 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "Оцениваем риски прохождения согласований и экспертизы.",
         image: "/assets/territory.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Ранняя ясность.",
+        text: "На самых ранних стадиях видим, какие решения имеют потенциал пройти согласования и экспертизы, а какие будут проблемными, и на основании этого можем довольно быстро предложить концептуальное видение будущего проекта.",
+        image: "/assets/vladimir-concept-aerial.jpg",
+      },
     ],
   },
   brief: {
     works: works.brief,
     takes: [
-      customerReview,
+      {
+        kind: "review",
+        title: "Независимость.",
+        text: "Разрабатываем ТЗ не под себя, а делаем универсальный документ, с которым заказчик может пойти в любое другое бюро или в частную практику.",
+        image: "/assets/home-consulting-drawings.jpg",
+      },
     ],
   },
   ago: {
@@ -247,7 +282,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "Подготовим по стандартам градсовета и территории.",
         image: "/assets/vladimir-ago-temple.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Согласование со всеми заинтересованными.",
+        text: "Можем согласовать со всеми заинтересованными сторонами.",
+        image: "/assets/vladimir-assumption-context.jpg",
+      },
     ],
   },
   consulting: {
@@ -265,7 +305,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "Дорожная карта и понимание стоимостей по проектным услугам: что и куда идти, какие требования по согласованиям.",
         image: "/assets/home-consulting-drawings.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Глубокий аудит проектной документации.",
+        text: "Многоступенчатая проверка с правовой, инженерной и финансовой стороны.",
+        image: "/assets/lab.jpg",
+      },
     ],
   },
   client: {
@@ -295,7 +340,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "Заказчик получает релевантные коммерческие предложения и не отвечает на лишние вопросы.",
         image: "/assets/consulting-meeting.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Полный цикл.",
+        text: "От разработки замысла до эксплуатации и обслуживания: включаемся на любом этапе.",
+        image: "/assets/home-hospitality-ruza-life.jpg",
+      },
     ],
   },
   cm: {
@@ -313,7 +363,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "То, что нужно, по лучшим ценам: понятные объёмы и материалы по ведомостям проекта, без изменений и отклонений от проекта.",
         image: "/assets/portfolio/dobrograd/panels.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Комплектация.",
+        text: "Предлагаем разные варианты проверенных производителей и исполнителей.",
+        image: "/assets/lodge.jpg",
+      },
       {
         kind: "left",
         title: "Социальный капитал.",
@@ -349,7 +404,12 @@ export const productTakes: Record<string, { takes: ProductTake[]; works: string[
         text: "Контроль, согласование и внесение всех изменений во время строительства в исполнительную документацию, без рисков нарушения норм.",
         image: "/assets/home-consulting-drawings.jpg",
       },
-      customerReview,
+      {
+        kind: "review",
+        title: "Исключение человеческого фактора на стройке.",
+        text: "Не надо переделывать.",
+        image: "/assets/portfolio/dobrograd/street.jpg",
+      },
       {
         kind: "note",
         title: "Контролируем материалы и закупки.",

@@ -50,17 +50,30 @@ function TakeBlock({ take }: { take: ProductTake }) {
     );
   }
 
-  if (take.kind === "review") {
+  if (take.kind === "review" && take.logo && take.image) {
     return (
-      <section className="p-review" aria-label="Отзыв">
-        <img src={sitePath(take.sign ? take.image || "" : "/assets/portfolio/saburovo/voice.jpg")} alt="" />
+      <section className="p-review p-review--customer" aria-label="Отзыв">
+        <img src={sitePath(take.image)} alt="" />
         <div>
           {take.title ? <h2>{take.title}</h2> : null}
           {take.text ? <blockquote>{take.text}</blockquote> : null}
           <p className="p-review-sign">
             <span className="p-review-who">{take.sign || "Главный инженер"}<span>{take.signMeta || "Доброград"}</span></span>
-            {take.logo ? <img className="p-review-logo" src={sitePath(take.logo)} alt="Доброград" /> : null}
+            <img className="p-review-logo" src={sitePath(take.logo)} alt="Доброград" />
           </p>
+        </div>
+      </section>
+    );
+  }
+  if (take.kind === "review") {
+    return (
+      <section className="p-review" aria-label="Отзыв">
+        <img src={sitePath("/assets/portfolio/saburovo/voice.jpg")} alt="" />
+        <div>
+          <p className="p-review-kicker">Ценность, сказанная заказчиком</p>
+          <h2>{take.title}</h2>
+          {take.text ? <blockquote>{take.text}</blockquote> : null}
+          <p className="p-review-sign">Главный инженер<span>Доброград</span></p>
         </div>
       </section>
     );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { sitePath } from "@/lib/site-path";
 import { houseServices } from "@/lib/houses";
+import { projects } from "@/lib/projects";
 import { HouseLink } from "../links";
 import { ImplementationBlocks } from "../implementation-blocks";
 import { ProductLead } from "@/components/product-lead";
@@ -23,6 +24,7 @@ export default async function HouseServicePage({ params }: Props) {
   const service = houseServices.find(item => item.slug === slug);
   if (!service) notFound();
   const back = `/napravleniya/houses#${service.slug}`;
+  const hasNerl = projects.find(project => project.slug === "novoe")?.tags.some(tag => tag === service.slug);
 
   return <main id="content" className={`inner-page ${styles.page}`}>
     <nav className={styles.breadcrumbs} aria-label="Навигация по разделу">
@@ -41,7 +43,7 @@ export default async function HouseServicePage({ params }: Props) {
         <p>{block.text}</p>
       </section>)}
     </div>
-    <ProductClients slug={service.slug} />
+    {hasNerl && <ProductClients slug={service.slug} />}
     <nav className={styles.return} aria-label="Вернуться к направлению"><HouseLink href={back} back>Частные владения</HouseLink></nav>
   </main>;
 }
