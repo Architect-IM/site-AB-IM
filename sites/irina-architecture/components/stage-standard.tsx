@@ -86,7 +86,11 @@ function TakeBlock({ take }: { take: ProductTake }) {
       {take.text ? <p>{take.text}</p> : null}
     </div>
   );
-  const image = take.image ? <img src={sitePath(take.image)} alt="" /> : null;
+  const image = take.image?.endsWith(".mp4") ? (
+    <video src={sitePath(take.image)} autoPlay muted loop playsInline />
+  ) : take.image ? (
+    <img src={sitePath(take.image)} alt="" />
+  ) : null;
 
   return (
     <section className={takeClass(take)}>
